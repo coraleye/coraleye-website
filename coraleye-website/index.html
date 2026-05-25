@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Coraleye — The customer agent that never sleeps</title>
+  <title>Coraleye: The customer agent that never sleeps</title>
   <meta name="description" content="Intelligent customer success, on autopilot. Coraleye unifies every customer interaction and deploys Cory, an AI agent that surfaces churn risks and executes recovery plays before you'd notice the pattern." />
   <style>
     /* ─── Reset & Base ─────────────────────────────────────────────── */
@@ -1159,7 +1159,7 @@
     @media (max-width: 768px) {
       #before-after .container > div:last-child { grid-template-columns: 1fr; }
       #before-after [style*="width:80%"] { width: 100% !important; }
-      #before-card, #with-coraleye-card { max-width: 90% !important; }
+      #approach-cards { grid-template-columns: 1fr !important; }
       #contact .container > div { grid-template-columns: 1fr; gap: 40px; }
       .hero-inner { grid-template-columns: 1fr; gap: 24px; }
       .hero-content { padding: 0 20px; }
@@ -1273,20 +1273,10 @@
     <div class="container">
       <div class="hero-inner">
         <div class="hero-content">
-          <div class="hero-badge">
-            <div class="hero-badge-dot"></div>
-            The agentic customer success platform
-          </div>
-          <h1>The customer agent that never sleeps</h1>
-          <p class="hero-sub">Know. Your. Customer. Coraleye unifies every interaction across your stack and deploys Cory, our AI agent that acts on every signal before it's too late.</p>
+          <h1>Customer success, finally proactive.</h1>
+          <p class="hero-sub"><span style="color:#e8782a;font-weight:600;">Your CS team, amplified.</span> Coraleye unifies every interaction across your stack and deploys Cory to act on what it finds, before a customer decides to leave.</p>
           <div class="hero-ctas">
             <a href="#contact" class="btn btn-outline btn-lg">Get in Touch →</a>
-          </div>
-          <div class="hero-ticker">
-            <div class="ticker-label">Live Cory dispatch</div>
-            <div class="ticker-shell">
-              <div class="ticker-message"></div>
-            </div>
           </div>
         </div>
         <div class="hero-visual">
@@ -1295,55 +1285,105 @@
           </div>
         </div>
       </div>
-      <div class="hero-social-proof">
-        <span>Trusted signal from CS leaders at</span>
-        <div class="hero-sp-logos">
-          <span class="sp-logo-pill">$1B+ tech</span>
-          <span class="sp-logo-pill">$15B+ tech</span>
-          <span class="sp-logo-pill">Series C</span>
-        </div>
-      </div>
     </div>
   </section>
 
   <!-- ─── Problem ────────────────────────────────────────────────────── -->
   <section id="problem" class="section">
     <div class="container">
-      <div class="problem-grid">
-        <div class="problem-left reveal">
-          <div class="label">The problem</div>
-          <p style="font-size:1rem;color:var(--text-muted);line-height:1.7;margin-bottom:16px;">Thousands of interactions. Fragmented systems. Disconnected teams. The customer experience suffers.</p>
-          <h2>By the time you connect the dots, they've already decided to leave</h2>
-          <div class="problem-stat-row">
-            <div class="problem-stat">
-              <div class="stat-num">8+</div>
-              <div class="stat-desc">People touching one account at the same time</div>
-            </div>
-            <div class="problem-stat">
-              <div class="stat-num" style="white-space:nowrap;">5+ tools</div>
-              <div class="stat-desc">Siloed systems no one reads in full</div>
-            </div>
-            <div class="problem-stat">
-              <div class="stat-num">0 days</div>
-              <div class="stat-desc">Warning before a quiet churn decision is made</div>
-            </div>
+      <div class="reveal">
+        <div class="label">The problem</div>
+        <p style="font-size:1rem;color:var(--text-muted);line-height:1.7;margin-bottom:16px;">Your customer interacted with 6+ people across 6+ systems this month. Nobody has the full picture.</p>
+        <h2>By the time you connect the dots, they've already decided to leave</h2>
+      </div>
+
+      <!-- Full-width diagram -->
+      <div class="chaos-diagram reveal" style="margin-top:40px;border-radius:16px;padding:32px 36px;">
+
+        <!-- Stat callouts + title row -->
+        <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:20px;">
+          <div>
+            <div style="font-size:2.4rem;font-weight:800;color:#e8782a;line-height:1;">6+</div>
+            <div style="font-size:0.72rem;color:#4a5568;margin-top:4px;">siloed data sources</div>
           </div>
-          <p style="font-size:0.8rem;color:var(--text-subtle);font-style:italic;margin-top:16px;">— Head of Customer Success, $1B+ technology company</p>
+          <div class="chaos-title" style="margin:0;padding:0;border:none;background:none;color:#4a5568;">A single customer account</div>
+          <div style="text-align:right;">
+            <div style="font-size:2.4rem;font-weight:800;color:#e8782a;line-height:1;">6+</div>
+            <div style="font-size:0.72rem;color:#4a5568;margin-top:4px;">teams touching one account</div>
+          </div>
         </div>
-        <div class="problem-right reveal reveal-delay-2">
-          <div class="chaos-diagram">
-            <div class="chaos-title">A single customer account</div>
-            <div class="chaos-nodes">
-              <div class="chaos-node">Onboarding</div>
-              <div class="chaos-node">Account Mgr</div>
-              <div class="chaos-node">Support</div>
-              <div class="chaos-node">Product</div>
-              <div class="chaos-node">CSM</div>
-              <div class="chaos-node">Sales</div>
-            </div>
-            <div class="chaos-arrow">↓</div>
-            <div class="chaos-result">No one has the full picture</div>
+
+        <!-- Tool columns -->
+        <div style="display:flex;gap:8px;margin-bottom:0;">
+          <div style="flex:1;border-top:3px solid #e8782a;background:var(--bg-card);border-radius:8px;padding:10px 8px;">
+            <div style="font-size:0.72rem;font-weight:700;color:var(--text);margin-bottom:4px;">HubSpot</div>
+            <div style="font-size:0.68rem;color:#4a5568;">CRM / Pipeline</div>
           </div>
+          <div style="flex:1;border-top:3px solid #1f3c5e;background:var(--bg-card);border-radius:8px;padding:10px 8px;">
+            <div style="font-size:0.72rem;font-weight:700;color:var(--text);margin-bottom:4px;">Zendesk</div>
+            <div style="font-size:0.68rem;color:#4a5568;">Support Tickets</div>
+          </div>
+          <div style="flex:1;border-top:3px solid #2c8f7e;background:var(--bg-card);border-radius:8px;padding:10px 8px;">
+            <div style="font-size:0.72rem;font-weight:700;color:var(--text);margin-bottom:4px;">Slack</div>
+            <div style="font-size:0.68rem;color:#4a5568;">Communications</div>
+          </div>
+          <div style="flex:1;border-top:3px solid #4a9fd4;background:var(--bg-card);border-radius:8px;padding:10px 8px;">
+            <div style="font-size:0.72rem;font-weight:700;color:var(--text);margin-bottom:4px;">Salesforce</div>
+            <div style="font-size:0.68rem;color:#4a5568;">Account Data</div>
+          </div>
+          <div style="flex:1;border-top:3px solid #8b5cf6;background:var(--bg-card);border-radius:8px;padding:10px 8px;">
+            <div style="font-size:0.72rem;font-weight:700;color:var(--text);margin-bottom:4px;">Gong</div>
+            <div style="font-size:0.68rem;color:#4a5568;">Call Transcripts</div>
+          </div>
+          <div style="flex:1;border-top:3px solid #0052CC;background:var(--bg-card);border-radius:8px;padding:10px 8px;">
+            <div style="font-size:0.72rem;font-weight:700;color:var(--text);margin-bottom:4px;">Jira</div>
+            <div style="font-size:0.68rem;color:#4a5568;">Product & Engineering</div>
+          </div>
+        </div>
+
+        <!-- Dashed separator + connector arrows -->
+        <div style="border-top:1px dashed rgba(255,255,255,0.1);margin:10px 0 0;"></div>
+        <div style="display:flex;gap:8px;margin-bottom:0;">
+          <div style="flex:1;display:flex;justify-content:center;padding:3px 0;font-size:0.65rem;color:rgba(255,255,255,0.2);">↓</div>
+          <div style="flex:1;display:flex;justify-content:center;padding:3px 0;font-size:0.65rem;color:rgba(255,255,255,0.2);">↓</div>
+          <div style="flex:1;display:flex;justify-content:center;padding:3px 0;font-size:0.65rem;color:rgba(255,255,255,0.2);">↓</div>
+          <div style="flex:1;display:flex;justify-content:center;padding:3px 0;font-size:0.65rem;color:rgba(255,255,255,0.2);">↓</div>
+          <div style="flex:1;display:flex;justify-content:center;padding:3px 0;font-size:0.65rem;color:rgba(255,255,255,0.2);">↓</div>
+          <div style="flex:1;display:flex;justify-content:center;padding:3px 0;font-size:0.65rem;color:rgba(255,255,255,0.2);">↓</div>
+        </div>
+
+        <!-- Stakeholder row -->
+        <div style="display:flex;gap:8px;margin-bottom:20px;">
+          <div style="flex:1;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.11);border-radius:8px;padding:10px 8px;">
+            <div style="font-size:0.72rem;font-weight:700;color:var(--text);margin-bottom:4px;">Sales Rep</div>
+            <div style="font-size:0.68rem;color:#4a5568;">Owns the deal, not the relationship</div>
+          </div>
+          <div style="flex:1;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.11);border-radius:8px;padding:10px 8px;">
+            <div style="font-size:0.72rem;font-weight:700;color:var(--text);margin-bottom:4px;">Support Agent</div>
+            <div style="font-size:0.68rem;color:#4a5568;">Closes tickets, never sees the account</div>
+          </div>
+          <div style="flex:1;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.11);border-radius:8px;padding:10px 8px;">
+            <div style="font-size:0.72rem;font-weight:700;color:var(--text);margin-bottom:4px;">Account Mgr</div>
+            <div style="font-size:0.68rem;color:#4a5568;">Last to know when things go wrong</div>
+          </div>
+          <div style="flex:1;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.11);border-radius:8px;padding:10px 8px;">
+            <div style="font-size:0.72rem;font-weight:700;color:var(--text);margin-bottom:4px;">CSM</div>
+            <div style="font-size:0.68rem;color:#4a5568;">Flying blind on health</div>
+          </div>
+          <div style="flex:1;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.11);border-radius:8px;padding:10px 8px;">
+            <div style="font-size:0.72rem;font-weight:700;color:var(--text);margin-bottom:4px;">Onboarding</div>
+            <div style="font-size:0.68rem;color:#4a5568;">Hands off and disappears</div>
+          </div>
+          <div style="flex:1;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.11);border-radius:8px;padding:10px 8px;">
+            <div style="font-size:0.72rem;font-weight:700;color:var(--text);margin-bottom:4px;">Engineering</div>
+            <div style="font-size:0.68rem;color:#4a5568;">Fixes issues, never sees the customer impact</div>
+          </div>
+        </div>
+
+        <div style="font-size:0.75rem;font-weight:700;text-align:center;color:var(--text);letter-spacing:0.04em;margin-bottom:12px;">Things Start to Slip</div>
+        <p style="font-size:0.8rem;color:var(--text-muted);line-height:1.75;margin-bottom:16px;">Quote requested, <strong style="color:#e8782a;">Permit delayed with no flag,</strong> interaction logged, <strong style="color:#e8782a;">Follow-up never sent,</strong> milestone passed, <strong style="color:#e8782a;">Complaint unseen by CSM,</strong> check-in skipped, <strong style="color:#e8782a;">Risk score stale,</strong> account silent for 6 weeks, <strong style="color:#e8782a;">no one noticed.</strong> Customer decided to leave.</p>
+        <div style="border:1px solid rgba(232,120,42,0.4);border-radius:8px;padding:12px 16px;background:rgba(232,120,42,0.06);">
+          <p style="font-size:0.82rem;color:#e8782a;font-weight:600;text-align:center;margin:0;">Resulting in impersonal experiences that lead to churn and lost upsell opportunities</p>
         </div>
       </div>
     </div>
@@ -1356,7 +1396,7 @@
             <p style="font-size:0.95rem;line-height:1.75;color:var(--text-muted);margin-bottom:20px;">Most companies aren't systems of action, they are systems of recommendations. Where a company could differentiate is if it had the recommendation engine and then helped me do it.</p>
             <div style="font-size:2.5rem;line-height:1;color:#e07230;font-family:Georgia,serif;text-align:right;margin-top:-8px;">"</div>
             <div style="padding-top:16px;border-top:1px solid rgba(224,114,48,0.2);">
-              <div style="font-size:0.82rem;color:var(--text-subtle);">— Global Head of Customer Success, $15B+ technology company</div>
+              <div style="font-size:0.82rem;color:var(--text-subtle);">Global Head of Customer Success, $15B+ technology company</div>
             </div>
           </div>
         </div>
@@ -1369,50 +1409,50 @@
   </section>
 
   <!-- ─── Before/After ───────────────────────────────────────────────── -->
-  <section id="before-after" style="padding:100px 0 120px;background:linear-gradient(to right,#1a2744 0%,#1a2744 25%,rgba(26,39,68,0.9) 40%,rgba(26,39,68,0.75) 55%,rgba(26,39,68,0.55) 70%,rgba(26,39,68,0.35) 85%,rgba(26,39,68,0.2) 100%);position:relative;">
+  <section id="before-after" style="padding:100px 0 100px;background:linear-gradient(to right,#1a2744 0%,#1a2744 25%,rgba(26,39,68,0.9) 40%,rgba(26,39,68,0.75) 55%,rgba(26,39,68,0.55) 70%,rgba(26,39,68,0.35) 85%,rgba(26,39,68,0.2) 100%);position:relative;">
     <div style="position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,0.08) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.08) 1px,transparent 1px);background-size:64px 64px;mask-image:radial-gradient(ellipse 80% 60% at 50% 0%,black 40%,transparent 100%);-webkit-mask-image:radial-gradient(ellipse 80% 60% at 50% 0%,black 40%,transparent 100%);pointer-events:none;"></div>
     <div class="container">
-      <div style="text-align:center;margin-bottom:64px;">
+      <div style="text-align:center;margin-bottom:56px;">
         <div style="display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#e07230;margin-bottom:20px;">
           <span style="display:block;width:18px;height:2px;background:#e07230;border-radius:2px;"></span>
           Our Approach
         </div>
-        <h2 style="color:#ffffff;margin-bottom:16px;">Replace reactive chaos<br>with proactive intelligence</h2>
-        <p style="font-size:1rem;color:rgba(255,255,255,0.55);line-height:1.7;">The difference Coraleye makes, from day one</p>
-      </div>
-    </div>
-
-    <!-- Card stack scroll zone — extra height gives scroll room for the animation -->
-    <div id="approach-section" style="position:relative;max-width:720px;margin:0 auto;padding:0 24px 170px;">
-
-      <!-- Before card: sticky, stays pinned while With card rises over it -->
-      <div id="before-card" style="position:sticky;top:80px;z-index:1;background:#161620;border:1px solid rgba(255,255,255,0.07);border-radius:14px;padding:36px 40px;box-shadow:0 4px 24px rgba(0,0,0,0.35);max-width:620px;margin-left:auto;margin-right:auto;">
-        <div style="font-size:0.7rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.28);margin-bottom:12px;">Before Coraleye</div>
-        <h3 style="color:rgba(255,255,255,0.6);font-size:1.3rem;margin-bottom:6px;">Reactive and Blind</h3>
-        <p style="color:rgba(255,255,255,0.28);font-size:0.85rem;margin-bottom:24px;">Tedious, fragmented, expensive</p>
-        <ul style="list-style:none;display:flex;flex-direction:column;gap:12px;">
-          <li style="display:flex;align-items:flex-start;gap:12px;color:rgba(255,255,255,0.35);font-size:0.9rem;"><span style="color:#3a3a4a;flex-shrink:0;">▪</span>Accounts hot-potatoed across five teams with no shared context</li>
-          <li style="display:flex;align-items:flex-start;gap:12px;color:rgba(255,255,255,0.35);font-size:0.9rem;"><span style="color:#3a3a4a;flex-shrink:0;">▪</span>Interactions scattered across six siloed systems nobody reads in full</li>
-          <li style="display:flex;align-items:flex-start;gap:12px;color:rgba(255,255,255,0.35);font-size:0.9rem;"><span style="color:#3a3a4a;flex-shrink:0;">▪</span>Health scores based on login frequency, not what customers actually said</li>
-          <li style="display:flex;align-items:flex-start;gap:12px;color:rgba(255,255,255,0.35);font-size:0.9rem;"><span style="color:#3a3a4a;flex-shrink:0;">▪</span>CSMs spending hours on manual follow-ups instead of relationships</li>
-          <li style="display:flex;align-items:flex-start;gap:12px;color:rgba(255,255,255,0.35);font-size:0.9rem;"><span style="color:#3a3a4a;flex-shrink:0;">▪</span>Churn decisions made before anyone on the team noticed the pattern</li>
-        </ul>
+        <h2 style="color:#ffffff;margin-bottom:16px;">Replace reactive chaos with proactive intelligence</h2>
+        <p style="font-size:1rem;color:rgba(255,255,255,0.55);line-height:1.7;">The difference Coraleye makes</p>
       </div>
 
-      <!-- With Coraleye card: rises up over the Before card as you scroll -->
-      <div id="with-coraleye-card" style="position:relative;z-index:2;background:#1a2744;border:2px solid #e8782a;border-radius:14px;padding:36px 40px;margin-top:-180px;transform:translateY(150px);box-shadow:0 20px 60px rgba(0,0,0,0.5);transition:transform 0.12s ease-out;max-width:700px;margin-left:auto;margin-right:auto;">
-        <div style="font-size:0.7rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#e07230;margin-bottom:12px;">With Coraleye</div>
-        <h3 style="color:#ffffff;font-size:1.3rem;margin-bottom:6px;">Proactive and Complete</h3>
-        <p style="color:rgba(255,255,255,0.55);font-size:0.85rem;margin-bottom:24px;">Scalable, intelligent, automatic</p>
-        <ul style="list-style:none;display:flex;flex-direction:column;gap:12px;">
-          <li style="display:flex;align-items:flex-start;gap:12px;color:rgba(255,255,255,0.9);font-size:0.9rem;"><span style="color:#e07230;flex-shrink:0;">✓</span>Every interaction unified in one timeline across every system</li>
-          <li style="display:flex;align-items:flex-start;gap:12px;color:rgba(255,255,255,0.9);font-size:0.9rem;"><span style="color:#e07230;flex-shrink:0;">✓</span>Cory reads signals across every system simultaneously</li>
-          <li style="display:flex;align-items:flex-start;gap:12px;color:rgba(255,255,255,0.9);font-size:0.9rem;"><span style="color:#e07230;flex-shrink:0;">✓</span>Health scores derived from actual conversations, not proxies</li>
-          <li style="display:flex;align-items:flex-start;gap:12px;color:rgba(255,255,255,0.9);font-size:0.9rem;"><span style="color:#e07230;flex-shrink:0;">✓</span>Plays drafted and executed automatically with one CSM approval</li>
-          <li style="display:flex;align-items:flex-start;gap:12px;color:rgba(255,255,255,0.9);font-size:0.9rem;"><span style="color:#e07230;flex-shrink:0;">✓</span>Risk flagged weeks before the customer decides to leave</li>
-        </ul>
-      </div>
+      <!-- Side-by-side cards -->
+      <div id="approach-cards" style="display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:stretch;">
 
+        <!-- Before card -->
+        <div style="background:#111620;border:1px solid rgba(255,255,255,0.07);border-radius:14px;padding:36px 32px;">
+          <div style="font-size:0.65rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.28);margin-bottom:12px;">Before Coraleye</div>
+          <h3 style="color:rgba(255,255,255,0.55);font-size:1.2rem;margin-bottom:6px;">Reactive and Blind</h3>
+          <p style="color:rgba(255,255,255,0.25);font-size:0.82rem;margin-bottom:24px;">Tedious, fragmented, expensive</p>
+          <ul style="list-style:none;display:flex;flex-direction:column;gap:12px;">
+            <li style="display:flex;align-items:flex-start;gap:12px;color:rgba(255,255,255,0.35);font-size:0.88rem;"><span style="color:#3a3a4a;flex-shrink:0;margin-top:1px;">▪</span>Accounts hot-potatoed across five teams with no shared context</li>
+            <li style="display:flex;align-items:flex-start;gap:12px;color:rgba(255,255,255,0.35);font-size:0.88rem;"><span style="color:#3a3a4a;flex-shrink:0;margin-top:1px;">▪</span>Interactions scattered across six siloed systems nobody reads in full</li>
+            <li style="display:flex;align-items:flex-start;gap:12px;color:rgba(255,255,255,0.35);font-size:0.88rem;"><span style="color:#3a3a4a;flex-shrink:0;margin-top:1px;">▪</span>Health scores built on login frequency, a lagging indicator that tells you nothing about what customers actually said or felt</li>
+            <li style="display:flex;align-items:flex-start;gap:12px;color:rgba(255,255,255,0.35);font-size:0.88rem;"><span style="color:#3a3a4a;flex-shrink:0;margin-top:1px;">▪</span>CSMs spending hours on manual follow-ups instead of relationships</li>
+            <li style="display:flex;align-items:flex-start;gap:12px;color:rgba(255,255,255,0.35);font-size:0.88rem;"><span style="color:#3a3a4a;flex-shrink:0;margin-top:1px;">▪</span>Churn decisions made before anyone on the team noticed the pattern</li>
+          </ul>
+        </div>
+
+        <!-- With Coraleye card -->
+        <div style="background:#1a2744;border:1px solid rgba(232,120,42,0.2);border-left:4px solid #e8782a;border-radius:14px;padding:36px 32px;box-shadow:0 8px 40px rgba(0,0,0,0.3);">
+          <div style="font-size:0.65rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#e8782a;margin-bottom:12px;">With Coraleye</div>
+          <h3 style="color:#ffffff;font-size:1.2rem;margin-bottom:6px;">Proactive and Complete</h3>
+          <p style="color:rgba(255,255,255,0.5);font-size:0.82rem;margin-bottom:24px;">Scalable, intelligent, automatic</p>
+          <ul style="list-style:none;display:flex;flex-direction:column;gap:12px;">
+            <li style="display:flex;align-items:flex-start;gap:12px;color:rgba(255,255,255,0.9);font-size:0.88rem;"><span style="color:#e8782a;flex-shrink:0;margin-top:1px;">✓</span>Every interaction unified in one timeline across every system</li>
+            <li style="display:flex;align-items:flex-start;gap:12px;color:rgba(255,255,255,0.9);font-size:0.88rem;"><span style="color:#e8782a;flex-shrink:0;margin-top:1px;">✓</span>Cory reads signals across every system simultaneously</li>
+            <li style="display:flex;align-items:flex-start;gap:12px;color:rgba(255,255,255,0.9);font-size:0.88rem;"><span style="color:#e8782a;flex-shrink:0;margin-top:1px;">✓</span>Health scores derived from actual conversations, not proxies</li>
+            <li style="display:flex;align-items:flex-start;gap:12px;color:rgba(255,255,255,0.9);font-size:0.88rem;"><span style="color:#e8782a;flex-shrink:0;margin-top:1px;">✓</span>Plays drafted and executed automatically with one CSM approval</li>
+            <li style="display:flex;align-items:flex-start;gap:12px;color:rgba(255,255,255,0.9);font-size:0.88rem;"><span style="color:#e8782a;flex-shrink:0;margin-top:1px;">✓</span>Risk flagged weeks before the customer decides to leave</li>
+          </ul>
+        </div>
+
+      </div>
     </div>
   </section>
 
@@ -1421,7 +1461,7 @@
     <div class="container">
       <div class="how-header reveal">
         <div class="label">How it works</div>
-        <h2>From signal to action in one motion</h2>
+        <h2 style="white-space:nowrap;">From signal to action in one motion</h2>
         <p>Coraleye ingests every customer touchpoint, Cory reads the patterns, and the right play is executed before a human would have thought to look.</p>
       </div>
       <div class="steps-grid">
@@ -1431,7 +1471,7 @@
             <div id="orbit-0" class="step-orbit" style="display:none;"><div class="orbit-ball"></div></div>
           </div>
           <h3>Unify</h3>
-          <p>Every interaction, support tickets, calls, messages, and emails flows into a single customer timeline. No more tab-switching, no more gaps.</p>
+          <p>Every interaction, support ticket, call, message, and email flows into a single customer timeline. No more tab-switching, no more gaps.</p>
         </div>
         <div class="step-card reveal reveal-delay-1" id="step-card-1">
           <div class="step-num">
@@ -1452,7 +1492,7 @@
       </div>
       <div id="how-screenshot-wrap" style="position:relative;">
         <img id="how-screenshot" src="unify-cory-module.png" alt="Product screenshot" title="Click to pause" style="cursor:pointer;" />
-        <div id="how-step-label" style="position:absolute;top:16px;left:16px;background:#e8782a;color:#ffffff;font-size:13px;font-weight:700;font-variant:small-caps;letter-spacing:0.08em;padding:6px 14px;border-radius:20px;pointer-events:none;z-index:10;">01 — Unify</div>
+        <div id="how-step-label" style="position:absolute;top:16px;left:16px;background:#e8782a;color:#ffffff;font-size:13px;font-weight:700;font-variant:small-caps;letter-spacing:0.08em;padding:6px 14px;border-radius:20px;pointer-events:none;z-index:10;">01: Unify</div>
         <div id="how-pause-overlay" style="display:none;position:absolute;inset:0;align-items:center;justify-content:center;pointer-events:none;">
           <div style="width:56px;height:56px;border-radius:50%;background:rgba(0,0,0,0.45);display:flex;align-items:center;justify-content:center;">
             <span style="font-size:1.6rem;line-height:1;color:#ffffff;opacity:0.9;">⏸</span>
@@ -1492,33 +1532,71 @@
   <section id="meet-cory" class="section">
     <div class="container">
       <div class="cory-grid">
-        <div class="cory-mascot reveal">
-          <div class="cory-orb">
-            <div class="cory-orbit">
-              <div class="orbit-dot"></div>
+
+        <!-- Sandra Clark dispatch card -->
+        <div class="reveal">
+          <div style="background:#1a2744;border-radius:16px;padding:32px;border-left:4px solid #e8782a;box-shadow:0 8px 40px rgba(0,0,0,0.18);">
+
+            <!-- Card header -->
+            <div style="font-size:0.65rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#e8782a;margin-bottom:12px;">Cory in Action</div>
+            <div style="font-size:1rem;font-weight:700;color:#ffffff;margin-bottom:10px;">Sandra Clark, Meridian Health</div>
+            <div style="display:flex;gap:8px;margin-bottom:24px;">
+              <span style="font-size:0.7rem;font-weight:700;background:rgba(220,50,50,0.18);color:#f87171;border:1px solid rgba(220,50,50,0.3);border-radius:100px;padding:3px 10px;">Churn Risk: 82</span>
+              <span style="font-size:0.7rem;font-weight:700;background:rgba(232,120,42,0.15);color:#e8782a;border:1px solid rgba(232,120,42,0.3);border-radius:100px;padding:3px 10px;">Renewal in 18 days</span>
             </div>
-            <img src="kory.png" alt="Cory" class="cory-img" />
+
+            <!-- Step 1 -->
+            <div style="padding-bottom:16px;border-bottom:1px solid rgba(255,255,255,0.07);margin-bottom:16px;">
+              <div style="display:flex;gap:12px;">
+                <div style="flex-shrink:0;font-size:0.68rem;font-weight:700;color:rgba(232,120,42,0.6);width:18px;padding-top:2px;">01</div>
+                <div>
+                  <div style="font-size:0.68rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:4px;">Flagged</div>
+                  <div style="font-size:0.85rem;color:rgba(255,255,255,0.6);line-height:1.6;">3 signals detected across Zendesk, Gong, and Slack over 6 days.</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Step 2 -->
+            <div style="padding-bottom:16px;border-bottom:1px solid rgba(255,255,255,0.07);margin-bottom:16px;">
+              <div style="display:flex;gap:12px;">
+                <div style="flex-shrink:0;font-size:0.68rem;font-weight:700;color:rgba(232,120,42,0.6);width:18px;padding-top:2px;">02</div>
+                <div>
+                  <div style="font-size:0.68rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:4px;">Analyzed</div>
+                  <div style="font-size:0.85rem;color:rgba(255,255,255,0.6);line-height:1.6;">Transcript excerpt: <em style="color:rgba(255,255,255,0.45);">"I feel like no one is reading our tickets."</em> Unanswered renewal question identified.</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Step 3 -->
+            <div style="padding-bottom:16px;border-bottom:1px solid rgba(255,255,255,0.07);margin-bottom:16px;">
+              <div style="display:flex;gap:12px;">
+                <div style="flex-shrink:0;font-size:0.68rem;font-weight:700;color:rgba(232,120,42,0.6);width:18px;padding-top:2px;">03</div>
+                <div>
+                  <div style="font-size:0.68rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:4px;">Play Drafted</div>
+                  <div style="font-size:0.85rem;color:rgba(255,255,255,0.6);line-height:1.6;">Recovery play queued. Apology call plus renewal prep sequence. Save probability: 74%.</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Step 4 — active -->
+            <div>
+              <div style="display:flex;gap:12px;">
+                <div style="flex-shrink:0;font-size:0.68rem;font-weight:700;color:#e8782a;width:18px;padding-top:2px;">04</div>
+                <div>
+                  <div style="font-size:0.68rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#e8782a;margin-bottom:4px;">Executed</div>
+                  <div style="font-size:0.85rem;color:#f8fafc;line-height:1.6;">CSM approved in one click. Call scheduled. Sequence deployed. Account moved from <span style="color:rgba(255,100,100,0.85);">At Risk</span> to <span style="color:#e8782a;">Watch</span>.</div>
+                </div>
+              </div>
+            </div>
+
           </div>
         </div>
+
         <div class="cory-info reveal reveal-delay-1">
           <div class="label">Meet Cory</div>
           <h2>Your AI agent that never misses a signal</h2>
           <p>Cory reads across the full customer timeline, picking up signals from conversations and usage across your entire account base.</p>
-          <div class="cory-traits">
-            <div class="cory-trait">
-              <div class="trait-icon">🔭</div>
-              <div class="trait-text">
-                <strong>Always watching</strong>
-                Monitors every account, 24/7, across every channel
-              </div>
-            </div>
-            <div class="cory-trait">
-              <div class="trait-icon">🧩</div>
-              <div class="trait-text">
-                <strong>Pattern recognition</strong>
-                Connects dots across tools and timelines humans can't hold in memory
-              </div>
-            </div>
+          <div class="cory-traits" style="grid-template-columns:1fr;">
             <div class="cory-trait">
               <div class="trait-icon">⚡</div>
               <div class="trait-text">
@@ -1530,7 +1608,7 @@
               <div class="trait-icon">🛡</div>
               <div class="trait-text">
                 <strong>Human-in-the-loop</strong>
-                CSMs stay in control , Cory does the legwork, you make the call
+                CSMs stay in control. Cory does the legwork, you make the call.
               </div>
             </div>
           </div>
@@ -1619,25 +1697,6 @@
     }, { threshold: 0.12 });
     reveals.forEach(el => observer.observe(el));
 
-    // Ticker content for hero live dispatch
-    const tickerMessages = [
-      `Cory flagged <span class="ticker-keyword">Northstar Insurance</span> across <span class="ticker-keyword">3 signals</span>: <span class="ticker-keyword">bot failure</span>, unanswered renewal question, and support escalation. <span class="ticker-keyword">Apology call deployed</span>.`,
-      `Cory detected that <span class="ticker-keyword">Clearbridge Logistics</span> has not activated <span class="ticker-keyword">auto-reporting</span> despite 6 months on platform. <span class="ticker-keyword">Proactive enablement play queued</span> to drive deeper adoption and expansion.`,
-      `Cory drafted a <span class="ticker-keyword">QBR presentation</span> for <span class="ticker-keyword">Rivers Bank</span> pulling 90 days of interaction data, health trends, and key wins. <span class="ticker-keyword">Ready for CSM review</span> in one click.`
-    ];
-    const tickerEl = document.querySelector('.ticker-message');
-    let tickerIndex = 0;
-    function updateTicker() {
-      if (!tickerEl) return;
-      tickerEl.classList.remove('active');
-      setTimeout(() => {
-        tickerEl.innerHTML = tickerMessages[tickerIndex];
-        tickerEl.classList.add('active');
-        tickerIndex = (tickerIndex + 1) % tickerMessages.length;
-      }, 220);
-    }
-    updateTicker();
-    setInterval(updateTicker, 9000);
 
     // Remove dark navy background from logo images via canvas
     function removeDarkBg(imgEl, tolerance) {
@@ -1688,7 +1747,7 @@
         company: `$15B+ technology company`
       },
       {
-        text: `I would like my CSM team to spend zero time on follow-ups and actually taking action — booking the call, writing the email, sending an escalation internally, not just drafting the language.`,
+        text: `I would like my CSM team to spend zero time on follow-ups and actually taking action: booking the call, writing the email, sending an escalation internally, not just drafting the language.`,
         name: `Director of Customer Success`,
         company: `Series C startup`
       }
@@ -1708,7 +1767,7 @@
             <p style="font-size:0.95rem;line-height:1.75;color:var(--text-muted);margin-bottom:20px;">${q.text}</p>
             <div style="font-size:2.5rem;line-height:1;color:#e07230;font-family:Georgia,serif;text-align:right;margin-top:-8px;">"</div>
             <div style='padding-top:16px;border-top:1px solid rgba(224,114,48,0.2);'>
-              <div style='font-size:0.82rem;color:#9aa0ae;'>— ${q.name}, ${q.company}</div>
+              <div style='font-size:0.82rem;color:#9aa0ae;'>${q.name}, ${q.company}</div>
             </div>
           </div>`;
         display.style.opacity = '1';
@@ -1719,34 +1778,16 @@
     }
     setInterval(rotateQuote, 4000);
 
-    // ── Our Approach: scroll-driven card stack ────────────────────────────
-    (function() {
-      var section  = document.getElementById('approach-section');
-      var withCard = document.getElementById('with-coraleye-card');
-      if (!section || !withCard) return;
-
-      function onApproachScroll() {
-        var rect = section.getBoundingClientRect();
-        var scrollable = rect.height - window.innerHeight;
-        if (scrollable <= 0) return;
-        var progress = Math.max(0, Math.min(1, -rect.top / scrollable));
-        var translateY = 150 - (progress * 150);
-        withCard.style.transform = 'translateY(' + translateY + 'px)';
-      }
-
-      window.addEventListener('scroll', onApproachScroll, { passive: true });
-      onApproachScroll();
-    })();
 
     // ── How It Works: synchronized orbit dot + screenshot ─────────────────
     let currentStep = 0;
     let isPaused = false;
 
     const steps = [
-      { cardIndex: 0, img: 'unify-cory-module.png',            label: '01 — Unify'   },
-      { cardIndex: 1, img: 'portfolio-analyze-module.png',     label: '02 — Analyze' },
-      { cardIndex: 2, img: 'act-workbench-module.png',         label: '03 — Act'     },
-      { cardIndex: 2, img: 'act-play-module.png',              label: '03 — Act'     },
+      { cardIndex: 0, img: 'unify-cory-module.png',            label: '01: Unify'   },
+      { cardIndex: 1, img: 'portfolio-analyze-module.png',     label: '02: Analyze' },
+      { cardIndex: 2, img: 'act-workbench-module.png',         label: '03: Act'     },
+      { cardIndex: 2, img: 'act-play-module.png',              label: '03: Act'     },
     ];
 
     const howStepCards = [
