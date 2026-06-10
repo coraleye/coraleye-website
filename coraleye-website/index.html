@@ -149,6 +149,70 @@
       gap: 12px;
     }
 
+    /* Hamburger toggle — hidden on desktop, shown ≤900px */
+    .nav-toggle {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      gap: 5px;
+      width: 40px;
+      height: 40px;
+      padding: 8px;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+    }
+
+    .nav-toggle span {
+      display: block;
+      width: 100%;
+      height: 2px;
+      background: #ffffff;
+      border-radius: 2px;
+      transition: transform 0.25s ease, opacity 0.2s ease;
+    }
+
+    .nav-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-toggle.open span:nth-child(2) { opacity: 0; }
+    .nav-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    .mobile-menu {
+      position: fixed;
+      top: 64px;
+      left: 0;
+      right: 0;
+      z-index: 99;
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      padding: 16px 24px 24px;
+      background: #1a2744;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+      opacity: 0;
+      transform: translateY(-12px);
+      pointer-events: none;
+      transition: opacity 0.22s ease, transform 0.22s ease;
+    }
+
+    .mobile-menu.open {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+
+    .mobile-menu a {
+      color: #ffffff;
+      font-size: 1rem;
+      font-weight: 500;
+      padding: 12px 4px;
+    }
+
+    .mobile-menu a.btn {
+      justify-content: center;
+      margin-top: 10px;
+    }
+
     .btn {
       display: inline-flex;
       align-items: center;
@@ -1169,6 +1233,8 @@
       .steps-grid::before { display: none; }
       .quotes-grid { grid-template-columns: 1fr; }
       .nav-links { display: none; }
+      .nav-cta { display: none; }
+      .nav-toggle { display: flex; }
       .problem-right { order: 1; }
     }
 
@@ -1421,9 +1487,22 @@
         <div class="nav-cta">
           <a href="#contact" class="btn btn-primary">Book a Demo</a>
         </div>
+        <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+          <span></span><span></span><span></span>
+        </button>
       </div>
     </div>
   </nav>
+
+  <!-- Mobile menu (toggled by hamburger ≤900px) -->
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="#problem">Problem</a>
+    <a href="#before-after">Our Approach</a>
+    <a href="#how-it-works">How It Works</a>
+    <a href="#meet-cory">Meet Cory</a>
+    <a href="#about">About</a>
+    <a href="#contact" class="btn btn-primary">Book a Demo</a>
+  </div>
 
   <!-- ─── Hero ───────────────────────────────────────────────────────── -->
   <section id="hero">
@@ -2104,6 +2183,20 @@
 
   <!-- ─── JS ─────────────────────────────────────────────────────────── -->
   <script>
+    // Mobile hamburger menu
+    const navToggle = document.getElementById('nav-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    if (navToggle && mobileMenu) {
+      const setMenu = (open) => {
+        mobileMenu.classList.toggle('open', open);
+        navToggle.classList.toggle('open', open);
+        navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+        navToggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+      };
+      navToggle.addEventListener('click', () => setMenu(!mobileMenu.classList.contains('open')));
+      mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setMenu(false)));
+    }
+
     // Sticky nav with scroll threshold
     const nav = document.getElementById('main-nav');
     window.addEventListener('scroll', () => {
