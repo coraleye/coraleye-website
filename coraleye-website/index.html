@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Coraleye: The customer agent that never sleeps</title>
+  <title>Coraleye — AI-Native Customer Success</title>
   <meta name="description" content="Intelligent customer success, on autopilot. Coraleye unifies every customer interaction and deploys Cory, an AI agent that surfaces churn risks and executes recovery plays before you'd notice the pattern." />
   <style>
     /* ─── Reset & Base ─────────────────────────────────────────────── */
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; max-width: 100%; }
 
     :root {
       --bg:          #f3f4f6;
@@ -35,6 +35,7 @@
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
       overflow-x: hidden;
+      max-width: 100vw;
     }
 
     a { color: inherit; text-decoration: none; }
@@ -1174,12 +1175,13 @@
       #approach-cards { grid-template-columns: 1fr !important; }
       #contact .container > div { grid-template-columns: 1fr; gap: 40px; }
       .hero-inner { grid-template-columns: 1fr; gap: 24px; }
-      .hero-content { padding: 0 20px; }
+      #hero { overflow-x: hidden; }
+      .hero-content { padding: 0 16px; padding-right: 16px; }
       #hero h1 { font-size: clamp(2rem, 8vw, 4rem); }
-      .hero-sub { font-size: 1rem; }
+      .hero-sub { font-size: 1rem; max-width: 100%; overflow-wrap: break-word; word-break: break-word; }
       .hero-ctas { flex-direction: column; align-items: stretch; }
-      .hero-ctas a { width: 100%; text-align: center; }
-      .hero-visual { display: none; }
+      .hero-ctas a { width: 100% !important; text-align: center; display: flex !important; justify-content: center; }
+      .hero-visual { display: none !important; }
       .hero-cory-img { max-width: 180px; max-height: 180px; width: auto; }
       .hero-pillars { display: none; }
 
@@ -1229,14 +1231,21 @@
         font-size: 0.75rem !important;
       }
 
+      /* How it works — screenshot must not overflow on mobile */
+      #how-screenshot-wrap { overflow: hidden; max-width: 100%; }
+      #how-screenshot { width: 100% !important; height: auto !important; max-width: 100%; }
+
+      /* Integration logos row — no horizontal overflow */
+      .marquee-track, .hero-marquee-track { overflow: hidden; }
+
       /* All section headlines — scale and center on mobile */
       h2 { font-size: clamp(1.6rem, 6vw, 2.4rem) !important; text-align: center; padding: 0 16px; white-space: normal !important; }
     }
 
     @media (max-width: 600px) {
       .section { padding: 60px 16px; }
-      #hero { padding: 120px 16px 60px; }
-      .hero-visual { display: none; }
+      #hero { padding: 120px 16px 60px; overflow-x: hidden; }
+      .hero-visual { display: none !important; }
       .hero-pillars { display: none; }
       .hero-cory-card { margin: 24px auto 0 auto; display: block; text-align: center; }
 
