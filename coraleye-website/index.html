@@ -1159,6 +1159,9 @@
     .reveal-delay-2 { transition-delay: 0.2s; }
     .reveal-delay-3 { transition-delay: 0.3s; }
 
+    /* ─── Mobile Dashboard Card ─────────────────────────────────────── */
+    .mobile-dashboard { display: none; }
+
     /* ─── Responsive ────────────────────────────────────────────────── */
     @media (max-width: 900px) {
       .problem-grid, .cory-grid { grid-template-columns: 1fr; gap: 48px; }
@@ -1181,17 +1184,100 @@
       .hero-sub { font-size: 1rem; max-width: 100%; overflow-wrap: break-word; word-break: break-word; }
       .hero-ctas { flex-direction: column; align-items: stretch; }
       .hero-ctas a { width: 100% !important; text-align: center; display: flex !important; justify-content: center; }
-      .hero-visual {
-        display: block !important;
-        width: calc(100% - 32px) !important;
-        max-width: 100% !important;
-        max-height: none !important;
-        transform: none !important;
-        margin: 16px auto !important;
-        overflow: hidden;
-        border-radius: 12px;
-      }
+      .hero-visual { display: none !important; }
       #hero .container { overflow: hidden; width: 100%; padding-left: 16px; padding-right: 16px; }
+
+      /* Mobile dashboard card */
+      .mobile-dashboard {
+        display: block;
+        background: #1a2744;
+        border-radius: 12px;
+        padding: 20px;
+        width: calc(100% - 32px);
+        margin: 16px auto 0;
+        color: white;
+      }
+      .mobile-dash-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 12px;
+        font-weight: 700;
+        font-size: 0.95rem;
+      }
+      .at-risk-badge {
+        background: #dc2626;
+        color: white;
+        padding: 2px 8px;
+        border-radius: 4px;
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 0.05em;
+        flex-shrink: 0;
+      }
+      .mobile-dash-stats {
+        display: flex;
+        gap: 12px;
+        font-size: 0.76rem;
+        color: rgba(255,255,255,0.55);
+        margin-bottom: 14px;
+        flex-wrap: wrap;
+      }
+      .mobile-dash-flag {
+        font-size: 0.62rem;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: #f87171;
+        margin-bottom: 6px;
+      }
+      .mobile-dashboard > p {
+        font-size: 0.82rem;
+        color: rgba(255,255,255,0.6);
+        line-height: 1.6;
+        margin-bottom: 14px;
+      }
+      .mobile-dash-evidence {
+        background: rgba(255,255,255,0.05);
+        border-left: 2px solid rgba(232,120,42,0.4);
+        border-radius: 6px;
+        padding: 10px 12px;
+        font-size: 0.8rem;
+        color: rgba(255,255,255,0.65);
+        line-height: 1.55;
+        margin-bottom: 16px;
+        font-style: italic;
+      }
+      .mobile-dash-evidence span {
+        display: block;
+        font-style: normal;
+        font-size: 0.68rem;
+        color: rgba(255,255,255,0.38);
+        margin-top: 6px;
+      }
+      .mobile-dash-actions { display: flex; flex-wrap: wrap; gap: 8px; }
+      .generate-btn {
+        background: #e8782a;
+        color: white;
+        border: none;
+        padding: 10px 16px;
+        border-radius: 8px;
+        font-size: 13px;
+        font-weight: 700;
+        width: 100%;
+        cursor: pointer;
+        box-shadow: 0 0 14px rgba(232,120,42,0.3);
+      }
+      .modify-btn, .dismiss-btn {
+        background: transparent;
+        border: 1px solid rgba(255,255,255,0.18);
+        color: rgba(255,255,255,0.75);
+        padding: 10px 16px;
+        border-radius: 8px;
+        font-size: 13px;
+        width: calc(50% - 4px);
+        cursor: pointer;
+      }
       .hero-cory-img { max-width: 180px; max-height: 180px; width: auto; }
       .hero-pillars { display: none; }
 
@@ -1260,16 +1346,7 @@
     @media (max-width: 600px) {
       .section { padding: 60px 16px; }
       #hero { padding: 120px 16px 60px; overflow-x: hidden; }
-      .hero-visual {
-        display: block !important;
-        width: calc(100% - 32px) !important;
-        max-width: 100% !important;
-        max-height: none !important;
-        transform: none !important;
-        margin: 16px auto !important;
-        overflow: hidden;
-        border-radius: 12px;
-      }
+      .hero-visual { display: none !important; }
       .hero-pillars { display: none; }
       .hero-cory-card { margin: 24px auto 0 auto; display: block; text-align: center; }
 
@@ -1379,6 +1456,30 @@
               </div>
               <div style="font-size:0.74rem;font-weight:700;color:rgba(255,255,255,0.85);margin-bottom:3px;">Act</div>
               <div style="font-size:0.67rem;color:rgba(255,255,255,0.45);line-height:1.5;">Generate plays and workflows.</div>
+            </div>
+          </div>
+
+          <!-- Mobile-only simplified account card -->
+          <div class="mobile-dashboard">
+            <div class="mobile-dash-header">
+              <span>Terracotta Cloud</span>
+              <span class="at-risk-badge">AT RISK</span>
+            </div>
+            <div class="mobile-dash-stats">
+              <div>ARR: $96,000</div>
+              <div>Health: <span style="color:#e8782a;">48</span></div>
+              <div>Renewal: 180 days</div>
+            </div>
+            <div class="mobile-dash-flag">Why This Account Was Flagged</div>
+            <p>Unresolved policy issues and support friction may jeopardize growth and renewal.</p>
+            <div class="mobile-dash-evidence">
+              "We're looking at increasing our seat count from 50 to 100."
+              <span>Gong call · 3 days ago</span>
+            </div>
+            <div class="mobile-dash-actions">
+              <button class="generate-btn">⚡ Generate Play</button>
+              <button class="modify-btn">Modify</button>
+              <button class="dismiss-btn">Dismiss</button>
             </div>
           </div>
         </div>
