@@ -2152,48 +2152,6 @@
     reveals.forEach(el => observer.observe(el));
 
 
-    // Remove dark navy background from logo images via canvas
-    function removeDarkBg(imgEl, tolerance) {
-      if (!imgEl.complete || imgEl.naturalWidth === 0) {
-        imgEl.addEventListener('load', () => removeDarkBg(imgEl, tolerance));
-        return;
-      }
-      const canvas = document.createElement('canvas');
-      canvas.width  = imgEl.naturalWidth;
-      canvas.height = imgEl.naturalHeight;
-      const ctx = canvas.getContext('2d');
-      ctx.drawImage(imgEl, 0, 0);
-      const id   = ctx.getImageData(0, 0, canvas.width, canvas.height);
-      const data = id.data;
-      // Flood-fill transparent from all four corners to catch the solid bg
-      const w = canvas.width, h = canvas.height;
-      const seeds = [[0,0],[w-1,0],[0,h-1],[w-1,h-1]];
-      const visited = new Uint8Array(w * h);
-      const queue = [];
-      // Sample bg colour from top-left pixel
-      const bgR = data[0], bgG = data[1], bgB = data[2];
-      seeds.forEach(([sx,sy]) => { queue.push(sy * w + sx); });
-      while (queue.length) {
-        const idx = queue.pop();
-        if (visited[idx]) continue;
-        visited[idx] = 1;
-        const x = idx % w, y = (idx / w) | 0;
-        const p = idx * 4;
-        const dr = Math.abs(data[p]   - bgR);
-        const dg = Math.abs(data[p+1] - bgG);
-        const db = Math.abs(data[p+2] - bgB);
-        if (dr + dg + db > tolerance) continue;
-        data[p+3] = 0; // transparent
-        if (x > 0)   queue.push(idx - 1);
-        if (x < w-1) queue.push(idx + 1);
-        if (y > 0)   queue.push(idx - w);
-        if (y < h-1) queue.push(idx + w);
-      }
-      ctx.putImageData(id, 0, 0);
-      imgEl.src = canvas.toDataURL('image/png');
-    }
-    document.querySelectorAll('img[src="kory.png"]').forEach(img => removeDarkBg(img, 90));
-
     const quoteSlides = [
       {
         text: `Most companies aren't systems of action, they are systems of recommendations. Where a company could differentiate is if it had the recommendation engine and then helped me do it.`,
