@@ -1185,11 +1185,13 @@
       .hero-ctas { flex-direction: column; align-items: stretch; }
       .hero-ctas a { width: 100% !important; text-align: center; display: flex !important; justify-content: center; }
       .hero-visual { display: none !important; }
+      .mobile-dashboard { display: none !important; }
+      .hero-pillars { display: none !important; }
       #hero .container { overflow: hidden; width: 100%; padding-left: 16px; padding-right: 16px; }
 
-      /* Mobile dashboard card */
-      .mobile-dashboard {
-        display: block;
+      /* Mobile dashboard card — kept for reference but hidden per latest request */
+      .mobile-dashboard-hidden {
+        display: none;
         background: #1a2744;
         border-radius: 12px;
         padding: 20px;
@@ -1312,11 +1314,27 @@
       .problem-right { order: 2; }
       .problem-left { order: 1; }
 
-      /* Problem diagram — prevent overflow, wrap tool/stakeholder rows into 2-col grid */
+      /* Problem diagram — center header, 2-col tool/stakeholder grids */
       #problem .container { overflow-x: hidden; }
-      .chaos-diagram { overflow: hidden; }
+      .chaos-diagram { overflow: hidden; padding: 20px 16px !important; }
+
+      /* Header row: stack vertically and center everything */
+      .chaos-diagram > div[style*="justify-content:space-between"] {
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center !important;
+        gap: 10px !important;
+        justify-content: center !important;
+      }
+      .chaos-diagram > div[style*="justify-content:space-between"] > div {
+        text-align: center !important;
+      }
+      .chaos-title { text-align: center !important; width: 100% !important; }
+
+      /* Tool & stakeholder rows: wrap into 2-column grid */
       .chaos-diagram > div[style*="display:flex;gap:8px"] {
         flex-wrap: wrap !important;
+        justify-content: center !important;
       }
       .chaos-diagram > div[style*="display:flex;gap:8px"] > div {
         flex: 0 0 calc(50% - 4px) !important;
