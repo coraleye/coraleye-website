@@ -1404,6 +1404,17 @@
     .nav-dropdown:hover .dropdown-menu {
       display: block !important;
     }
+
+    /* Transparent bridge over the 8px gap between trigger and menu so the
+       dropdown doesn't close while the cursor crosses into it. */
+    .dropdown-menu::before {
+      content: '';
+      position: absolute;
+      top: -12px;
+      left: 0;
+      right: 0;
+      height: 12px;
+    }
   </style>
 </head>
 <body>
