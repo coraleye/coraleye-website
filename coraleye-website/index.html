@@ -24,7 +24,7 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; max-width: 100%; }
 
     :root {
-      --bg:          #f3f4f6;
+      --bg:          #eaecf0;
       --bg-card:     #ffffff;
       --bg-raised:   #eaecf0;
       --border:      rgba(0,0,0,0.08);
@@ -57,7 +57,7 @@
       margin: 24px;
       border-radius: 16px;
       overflow: clip;
-      border: 1.5px solid rgba(255,255,255,0.15);
+      border: 0.5px solid rgba(255,255,255,0.2);
       box-shadow: 0 0 0 1px rgba(255,255,255,0.08);
     }
 
@@ -600,12 +600,14 @@
     }
 
     .chaos-diagram {
-      background: var(--bg-raised);
+      background: #eaecf0;
       border: 1px solid var(--border);
       border-radius: var(--radius-lg);
       padding: 32px;
       position: relative;
       overflow: hidden;
+      --bg-card: #eaecf0;
+      --bg-raised: #eaecf0;
     }
 
     .chaos-diagram::before {
@@ -1757,66 +1759,66 @@
 
         <!-- Tool columns -->
         <div style="display:flex;gap:8px;margin-bottom:0;">
-          <div style="flex:1;border-top:3px solid #e8782a;background:var(--bg-card);border-radius:8px;padding:10px 8px;">
+          <div style="flex:1;border-top:3px solid #e8782a;background:#eaecf0;border-radius:12px;padding:10px 8px;">
             <div style="font-size:0.72rem;font-weight:700;color:var(--text);margin-bottom:4px;">HubSpot</div>
             <div style="font-size:0.68rem;color:#4a5568;">CRM / Pipeline</div>
           </div>
-          <div style="flex:1;border-top:3px solid #1f3c5e;background:var(--bg-card);border-radius:8px;padding:10px 8px;">
+          <div style="flex:1;border-top:3px solid #1f3c5e;background:#eaecf0;border-radius:12px;padding:10px 8px;">
             <div style="font-size:0.72rem;font-weight:700;color:var(--text);margin-bottom:4px;">Zendesk</div>
             <div style="font-size:0.68rem;color:#4a5568;">Support Tickets</div>
           </div>
-          <div style="flex:1;border-top:3px solid #2c8f7e;background:var(--bg-card);border-radius:8px;padding:10px 8px;">
+          <div style="flex:1;border-top:3px solid #2c8f7e;background:#eaecf0;border-radius:12px;padding:10px 8px;">
             <div style="font-size:0.72rem;font-weight:700;color:var(--text);margin-bottom:4px;">Slack</div>
             <div style="font-size:0.68rem;color:#4a5568;">Communications</div>
           </div>
-          <div style="flex:1;border-top:3px solid #4a9fd4;background:var(--bg-card);border-radius:8px;padding:10px 8px;">
+          <div style="flex:1;border-top:3px solid #4a9fd4;background:#eaecf0;border-radius:12px;padding:10px 8px;">
             <div style="font-size:0.72rem;font-weight:700;color:var(--text);margin-bottom:4px;">Salesforce</div>
             <div style="font-size:0.68rem;color:#4a5568;">Account Data</div>
           </div>
-          <div style="flex:1;border-top:3px solid #8b5cf6;background:var(--bg-card);border-radius:8px;padding:10px 8px;">
+          <div style="flex:1;border-top:3px solid #8b5cf6;background:#eaecf0;border-radius:12px;padding:10px 8px;">
             <div style="font-size:0.72rem;font-weight:700;color:var(--text);margin-bottom:4px;">Gong</div>
             <div style="font-size:0.68rem;color:#4a5568;">Call Transcripts</div>
           </div>
-          <div style="flex:1;border-top:3px solid #0052CC;background:var(--bg-card);border-radius:8px;padding:10px 8px;">
+          <div style="flex:1;border-top:3px solid #0052CC;background:#eaecf0;border-radius:12px;padding:10px 8px;">
             <div style="font-size:0.72rem;font-weight:700;color:var(--text);margin-bottom:4px;">Jira</div>
             <div style="font-size:0.68rem;color:#4a5568;">Product & Engineering</div>
           </div>
         </div>
 
         <!-- Dashed separator + connector arrows -->
-        <div style="border-top:1px dashed rgba(255,255,255,0.1);margin:10px 0 0;"></div>
+        <div style="border-top:1px dashed rgba(0,0,0,0.12);margin:10px 0 0;"></div>
         <div style="display:flex;gap:8px;margin-bottom:0;">
-          <div style="flex:1;display:flex;justify-content:center;padding:3px 0;font-size:0.65rem;color:rgba(255,255,255,0.2);">↓</div>
-          <div style="flex:1;display:flex;justify-content:center;padding:3px 0;font-size:0.65rem;color:rgba(255,255,255,0.2);">↓</div>
-          <div style="flex:1;display:flex;justify-content:center;padding:3px 0;font-size:0.65rem;color:rgba(255,255,255,0.2);">↓</div>
-          <div style="flex:1;display:flex;justify-content:center;padding:3px 0;font-size:0.65rem;color:rgba(255,255,255,0.2);">↓</div>
-          <div style="flex:1;display:flex;justify-content:center;padding:3px 0;font-size:0.65rem;color:rgba(255,255,255,0.2);">↓</div>
-          <div style="flex:1;display:flex;justify-content:center;padding:3px 0;font-size:0.65rem;color:rgba(255,255,255,0.2);">↓</div>
+          <div style="flex:1;display:flex;justify-content:center;padding:3px 0;font-size:0.65rem;color:rgba(0,0,0,0.25);">↓</div>
+          <div style="flex:1;display:flex;justify-content:center;padding:3px 0;font-size:0.65rem;color:rgba(0,0,0,0.25);">↓</div>
+          <div style="flex:1;display:flex;justify-content:center;padding:3px 0;font-size:0.65rem;color:rgba(0,0,0,0.25);">↓</div>
+          <div style="flex:1;display:flex;justify-content:center;padding:3px 0;font-size:0.65rem;color:rgba(0,0,0,0.25);">↓</div>
+          <div style="flex:1;display:flex;justify-content:center;padding:3px 0;font-size:0.65rem;color:rgba(0,0,0,0.25);">↓</div>
+          <div style="flex:1;display:flex;justify-content:center;padding:3px 0;font-size:0.65rem;color:rgba(0,0,0,0.25);">↓</div>
         </div>
 
         <!-- Stakeholder row -->
         <div style="display:flex;gap:8px;margin-bottom:20px;">
-          <div style="flex:1;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.11);border-radius:8px;padding:10px 8px;">
+          <div style="flex:1;background:#eaecf0;border:1px solid rgba(0,0,0,0.08);border-radius:12px;padding:10px 8px;">
             <div style="font-size:0.72rem;font-weight:700;color:var(--text);margin-bottom:4px;">Sales Rep</div>
             <div style="font-size:0.68rem;color:#4a5568;">Owns the deal, not the relationship</div>
           </div>
-          <div style="flex:1;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.11);border-radius:8px;padding:10px 8px;">
+          <div style="flex:1;background:#eaecf0;border:1px solid rgba(0,0,0,0.08);border-radius:12px;padding:10px 8px;">
             <div style="font-size:0.72rem;font-weight:700;color:var(--text);margin-bottom:4px;">Support Agent</div>
             <div style="font-size:0.68rem;color:#4a5568;">Closes tickets, never sees the account</div>
           </div>
-          <div style="flex:1;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.11);border-radius:8px;padding:10px 8px;">
+          <div style="flex:1;background:#eaecf0;border:1px solid rgba(0,0,0,0.08);border-radius:12px;padding:10px 8px;">
             <div style="font-size:0.72rem;font-weight:700;color:var(--text);margin-bottom:4px;">Account Mgr</div>
             <div style="font-size:0.68rem;color:#4a5568;">Last to know when things go wrong</div>
           </div>
-          <div style="flex:1;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.11);border-radius:8px;padding:10px 8px;">
+          <div style="flex:1;background:#eaecf0;border:1px solid rgba(0,0,0,0.08);border-radius:12px;padding:10px 8px;">
             <div style="font-size:0.72rem;font-weight:700;color:var(--text);margin-bottom:4px;">CSM</div>
             <div style="font-size:0.68rem;color:#4a5568;">Flying blind on health</div>
           </div>
-          <div style="flex:1;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.11);border-radius:8px;padding:10px 8px;">
+          <div style="flex:1;background:#eaecf0;border:1px solid rgba(0,0,0,0.08);border-radius:12px;padding:10px 8px;">
             <div style="font-size:0.72rem;font-weight:700;color:var(--text);margin-bottom:4px;">Onboarding</div>
             <div style="font-size:0.68rem;color:#4a5568;">Hands off and disappears</div>
           </div>
-          <div style="flex:1;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.11);border-radius:8px;padding:10px 8px;">
+          <div style="flex:1;background:#eaecf0;border:1px solid rgba(0,0,0,0.08);border-radius:12px;padding:10px 8px;">
             <div style="font-size:0.72rem;font-weight:700;color:var(--text);margin-bottom:4px;">Engineering</div>
             <div style="font-size:0.68rem;color:#4a5568;">Fixes issues, never sees the customer impact</div>
           </div>
