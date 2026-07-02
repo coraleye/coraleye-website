@@ -220,10 +220,18 @@
 
     /* ─── Hero ──────────────────────────────────────────────────────── */
     #hero {
-      padding: 120px 0 80px;
+      padding: 40px;
+      background: #0B1628;
+    }
+
+    .hero-card {
+      background: #0B1628;
+      border: 2px solid rgba(255,255,255,0.2);
+      border-radius: 20px;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.4);
+      padding: 80px 0 60px;
       position: relative;
       overflow: hidden;
-      background: linear-gradient(to right, #011330 0%, #011330 25%, rgba(1, 19, 48, 0.9) 40%, rgba(1, 19, 48, 0.75) 55%, rgba(1, 19, 48, 0.55) 70%, rgba(1, 19, 48, 0.35) 85%, rgba(1, 19, 48, 0.2) 100%);
     }
 
     .hero-grid-lines {
@@ -1184,7 +1192,8 @@
       #approach-cards { grid-template-columns: 1fr !important; }
       #contact .container > div { grid-template-columns: 1fr; gap: 40px; }
       .hero-inner { grid-template-columns: 1fr; gap: 24px; }
-      #hero { overflow-x: hidden; }
+      #hero { overflow-x: hidden; padding: 16px; }
+      .hero-card { padding: 40px 0 36px; border-radius: 14px; }
       .hero-content { padding: 0 16px; padding-right: 16px; }
       #hero h1 { font-size: clamp(2rem, 8vw, 4rem); }
       .hero-sub { font-size: 1rem; max-width: 100%; overflow-wrap: break-word; word-break: break-word; }
@@ -1430,10 +1439,11 @@
 
   <!-- ─── Hero ───────────────────────────────────────────────────────── -->
   <section id="hero">
-    <div class="hero-grid-lines"></div>
-    <div class="hero-glow"></div>
-    <div class="container">
-      <div class="hero-inner">
+    <div class="hero-card">
+      <div class="hero-grid-lines"></div>
+      <div class="hero-glow"></div>
+      <div class="container">
+        <div class="hero-inner">
 
         <!-- LEFT: Text content -->
         <div class="hero-content">
@@ -1837,8 +1847,9 @@
           <div class="quote-dot" style="width:8px;height:8px;border-radius:50%;background:var(--orange);transition:opacity 0.3s;"></div>
           <div class="quote-dot" style="width:8px;height:8px;border-radius:50%;background:var(--border);transition:opacity 0.3s;"></div>
         </div>
-      </div>
-    </div>
+        </div><!-- /hero-inner -->
+      </div><!-- /container -->
+    </div><!-- /hero-card -->
   </section>
 
   <!-- ─── Before/After ───────────────────────────────────────────────── -->
