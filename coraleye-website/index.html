@@ -1376,6 +1376,14 @@
       /* All section headlines — scale and center on mobile */
       h2 { font-size: clamp(1.6rem, 6vw, 2.4rem) !important; text-align: center; padding: 0 16px; white-space: normal !important; }
 
+      /* Remove gray frame borders on mobile — all sections full-width, no side margins */
+      .page-wrapper { margin: 0 !important; border-radius: 0 !important; }
+      nav { margin: 0 !important; border-radius: 0 !important; }
+      #hero { margin: 0 !important; border-radius: 0 !important; }
+      #before-after { margin: 0 !important; border-radius: 0 !important; }
+      #contact { margin: 0 !important; border-radius: 0 !important; }
+      footer { margin: 0 !important; border-radius: 0 !important; border-top: 1px solid rgba(255,255,255,0.08); }
+
       /* Hero — solid background on mobile, no gradient bleed */
       #hero { background: #011330 !important; overflow: hidden; width: 100%; box-sizing: border-box; }
       .hero-cory-img { transform: none; }
@@ -1386,9 +1394,9 @@
     }
 
     @media (max-width: 600px) {
-      .page-wrapper { margin: 12px; border-radius: 12px; }
+      .page-wrapper { margin: 0; border-radius: 0; }
       .section { padding: 60px 16px; }
-      #hero { padding: 60px 0; margin: 0 16px 16px 16px; border-radius: 0 0 14px 14px; overflow-x: hidden; }
+      #hero { padding: 60px 0; margin: 0 !important; border-radius: 0 !important; overflow-x: hidden; }
       .hero-visual { display: none !important; }
       .hero-pillars { display: none; }
       .hero-cory-card { margin: 24px auto 0 auto; display: block; text-align: center; }
