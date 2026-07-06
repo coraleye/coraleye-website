@@ -1373,10 +1373,11 @@
       .diagram-arrows-row,
       .diagram-stakeholder-row { display: none !important; }
 
-      /* Meet Cory — card on top, headline + traits below on mobile */
+      /* Meet Cory — hide desktop card, show inline mobile copy between text and traits */
+      .cory-action-desktop { display: none !important; }
+      .cory-action-mobile { display: block; }
       .cory-grid { display: flex; flex-direction: column; }
-      .cory-grid > div:first-child { order: 1; }
-      .cory-grid .cory-info { order: 2; }
+      .cory-grid .cory-info { order: 1; }
 
       /* How it works — screenshot must not overflow on mobile */
       #how-screenshot-wrap { overflow: hidden; max-width: 100%; }
@@ -1428,6 +1429,10 @@
       .footer-inner { flex-direction: column; align-items: flex-start; }
       .container { padding: 0 16px; }
     }
+
+    /* Cory in Action: desktop shows original left-column card, mobile copy hidden */
+    .cory-action-mobile { display: none; }
+    .cory-action-desktop { display: block; }
 
     /* Contact heading: desktop/mobile variants */
     .contact-heading-mobile { display: none; }
@@ -1991,7 +1996,7 @@
       <div class="cory-grid">
 
         <!-- Sandra Clark dispatch card -->
-        <div class="reveal">
+        <div class="cory-action-desktop reveal">
           <div style="background:#011330;border-radius:16px;padding:32px;border-left:4px solid #e8782a;box-shadow:0 8px 40px rgba(0,0,0,0.18);">
 
             <!-- Card header -->
@@ -2053,6 +2058,55 @@
           <div class="label">Meet Cory</div>
           <h2>Your AI agent that never misses a signal</h2>
           <p>Cory reads across the full customer timeline, picking up signals from conversations and usage across your entire account base.</p>
+
+          <!-- Mobile-only: Cory in Action card repositioned between text and traits -->
+          <div class="cory-action-mobile" style="margin:28px 0;">
+            <div style="background:#011330;border-radius:16px;padding:32px;border-left:4px solid #e8782a;box-shadow:0 8px 40px rgba(0,0,0,0.18);">
+              <div style="font-size:0.65rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#e8782a;margin-bottom:12px;">Cory in Action</div>
+              <div style="font-size:1rem;font-weight:700;color:#ffffff;margin-bottom:10px;">Sandra Clark, Meridian Health</div>
+              <div style="display:flex;gap:8px;margin-bottom:24px;">
+                <span style="font-size:0.7rem;font-weight:700;background:rgba(220,50,50,0.18);color:#f87171;border:1px solid rgba(220,50,50,0.3);border-radius:100px;padding:3px 10px;">Churn Risk: 82</span>
+                <span style="font-size:0.7rem;font-weight:700;background:rgba(232,120,42,0.15);color:#e8782a;border:1px solid rgba(232,120,42,0.3);border-radius:100px;padding:3px 10px;">Renewal in 18 days</span>
+              </div>
+              <div style="padding-bottom:16px;border-bottom:1px solid rgba(255,255,255,0.07);margin-bottom:16px;">
+                <div style="display:flex;gap:12px;">
+                  <div style="flex-shrink:0;font-size:0.68rem;font-weight:700;color:rgba(232,120,42,0.6);width:18px;padding-top:2px;">01</div>
+                  <div>
+                    <div style="font-size:0.68rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:4px;">Flagged</div>
+                    <div style="font-size:0.85rem;color:rgba(255,255,255,0.6);line-height:1.6;">3 signals detected across Zendesk, Gong, and Slack over 6 days.</div>
+                  </div>
+                </div>
+              </div>
+              <div style="padding-bottom:16px;border-bottom:1px solid rgba(255,255,255,0.07);margin-bottom:16px;">
+                <div style="display:flex;gap:12px;">
+                  <div style="flex-shrink:0;font-size:0.68rem;font-weight:700;color:rgba(232,120,42,0.6);width:18px;padding-top:2px;">02</div>
+                  <div>
+                    <div style="font-size:0.68rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:4px;">Analyzed</div>
+                    <div style="font-size:0.85rem;color:rgba(255,255,255,0.6);line-height:1.6;">Transcript excerpt: <em style="color:rgba(255,255,255,0.45);">"I feel like no one is reading our tickets."</em> Unanswered renewal question identified.</div>
+                  </div>
+                </div>
+              </div>
+              <div style="padding-bottom:16px;border-bottom:1px solid rgba(255,255,255,0.07);margin-bottom:16px;">
+                <div style="display:flex;gap:12px;">
+                  <div style="flex-shrink:0;font-size:0.68rem;font-weight:700;color:rgba(232,120,42,0.6);width:18px;padding-top:2px;">03</div>
+                  <div>
+                    <div style="font-size:0.68rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:4px;">Play Drafted</div>
+                    <div style="font-size:0.85rem;color:rgba(255,255,255,0.6);line-height:1.6;">Recovery play queued. Apology call plus renewal prep sequence. Save probability: 74%.</div>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <div style="display:flex;gap:12px;">
+                  <div style="flex-shrink:0;font-size:0.68rem;font-weight:700;color:#e8782a;width:18px;padding-top:2px;">04</div>
+                  <div>
+                    <div style="font-size:0.68rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#e8782a;margin-bottom:4px;">Executed</div>
+                    <div style="font-size:0.85rem;color:#f8fafc;line-height:1.6;">CSM approved in one click. Call scheduled. Sequence deployed. Account moved from <span style="color:rgba(255,100,100,0.85);">At Risk</span> to <span style="color:#e8782a;">Watch</span>.</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
           <div class="cory-traits" style="grid-template-columns:1fr;">
             <div class="cory-trait">
               <div class="trait-icon">⚡</div>
