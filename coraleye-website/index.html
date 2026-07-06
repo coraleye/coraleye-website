@@ -1375,6 +1375,14 @@
 
       /* All section headlines — scale and center on mobile */
       h2 { font-size: clamp(1.6rem, 6vw, 2.4rem) !important; text-align: center; padding: 0 16px; white-space: normal !important; }
+
+      /* Hero — solid background on mobile, no gradient bleed */
+      #hero { background: #011330 !important; overflow: hidden; width: 100%; box-sizing: border-box; }
+      .hero-cory-img { transform: none; }
+
+      /* Contact form — full-width inputs, padded container, full-width submit */
+      #contact form { padding: 0 20px; }
+      #contact form button[type="submit"] { width: 100%; box-sizing: border-box; }
     }
 
     @media (max-width: 600px) {
