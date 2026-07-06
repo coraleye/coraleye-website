@@ -1334,20 +1334,27 @@
       #problem .container { overflow-x: hidden; }
       .chaos-diagram { overflow: hidden; padding: 20px 16px !important; }
 
-      /* Header row: stack vertically and center everything */
-      .chaos-diagram > div[style*="justify-content:space-between"] {
-        flex-direction: column !important;
-        align-items: center !important;
-        text-align: center !important;
-        gap: 10px !important;
-        justify-content: center !important;
+      /* Stats row: two "6+" blocks side by side, label as caption below */
+      .diagram-stat-row {
+        flex-direction: row !important;
+        flex-wrap: wrap !important;
+        align-items: flex-start !important;
+        justify-content: space-between !important;
+        gap: 4px !important;
       }
-      .chaos-diagram > div[style*="justify-content:space-between"] > div {
+      .diagram-stat-left { order: 1; }
+      .diagram-stat-right { order: 2; text-align: right; }
+      .diagram-stat-center {
+        order: 3 !important;
+        width: 100% !important;
         text-align: center !important;
+        font-size: 0.68rem !important;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        margin-top: 6px !important;
       }
-      .chaos-title { text-align: center !important; width: 100% !important; }
 
-      /* Tool & stakeholder rows: wrap into 2-column grid */
+      /* Tool boxes: wrap into 2x3 grid */
       .chaos-diagram > div[style*="display:flex;gap:8px"] {
         flex-wrap: wrap !important;
         justify-content: center !important;
@@ -1360,6 +1367,11 @@
       .chaos-diagram > div[style*="display:flex;gap:8px"] > div > div:first-child {
         font-size: 0.75rem !important;
       }
+
+      /* Hide stakeholder row and its connector arrows */
+      .diagram-arrows-sep,
+      .diagram-arrows-row,
+      .diagram-stakeholder-row { display: none !important; }
 
       /* Meet Cory — card on top, headline + traits below on mobile */
       .cory-grid { display: flex; flex-direction: column; }
@@ -1772,13 +1784,13 @@
       <div class="chaos-diagram reveal" style="margin-top:40px;border-radius:16px;padding:32px 36px;">
 
         <!-- Stat callouts + title row -->
-        <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:20px;">
-          <div>
+        <div class="diagram-stat-row" style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:20px;">
+          <div class="diagram-stat-left">
             <div style="font-size:2.4rem;font-weight:800;color:#e8782a;line-height:1;">6+</div>
             <div style="font-size:0.72rem;color:#4a5568;margin-top:4px;">siloed data sources</div>
           </div>
-          <div class="chaos-title" style="margin:0;padding:0;border:none;background:none;color:#4a5568;">A single customer account</div>
-          <div style="text-align:right;">
+          <div class="chaos-title diagram-stat-center" style="margin:0;padding:0;border:none;background:none;color:#4a5568;">A single customer account</div>
+          <div class="diagram-stat-right" style="text-align:right;">
             <div style="font-size:2.4rem;font-weight:800;color:#e8782a;line-height:1;">6+</div>
             <div style="font-size:0.72rem;color:#4a5568;margin-top:4px;">teams touching one account</div>
           </div>
@@ -1813,8 +1825,8 @@
         </div>
 
         <!-- Dashed separator + connector arrows -->
-        <div style="border-top:1px dashed rgba(0,0,0,0.12);margin:10px 0 0;"></div>
-        <div style="display:flex;gap:8px;margin-bottom:0;">
+        <div class="diagram-arrows-sep" style="border-top:1px dashed rgba(0,0,0,0.12);margin:10px 0 0;"></div>
+        <div class="diagram-arrows-row" style="display:flex;gap:8px;margin-bottom:0;">
           <div style="flex:1;display:flex;justify-content:center;padding:3px 0;font-size:0.65rem;color:rgba(0,0,0,0.25);">↓</div>
           <div style="flex:1;display:flex;justify-content:center;padding:3px 0;font-size:0.65rem;color:rgba(0,0,0,0.25);">↓</div>
           <div style="flex:1;display:flex;justify-content:center;padding:3px 0;font-size:0.65rem;color:rgba(0,0,0,0.25);">↓</div>
@@ -1824,7 +1836,7 @@
         </div>
 
         <!-- Stakeholder row -->
-        <div style="display:flex;gap:8px;margin-bottom:20px;">
+        <div class="diagram-stakeholder-row" style="display:flex;gap:8px;margin-bottom:20px;">
           <div style="flex:1;background:#E8E6E1;border:1px solid rgba(0,0,0,0.08);border-radius:12px;padding:10px 8px;">
             <div style="font-size:0.72rem;font-weight:700;color:var(--text);margin-bottom:4px;">Sales Rep</div>
             <div style="font-size:0.68rem;color:#4a5568;">Owns the deal, not the relationship</div>
