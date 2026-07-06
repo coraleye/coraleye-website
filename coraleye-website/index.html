@@ -1391,6 +1391,12 @@
       /* Contact form — full-width inputs, padded container, full-width submit */
       #contact form { padding: 0 20px; }
       #contact form button[type="submit"] { width: 100%; box-sizing: border-box; }
+
+      /* Contact section — simplified text and form on mobile */
+      .contact-heading-desktop { display: none; }
+      .contact-heading-mobile { display: inline; }
+      .contact-desc { display: none; }
+      .contact-message { display: none !important; }
     }
 
     @media (max-width: 600px) {
@@ -1410,6 +1416,10 @@
       .footer-inner { flex-direction: column; align-items: flex-start; }
       .container { padding: 0 16px; }
     }
+
+    /* Contact heading: desktop/mobile variants */
+    .contact-heading-mobile { display: none; }
+    .contact-heading-desktop { display: inline; }
 
     #contact input::placeholder,
     #contact textarea::placeholder {
@@ -2059,15 +2069,15 @@
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;">
         <div>
           <div class="label" style="color:#e07230;">Contact Us</div>
-          <h2 style="color:#ffffff;margin-bottom:16px;text-align:left;">Ready to see Coraleye in action?</h2>
-          <p style="font-size:1rem;color:rgba(255,255,255,0.55);line-height:1.7;">Book a call to see how Coraleye can transform your customer success operations.</p>
+          <h2 style="color:#ffffff;margin-bottom:16px;text-align:left;"><span class="contact-heading-desktop">Ready to see Coraleye in action?</span><span class="contact-heading-mobile">See Coraleye in action</span></h2>
+          <p class="contact-desc" style="font-size:1rem;color:rgba(255,255,255,0.55);line-height:1.7;">Book a call to see how Coraleye can transform your customer success operations.</p>
         </div>
         <form action="mailto:chris@coraleye.ai" method="POST" enctype="text/plain" style="display:flex;flex-direction:column;gap:20px;">
           <input type="text" name="name" placeholder="Name" required style="background:transparent;border:none;border-bottom:1px solid rgba(255,255,255,0.3);padding:12px 0;color:#ffffff;font-size:0.95rem;outline:none;font-family:inherit;" />
           <input type="text" name="company" placeholder="Company name" style="background:transparent;border:none;border-bottom:1px solid rgba(255,255,255,0.3);padding:12px 0;color:#ffffff;font-size:0.95rem;outline:none;font-family:inherit;" />
           <input type="email" name="email" placeholder="Email" required style="background:transparent;border:none;border-bottom:1px solid rgba(255,255,255,0.3);padding:12px 0;color:#ffffff;font-size:0.95rem;outline:none;font-family:inherit;" />
           <input type="text" name="role" placeholder="Your role" style="background:transparent;border:none;border-bottom:1px solid rgba(255,255,255,0.3);padding:12px 0;color:#ffffff;font-size:0.95rem;outline:none;font-family:inherit;" />
-          <textarea name="message" placeholder="Tell us more about your team and goals..." rows="3" style="background:transparent;border:none;border-bottom:1px solid rgba(255,255,255,0.3);padding:12px 0;color:#ffffff;font-size:0.95rem;outline:none;font-family:inherit;resize:none;"></textarea>
+          <textarea name="message" class="contact-message" placeholder="Tell us more about your team and goals..." rows="3" style="background:transparent;border:none;border-bottom:1px solid rgba(255,255,255,0.3);padding:12px 0;color:#ffffff;font-size:0.95rem;outline:none;font-family:inherit;resize:none;"></textarea>
           <button type="submit" class="btn btn-primary btn-lg" style="margin-top:8px;justify-content:center;">Submit</button>
         </form>
       </div>
