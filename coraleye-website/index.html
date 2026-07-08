@@ -227,6 +227,14 @@
       border-radius: 11px;
     }
 
+    /* ─── Hero signal line ──────────────────────────────────────────── */
+    .hero-signal-line {
+      margin: 28px 0 26px;
+      padding-top: 18px; /* space above SVG for the floating FLAGGED label */
+      overflow: visible;
+      max-width: 540px;
+    }
+
     /* ─── Hero ──────────────────────────────────────────────────────── */
     #hero {
       padding: 80px 0;
@@ -1408,6 +1416,9 @@
       #contact { margin: 0 !important; border-radius: 0 !important; }
       footer { margin: 0 !important; border-radius: 0 !important; border-top: 1px solid rgba(255,255,255,0.08); }
 
+      /* Hide signal line on mobile — desktop-only visual */
+      .hero-signal-line { display: none; }
+
       /* Hero — solid background on mobile, no gradient bleed */
       #hero { background: #011330 !important; overflow: hidden; width: 100%; box-sizing: border-box; }
       .hero-cory-img { transform: none; }
@@ -1510,6 +1521,39 @@
           </div>
 
           <h1>Customer success,<br>finally <span style="color:#e8782a;">proactive.</span></h1>
+
+          <!-- Teal signal line: ingested → evaluated → flagged → system of action -->
+          <div class="hero-signal-line">
+            <svg viewBox="0 0 520 66" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:100%;display:block;overflow:visible;">
+              <defs>
+                <linearGradient id="heroSigFill" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#2dd4bf" stop-opacity="0.15"/>
+                  <stop offset="100%" stop-color="#2dd4bf" stop-opacity="0"/>
+                </linearGradient>
+              </defs>
+              <!-- Area under line -->
+              <path d="M0,52 C60,52 100,52 148,49 C183,46 205,30 228,18 C240,12 255,10 268,12 C285,18 308,34 338,46 C364,52 405,54 520,54 L520,66 L0,66 Z" fill="url(#heroSigFill)"/>
+              <!-- Teal line -->
+              <path d="M0,52 C60,52 100,52 148,49 C183,46 205,30 228,18 C240,12 255,10 268,12 C285,18 308,34 338,46 C364,52 405,54 520,54" stroke="#2dd4bf" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+              <!-- Dot: Ingested data -->
+              <circle cx="50" cy="52" r="2.5" fill="#2dd4bf" fill-opacity="0.6"/>
+              <!-- Dot: Evaluated -->
+              <circle cx="172" cy="48" r="2.5" fill="#2dd4bf" fill-opacity="0.6"/>
+              <!-- Dot: Flagged (peak) — orange -->
+              <circle cx="258" cy="10" r="3.5" fill="#e8782a"/>
+              <!-- Dashed stem up to "FLAGGED" label -->
+              <line x1="258" y1="-4" x2="258" y2="7" stroke="rgba(232,120,42,0.4)" stroke-width="1" stroke-dasharray="2,2"/>
+              <!-- FLAGGED label above peak -->
+              <text x="258" y="-8" text-anchor="middle" font-size="7" font-weight="700" letter-spacing="1.5" fill="#e8782a" font-family="Inter,-apple-system,BlinkMacSystemFont,sans-serif">FLAGGED</text>
+              <!-- Dot: System of action -->
+              <circle cx="420" cy="53" r="2.5" fill="#2dd4bf" fill-opacity="0.6"/>
+              <!-- Bottom stage labels -->
+              <text x="50"  y="64" text-anchor="middle" font-size="6.5" fill="rgba(255,255,255,0.28)" font-family="Inter,-apple-system,sans-serif" letter-spacing="0.5">INGESTED</text>
+              <text x="172" y="64" text-anchor="middle" font-size="6.5" fill="rgba(255,255,255,0.28)" font-family="Inter,-apple-system,sans-serif" letter-spacing="0.5">EVALUATED</text>
+              <text x="258" y="64" text-anchor="middle" font-size="6.5" fill="#e8782a"               font-family="Inter,-apple-system,sans-serif" letter-spacing="0.5" font-weight="700">FLAGGED</text>
+              <text x="420" y="64" text-anchor="middle" font-size="6.5" fill="rgba(255,255,255,0.28)" font-family="Inter,-apple-system,sans-serif" letter-spacing="0.5">SYSTEM OF ACTION</text>
+            </svg>
+          </div>
 
           <p class="hero-sub">Coraleye evaluates customer interactions and recommends proactive actions before accounts churn.</p>
 
