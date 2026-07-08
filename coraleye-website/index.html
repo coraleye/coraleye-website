@@ -230,7 +230,6 @@
     /* ─── Hero signal line ──────────────────────────────────────────── */
     .hero-signal-line {
       margin: 28px 0 26px;
-      padding-top: 18px; /* space above SVG for the floating FLAGGED label */
       overflow: visible;
       max-width: 540px;
     }
@@ -1543,14 +1542,11 @@
               <!-- Teal wave line — 4 bumps -->
               <path d="M0,52 C20,52 35,40 50,40 C65,40 90,46 111,46 C132,46 152,28 172,28 C192,28 210,38 218,38 C228,38 244,10 258,10 C272,10 295,44 320,44 C342,44 395,30 420,30 C445,30 480,52 520,52" stroke="#2dd4bf" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
 
-              <!-- Dot at each peak (no label/accent — only FLAGGED gets the tag) -->
-              <circle cx="50"  cy="40" r="2.5" fill="#2dd4bf" fill-opacity="0.5"/>
-              <circle cx="172" cy="28" r="2.5" fill="#2dd4bf" fill-opacity="0.5"/>
-              <!-- Flagged peak: orange dot + dashed stem + floating label -->
-              <circle cx="258" cy="10" r="3.5" fill="#e8782a"/>
-              <line x1="258" y1="-4" x2="258" y2="7" stroke="rgba(232,120,42,0.4)" stroke-width="1" stroke-dasharray="2,2"/>
-              <text x="258" y="-8" text-anchor="middle" font-size="7" font-weight="700" letter-spacing="1.5" fill="#e8782a" font-family="Inter,-apple-system,BlinkMacSystemFont,sans-serif">FLAGGED</text>
-              <circle cx="420" cy="30" r="2.5" fill="#2dd4bf" fill-opacity="0.5"/>
+              <!-- Orange dot at every stage peak -->
+              <circle cx="50"  cy="40" r="3" fill="#e8782a"/>
+              <circle cx="172" cy="28" r="3" fill="#e8782a"/>
+              <circle cx="258" cy="10" r="3" fill="#e8782a"/>
+              <circle cx="420" cy="30" r="3" fill="#e8782a"/>
 
               <!-- Stage labels — all orange, larger, bold -->
               <text x="50"  y="72" text-anchor="middle" font-size="10" font-weight="700" fill="#e8782a" font-family="Inter,-apple-system,sans-serif" letter-spacing="0.5">INGESTED</text>
