@@ -1524,34 +1524,39 @@
 
           <!-- Teal signal line: ingested → evaluated → flagged → system of action -->
           <div class="hero-signal-line">
-            <svg viewBox="0 0 520 66" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:100%;display:block;overflow:visible;">
+            <svg viewBox="0 0 520 74" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:100%;display:block;overflow:visible;">
               <defs>
                 <linearGradient id="heroSigFill" x1="0" y1="0" x2="0" y2="1">
                   <stop offset="0%" stop-color="#2dd4bf" stop-opacity="0.15"/>
                   <stop offset="100%" stop-color="#2dd4bf" stop-opacity="0"/>
                 </linearGradient>
               </defs>
-              <!-- Area under line -->
-              <path d="M0,52 C60,52 100,52 148,49 C183,46 205,30 228,18 C240,12 255,10 268,12 C285,18 308,34 338,46 C364,52 405,54 520,54 L520,66 L0,66 Z" fill="url(#heroSigFill)"/>
-              <!-- Teal line -->
-              <path d="M0,52 C60,52 100,52 148,49 C183,46 205,30 228,18 C240,12 255,10 268,12 C285,18 308,34 338,46 C364,52 405,54 520,54" stroke="#2dd4bf" stroke-width="1.5" fill="none" stroke-linecap="round"/>
-              <!-- Dot: Ingested data -->
-              <circle cx="50" cy="52" r="2.5" fill="#2dd4bf" fill-opacity="0.6"/>
-              <!-- Dot: Evaluated -->
-              <circle cx="172" cy="48" r="2.5" fill="#2dd4bf" fill-opacity="0.6"/>
-              <!-- Dot: Flagged (peak) — orange -->
+              <!--
+                Baseline y=52. Four peaks, heights vary:
+                  Ingested  x=50   y=40  (small,   12px above baseline)
+                  Evaluated x=172  y=28  (medium,  24px above baseline)
+                  Flagged   x=258  y=10  (tallest, 42px above baseline) ← visual climax
+                  Sys/Act   x=420  y=30  (settling, 22px above baseline)
+              -->
+              <!-- Area fill -->
+              <path d="M0,52 C20,52 35,40 50,40 C65,40 90,46 111,46 C132,46 152,28 172,28 C192,28 210,38 218,38 C228,38 244,10 258,10 C272,10 295,44 320,44 C342,44 395,30 420,30 C445,30 480,52 520,52 L520,74 L0,74 Z" fill="url(#heroSigFill)"/>
+              <!-- Teal wave line — 4 bumps -->
+              <path d="M0,52 C20,52 35,40 50,40 C65,40 90,46 111,46 C132,46 152,28 172,28 C192,28 210,38 218,38 C228,38 244,10 258,10 C272,10 295,44 320,44 C342,44 395,30 420,30 C445,30 480,52 520,52" stroke="#2dd4bf" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+
+              <!-- Dot at each peak (no label/accent — only FLAGGED gets the tag) -->
+              <circle cx="50"  cy="40" r="2.5" fill="#2dd4bf" fill-opacity="0.5"/>
+              <circle cx="172" cy="28" r="2.5" fill="#2dd4bf" fill-opacity="0.5"/>
+              <!-- Flagged peak: orange dot + dashed stem + floating label -->
               <circle cx="258" cy="10" r="3.5" fill="#e8782a"/>
-              <!-- Dashed stem up to "FLAGGED" label -->
               <line x1="258" y1="-4" x2="258" y2="7" stroke="rgba(232,120,42,0.4)" stroke-width="1" stroke-dasharray="2,2"/>
-              <!-- FLAGGED label above peak -->
               <text x="258" y="-8" text-anchor="middle" font-size="7" font-weight="700" letter-spacing="1.5" fill="#e8782a" font-family="Inter,-apple-system,BlinkMacSystemFont,sans-serif">FLAGGED</text>
-              <!-- Dot: System of action -->
-              <circle cx="420" cy="53" r="2.5" fill="#2dd4bf" fill-opacity="0.6"/>
-              <!-- Bottom stage labels -->
-              <text x="50"  y="64" text-anchor="middle" font-size="6.5" fill="rgba(255,255,255,0.28)" font-family="Inter,-apple-system,sans-serif" letter-spacing="0.5">INGESTED</text>
-              <text x="172" y="64" text-anchor="middle" font-size="6.5" fill="rgba(255,255,255,0.28)" font-family="Inter,-apple-system,sans-serif" letter-spacing="0.5">EVALUATED</text>
-              <text x="258" y="64" text-anchor="middle" font-size="6.5" fill="#e8782a"               font-family="Inter,-apple-system,sans-serif" letter-spacing="0.5" font-weight="700">FLAGGED</text>
-              <text x="420" y="64" text-anchor="middle" font-size="6.5" fill="rgba(255,255,255,0.28)" font-family="Inter,-apple-system,sans-serif" letter-spacing="0.5">SYSTEM OF ACTION</text>
+              <circle cx="420" cy="30" r="2.5" fill="#2dd4bf" fill-opacity="0.5"/>
+
+              <!-- Stage labels — all orange, larger, bold -->
+              <text x="50"  y="72" text-anchor="middle" font-size="10" font-weight="700" fill="#e8782a" font-family="Inter,-apple-system,sans-serif" letter-spacing="0.5">INGESTED</text>
+              <text x="172" y="72" text-anchor="middle" font-size="10" font-weight="700" fill="#e8782a" font-family="Inter,-apple-system,sans-serif" letter-spacing="0.5">EVALUATED</text>
+              <text x="258" y="72" text-anchor="middle" font-size="10" font-weight="700" fill="#e8782a" font-family="Inter,-apple-system,sans-serif" letter-spacing="0.5">FLAGGED</text>
+              <text x="420" y="72" text-anchor="middle" font-size="10" font-weight="700" fill="#e8782a" font-family="Inter,-apple-system,sans-serif" letter-spacing="0.5">SYSTEM OF ACTION</text>
             </svg>
           </div>
 
