@@ -3,21 +3,24 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Coraleye — AI-Native Customer Success</title>
-  <meta name="description" content="Intelligent customer success, on autopilot. Coraleye unifies every customer interaction and deploys Cory, an AI agent that surfaces churn risks and executes recovery plays before you'd notice the pattern." />
+  <title>Coraleye — Customer Success, Finally Proactive</title>
+  <meta name="description" content="Coraleye unifies every customer signal across your stack and acts automatically — so your team is always ahead of the account, never behind it." />
   <link rel="icon" type="image/png" href="kory.png" />
   <link rel="apple-touch-icon" href="kory.png" />
   <link rel="canonical" href="https://coraleye.ai/" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 
   <!-- Open Graph / social cards -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://coraleye.ai/" />
-  <meta property="og:title" content="Coraleye — AI-Native Customer Success" />
-  <meta property="og:description" content="Intelligent customer success, on autopilot. Coraleye unifies every customer interaction and deploys Cory, an AI agent that surfaces churn risks and executes recovery plays before you'd notice the pattern." />
+  <meta property="og:title" content="Coraleye — Customer Success, Finally Proactive" />
+  <meta property="og:description" content="Coraleye unifies every customer signal across your stack and acts automatically — so your team is always ahead of the account, never behind it." />
   <meta property="og:image" content="https://coraleye.ai/kory.png" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Coraleye — AI-Native Customer Success" />
-  <meta name="twitter:description" content="Intelligent customer success, on autopilot. Coraleye deploys Cory, an AI agent that surfaces churn risks and executes recovery plays before you'd notice the pattern." />
+  <meta name="twitter:title" content="Coraleye — Customer Success, Finally Proactive" />
+  <meta name="twitter:description" content="Coraleye unifies every customer signal across your stack and acts automatically — so your team is always ahead of the account, never behind it." />
   <meta name="twitter:image" content="https://coraleye.ai/kory.png" />
   <style>
     /* ─── Reset & Base ─────────────────────────────────────────────── */
@@ -44,7 +47,7 @@
     body {
       background: #E8E6E1;
       color: var(--text);
-      font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", sans-serif;
+      font-family: "Epilogue", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       font-size: 16px;
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
@@ -81,18 +84,19 @@
       align-items: center;
       gap: 8px;
       font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 0.12em;
+      font-weight: 500;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
       color: var(--orange);
       margin-bottom: 20px;
+      opacity: 0.85;
     }
 
     .label::before {
       content: '';
       display: block;
-      width: 18px;
-      height: 2px;
+      width: 14px;
+      height: 1px;
       background: var(--orange);
       border-radius: 2px;
     }
@@ -194,7 +198,7 @@
     .btn-primary:hover {
       background: #d97824;
       transform: translateY(-1px);
-      box-shadow: 0 4px 20px rgba(240,137,42,0.30);
+      box-shadow: 0 4px 14px rgba(0,0,0,0.25);
     }
 
     .btn-ghost {
@@ -248,16 +252,7 @@
       display: none;
     }
 
-    .hero-glow {
-      position: absolute;
-      top: -200px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 800px;
-      height: 600px;
-      background: radial-gradient(ellipse at center, rgba(224,114,48,0.06) 0%, transparent 70%);
-      pointer-events: none;
-    }
+    .hero-glow { display: none; }
 
     .hero-content {
       position: relative;
@@ -739,7 +734,16 @@
     }
 
     .step-num:hover {
-      box-shadow: 0 0 12px rgba(232, 120, 42, 0.4);
+      border-color: rgba(224,114,48,0.45);
+    }
+
+    a:focus-visible,
+    button:focus-visible,
+    .step-num:focus-visible,
+    input:focus-visible,
+    textarea:focus-visible {
+      outline: 2px solid #e8782a;
+      outline-offset: 3px;
     }
 
     @keyframes orbit {
@@ -758,14 +762,13 @@
 
     .orbit-ball {
       position: absolute;
-      width: 10px;
-      height: 10px;
+      width: 8px;
+      height: 8px;
       border-radius: 50%;
       background: #e8782a;
-      margin-left: -5px;
-      margin-top: -5px;
+      margin-left: -4px;
+      margin-top: -4px;
       animation: orbit 3s linear infinite;
-      box-shadow: 0 0 8px rgba(232,120,42,0.8);
     }
 
     #how-screenshot-wrap {
@@ -845,7 +848,7 @@
       align-items: center;
       justify-content: center;
       position: relative;
-      box-shadow: 0 8px 40px rgba(0,0,0,0.07), 0 0 80px rgba(224,114,48,0.06);
+      box-shadow: 0 8px 40px rgba(0,0,0,0.10);
     }
 
     .cory-img {
@@ -1212,7 +1215,7 @@
       .hero-ctas { flex-direction: column; align-items: stretch; }
       .hero-ctas a { width: 100% !important; text-align: center; display: flex !important; justify-content: center; }
       .hero-visual { display: none !important; }
-      .mobile-dashboard { display: none !important; }
+      .mobile-dashboard { display: block !important; }
       .hero-pillars { display: none !important; }
       #hero .container { overflow: hidden; width: 100%; padding-left: 16px; padding-right: 16px; }
 
@@ -1482,6 +1485,16 @@
       right: 0;
       height: 12px;
     }
+
+    /* ─── Reduced Motion ────────────────────────────────────────────── */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
   </style>
 </head>
 <body>
@@ -1513,10 +1526,10 @@
 
         <!-- LEFT: Text content -->
         <div class="hero-content">
-          <!-- AI-Native badge -->
-          <div style="display:inline-flex;align-items:center;gap:7px;border:1px solid rgba(232,120,42,0.45);border-radius:20px;padding:5px 14px;margin-bottom:28px;">
+          <!-- Platform badge -->
+          <div style="display:inline-flex;align-items:center;gap:7px;border:1px solid rgba(232,120,42,0.35);border-radius:20px;padding:5px 14px;margin-bottom:28px;">
             <div style="width:6px;height:6px;border-radius:50%;background:#e8782a;flex-shrink:0;"></div>
-            <span style="font-size:0.6rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#e8782a;">AI-Native Customer Success</span>
+            <span style="font-size:0.6rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#e8782a;">Proactive Customer Success</span>
           </div>
 
           <h1>Customer success,<br>finally <span style="color:#e8782a;">proactive.</span></h1>
@@ -1595,16 +1608,7 @@
 
         <!-- RIGHT: Product workflow visual -->
         <div class="hero-visual" style="display:block;width:100%;max-width:none;position:relative;">
-          <!-- External ambient glows — bleed into hero background -->
-          <div style="position:absolute;top:-50px;left:50%;transform:translateX(-50%);width:560px;height:160px;background:radial-gradient(ellipse,rgba(99,102,241,0.1) 0%,transparent 65%);pointer-events:none;z-index:0;"></div>
-          <div style="position:absolute;bottom:15%;left:8%;width:260px;height:180px;background:radial-gradient(ellipse,rgba(232,120,42,0.07) 0%,transparent 65%);pointer-events:none;z-index:0;"></div>
-          <div style="position:absolute;top:30%;right:-20px;width:160px;height:200px;background:radial-gradient(ellipse,rgba(99,102,241,0.05) 0%,transparent 70%);pointer-events:none;z-index:0;"></div>
-
-          <div style="position:relative;z-index:1;background:rgba(10,17,30,0.93);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,0.045);border-radius:20px;padding:14px;box-shadow:0 40px 80px rgba(0,0,0,0.55),0 0 90px rgba(99,102,241,0.07),0 0 50px rgba(232,120,42,0.04),inset 0 1px 0 rgba(255,255,255,0.05);overflow:hidden;">
-            <!-- Internal top glow: indigo/blue for ingestion section -->
-            <div style="position:absolute;top:-60px;left:50%;transform:translateX(-50%);width:340px;height:180px;background:radial-gradient(ellipse,rgba(99,102,241,0.1) 0%,rgba(232,120,42,0.03) 55%,transparent 75%);pointer-events:none;"></div>
-            <!-- Internal bottom-left glow: orange near Generate Play -->
-            <div style="position:absolute;bottom:-20px;left:4%;width:220px;height:120px;background:radial-gradient(ellipse,rgba(232,120,42,0.08) 0%,transparent 70%);pointer-events:none;"></div>
+          <div style="position:relative;z-index:1;background:rgba(6,12,22,0.97);border:1px solid rgba(255,255,255,0.08);border-radius:20px;padding:14px;box-shadow:0 24px 60px rgba(0,0,0,0.45),inset 0 1px 0 rgba(255,255,255,0.04);overflow:hidden;">
 
             <!-- SECTION 1: UNIFY CUSTOMER INTERACTIONS -->
             <div style="margin-bottom:12px;">
@@ -1773,7 +1777,7 @@
                           <div style="font-size:0.65rem;font-weight:600;color:rgba(255,255,255,0.7);">Expansion Opportunity</div>
                           <div style="font-size:0.58rem;color:rgba(255,255,255,0.4);flex-shrink:0;">$120,000 ARR</div>
                         </div>
-                        <div style="font-size:0.57rem;color:rgba(255,255,255,0.4);margin-bottom:5px;">Wayne Enterprises · 2 tasks</div>
+                        <div style="font-size:0.57rem;color:rgba(255,255,255,0.4);margin-bottom:5px;">Brightfield SaaS · 2 tasks</div>
                         <div style="display:flex;align-items:center;gap:4px;">
                           <div style="width:5px;height:5px;border-radius:50%;background:#f59e0b;flex-shrink:0;"></div>
                           <span style="font-size:0.54rem;color:rgba(255,255,255,0.4);">In progress</span>
@@ -1791,7 +1795,7 @@
                           <div style="font-size:0.65rem;font-weight:600;color:rgba(255,255,255,0.7);">Executive Sponsor Outreach</div>
                           <div style="font-size:0.58rem;color:rgba(255,255,255,0.4);flex-shrink:0;">$85,000 ARR</div>
                         </div>
-                        <div style="font-size:0.57rem;color:rgba(255,255,255,0.4);margin-bottom:5px;">Cyberdyne Systems · 3 tasks</div>
+                        <div style="font-size:0.57rem;color:rgba(255,255,255,0.4);margin-bottom:5px;">Nexus Financial · 3 tasks</div>
                         <div style="display:flex;align-items:center;gap:4px;">
                           <div style="width:5px;height:5px;border-radius:50%;background:#f59e0b;flex-shrink:0;"></div>
                           <span style="font-size:0.54rem;color:rgba(255,255,255,0.4);">In progress</span>
@@ -1809,7 +1813,7 @@
                           <div style="font-size:0.65rem;font-weight:600;color:rgba(255,255,255,0.7);">Renewal Risk Mitigation</div>
                           <div style="font-size:0.58rem;color:rgba(255,255,255,0.4);flex-shrink:0;">$70,000 ARR</div>
                         </div>
-                        <div style="font-size:0.57rem;color:rgba(255,255,255,0.4);margin-bottom:5px;">Umbrella Corporation · 4 tasks</div>
+                        <div style="font-size:0.57rem;color:rgba(255,255,255,0.4);margin-bottom:5px;">Ironwood Health · 4 tasks</div>
                         <div style="display:flex;align-items:center;gap:4px;">
                           <div style="width:5px;height:5px;border-radius:50%;background:#f59e0b;flex-shrink:0;"></div>
                           <span style="font-size:0.54rem;color:rgba(255,255,255,0.4);">In progress</span>
@@ -1859,28 +1863,28 @@
 
         <!-- Tool columns -->
         <div style="display:flex;gap:8px;margin-bottom:0;">
-          <div style="flex:1;border-top:3px solid #e8782a;background:#E8E6E1;border-radius:12px;padding:10px 8px;">
-            <div style="font-size:0.72rem;font-weight:700;color:var(--text);margin-bottom:4px;">HubSpot</div>
+          <div style="flex:1;background:#E8E6E1;border:1px solid rgba(0,0,0,0.08);border-radius:8px;padding:10px 8px;">
+            <div style="font-size:0.72rem;font-weight:700;color:#e8782a;margin-bottom:4px;">HubSpot</div>
             <div style="font-size:0.68rem;color:#4a5568;">CRM / Pipeline</div>
           </div>
-          <div style="flex:1;border-top:3px solid #1f3c5e;background:#E8E6E1;border-radius:12px;padding:10px 8px;">
-            <div style="font-size:0.72rem;font-weight:700;color:var(--text);margin-bottom:4px;">Zendesk</div>
+          <div style="flex:1;background:#E8E6E1;border:1px solid rgba(0,0,0,0.08);border-radius:8px;padding:10px 8px;">
+            <div style="font-size:0.72rem;font-weight:700;color:#1f3c5e;margin-bottom:4px;">Zendesk</div>
             <div style="font-size:0.68rem;color:#4a5568;">Support Tickets</div>
           </div>
-          <div style="flex:1;border-top:3px solid #2c8f7e;background:#E8E6E1;border-radius:12px;padding:10px 8px;">
-            <div style="font-size:0.72rem;font-weight:700;color:var(--text);margin-bottom:4px;">Slack</div>
+          <div style="flex:1;background:#E8E6E1;border:1px solid rgba(0,0,0,0.08);border-radius:8px;padding:10px 8px;">
+            <div style="font-size:0.72rem;font-weight:700;color:#2c8f7e;margin-bottom:4px;">Slack</div>
             <div style="font-size:0.68rem;color:#4a5568;">Communications</div>
           </div>
-          <div style="flex:1;border-top:3px solid #4a9fd4;background:#E8E6E1;border-radius:12px;padding:10px 8px;">
-            <div style="font-size:0.72rem;font-weight:700;color:var(--text);margin-bottom:4px;">Salesforce</div>
+          <div style="flex:1;background:#E8E6E1;border:1px solid rgba(0,0,0,0.08);border-radius:8px;padding:10px 8px;">
+            <div style="font-size:0.72rem;font-weight:700;color:#4a9fd4;margin-bottom:4px;">Salesforce</div>
             <div style="font-size:0.68rem;color:#4a5568;">Account Data</div>
           </div>
-          <div style="flex:1;border-top:3px solid #8b5cf6;background:#E8E6E1;border-radius:12px;padding:10px 8px;">
-            <div style="font-size:0.72rem;font-weight:700;color:var(--text);margin-bottom:4px;">Gong</div>
+          <div style="flex:1;background:#E8E6E1;border:1px solid rgba(0,0,0,0.08);border-radius:8px;padding:10px 8px;">
+            <div style="font-size:0.72rem;font-weight:700;color:#8b5cf6;margin-bottom:4px;">Gong</div>
             <div style="font-size:0.68rem;color:#4a5568;">Call Transcripts</div>
           </div>
-          <div style="flex:1;border-top:3px solid #0052CC;background:#E8E6E1;border-radius:12px;padding:10px 8px;">
-            <div style="font-size:0.72rem;font-weight:700;color:var(--text);margin-bottom:4px;">Jira</div>
+          <div style="flex:1;background:#E8E6E1;border:1px solid rgba(0,0,0,0.08);border-radius:8px;padding:10px 8px;">
+            <div style="font-size:0.72rem;font-weight:700;color:#0052CC;margin-bottom:4px;">Jira</div>
             <div style="font-size:0.68rem;color:#4a5568;">Product & Engineering</div>
           </div>
         </div>
@@ -1982,7 +1986,7 @@
         </div>
 
         <!-- With Coraleye card -->
-        <div style="background:#011330;border:1px solid rgba(232,120,42,0.2);border-left:4px solid #e8782a;border-radius:14px;padding:36px 32px;box-shadow:0 8px 40px rgba(0,0,0,0.3);">
+        <div style="background:#011330;border:1px solid rgba(232,120,42,0.35);border-radius:14px;padding:36px 32px;box-shadow:0 8px 40px rgba(0,0,0,0.25);">
           <div style="font-size:0.65rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#e8782a;margin-bottom:12px;">With Coraleye</div>
           <h3 style="color:#ffffff;font-size:1.2rem;margin-bottom:6px;">Proactive and Complete</h3>
           <p style="color:rgba(255,255,255,0.5);font-size:0.82rem;margin-bottom:24px;">Scalable, intelligent, automatic</p>
@@ -2009,24 +2013,24 @@
       </div>
       <div class="steps-grid">
         <div class="step-card reveal" id="step-card-0">
-          <div class="step-num">
-            01
+          <div class="step-num" aria-label="Step 1">
+            1
             <div id="orbit-0" class="step-orbit" style="display:none;"><div class="orbit-ball"></div></div>
           </div>
           <h3>Unify</h3>
           <p>Bring conversations, support tickets, calls, and product activity into one customer timeline.</p>
         </div>
         <div class="step-card reveal reveal-delay-1" id="step-card-1">
-          <div class="step-num">
-            02
+          <div class="step-num" aria-label="Step 2">
+            2
             <div id="orbit-1" class="step-orbit" style="display:none;"><div class="orbit-ball"></div></div>
           </div>
           <h3>Analyze</h3>
           <p>Detect churn risk, expansion signals, sentiment shifts, and escalation patterns automatically.</p>
         </div>
         <div class="step-card reveal reveal-delay-2" id="step-card-2">
-          <div class="step-num">
-            03
+          <div class="step-num" aria-label="Step 3">
+            3
             <div id="orbit-2" class="step-orbit" style="display:none;"><div class="orbit-ball"></div></div>
           </div>
           <h3>Act</h3>
@@ -2034,8 +2038,8 @@
         </div>
       </div>
       <div id="how-screenshot-wrap" style="position:relative;">
-        <img id="how-screenshot" src="unify-cory-module.png" alt="Product screenshot" title="Click to pause" style="cursor:pointer;" />
-        <div id="how-step-label" style="position:absolute;top:16px;left:16px;background:#e8782a;color:#ffffff;font-size:13px;font-weight:700;font-variant:small-caps;letter-spacing:0.08em;padding:6px 14px;border-radius:20px;pointer-events:none;z-index:10;">01: Unify</div>
+        <img id="how-screenshot" src="unify-cory-module.png" alt="Coraleye Unify module showing a unified customer timeline across Zendesk, Gong, Slack, and HubSpot" title="Click to pause" style="cursor:pointer;" />
+        <div id="how-step-label" style="position:absolute;top:16px;left:16px;background:#e8782a;color:#ffffff;font-size:13px;font-weight:700;font-variant:small-caps;letter-spacing:0.08em;padding:6px 14px;border-radius:20px;pointer-events:none;z-index:10;">Unify</div>
         <div id="how-pause-overlay" style="display:none;position:absolute;inset:0;align-items:center;justify-content:center;pointer-events:none;">
           <div style="width:56px;height:56px;border-radius:50%;background:rgba(0,0,0,0.45);display:flex;align-items:center;justify-content:center;">
             <span style="font-size:1.6rem;line-height:1;color:#ffffff;opacity:0.9;">⏸</span>
@@ -2053,7 +2057,7 @@
 
         <!-- Sandra Clark dispatch card -->
         <div class="cory-action-desktop reveal">
-          <div style="background:#011330;border-radius:16px;padding:32px;border-left:4px solid #e8782a;box-shadow:0 8px 40px rgba(0,0,0,0.18);">
+          <div style="background:#011330;border-radius:16px;padding:32px;border:1px solid rgba(232,120,42,0.25);box-shadow:0 8px 32px rgba(0,0,0,0.18);">
 
             <!-- Card header -->
             <div style="font-size:0.65rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#e8782a;margin-bottom:12px;">Cory in Action</div>
@@ -2091,7 +2095,7 @@
                 <div style="flex-shrink:0;font-size:0.68rem;font-weight:700;color:rgba(232,120,42,0.6);width:18px;padding-top:2px;">03</div>
                 <div>
                   <div style="font-size:0.68rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:4px;">Play Drafted</div>
-                  <div style="font-size:0.85rem;color:rgba(255,255,255,0.6);line-height:1.6;">Recovery play queued. Apology call plus renewal prep sequence. Save probability: 74%.</div>
+                  <div style="font-size:0.85rem;color:rgba(255,255,255,0.6);line-height:1.6;">Recovery play queued. Apology call plus renewal prep sequence ready for CSM review.</div>
                 </div>
               </div>
             </div>
@@ -2117,7 +2121,7 @@
 
           <!-- Mobile-only: Cory in Action card repositioned between text and traits -->
           <div class="cory-action-mobile" style="margin:28px 0;">
-            <div style="background:#011330;border-radius:16px;padding:32px;border-left:4px solid #e8782a;box-shadow:0 8px 40px rgba(0,0,0,0.18);">
+            <div style="background:#011330;border-radius:16px;padding:32px;border:1px solid rgba(232,120,42,0.25);box-shadow:0 8px 32px rgba(0,0,0,0.18);">
               <div style="font-size:0.65rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#e8782a;margin-bottom:12px;">Cory in Action</div>
               <div style="font-size:1rem;font-weight:700;color:#ffffff;margin-bottom:10px;">Sandra Clark, Meridian Health</div>
               <div style="display:flex;gap:8px;margin-bottom:24px;">
@@ -2147,7 +2151,7 @@
                   <div style="flex-shrink:0;font-size:0.68rem;font-weight:700;color:rgba(232,120,42,0.6);width:18px;padding-top:2px;">03</div>
                   <div>
                     <div style="font-size:0.68rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:4px;">Play Drafted</div>
-                    <div style="font-size:0.85rem;color:rgba(255,255,255,0.6);line-height:1.6;">Recovery play queued. Apology call plus renewal prep sequence. Save probability: 74%.</div>
+                    <div style="font-size:0.85rem;color:rgba(255,255,255,0.6);line-height:1.6;">Recovery play queued. Apology call plus renewal prep sequence ready for CSM review.</div>
                   </div>
                 </div>
               </div>
@@ -2192,15 +2196,37 @@
         <div>
           <div class="label" style="color:#e07230;">Contact Us</div>
           <h2 style="color:#ffffff;margin-bottom:16px;text-align:left;"><span class="contact-heading-desktop">Ready to see Coraleye in action?</span><span class="contact-heading-mobile">See Coraleye in action</span></h2>
-          <p class="contact-desc" style="font-size:1rem;color:rgba(255,255,255,0.55);line-height:1.7;">Book a call to see how Coraleye can transform your customer success operations.</p>
+          <p class="contact-desc" style="font-size:1rem;color:rgba(255,255,255,0.55);line-height:1.7;margin-bottom:28px;">30-minute call. No pitch decks. See exactly how Coraleye reads your accounts and surfaces what needs attention.</p>
+
+          <!-- Credibility proof block -->
+          <div style="display:flex;align-items:flex-start;gap:14px;padding:20px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:12px;">
+            <img src="duane-headshot.png" alt="Duane Smith, VP of Customer Success" style="width:44px;height:44px;border-radius:50%;object-fit:cover;flex-shrink:0;border:1px solid rgba(255,255,255,0.12);" />
+            <div>
+              <p style="font-size:0.85rem;color:rgba(255,255,255,0.7);line-height:1.65;margin-bottom:8px;font-style:italic;">"I would like my CSM team to spend zero time on follow-ups and actually taking action."</p>
+              <div style="font-size:0.75rem;color:rgba(255,255,255,0.4);">Director of CS · Series C SaaS company</div>
+            </div>
+          </div>
         </div>
-        <form action="mailto:chris@coraleye.ai" method="POST" enctype="text/plain" style="display:flex;flex-direction:column;gap:20px;">
-          <input type="text" name="name" placeholder="Name" required style="background:transparent;border:none;border-bottom:1px solid rgba(255,255,255,0.3);padding:12px 0;color:#ffffff;font-size:0.95rem;outline:none;font-family:inherit;" />
-          <input type="text" name="company" placeholder="Company" style="background:transparent;border:none;border-bottom:1px solid rgba(255,255,255,0.3);padding:12px 0;color:#ffffff;font-size:0.95rem;outline:none;font-family:inherit;" />
-          <input type="email" name="email" placeholder="Email" required style="background:transparent;border:none;border-bottom:1px solid rgba(255,255,255,0.3);padding:12px 0;color:#ffffff;font-size:0.95rem;outline:none;font-family:inherit;" />
-          <input type="text" name="role" placeholder="Your role" style="background:transparent;border:none;border-bottom:1px solid rgba(255,255,255,0.3);padding:12px 0;color:#ffffff;font-size:0.95rem;outline:none;font-family:inherit;" />
-          <textarea name="message" class="contact-message" placeholder="Tell us more about your team and goals..." rows="3" style="background:transparent;border:none;border-bottom:1px solid rgba(255,255,255,0.3);padding:12px 0;color:#ffffff;font-size:0.95rem;outline:none;font-family:inherit;resize:none;"></textarea>
-          <button type="submit" class="btn btn-primary btn-lg" style="margin-top:8px;justify-content:center;">Submit</button>
+        <form id="contact-form" action="mailto:chris@coraleye.ai" method="POST" enctype="text/plain" style="display:flex;flex-direction:column;gap:20px;" novalidate>
+          <div>
+            <label for="contact-name" style="display:block;font-size:0.72rem;font-weight:500;letter-spacing:0.06em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:6px;">Name</label>
+            <input id="contact-name" type="text" name="name" placeholder="Your name" required style="background:transparent;border:none;border-bottom:1px solid rgba(255,255,255,0.3);padding:10px 0;color:#ffffff;font-size:0.95rem;outline:none;font-family:inherit;width:100%;" />
+          </div>
+          <div>
+            <label for="contact-company" style="display:block;font-size:0.72rem;font-weight:500;letter-spacing:0.06em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:6px;">Company</label>
+            <input id="contact-company" type="text" name="company" placeholder="Company name" style="background:transparent;border:none;border-bottom:1px solid rgba(255,255,255,0.3);padding:10px 0;color:#ffffff;font-size:0.95rem;outline:none;font-family:inherit;width:100%;" />
+          </div>
+          <div>
+            <label for="contact-email" style="display:block;font-size:0.72rem;font-weight:500;letter-spacing:0.06em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:6px;">Email</label>
+            <input id="contact-email" type="email" name="email" placeholder="you@company.com" required style="background:transparent;border:none;border-bottom:1px solid rgba(255,255,255,0.3);padding:10px 0;color:#ffffff;font-size:0.95rem;outline:none;font-family:inherit;width:100%;" />
+          </div>
+          <div>
+            <label for="contact-role" style="display:block;font-size:0.72rem;font-weight:500;letter-spacing:0.06em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:6px;">Role</label>
+            <input id="contact-role" type="text" name="role" placeholder="Your title" style="background:transparent;border:none;border-bottom:1px solid rgba(255,255,255,0.3);padding:10px 0;color:#ffffff;font-size:0.95rem;outline:none;font-family:inherit;width:100%;" />
+          </div>
+          <textarea name="message" class="contact-message" placeholder="Tell us more about your team and goals..." rows="3" aria-label="Tell us more about your team and goals" style="background:transparent;border:none;border-bottom:1px solid rgba(255,255,255,0.3);padding:10px 0;color:#ffffff;font-size:0.95rem;outline:none;font-family:inherit;resize:none;width:100%;"></textarea>
+          <div id="contact-success" style="display:none;padding:14px 18px;background:rgba(16,185,129,0.12);border:1px solid rgba(16,185,129,0.3);border-radius:10px;color:#6ee7b7;font-size:0.9rem;">Thanks — we'll reach out within one business day to schedule your demo.</div>
+          <button type="submit" class="btn btn-primary btn-lg" style="margin-top:8px;justify-content:center;">Book a Demo</button>
         </form>
       </div>
     </div>
@@ -2216,7 +2242,7 @@
           </div>
           <div>
             <div class="footer-brand">Coraleye</div>
-            <div class="footer-tagline">The agentic customer success platform</div>
+            <div class="footer-tagline">Customer success, finally proactive.</div>
           </div>
         </div>
         <div class="footer-links">
@@ -2293,7 +2319,9 @@
         });
       }, 500);
     }
-    setInterval(rotateQuote, 4000);
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      setInterval(rotateQuote, 4000);
+    }
 
 
     // ── Meet Cory: sequential step reveal ─────────────────────────────────
@@ -2327,7 +2355,14 @@
         setTimeout(showNextStep, 2000);
       }
 
-      setTimeout(showNextStep, 3000);
+      if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        setTimeout(showNextStep, 3000);
+      } else {
+        // Show all steps immediately for reduced motion users
+        for (var i = 0; i < steps.length; i++) {
+          steps[i].style.opacity = '1';
+        }
+      }
     })();
 
     // ── How It Works: synchronized orbit dot + screenshot ─────────────────
@@ -2335,10 +2370,10 @@
     let isPaused = false;
 
     const steps = [
-      { cardIndex: 0, img: 'unify-cory-module.png',            label: '01: Unify'   },
-      { cardIndex: 1, img: 'portfolio-analyze-module.png',     label: '02: Analyze' },
-      { cardIndex: 2, img: 'act-workbench-module.png',         label: '03: Act'     },
-      { cardIndex: 2, img: 'act-play-module.png',              label: '03: Act'     },
+      { cardIndex: 0, img: 'unify-cory-module.png',            label: 'Unify'   },
+      { cardIndex: 1, img: 'portfolio-analyze-module.png',     label: 'Analyze' },
+      { cardIndex: 2, img: 'act-workbench-module.png',         label: 'Act'     },
+      { cardIndex: 2, img: 'act-play-module.png',              label: 'Act'     },
     ];
 
     const howStepCards = [
@@ -2429,6 +2464,31 @@
     // Fire immediately on load
     goToStep(0);
     startTimer();
+
+    // ── Contact form: intercept and show success state ─────────────────
+    const contactForm = document.getElementById('contact-form');
+    const contactSuccess = document.getElementById('contact-success');
+    if (contactForm) {
+      contactForm.addEventListener('submit', function(e) {
+        const name = document.getElementById('contact-name').value.trim();
+        const email = document.getElementById('contact-email').value.trim();
+        if (!name || !email) {
+          e.preventDefault();
+          if (!name) document.getElementById('contact-name').style.borderBottomColor = '#f87171';
+          if (!email) document.getElementById('contact-email').style.borderBottomColor = '#f87171';
+          return;
+        }
+        e.preventDefault();
+        contactForm.style.display = 'none';
+        if (contactSuccess) {
+          contactSuccess.style.display = 'block';
+        }
+        // Silently open mailto as fallback
+        const subject = encodeURIComponent('Coraleye Demo Request — ' + name);
+        const body = encodeURIComponent('Name: ' + name + '\nEmail: ' + email);
+        window.location.href = 'mailto:chris@coraleye.ai?subject=' + subject + '&body=' + body;
+      });
+    }
   </script>
 
   </div><!-- /page-wrapper -->
