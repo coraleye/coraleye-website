@@ -1176,16 +1176,31 @@
 
     /* ─── Footer ────────────────────────────────────────────────────── */
     footer {
-      background: #011330;
+      position: relative;
       color: rgba(255,255,255,0.7);
       padding: 48px 0;
       margin: 0;
       border-radius: 0;
       overflow: hidden;
-      border-top: 1px solid rgba(255,255,255,0.08);
+      border-top: none;
+      background-color: #011330;
+      background-image: url("Coraleye Deep Ocean Image.jpeg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    footer::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to right, rgba(11, 22, 40, 0.88) 0%, rgba(11, 22, 40, 0.55) 50%, rgba(11, 22, 40, 0.75) 100%);
+      pointer-events: none;
     }
 
     .footer-inner {
+      position: relative;
+      z-index: 1;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -1252,9 +1267,142 @@
       color: #ffffff;
     }
 
+    /* ─── Demo request panel ─────────────────────────────────────────── */
+    .demo-panel-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.45);
+      z-index: 200;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.25s ease, visibility 0.25s ease;
+    }
+
+    .demo-panel-backdrop.open {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .demo-panel {
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: min(420px, 100vw);
+      height: 100vh;
+      height: 100svh;
+      background: #0b1628;
+      border-left: 1px solid rgba(255, 255, 255, 0.1);
+      z-index: 201;
+      transform: translateX(100%);
+      transition: transform 0.32s cubic-bezier(0.4, 0, 0.2, 1);
+      padding: 32px 28px;
+      overflow-y: auto;
+      box-shadow: -12px 0 40px rgba(0, 0, 0, 0.35);
+    }
+
+    .demo-panel.open {
+      transform: translateX(0);
+    }
+
+    .demo-panel-close {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      width: 36px;
+      height: 36px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 8px;
+      background: transparent;
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 1.25rem;
+      line-height: 1;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .demo-panel-close:hover {
+      color: #ffffff;
+      border-color: rgba(255, 255, 255, 0.4);
+    }
+
+    .demo-panel-title {
+      color: #ffffff;
+      font-size: 1.35rem;
+      font-weight: 600;
+      line-height: 1.35;
+      margin: 8px 40px 28px 0;
+      letter-spacing: -0.02em;
+    }
+
+    .demo-form {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .demo-field label {
+      display: block;
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.4);
+      margin-bottom: 6px;
+    }
+
+    .demo-field input {
+      width: 100%;
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+      padding: 10px 0;
+      color: #ffffff;
+      font-size: 0.95rem;
+      outline: none;
+      font-family: inherit;
+    }
+
+    .demo-field input::placeholder {
+      color: rgba(255, 255, 255, 0.4);
+    }
+
+    .demo-field input:focus {
+      border-bottom-color: #e07230;
+    }
+
+    .demo-form-success,
+    .demo-form-error {
+      display: none;
+      padding: 14px 18px;
+      border-radius: 10px;
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+
+    .demo-form-success {
+      background: rgba(16, 185, 129, 0.12);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      color: #6ee7b7;
+    }
+
+    .demo-form-error {
+      background: rgba(239, 68, 68, 0.12);
+      border: 1px solid rgba(239, 68, 68, 0.3);
+      color: #fca5a5;
+    }
+
+    .demo-form-error a {
+      color: #fca5a5;
+    }
+
+    button.btn-hero-outline {
+      font-family: inherit;
+    }
+
     /* ─── Remove outer section borders/margins (desktop) ───────────── */
     #before-after { margin: 0 !important; border-radius: 0 !important; }
-    #contact { margin: 0 !important; border-radius: 0 !important; }
 
     /* ─── Scroll Reveal ─────────────────────────────────────────────── */
     .reveal {
@@ -1289,14 +1437,13 @@
       #before-after .container > div:last-child { grid-template-columns: 1fr; }
       #before-after [style*="width:80%"] { width: 100% !important; }
       #approach-cards { grid-template-columns: 1fr !important; }
-      #contact .container > div { grid-template-columns: 1fr; gap: 40px; }
-      .hero-inner { grid-template-columns: 1fr; gap: 24px; }
       #hero { overflow-x: hidden; }
       .hero-content { padding: 0 16px; padding-right: 16px; }
       #hero h1 { font-size: clamp(2rem, 8vw, 4rem); }
       .hero-sub { font-size: 1rem; max-width: 100%; overflow-wrap: break-word; word-break: break-word; }
       .hero-ctas { flex-direction: column; align-items: stretch; }
-      .hero-ctas a { width: 100% !important; text-align: center; display: flex !important; justify-content: center; }
+      .hero-ctas a,
+      .hero-ctas button { width: 100% !important; text-align: center; display: flex !important; justify-content: center; }
       .hero-visual { display: none !important; }
       .mobile-dashboard { display: block !important; }
       .hero-pillars { display: none !important; }
@@ -1407,15 +1554,6 @@
       /* How It Works step label badge — smaller on mobile */
       #how-step-label { font-size: 10px !important; padding: 4px 10px !important; border-radius: 14px !important; }
 
-      /* Contact form — full width inputs, no overflow */
-      #contact form { width: 100%; min-width: 0; }
-      #contact input, #contact textarea {
-        width: 100% !important;
-        box-sizing: border-box;
-        min-width: 0;
-      }
-      #contact .container { padding: 0 16px; }
-
       /* How it works slider — fallback bg so broken images don't look empty */
       #how-it-works #how-slider > div {
         background: #011330;
@@ -1497,8 +1635,7 @@
       nav { margin: 0 !important; border-radius: 0 !important; }
       #hero { margin: 0 !important; border-radius: 0 !important; }
       #before-after { margin: 0 !important; border-radius: 0 !important; }
-      #contact { margin: 0 !important; border-radius: 0 !important; }
-      footer { margin: 0 !important; border-radius: 0 !important; border-top: 1px solid rgba(255,255,255,0.08); }
+      footer { margin: 0 !important; border-radius: 0 !important; }
 
       /* Hide signal line on mobile — desktop-only visual */
       .hero-signal-line { display: none; }
@@ -1517,16 +1654,6 @@
         box-sizing: border-box;
       }
       .hero-cory-img { transform: none; }
-
-      /* Contact form — full-width inputs, padded container, full-width submit */
-      #contact form { padding: 0 20px; }
-      #contact form button[type="submit"] { width: 100%; box-sizing: border-box; }
-
-      /* Contact section — simplified text and form on mobile */
-      .contact-heading-desktop { display: none; }
-      .contact-heading-mobile { display: inline; }
-      .contact-desc { display: none; }
-      .contact-message { display: none !important; }
     }
 
     @media (max-width: 600px) {
@@ -1550,19 +1677,6 @@
     /* Cory in Action: desktop shows original left-column card, mobile copy hidden */
     .cory-action-mobile { display: none; }
     .cory-action-desktop { display: block; }
-
-    /* Contact heading: desktop/mobile variants */
-    .contact-heading-mobile { display: none; }
-    .contact-heading-desktop { display: inline; }
-
-    #contact input::placeholder,
-    #contact textarea::placeholder {
-      color: rgba(255,255,255,0.4);
-    }
-    #contact input:focus,
-    #contact textarea:focus {
-      border-bottom-color: #e07230;
-    }
 
     .nav-dropdown:hover .dropdown-menu {
       display: block !important;
@@ -1607,7 +1721,7 @@
             </div>
             Coraleye
           </a>
-          <a href="#contact" class="btn-hero-outline">Request a Demo</a>
+          <button type="button" class="btn-hero-outline demo-trigger">Request a Demo</button>
         </div>
       </div>
     </div>
@@ -1622,7 +1736,7 @@
           <p class="hero-sub">Coraleye evaluates customer interactions and recommends proactive actions before accounts churn.</p>
 
           <div class="hero-ctas">
-            <a href="#contact" class="btn btn-primary btn-lg">Request a Demo →</a>
+            <button type="button" class="btn btn-primary btn-lg demo-trigger">Request a Demo →</button>
           </div>
 
           <!-- Feature pillars -->
@@ -2029,39 +2143,6 @@
   </section>
 
 
-  <!-- ─── Contact ─────────────────────────────────────────────────────── -->
-  <section id="contact" class="section" style="background:#011330;margin:40px 40px 0 40px;border-radius:20px 20px 0 0;overflow:hidden;">
-    <div class="container">
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;">
-        <div>
-          <div class="label" style="color:#e07230;">Contact Us</div>
-          <h2 style="color:#ffffff;margin-bottom:0;text-align:left;">See Coraleye in Action</h2>
-        </div>
-        <form id="contact-form" style="display:flex;flex-direction:column;gap:20px;" novalidate>
-          <div>
-            <label for="contact-name" style="display:block;font-size:0.72rem;font-weight:500;letter-spacing:0.06em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:6px;">Name</label>
-            <input id="contact-name" type="text" name="name" placeholder="Your name" required style="background:transparent;border:none;border-bottom:1px solid rgba(255,255,255,0.3);padding:10px 0;color:#ffffff;font-size:0.95rem;outline:none;font-family:inherit;width:100%;" />
-          </div>
-          <div>
-            <label for="contact-company" style="display:block;font-size:0.72rem;font-weight:500;letter-spacing:0.06em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:6px;">Company</label>
-            <input id="contact-company" type="text" name="company" placeholder="Company name" style="background:transparent;border:none;border-bottom:1px solid rgba(255,255,255,0.3);padding:10px 0;color:#ffffff;font-size:0.95rem;outline:none;font-family:inherit;width:100%;" />
-          </div>
-          <div>
-            <label for="contact-email" style="display:block;font-size:0.72rem;font-weight:500;letter-spacing:0.06em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:6px;">Email</label>
-            <input id="contact-email" type="email" name="email" placeholder="you@company.com" required style="background:transparent;border:none;border-bottom:1px solid rgba(255,255,255,0.3);padding:10px 0;color:#ffffff;font-size:0.95rem;outline:none;font-family:inherit;width:100%;" />
-          </div>
-          <div>
-            <label for="contact-role" style="display:block;font-size:0.72rem;font-weight:500;letter-spacing:0.06em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:6px;">Role</label>
-            <input id="contact-role" type="text" name="role" placeholder="Your title" style="background:transparent;border:none;border-bottom:1px solid rgba(255,255,255,0.3);padding:10px 0;color:#ffffff;font-size:0.95rem;outline:none;font-family:inherit;width:100%;" />
-          </div>
-          <div id="contact-success" style="display:none;padding:14px 18px;background:rgba(16,185,129,0.12);border:1px solid rgba(16,185,129,0.3);border-radius:10px;color:#6ee7b7;font-size:0.9rem;">Thanks — we'll reach out within one business day to schedule your demo.</div>
-          <div id="contact-error" style="display:none;padding:14px 18px;background:rgba(239,68,68,0.12);border:1px solid rgba(239,68,68,0.3);border-radius:10px;color:#fca5a5;font-size:0.9rem;">Something went wrong. Please email <a href="mailto:chris@coraleye.ai" style="color:#fca5a5;">chris@coraleye.ai</a> directly.</div>
-          <button type="submit" class="btn btn-primary btn-lg" style="margin-top:8px;justify-content:center;">Request a Demo</button>
-        </form>
-      </div>
-    </div>
-  </section>
-
   <!-- ─── Footer ─────────────────────────────────────────────────────── -->
   <footer>
     <div class="container">
@@ -2087,6 +2168,36 @@
       </div>
     </div>
   </footer>
+
+  </div><!-- /page-wrapper -->
+
+  <!-- ─── Demo request panel ─────────────────────────────────────────── -->
+  <div id="demo-panel-backdrop" class="demo-panel-backdrop" aria-hidden="true"></div>
+  <aside id="demo-panel" class="demo-panel" aria-labelledby="demo-panel-title" aria-hidden="true">
+    <button type="button" class="demo-panel-close" aria-label="Close demo request form">&times;</button>
+    <h2 id="demo-panel-title" class="demo-panel-title">Interested in seeing how Coraleye can help you?</h2>
+    <form id="demo-form" class="demo-form" novalidate>
+      <div class="demo-field">
+        <label for="demo-name">Name</label>
+        <input id="demo-name" type="text" name="name" placeholder="Your name" required autocomplete="name" />
+      </div>
+      <div class="demo-field">
+        <label for="demo-company">Company</label>
+        <input id="demo-company" type="text" name="company" placeholder="Company name" autocomplete="organization" />
+      </div>
+      <div class="demo-field">
+        <label for="demo-email">Email</label>
+        <input id="demo-email" type="email" name="email" placeholder="you@company.com" required autocomplete="email" />
+      </div>
+      <div class="demo-field">
+        <label for="demo-phone">Phone number</label>
+        <input id="demo-phone" type="tel" name="phone" placeholder="(555) 555-5555" autocomplete="tel" />
+      </div>
+      <div id="demo-success" class="demo-form-success">Thanks — we'll reach out within one business day to schedule your demo.</div>
+      <div id="demo-error" class="demo-form-error">Something went wrong. Please email <a href="mailto:chris@coraleye.ai">chris@coraleye.ai</a> directly.</div>
+      <button type="submit" class="btn btn-primary btn-lg" style="margin-top:8px;justify-content:center;width:100%;">Request a Demo</button>
+    </form>
+  </aside>
 
   <!-- ─── JS ─────────────────────────────────────────────────────────── -->
   <script>
@@ -2285,24 +2396,66 @@
     goToStep(0);
     startTimer();
 
-    // ── Contact form: send to chris@coraleye.ai via FormSubmit ─────────
-    const contactForm = document.getElementById('contact-form');
-    const contactSuccess = document.getElementById('contact-success');
-    const contactError = document.getElementById('contact-error');
-    if (contactForm) {
-      contactForm.addEventListener('submit', async function(e) {
+    // ── Demo request panel ───────────────────────────────────────────
+    const demoPanel = document.getElementById('demo-panel');
+    const demoBackdrop = document.getElementById('demo-panel-backdrop');
+    const demoForm = document.getElementById('demo-form');
+    const demoSuccess = document.getElementById('demo-success');
+    const demoError = document.getElementById('demo-error');
+    const demoClose = document.querySelector('.demo-panel-close');
+
+    function openDemoPanel() {
+      if (!demoPanel || !demoBackdrop) return;
+      demoPanel.classList.add('open');
+      demoBackdrop.classList.add('open');
+      demoPanel.setAttribute('aria-hidden', 'false');
+      demoBackdrop.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+      const firstInput = demoForm && demoForm.querySelector('input');
+      if (firstInput) setTimeout(function() { firstInput.focus(); }, 320);
+    }
+
+    function closeDemoPanel() {
+      if (!demoPanel || !demoBackdrop) return;
+      demoPanel.classList.remove('open');
+      demoBackdrop.classList.remove('open');
+      demoPanel.setAttribute('aria-hidden', 'true');
+      demoBackdrop.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+    }
+
+    document.querySelectorAll('.demo-trigger').forEach(function(btn) {
+      btn.addEventListener('click', function(e) {
         e.preventDefault();
-        const nameEl = document.getElementById('contact-name');
-        const emailEl = document.getElementById('contact-email');
+        openDemoPanel();
+      });
+    });
+
+    if (demoClose) demoClose.addEventListener('click', closeDemoPanel);
+    if (demoBackdrop) demoBackdrop.addEventListener('click', closeDemoPanel);
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') closeDemoPanel();
+    });
+
+    if (window.location.hash === '#request-demo') {
+      openDemoPanel();
+      history.replaceState(null, '', window.location.pathname + window.location.search);
+    }
+
+    if (demoForm) {
+      demoForm.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        const nameEl = document.getElementById('demo-name');
+        const emailEl = document.getElementById('demo-email');
         const name = nameEl.value.trim();
-        const company = document.getElementById('contact-company').value.trim();
+        const company = document.getElementById('demo-company').value.trim();
         const email = emailEl.value.trim();
-        const role = document.getElementById('contact-role').value.trim();
-        const submitBtn = contactForm.querySelector('button[type="submit"]');
+        const phone = document.getElementById('demo-phone').value.trim();
+        const submitBtn = demoForm.querySelector('button[type="submit"]');
 
         nameEl.style.borderBottomColor = '';
         emailEl.style.borderBottomColor = '';
-        if (contactError) contactError.style.display = 'none';
+        if (demoError) demoError.style.display = 'none';
 
         if (!name || !email) {
           if (!name) nameEl.style.borderBottomColor = '#f87171';
@@ -2321,7 +2474,7 @@
               name,
               company,
               email,
-              role,
+              phone,
               _subject: 'Coraleye Demo Request — ' + name,
               _template: 'table',
               _captcha: 'false'
@@ -2330,18 +2483,16 @@
 
           if (!response.ok) throw new Error('Submit failed');
 
-          contactForm.style.display = 'none';
-          if (contactSuccess) contactSuccess.style.display = 'block';
+          demoForm.style.display = 'none';
+          if (demoSuccess) demoSuccess.style.display = 'block';
         } catch (err) {
           submitBtn.disabled = false;
           submitBtn.textContent = 'Request a Demo';
-          if (contactError) contactError.style.display = 'block';
+          if (demoError) demoError.style.display = 'block';
         }
       });
     }
   </script>
-
-  </div><!-- /page-wrapper -->
 
 </body>
 </html>
