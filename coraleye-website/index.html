@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Coraleye | Customer Success, Finally Proactive</title>
-  <meta name="description" content="Coraleye reads your customer data. You act on what matters. Know what your customers need before they do — with your approval on every move." />
+  <meta name="description" content="Coraleye reads your customer data. You act on what matters. Know what your customers need before they do, with your approval on every move." />
   <link rel="icon" type="image/png" href="kory.png" />
   <link rel="apple-touch-icon" href="kory.png" />
   <link rel="canonical" href="https://coraleye.ai/" />
@@ -13,12 +13,12 @@
   <!-- Open Graph / social cards -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://coraleye.ai/" />
-  <meta property="og:title" content="Coraleye — Customer Success, Finally Proactive" />
-  <meta property="og:description" content="Coraleye reads your customer data. You act on what matters. Know what your customers need before they do — with your approval on every move." />
+  <meta property="og:title" content="Coraleye | Customer Success, Finally Proactive" />
+  <meta property="og:description" content="Coraleye reads your customer data. You act on what matters. Know what your customers need before they do, with your approval on every move." />
   <meta property="og:image" content="https://coraleye.ai/act-workbench-module.png" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Coraleye — Customer Success, Finally Proactive" />
-  <meta name="twitter:description" content="Coraleye reads your customer data. You act on what matters. Know what your customers need before they do — with your approval on every move." />
+  <meta name="twitter:title" content="Coraleye | Customer Success, Finally Proactive" />
+  <meta name="twitter:description" content="Coraleye reads your customer data. You act on what matters. Know what your customers need before they do, with your approval on every move." />
   <meta name="twitter:image" content="https://coraleye.ai/act-workbench-module.png" />
   <style>
     /* ─── Reset & Base ─────────────────────────────────────────────── */
@@ -42,6 +42,7 @@
       --navy:        #011330;
       --connect:     rgba(232, 120, 42, 0.3);
       --success:     #34d399;
+      --success-dim: rgba(52, 211, 153, 0.14);
     }
 
     html { scroll-behavior: smooth; scroll-padding-top: 64px; overflow-x: hidden; }
@@ -339,10 +340,13 @@
 
     /* ─── Hero ──────────────────────────────────────────────────────── */
     #hero {
-      padding: 136px 0 80px;
+      min-height: 92vh;
+      padding: 140px 0 120px;
       margin: 0;
       position: relative;
       overflow: hidden;
+      display: flex;
+      align-items: center;
       background-color: #011330;
       background-image: url("Coraleye Deep Ocean Image.jpeg");
       background-size: cover;
@@ -365,7 +369,7 @@
       z-index: 0;
     }
 
-    .hero-accent { color: var(--orange); }
+    .hero-accent { color: var(--success); }
 
     .hero-pain {
       font-size: 0.9375rem;
@@ -727,18 +731,40 @@
       gap: 28px;
     }
 
-    .trust-proof-line {
+    .trust-built-for {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .trust-built-for-label {
       text-align: center;
       font-size: 0.92rem;
       color: var(--text-muted);
-      max-width: 520px;
-      margin: 0 auto;
+      margin: 0;
       line-height: 1.6;
     }
 
-    .trust-proof-line strong {
-      color: var(--text);
+    .trust-audience-tags {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin: 0;
+      padding: 0;
+    }
+
+    .trust-audience-tags li {
+      padding: 8px 16px;
+      border-radius: 999px;
+      background: var(--success-dim);
+      color: var(--success);
+      font-size: 0.8125rem;
       font-weight: 500;
+      letter-spacing: 0.01em;
+      line-height: 1.4;
     }
 
     .trust-band-badges {
@@ -771,9 +797,27 @@
     /* ─── Our Approach section ──────────────────────────────────────── */
     .approach-section {
       padding: 100px 0;
-      background: linear-gradient(to right, #011330 0%, #011330 25%, rgba(1,19,48,0.9) 40%, rgba(1,19,48,0.75) 55%, rgba(1,19,48,0.55) 70%, rgba(1,19,48,0.35) 85%, rgba(1,19,48,0.2) 100%);
       position: relative;
       overflow: hidden;
+      background-color: #011330;
+      background-image: url("Coraleye Deep Ocean Image.jpeg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    .approach-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(11, 22, 40, 0.88) 0%, rgba(11, 22, 40, 0.72) 100%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .approach-section .container {
+      position: relative;
+      z-index: 1;
     }
 
     .approach-header {
@@ -784,12 +828,6 @@
     .approach-header h2 {
       color: #ffffff;
       margin-bottom: 16px;
-    }
-
-    .approach-sub {
-      font-size: 1rem;
-      color: rgba(255,255,255,0.55);
-      line-height: 1.7;
     }
 
     .label-on-dark {
@@ -810,23 +848,26 @@
 
     .approach-card-before {
       background: #111620;
-      border: 1px solid rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.08);
+      opacity: 0.85;
+      transform: scale(0.98);
     }
 
     .approach-card-before h3 {
       color: rgba(255,255,255,0.55);
-      font-size: 1.2rem;
+      font-size: 22px;
       margin-bottom: 6px;
     }
 
     .approach-card-after {
       background: #011330;
-      border: 1px solid rgba(232,120,42,0.35);
+      border: 1.5px solid #E8502A;
+      box-shadow: 0 0 0 1px rgba(232, 80, 42, 0.15);
     }
 
     .approach-card-after h3 {
       color: #ffffff;
-      font-size: 1.2rem;
+      font-size: 22px;
       margin-bottom: 6px;
     }
 
@@ -1134,15 +1175,8 @@
       font-size: 1.35rem;
       font-weight: 500;
       line-height: 1.35;
-      margin: 8px 40px 10px 0;
+      margin: 8px 40px 28px 0;
       letter-spacing: -0.02em;
-    }
-
-    .demo-panel-note {
-      font-size: 0.85rem;
-      color: rgba(255,255,255,0.5);
-      margin: 0 40px 28px 0;
-      line-height: 1.5;
     }
 
     a:focus-visible,
@@ -1266,7 +1300,7 @@
     }
 
     @media (max-width: 768px) {
-      #hero { overflow-x: hidden; padding: 112px 0 56px; }
+      #hero { overflow-x: hidden; min-height: 85vh; padding: 112px 0 72px; }
       .hero-content { padding: 0 16px; padding-right: 16px; }
       #hero h1 { font-size: clamp(2.5rem, 9vw, 4.5rem); }
       .hero-sub { font-size: 1.05rem; max-width: 100%; overflow-wrap: break-word; word-break: break-word; }
@@ -1282,10 +1316,10 @@
         margin-top: 48px;
       }
 
-      /* All section headlines — scale and center on mobile */
+      /* All section headlines: scale and center on mobile */
       h2 { font-size: clamp(1.6rem, 6vw, 2.4rem) !important; text-align: center; padding: 0 16px; white-space: normal !important; }
 
-      /* Remove gray frame borders on mobile — all sections full-width, no side margins */
+      /* Remove gray frame borders on mobile: all sections full-width, no side margins */
       .page-wrapper { margin: 0 !important; border-radius: 0 !important; }
       nav { margin: 0 !important; border-radius: 0 !important; }
       #hero { margin: 0 !important; border-radius: 0 !important; }
@@ -1304,7 +1338,7 @@
     @media (max-width: 600px) {
       .page-wrapper { margin: 0; border-radius: 0; }
       .section { padding: 60px 16px; }
-      #hero { padding: 48px 0; margin: 0 !important; border-radius: 0 !important; overflow-x: hidden; }
+      #hero { min-height: 78vh; padding: 72px 0 56px; margin: 0 !important; border-radius: 0 !important; overflow-x: hidden; }
       .cta-headline { font-size: clamp(2.5rem, 9vw, 4rem); }
       .footer-inner { flex-direction: column; align-items: flex-start; }
       .container { padding: 0 16px; }
@@ -1454,7 +1488,7 @@
         </div>
         <div class="how-unify-copy">
           <h3 class="how-unify-title">Unify all customer interaction data</h3>
-          <p class="how-unify-text">Coraleye connects to your existing stack via APIs and native integrations — every signal flows to Cory at the center.</p>
+          <p class="how-unify-text">Coraleye connects to your existing stack via APIs and native integrations, with ability to deploy in local environments.</p>
           <p class="how-unify-footnote">
             <svg class="how-unify-footnote-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
               <circle cx="9" cy="9" r="8" stroke="currentColor" stroke-width="1.2"/>
@@ -1475,15 +1509,11 @@
             <ul class="how-step-box-list">
               <li>
                 <svg class="how-step-box-check" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2.5 7.2 5.5 10 11.5 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                Native integrations with CRM, support, and communication tools
+                single customer timelines without manual exports
               </li>
               <li>
                 <svg class="how-step-box-check" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2.5 7.2 5.5 10 11.5 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                One customer timeline — no manual logging
-              </li>
-              <li>
-                <svg class="how-step-box-check" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2.5 7.2 5.5 10 11.5 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                MCP-compatible and API-first
+                MCP compatible, API first...
               </li>
             </ul>
           </div>
@@ -1500,7 +1530,7 @@
           <div class="how-step-box">
             <div class="how-step-box-num">4</div>
             <h3 class="how-step-box-title">Act with Approval</h3>
-            <p class="how-step-box-text">Your team reviews recommended plays and executes in one click — emails, escalations, and follow-ups, all with your sign-off before anything goes out.</p>
+            <p class="how-step-box-text">Your team reviews recommended plays and executes in one click, including emails, escalations, and follow-ups, all with your sign-off before anything goes out.</p>
           </div>
         </div>
         </div>
@@ -1535,7 +1565,15 @@
         <button type="button" class="btn btn-primary btn-lg demo-trigger">Request a Demo</button>
       </div>
       <div class="trust-band reveal">
-        <p class="trust-proof-line">Built for CS teams managing <strong>50–500 seat</strong> portfolios at B2B SaaS companies.</p>
+        <div class="trust-built-for">
+          <p class="trust-built-for-label">Built for:</p>
+          <ul class="trust-audience-tags">
+            <li>customer success</li>
+            <li>account management</li>
+            <li>revenue operations</li>
+            <li>partnerships</li>
+          </ul>
+        </div>
         <ul class="trust-band-badges">
           <li><a href="privacy.html">Gated overnight evaluation</a></li>
           <li><a href="privacy.html">Human-in-the-loop audit trail</a></li>
@@ -1550,8 +1588,7 @@
     <div class="container">
       <div class="approach-header reveal">
         <div class="label label-on-dark">Our Approach</div>
-        <h2>Replace reactive chaos with proactive intelligence</h2>
-        <p class="approach-sub">The difference Coraleye makes</p>
+        <h2>The old way vs the Coraleye way.</h2>
       </div>
 
       <div id="approach-cards" class="approach-cards">
@@ -1563,7 +1600,7 @@
           <ul class="approach-list">
             <li><span class="approach-list-mark">▪</span>Accounts hot-potatoed across five teams with no shared context</li>
             <li><span class="approach-list-mark">▪</span>Interactions scattered across six siloed systems nobody reads in full</li>
-            <li><span class="approach-list-mark">▪</span>Health scores based on login frequency — lagging, and blind to what customers actually said</li>
+            <li><span class="approach-list-mark">▪</span>Health scores based on login frequency, lagging, and blind to what customers actually said</li>
             <li><span class="approach-list-mark">▪</span>CSMs spending hours on manual follow-ups instead of relationships</li>
             <li><span class="approach-list-mark">▪</span>Churn decisions made before anyone on the team noticed the pattern</li>
           </ul>
@@ -1646,7 +1683,6 @@
   <aside id="demo-panel" class="demo-panel" role="dialog" aria-modal="true" aria-labelledby="demo-panel-title" aria-hidden="true">
     <button type="button" class="demo-panel-close" aria-label="Close demo request form">&times;</button>
     <h2 id="demo-panel-title" class="demo-panel-title">Interested in seeing how Coraleye can help you?</h2>
-    <p class="demo-panel-note">30-min call · no commitment · we'll reach out within one business day.</p>
     <form id="demo-form" class="demo-form" novalidate>
       <div class="demo-field">
         <label for="demo-name">Name</label>
@@ -1972,7 +2008,7 @@
               company,
               email,
               phone,
-              _subject: 'Coraleye Demo Request — ' + name,
+              _subject: 'Coraleye Demo Request - ' + name,
               _template: 'table',
               _captcha: 'false'
             })
