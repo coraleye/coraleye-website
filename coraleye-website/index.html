@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Coraleye — Customer Success, Finally Proactive</title>
-  <meta name="description" content="Coraleye unifies every customer signal across your stack and acts automatically — so your team is always ahead of the account, never behind it." />
+  <meta name="description" content="Coraleye unifies every customer signal, surfaces who needs attention, and helps your team act with one click — before accounts churn." />
   <link rel="icon" type="image/png" href="kory.png" />
   <link rel="apple-touch-icon" href="kory.png" />
   <link rel="canonical" href="https://coraleye.ai/" />
@@ -14,11 +14,11 @@
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://coraleye.ai/" />
   <meta property="og:title" content="Coraleye — Customer Success, Finally Proactive" />
-  <meta property="og:description" content="Coraleye unifies every customer signal across your stack and acts automatically — so your team is always ahead of the account, never behind it." />
+  <meta property="og:description" content="Coraleye unifies every customer signal, surfaces who needs attention, and helps your team act with one click — before accounts churn." />
   <meta property="og:image" content="https://coraleye.ai/kory.png" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Coraleye — Customer Success, Finally Proactive" />
-  <meta name="twitter:description" content="Coraleye unifies every customer signal across your stack and acts automatically — so your team is always ahead of the account, never behind it." />
+  <meta name="twitter:description" content="Coraleye unifies every customer signal, surfaces who needs attention, and helps your team act with one click — before accounts churn." />
   <meta name="twitter:image" content="https://coraleye.ai/kory.png" />
   <style>
     /* ─── Reset & Base ─────────────────────────────────────────────── */
@@ -667,9 +667,12 @@
     .quote-dot {
       width: 8px;
       height: 8px;
+      padding: 0;
+      border: none;
       border-radius: 50%;
       background: rgba(255, 255, 255, 0.2);
       transition: background 0.3s;
+      cursor: pointer;
     }
 
     .quote-dot.active {
@@ -689,144 +692,6 @@
 
     .how-header h2 { margin-bottom: 16px; }
     .how-header p { color: var(--text-muted); font-size: 1rem; line-height: 1.7; font-style: normal; }
-
-    .steps-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-      position: relative;
-    }
-
-    .steps-grid::before {
-      content: '';
-      position: absolute;
-      top: 60px;
-      left: calc(16.66% + 24px);
-      right: calc(16.66% + 24px);
-      height: 1px;
-      background: linear-gradient(90deg, transparent, var(--orange), transparent);
-      opacity: 0.4;
-    }
-
-    .step-card {
-      background: #E8E6E1;
-      border: 1px solid var(--border);
-      border-radius: var(--radius-lg);
-      padding: 36px 32px;
-      position: relative;
-      transition: border 0.3s ease, transform 0.2s;
-    }
-
-    .step-card:hover {
-      border-color: rgba(224,114,48,0.35);
-      transform: translateY(-3px);
-    }
-
-    .step-num {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 42px;
-      height: 42px;
-      border-radius: 10px;
-      background: var(--orange-dim);
-      border: 1px solid rgba(224,114,48,0.2);
-      color: var(--orange);
-      font-size: 0.8rem;
-      font-weight: 700;
-      cursor: pointer;
-      transition: box-shadow 0.2s ease;
-      letter-spacing: 0.04em;
-      margin-bottom: 24px;
-      position: relative;
-    }
-
-    .step-num:hover {
-      border-color: rgba(224,114,48,0.45);
-    }
-
-    a:focus-visible,
-    button:focus-visible,
-    .step-num:focus-visible,
-    input:focus-visible,
-    textarea:focus-visible {
-      outline: 2px solid #e8782a;
-      outline-offset: 3px;
-    }
-
-    @keyframes orbit {
-      from { transform: rotate(0deg) translateX(28px); }
-      to   { transform: rotate(360deg) translateX(28px); }
-    }
-
-    .step-orbit {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      width: 0;
-      height: 0;
-      pointer-events: none;
-    }
-
-    .orbit-ball {
-      position: absolute;
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: #e8782a;
-      margin-left: -4px;
-      margin-top: -4px;
-      animation: orbit 3s linear infinite;
-    }
-
-    #how-screenshot-wrap {
-      margin-top: 48px;
-      border-radius: 16px;
-      overflow: hidden;
-      border: 1px solid var(--border);
-      box-shadow: 0 8px 40px rgba(0,0,0,0.08);
-      background: #011330;
-      min-height: 120px;
-    }
-
-    #how-step-label {
-      transition: opacity 0.3s ease;
-    }
-
-    #how-screenshot {
-      width: 100%;
-      display: block;
-      transition: opacity 0.3s ease;
-      transition: opacity 0.4s ease;
-    }
-
-    .step-card h3 {
-      margin-bottom: 12px;
-      font-size: 1.1rem;
-    }
-
-    .step-card p {
-      color: var(--text-muted);
-      font-size: 0.9rem;
-      line-height: 1.7;
-    }
-
-    .step-integrations {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-      margin-top: 20px;
-    }
-
-    .int-tag {
-      padding: 3px 8px;
-      background: var(--blue-dim);
-      border: 1px solid rgba(31,73,125,0.15);
-      border-radius: 5px;
-      font-size: 0.72rem;
-      font-weight: 500;
-      color: var(--blue);
-    }
 
     @keyframes marquee {
       0%   { transform: translateX(0); }
@@ -928,7 +793,7 @@
 
     .how-step-boxes {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(2, 1fr);
       gap: 32px;
       margin-top: 48px;
     }
@@ -938,17 +803,37 @@
       border: 1px solid var(--border);
       border-radius: var(--radius-lg);
       padding: 28px 24px;
-      cursor: pointer;
-      transition: border-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
     }
 
-    .how-step-box:hover {
-      transform: translateY(-2px);
+    .how-step-footnote {
+      margin-top: 24px;
+      padding: 16px 20px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
     }
 
-    .how-step-box.is-active {
-      border: 2px solid #e8782a;
-      box-shadow: 0 8px 32px rgba(232,120,42,0.12);
+    .how-step-footnote-label {
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-subtle);
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .how-step-footnote-text {
+      font-size: 0.84rem;
+      line-height: 1.6;
+      color: var(--text-muted);
+      margin: 0;
+    }
+
+    .how-step-footnote-text strong {
+      color: var(--text);
+      font-weight: 600;
     }
 
     .how-step-box-num {
@@ -1029,10 +914,186 @@
       line-height: 1.5;
     }
 
-    @keyframes signal-pulse {
-      0%, 100% { opacity: 1; box-shadow: 0 0 8px rgba(232,120,42,0.8); }
-      50% { opacity: 0.6; box-shadow: 0 0 16px rgba(232,120,42,1), 0 0 32px rgba(232,120,42,0.4); }
+    .see-action-cta {
+      text-align: center;
+      margin-top: 48px;
     }
+
+    .see-action-cta-note {
+      margin-top: 14px;
+      font-size: 0.85rem;
+      color: var(--text-subtle);
+    }
+
+    .trust-band {
+      margin-top: 56px;
+      padding-top: 40px;
+      border-top: 1px solid var(--border);
+      display: grid;
+      gap: 28px;
+    }
+
+    .trust-band-proof {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      max-width: 640px;
+      margin: 0 auto;
+    }
+
+    .trust-band-photo {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+
+    .trust-band-quote {
+      font-size: 0.92rem;
+      line-height: 1.65;
+      color: var(--text);
+      margin: 0 0 6px;
+    }
+
+    .trust-band-attr {
+      font-size: 0.8rem;
+      color: var(--text-subtle);
+      margin: 0;
+    }
+
+    .trust-band-badges {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px 20px;
+      margin: 0;
+      padding: 0;
+    }
+
+    .trust-band-badges li {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      letter-spacing: 0.02em;
+    }
+
+    .trust-band-badges li::before {
+      content: '·';
+      margin-right: 8px;
+      color: var(--orange);
+    }
+
+    .trust-band-badges li:first-child::before {
+      content: none;
+      margin-right: 0;
+    }
+
+    /* ─── Our Approach section ──────────────────────────────────────── */
+    .approach-section {
+      padding: 100px 0;
+      background: linear-gradient(to right, #011330 0%, #011330 25%, rgba(1,19,48,0.9) 40%, rgba(1,19,48,0.75) 55%, rgba(1,19,48,0.55) 70%, rgba(1,19,48,0.35) 85%, rgba(1,19,48,0.2) 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .approach-header {
+      text-align: center;
+      margin-bottom: 56px;
+    }
+
+    .approach-header h2 {
+      color: #ffffff;
+      margin-bottom: 16px;
+    }
+
+    .approach-sub {
+      font-size: 1rem;
+      color: rgba(255,255,255,0.55);
+      line-height: 1.7;
+    }
+
+    .label-on-dark {
+      color: var(--orange);
+    }
+
+    .approach-cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      align-items: stretch;
+    }
+
+    .approach-card {
+      border-radius: 14px;
+      padding: 36px 32px;
+    }
+
+    .approach-card-before {
+      background: #111620;
+      border: 1px solid rgba(255,255,255,0.07);
+    }
+
+    .approach-card-before h3 {
+      color: rgba(255,255,255,0.55);
+      font-size: 1.2rem;
+      margin-bottom: 6px;
+    }
+
+    .approach-card-after {
+      background: #011330;
+      border: 1px solid rgba(232,120,42,0.35);
+    }
+
+    .approach-card-after h3 {
+      color: #ffffff;
+      font-size: 1.2rem;
+      margin-bottom: 6px;
+    }
+
+    .approach-card-kicker {
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .approach-card-before .approach-card-kicker { color: rgba(255,255,255,0.28); }
+    .approach-card-after .approach-card-kicker { color: var(--orange); }
+
+    .approach-card-tag {
+      font-size: 0.82rem;
+      margin-bottom: 24px;
+    }
+
+    .approach-card-before .approach-card-tag { color: rgba(255,255,255,0.25); }
+    .approach-card-after .approach-card-tag { color: rgba(255,255,255,0.5); }
+
+    .approach-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .approach-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: 0.88rem;
+    }
+
+    .approach-card-before .approach-list li { color: rgba(255,255,255,0.35); }
+    .approach-card-after .approach-list li { color: rgba(255,255,255,0.9); }
+
+    .approach-list-mark {
+      flex-shrink: 0;
+      margin-top: 1px;
+      color: #3a3a4a;
+    }
+
+    .approach-list-mark-check { color: var(--orange); }
 
     @keyframes float {
       0%, 100% { transform: translateY(0px); }
@@ -1170,13 +1231,20 @@
       gap: 24px;
     }
 
-    .footer-links a {
+    .footer-links a,
+    .footer-demo-link {
       font-size: 0.85rem;
       color: rgba(255,255,255,0.6);
       transition: color 0.15s;
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-family: inherit;
+      padding: 0;
     }
 
-    .footer-links a:hover { color: rgba(255,255,255,0.9); }
+    .footer-links a:hover,
+    .footer-demo-link:hover { color: rgba(255,255,255,0.9); }
 
     .footer-right {
       font-size: 0.8rem;
@@ -1260,8 +1328,24 @@
       font-size: 1.35rem;
       font-weight: 600;
       line-height: 1.35;
-      margin: 8px 40px 28px 0;
+      margin: 8px 40px 10px 0;
       letter-spacing: -0.02em;
+    }
+
+    .demo-panel-note {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.5);
+      margin: 0 40px 28px 0;
+      line-height: 1.5;
+    }
+
+    a:focus-visible,
+    button:focus-visible,
+    .quote-dot:focus-visible,
+    input:focus-visible,
+    textarea:focus-visible {
+      outline: 2px solid #e8782a;
+      outline-offset: 3px;
     }
 
     .demo-form {
@@ -1335,7 +1419,7 @@
     }
 
     /* ─── Remove outer section borders/margins (desktop) ───────────── */
-    #before-after { margin: 0 !important; border-radius: 0 !important; }
+    .approach-section { margin: 0 !important; border-radius: 0 !important; }
 
     /* ─── Scroll Reveal ─────────────────────────────────────────────── */
     .reveal {
@@ -1358,16 +1442,13 @@
 
     /* ─── Responsive ────────────────────────────────────────────────── */
     @media (max-width: 900px) {
-      .steps-grid { grid-template-columns: 1fr; }
-      .steps-grid::before { display: none; }
       .how-step-boxes { grid-template-columns: 1fr; }
       .how-cory-stage { grid-template-columns: 1fr; }
       .see-action-shots { grid-template-columns: 1fr; gap: 40px; }
-      .nav-links { display: none; }
+      .approach-cards { grid-template-columns: 1fr; }
     }
 
     @media (max-width: 768px) {
-      #approach-cards { grid-template-columns: 1fr !important; }
       #hero { overflow-x: hidden; }
       .hero-content { padding: 0 16px; padding-right: 16px; }
       #hero h1 { font-size: clamp(2rem, 8vw, 4rem); }
@@ -1448,29 +1529,23 @@
         color: rgba(255,255,255,0.38);
         margin-top: 6px;
       }
-      .mobile-dash-actions { display: flex; flex-wrap: wrap; gap: 8px; }
-      .generate-btn {
-        background: #e8782a;
-        color: white;
-        border: none;
+      .mobile-dash-actions { margin-top: 4px; }
+      .mobile-dash-cta {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
         padding: 10px 16px;
+        background: #e8782a;
+        color: #ffffff;
+        border: none;
         border-radius: 8px;
         font-size: 13px;
         font-weight: 700;
-        width: 100%;
-        cursor: pointer;
-        box-shadow: 0 0 14px rgba(232,120,42,0.3);
+        text-decoration: none;
+        font-family: inherit;
       }
-      .modify-btn, .dismiss-btn {
-        background: transparent;
-        border: 1px solid rgba(255,255,255,0.18);
-        color: rgba(255,255,255,0.75);
-        padding: 10px 16px;
-        border-radius: 8px;
-        font-size: 13px;
-        width: calc(50% - 4px);
-        cursor: pointer;
-      }
+      .mobile-dash-cta:hover { background: #d97824; }
       .hero-cory-img { max-width: 180px; max-height: 180px; width: auto; }
       .hero-pillars { display: none; }
 
@@ -1509,19 +1584,6 @@
         margin-top: 48px;
       }
 
-      /* How It Works step label badge — smaller on mobile */
-      #how-step-label { font-size: 10px !important; padding: 4px 10px !important; border-radius: 14px !important; }
-
-      /* How it works slider — fallback bg so broken images don't look empty */
-      #how-it-works #how-slider > div {
-        background: #011330;
-        min-height: 200px;
-      }
-
-      /* How it works — screenshot must not overflow on mobile */
-      #how-screenshot-wrap { overflow: hidden; max-width: 100%; }
-      #how-screenshot { width: 100% !important; height: auto !important; max-width: 100%; }
-
       /* Integration logos row — no horizontal overflow */
       .marquee-track, .hero-marquee-track { overflow: hidden; }
 
@@ -1532,7 +1594,7 @@
       .page-wrapper { margin: 0 !important; border-radius: 0 !important; }
       nav { margin: 0 !important; border-radius: 0 !important; }
       #hero { margin: 0 !important; border-radius: 0 !important; }
-      #before-after { margin: 0 !important; border-radius: 0 !important; }
+      .approach-section { margin: 0 !important; border-radius: 0 !important; }
       footer { margin: 0 !important; border-radius: 0 !important; }
 
       /* Hide signal line on mobile — desktop-only visual */
@@ -1607,7 +1669,7 @@
     <div class="hero-top-bar">
       <div class="container">
         <div class="hero-top-inner">
-          <a href="#" class="nav-logo">
+          <a href="https://coraleye.ai/" class="nav-logo">
             <div class="nav-logo-mark">
               <img src="kory.png" alt="Coraleye logo" style="width:28px;height:28px;object-fit:contain;border-radius:6px;" />
             </div>
@@ -1625,7 +1687,7 @@
         <div class="hero-content">
           <h1>Customer success,<br>finally <span style="color:#e8782a;">proactive.</span></h1>
 
-          <p class="hero-sub">Coraleye evaluates customer interactions and recommends proactive actions before accounts churn.</p>
+          <p class="hero-sub">Coraleye unifies every customer signal, surfaces who needs attention, and helps your team act — with your approval.</p>
 
           <div class="hero-ctas">
             <button type="button" class="btn btn-primary btn-lg demo-trigger">Request a Demo →</button>
@@ -1645,15 +1707,13 @@
               <div>Renewal: 180 days</div>
             </div>
             <div class="mobile-dash-flag">Why This Account Was Flagged</div>
-            <p>Unresolved policy issues and support friction may jeopardize growth and renewal.</p>
+            <p>Three unresolved support escalations and no executive contact in 45 days.</p>
             <div class="mobile-dash-evidence">
-              "We're looking at increasing our seat count from 50 to 100."
-              <span>Gong call · 3 days ago</span>
+              "We still haven't heard back on the policy exception from last month."
+              <span>Zendesk ticket · 2 days ago</span>
             </div>
             <div class="mobile-dash-actions">
-              <button class="generate-btn">⚡ Generate Play</button>
-              <button class="modify-btn">Modify</button>
-              <button class="dismiss-btn">Dismiss</button>
+              <a href="#see-it-in-action" class="mobile-dash-cta">See how Coraleye flags this →</a>
             </div>
           </div>
         </div>
@@ -1668,7 +1728,7 @@
       <div class="how-header reveal">
         <div class="label">How it works</div>
         <h2>From signal to action.</h2>
-        <p>Coraleye unifies customer interactions, identifies risk and opportunity, and recommends the next best action.</p>
+        <p>Coraleye unifies customer interactions, evaluates risk and opportunity, and surfaces the next best action for your team.</p>
       </div>
       <div class="how-integrations-marquee reveal">
         <div class="hero-marquee-track">
@@ -1704,30 +1764,20 @@
           </div>
         </div>
         <div class="how-step-boxes">
-          <div class="how-step-box reveal" id="step-card-0">
+          <div class="how-step-box reveal">
             <div class="how-step-box-num">1</div>
             <h3 class="how-step-box-title">Unify All Customer Interaction Data</h3>
-            <p class="how-step-box-text">Coraleye connects via APIs and MCP to gather conversations, messages, emails, calls, and third-party data so you can focus on growing relationships.</p>
+            <p class="how-step-box-text">Coraleye connects via APIs and native integrations to gather conversations, messages, emails, calls, and third-party data so you can focus on growing relationships.</p>
           </div>
-          <div class="how-step-box reveal reveal-delay-1" id="step-card-1">
+          <div class="how-step-box reveal reveal-delay-1">
             <div class="how-step-box-num">2</div>
             <h3 class="how-step-box-title">Cory Evaluates</h3>
             <p class="how-step-box-text">Detect churn risk, expansion signals, sentiment shifts, and escalation patterns automatically.</p>
           </div>
-          <div class="how-step-box reveal reveal-delay-2" id="step-card-2">
-            <div class="how-step-box-num">3</div>
-            <h3 class="how-step-box-title">24/7 Oversight</h3>
-            <p class="how-step-box-text">Coraleye runs overnight evaluation in gated, secure environments, and allows for human-in-the-loop auditing of interaction evidence.</p>
-          </div>
         </div>
-      </div>
-      <div id="how-screenshot-wrap" style="position:relative;">
-        <img id="how-screenshot" src="unify-cory-module.png" alt="Coraleye Unify module showing a unified customer timeline across Zendesk, Gong, Slack, and HubSpot" title="Click to pause" style="cursor:pointer;" />
-        <div id="how-step-label" style="position:absolute;top:16px;left:16px;background:#e8782a;color:#ffffff;font-size:13px;font-weight:700;font-variant:small-caps;letter-spacing:0.08em;padding:6px 14px;border-radius:20px;pointer-events:none;z-index:10;">Unify</div>
-        <div id="how-pause-overlay" style="display:none;position:absolute;inset:0;align-items:center;justify-content:center;pointer-events:none;">
-          <div style="width:56px;height:56px;border-radius:50%;background:rgba(0,0,0,0.45);display:flex;align-items:center;justify-content:center;">
-            <span style="font-size:1.6rem;line-height:1;color:#ffffff;opacity:0.9;">⏸</span>
-          </div>
+        <div class="how-step-footnote reveal reveal-delay-2">
+          <span class="how-step-footnote-label">Also</span>
+          <p class="how-step-footnote-text"><strong>24/7 Oversight</strong> — Coraleye runs overnight evaluation in gated, secure environments, with human-in-the-loop auditing of interaction evidence.</p>
         </div>
       </div>
 
@@ -1740,7 +1790,7 @@
       <div class="see-action-header reveal">
         <div class="label">See it in action</div>
         <h2>Evaluation meets action.</h2>
-        <p class="see-action-sub">Cory surfaces what matters every morning. Your team acts in one click.</p>
+        <p class="see-action-sub">Cory surfaces what matters every morning. Your team acts in one click — with your approval.</p>
       </div>
       <div class="see-action-shots">
         <figure class="see-action-shot reveal">
@@ -1756,49 +1806,61 @@
           <figcaption>Your team acts in one click.</figcaption>
         </figure>
       </div>
+      <div class="see-action-cta reveal">
+        <button type="button" class="btn btn-primary btn-lg demo-trigger">Request a Demo →</button>
+        <p class="see-action-cta-note">30-min call · no commitment · we'll reach out within one business day</p>
+      </div>
+      <div class="trust-band reveal">
+        <div class="trust-band-proof">
+          <img src="duane-headshot.png" alt="" class="trust-band-photo" width="48" height="48" />
+          <div>
+            <p class="trust-band-quote">"Built for CS leaders who need recommendations and a system of action — not another dashboard."</p>
+            <p class="trust-band-attr">Duane · Co-founder, Coraleye</p>
+          </div>
+        </div>
+        <ul class="trust-band-badges">
+          <li>Gated overnight evaluation</li>
+          <li>Human-in-the-loop audit trail</li>
+          <li>Integrates with Zendesk, HubSpot, Gong, Slack &amp; more</li>
+        </ul>
+      </div>
     </div>
   </section>
 
   <!-- ─── Our Approach ───────────────────────────────────────────────── -->
-  <section id="before-after" style="padding:100px 0 100px;background:linear-gradient(to right,#011330 0%,#011330 25%,rgba(1,19,48,0.9) 40%,rgba(1,19,48,0.75) 55%,rgba(1,19,48,0.55) 70%,rgba(1,19,48,0.35) 85%,rgba(1,19,48,0.2) 100%);position:relative;margin:40px;border-radius:20px;overflow:hidden;">
+  <section id="before-after" class="approach-section">
     <div class="container">
-      <div style="text-align:center;margin-bottom:56px;">
-        <div style="display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#e07230;margin-bottom:20px;">
-          <span style="display:block;width:18px;height:2px;background:#e07230;border-radius:2px;"></span>
-          Our Approach
-        </div>
-        <h2 style="color:#ffffff;margin-bottom:16px;">Replace reactive chaos with proactive intelligence</h2>
-        <p style="font-size:1rem;color:rgba(255,255,255,0.55);line-height:1.7;">The difference Coraleye makes</p>
+      <div class="approach-header reveal">
+        <div class="label label-on-dark">Our Approach</div>
+        <h2>Replace reactive chaos with proactive intelligence</h2>
+        <p class="approach-sub">The difference Coraleye makes</p>
       </div>
 
-      <!-- Side-by-side cards -->
-      <div id="approach-cards" style="display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:stretch;">
+      <div id="approach-cards" class="approach-cards">
 
-        <!-- Before card -->
-        <div style="background:#111620;border:1px solid rgba(255,255,255,0.07);border-radius:14px;padding:36px 32px;">
-          <div style="font-size:0.65rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.28);margin-bottom:12px;">Before Coraleye</div>
-          <h3 style="color:rgba(255,255,255,0.55);font-size:1.2rem;margin-bottom:6px;">Reactive and Blind</h3>
-          <p style="color:rgba(255,255,255,0.25);font-size:0.82rem;margin-bottom:24px;">Tedious, fragmented, expensive</p>
-          <ul style="list-style:none;display:flex;flex-direction:column;gap:12px;">
-            <li style="display:flex;align-items:flex-start;gap:12px;color:rgba(255,255,255,0.35);font-size:0.88rem;"><span style="color:#3a3a4a;flex-shrink:0;margin-top:1px;">▪</span>Accounts hot-potatoed across five teams with no shared context</li>
-            <li style="display:flex;align-items:flex-start;gap:12px;color:rgba(255,255,255,0.35);font-size:0.88rem;"><span style="color:#3a3a4a;flex-shrink:0;margin-top:1px;">▪</span>Interactions scattered across six siloed systems nobody reads in full</li>
-            <li style="display:flex;align-items:flex-start;gap:12px;color:rgba(255,255,255,0.35);font-size:0.88rem;"><span style="color:#3a3a4a;flex-shrink:0;margin-top:1px;">▪</span>Health scores built on login frequency, a lagging indicator that tells you nothing about what customers actually said or felt</li>
-            <li style="display:flex;align-items:flex-start;gap:12px;color:rgba(255,255,255,0.35);font-size:0.88rem;"><span style="color:#3a3a4a;flex-shrink:0;margin-top:1px;">▪</span>CSMs spending hours on manual follow-ups instead of relationships</li>
-            <li style="display:flex;align-items:flex-start;gap:12px;color:rgba(255,255,255,0.35);font-size:0.88rem;"><span style="color:#3a3a4a;flex-shrink:0;margin-top:1px;">▪</span>Churn decisions made before anyone on the team noticed the pattern</li>
+        <div class="approach-card approach-card-before">
+          <div class="approach-card-kicker">Before Coraleye</div>
+          <h3>Reactive and Blind</h3>
+          <p class="approach-card-tag">Tedious, fragmented, expensive</p>
+          <ul class="approach-list">
+            <li><span class="approach-list-mark">▪</span>Accounts hot-potatoed across five teams with no shared context</li>
+            <li><span class="approach-list-mark">▪</span>Interactions scattered across six siloed systems nobody reads in full</li>
+            <li><span class="approach-list-mark">▪</span>Health scores built on login frequency, a lagging indicator that tells you nothing about what customers actually said or felt</li>
+            <li><span class="approach-list-mark">▪</span>CSMs spending hours on manual follow-ups instead of relationships</li>
+            <li><span class="approach-list-mark">▪</span>Churn decisions made before anyone on the team noticed the pattern</li>
           </ul>
         </div>
 
-        <!-- With Coraleye card -->
-        <div style="background:#011330;border:1px solid rgba(232,120,42,0.35);border-radius:14px;padding:36px 32px;box-shadow:0 8px 40px rgba(0,0,0,0.25);">
-          <div style="font-size:0.65rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#e8782a;margin-bottom:12px;">With Coraleye</div>
-          <h3 style="color:#ffffff;font-size:1.2rem;margin-bottom:6px;">Proactive and Complete</h3>
-          <p style="color:rgba(255,255,255,0.5);font-size:0.82rem;margin-bottom:24px;">Scalable, intelligent, automatic</p>
-          <ul style="list-style:none;display:flex;flex-direction:column;gap:12px;">
-            <li style="display:flex;align-items:flex-start;gap:12px;color:rgba(255,255,255,0.9);font-size:0.88rem;"><span style="color:#e8782a;flex-shrink:0;margin-top:1px;">✓</span>Every interaction unified in one timeline across every system</li>
-            <li style="display:flex;align-items:flex-start;gap:12px;color:rgba(255,255,255,0.9);font-size:0.88rem;"><span style="color:#e8782a;flex-shrink:0;margin-top:1px;">✓</span>Cory reads signals across every system simultaneously</li>
-            <li style="display:flex;align-items:flex-start;gap:12px;color:rgba(255,255,255,0.9);font-size:0.88rem;"><span style="color:#e8782a;flex-shrink:0;margin-top:1px;">✓</span>Health scores derived from actual conversations, not proxies</li>
-            <li style="display:flex;align-items:flex-start;gap:12px;color:rgba(255,255,255,0.9);font-size:0.88rem;"><span style="color:#e8782a;flex-shrink:0;margin-top:1px;">✓</span>Plays drafted and executed automatically with one CSM approval</li>
-            <li style="display:flex;align-items:flex-start;gap:12px;color:rgba(255,255,255,0.9);font-size:0.88rem;"><span style="color:#e8782a;flex-shrink:0;margin-top:1px;">✓</span>Risk flagged weeks before the customer decides to leave</li>
+        <div class="approach-card approach-card-after">
+          <div class="approach-card-kicker">With Coraleye</div>
+          <h3>Proactive and Complete</h3>
+          <p class="approach-card-tag">Scalable, intelligent, with your approval</p>
+          <ul class="approach-list">
+            <li><span class="approach-list-mark approach-list-mark-check">✓</span>Every interaction unified in one timeline across every system</li>
+            <li><span class="approach-list-mark approach-list-mark-check">✓</span>Cory reads signals across every system simultaneously</li>
+            <li><span class="approach-list-mark approach-list-mark-check">✓</span>Health scores derived from actual conversations, not proxies</li>
+            <li><span class="approach-list-mark approach-list-mark-check">✓</span>Plays drafted for your team to execute with one CSM approval</li>
+            <li><span class="approach-list-mark approach-list-mark-check">✓</span>Risk flagged weeks before the customer decides to leave</li>
           </ul>
         </div>
 
@@ -1811,9 +1873,23 @@
           <div class="approach-quote-mark approach-quote-mark-close">"</div>
           <div class="approach-quote-attr">Global Head of Customer Success, $15B+ technology company</div>
         </div>
-        <div class="approach-quote-dots">
-          <div class="quote-dot active"></div>
-          <div class="quote-dot"></div>
+        <div class="approach-quote-dots" role="tablist" aria-label="Customer quotes">
+          <button type="button" class="quote-dot active" aria-label="Quote 1" aria-selected="true" data-quote-index="0"></button>
+          <button type="button" class="quote-dot" aria-label="Quote 2" aria-selected="false" data-quote-index="1"></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Final CTA ──────────────────────────────────────────────────── -->
+  <section id="cta-section" class="section">
+    <div class="cta-glow" aria-hidden="true"></div>
+    <div class="container">
+      <div class="cta-box reveal">
+        <h2>See Coraleye on your accounts.</h2>
+        <p>Walk through evaluation and action on a live demo — 30 minutes, no commitment.</p>
+        <div class="cta-buttons">
+          <button type="button" class="btn btn-primary btn-lg demo-trigger">Request a Demo →</button>
         </div>
       </div>
     </div>
@@ -1835,8 +1911,9 @@
         <div class="footer-links">
           <a href="https://coraleye.ai">coraleye.ai</a>
           <a href="mailto:chris@coraleye.ai">chris@coraleye.ai</a>
-          <a href="privacy.html" style="color:rgba(255,255,255,0.5);font-size:13px;">Privacy</a>
-          <a href="terms.html" style="color:rgba(255,255,255,0.5);font-size:13px;">Terms</a>
+          <a href="privacy.html">Privacy</a>
+          <a href="terms.html">Terms</a>
+          <button type="button" class="footer-demo-link demo-trigger">Request a Demo</button>
         </div>
         <div class="footer-right">
           © 2026 Coraleye. All rights reserved.
@@ -1849,9 +1926,10 @@
 
   <!-- ─── Demo request panel ─────────────────────────────────────────── -->
   <div id="demo-panel-backdrop" class="demo-panel-backdrop" aria-hidden="true"></div>
-  <aside id="demo-panel" class="demo-panel" aria-labelledby="demo-panel-title" aria-hidden="true">
+  <aside id="demo-panel" class="demo-panel" role="dialog" aria-modal="true" aria-labelledby="demo-panel-title" aria-hidden="true">
     <button type="button" class="demo-panel-close" aria-label="Close demo request form">&times;</button>
     <h2 id="demo-panel-title" class="demo-panel-title">Interested in seeing how Coraleye can help you?</h2>
+    <p class="demo-panel-note">30-min call · no commitment · we'll reach out within one business day.</p>
     <form id="demo-form" class="demo-form" novalidate>
       <div class="demo-field">
         <label for="demo-name">Name</label>
@@ -1903,122 +1981,47 @@
       }
     ];
     let quoteIndex = 0;
+    let quoteTimer;
     const quoteDots = document.querySelectorAll('.quote-dot');
-    function rotateQuote() {
-      quoteIndex = (quoteIndex + 1) % quoteSlides.length;
-      const q = quoteSlides[quoteIndex];
+
+    function showQuote(index) {
+      quoteIndex = index;
+      const q = quoteSlides[index];
       const display = document.getElementById('quote-display');
-      if (!display) return;
+      if (!display || !q) return;
       display.style.opacity = '0';
-      setTimeout(() => {
+      setTimeout(function() {
         display.innerHTML = `
           <div class="approach-quote-mark">"</div>
           <p class="approach-quote-text">${q.text}</p>
           <div class="approach-quote-mark approach-quote-mark-close">"</div>
           <div class="approach-quote-attr">${q.name}, ${q.company}</div>`;
         display.style.opacity = '1';
-        quoteDots.forEach((dot, i) => {
+        quoteDots.forEach(function(dot, i) {
           dot.classList.toggle('active', i === quoteIndex);
+          dot.setAttribute('aria-selected', i === quoteIndex ? 'true' : 'false');
         });
       }, 500);
     }
-    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      setInterval(rotateQuote, 4000);
+
+    function startQuoteTimer() {
+      clearInterval(quoteTimer);
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      quoteTimer = setInterval(function() {
+        showQuote((quoteIndex + 1) % quoteSlides.length);
+      }, 8000);
     }
 
-    // ── How It Works: synchronized orbit dot + screenshot ─────────────────
-    let currentStep = 0;
-    let isPaused = false;
-
-    const steps = [
-      { cardIndex: 0, img: 'unify-cory-module.png',            label: 'Unify'    },
-      { cardIndex: 1, img: 'portfolio-analyze-module.png',     label: 'Evaluate' },
-    ];
-
-    const howStepCards = [
-      document.getElementById('step-card-0'),
-      document.getElementById('step-card-1'),
-      document.getElementById('step-card-2'),
-    ];
-
-    const howScreenshot   = document.getElementById('how-screenshot');
-    const howScreenshotWrap = document.getElementById('how-screenshot-wrap');
-    const pauseOverlay    = document.getElementById('how-pause-overlay');
-    const howStepLabel    = document.getElementById('how-step-label');
-
-    function goToStep(stepIndex) {
-      const step = steps[stepIndex];
-      if (!step) return;
-
-      howStepCards.forEach(function(card, i) {
-        if (!card) return;
-        card.classList.toggle('is-active', i === step.cardIndex);
-      });
-
-      if (howScreenshotWrap) howScreenshotWrap.style.display = '';
-      if (!howScreenshot) return;
-
-      howScreenshot.style.opacity = '0';
-      if (howStepLabel) howStepLabel.style.opacity = '0';
-      setTimeout(function() {
-        howScreenshot.src = step.img;
-        if (howStepLabel) { howStepLabel.textContent = step.label; howStepLabel.style.opacity = '1'; }
-        howScreenshot.style.opacity = '1';
-      }, 300);
-    }
-
-    if (howScreenshot) {
-      howScreenshot.addEventListener('click', function() {
-        isPaused = !isPaused;
-        if (isPaused) {
-          if (pauseOverlay) pauseOverlay.style.display = 'flex';
-          howScreenshot.title = 'Click to resume';
-        } else {
-          if (pauseOverlay) pauseOverlay.style.display = 'none';
-          howScreenshot.title = 'Click to pause';
+    quoteDots.forEach(function(dot) {
+      dot.addEventListener('click', function() {
+        const idx = parseInt(dot.getAttribute('data-quote-index'), 10);
+        if (!isNaN(idx)) {
+          showQuote(idx);
+          startQuoteTimer();
         }
       });
-    }
-
-    // Named timer so it can be cleared on manual jump
-    let autoTimer;
-    function startTimer() {
-      clearInterval(autoTimer);
-      autoTimer = setInterval(function() {
-        if (isPaused) return;
-        currentStep = (currentStep + 1) % steps.length;
-        goToStep(currentStep);
-      }, 5000);
-    }
-
-    function jumpToCard(cardIndex) {
-      howStepCards.forEach(function(card, i) {
-        if (!card) return;
-        card.classList.toggle('is-active', i === cardIndex);
-      });
-
-      if (cardIndex === 2) {
-        if (howScreenshotWrap) howScreenshotWrap.style.display = 'none';
-        clearInterval(autoTimer);
-        return;
-      }
-
-      currentStep = cardIndex;
-      goToStep(currentStep);
-      startTimer();
-    }
-
-    howStepCards.forEach(function(card, i) {
-      if (!card) return;
-      card.addEventListener('click', function() {
-        jumpToCard(i);
-      });
     });
-
-    if (howScreenshot) {
-      goToStep(0);
-      startTimer();
-    }
+    startQuoteTimer();
 
     // ── Demo request panel ───────────────────────────────────────────
     const demoPanel = document.getElementById('demo-panel');
@@ -2027,9 +2030,18 @@
     const demoSuccess = document.getElementById('demo-success');
     const demoError = document.getElementById('demo-error');
     const demoClose = document.querySelector('.demo-panel-close');
+    let demoTriggerEl = null;
 
-    function openDemoPanel() {
+    function getDemoFocusables() {
+      if (!demoPanel) return [];
+      return Array.prototype.slice.call(
+        demoPanel.querySelectorAll('button:not([disabled]), input:not([disabled]), textarea:not([disabled]), [href], [tabindex]:not([tabindex="-1"])')
+      );
+    }
+
+    function openDemoPanel(triggerEl) {
       if (!demoPanel || !demoBackdrop) return;
+      demoTriggerEl = triggerEl || document.activeElement;
       demoPanel.classList.add('open');
       demoBackdrop.classList.add('open');
       demoPanel.setAttribute('aria-hidden', 'false');
@@ -2046,19 +2058,38 @@
       demoPanel.setAttribute('aria-hidden', 'true');
       demoBackdrop.setAttribute('aria-hidden', 'true');
       document.body.style.overflow = '';
+      if (demoTriggerEl && typeof demoTriggerEl.focus === 'function') {
+        demoTriggerEl.focus();
+      }
+      demoTriggerEl = null;
     }
 
     document.querySelectorAll('.demo-trigger').forEach(function(btn) {
       btn.addEventListener('click', function(e) {
         e.preventDefault();
-        openDemoPanel();
+        openDemoPanel(btn);
       });
     });
 
     if (demoClose) demoClose.addEventListener('click', closeDemoPanel);
     if (demoBackdrop) demoBackdrop.addEventListener('click', closeDemoPanel);
     document.addEventListener('keydown', function(e) {
-      if (e.key === 'Escape') closeDemoPanel();
+      if (e.key === 'Escape' && demoPanel && demoPanel.classList.contains('open')) {
+        closeDemoPanel();
+        return;
+      }
+      if (e.key !== 'Tab' || !demoPanel || !demoPanel.classList.contains('open')) return;
+      const focusables = getDemoFocusables();
+      if (!focusables.length) return;
+      const first = focusables[0];
+      const last = focusables[focusables.length - 1];
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault();
+        last.focus();
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault();
+        first.focus();
+      }
     });
 
     if (window.location.hash === '#request-demo') {
