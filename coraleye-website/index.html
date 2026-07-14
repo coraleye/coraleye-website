@@ -618,120 +618,62 @@
       flex-shrink: 0;
     }
 
-    /* ─── Problem ───────────────────────────────────────────────────── */
-    #problem {
-      background: #E8E6E1;
+    /* ─── Approach quotes ───────────────────────────────────────────── */
+    .approach-quote-block {
+      margin-top: 56px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: var(--radius-lg);
+      padding: 28px;
+      min-height: 260px;
     }
 
-    .problem-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 80px;
-      align-items: center;
+    .approach-quote-display {
+      transition: opacity 0.5s ease;
     }
 
-    .problem-left h2 { margin-bottom: 24px; }
+    .approach-quote-mark {
+      font-size: 2.5rem;
+      line-height: 1;
+      color: #e07230;
+      font-family: Georgia, serif;
+    }
 
-    .problem-left p {
-      font-size: 1.05rem;
-      color: var(--text-muted);
-      line-height: 1.8;
+    .approach-quote-mark-close {
+      text-align: right;
+      margin-top: -8px;
+    }
+
+    .approach-quote-text {
+      font-size: 0.95rem;
+      line-height: 1.75;
+      color: rgba(255, 255, 255, 0.65);
       margin-bottom: 20px;
     }
 
-    .problem-stat-row {
+    .approach-quote-attr {
+      padding-top: 16px;
+      border-top: 1px solid rgba(224, 114, 48, 0.2);
+      font-size: 0.82rem;
+      color: rgba(255, 255, 255, 0.45);
+    }
+
+    .approach-quote-dots {
       display: flex;
-      gap: 32px;
-      margin-top: 16px;
+      gap: 8px;
+      margin-top: 24px;
     }
 
-    .problem-stat {
-      border-left: 2px solid var(--orange);
-      padding-left: 16px;
+    .quote-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.2);
+      transition: background 0.3s;
     }
 
-    .stat-num {
-      font-size: 1.8rem;
-      font-weight: 700;
-      color: var(--text);
-      letter-spacing: -0.03em;
-    }
-
-    .stat-desc {
-      font-size: 0.8rem;
-      color: var(--text-subtle);
-      margin-top: 2px;
-    }
-
-    .problem-right {
-      position: relative;
-    }
-
-    .chaos-diagram {
-      background: #E8E6E1;
-      border: 1px solid var(--border);
-      border-radius: var(--radius-lg);
-      padding: 32px;
-      position: relative;
-      overflow: hidden;
-      --bg-card: #E8E6E1;
-      --bg-raised: #E8E6E1;
-    }
-
-    .chaos-diagram::before {
-      content: '';
-      position: absolute;
-      top: -60px;
-      right: -60px;
-      width: 200px;
-      height: 200px;
-      background: radial-gradient(circle, rgba(31,73,125,0.10) 0%, transparent 70%);
-      pointer-events: none;
-    }
-
-    .chaos-title {
-      font-size: 0.75rem;
-      font-weight: 600;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--text-subtle);
-      margin-bottom: 24px;
-    }
-
-    .chaos-nodes {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      gap: 12px;
-      margin-bottom: 24px;
-    }
-
-    .chaos-node {
-      padding: 10px 12px;
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      font-size: 0.8rem;
-      font-weight: 500;
-      color: var(--text-muted);
-      text-align: center;
-    }
-
-    .chaos-arrow {
-      text-align: center;
-      color: var(--text-subtle);
-      font-size: 1.2rem;
-      margin: 4px 0;
-    }
-
-    .chaos-result {
-      padding: 12px 16px;
-      background: rgba(224,114,48,0.08);
-      border: 1px solid rgba(224,114,48,0.22);
-      border-radius: 8px;
-      font-size: 0.85rem;
-      color: var(--orange);
-      text-align: center;
-      font-weight: 500;
+    .quote-dot.active {
+      background: #e07230;
     }
 
     /* ─── How it Works ──────────────────────────────────────────────── */
@@ -933,73 +875,6 @@
     @keyframes float {
       0%, 100% { transform: translateY(0px); }
       50% { transform: translateY(-12px); }
-    }
-
-    /* ─── Quotes ────────────────────────────────────────────────────── */
-    #quotes {
-      position: relative;
-    }
-
-    .quotes-header {
-      text-align: center;
-      margin-bottom: 64px;
-    }
-
-    .quotes-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-    }
-
-    .quote-card {
-      background: #E8E6E1 !important;
-      border: 1px solid var(--border);
-      border-radius: var(--radius-lg);
-      padding: 32px;
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-      transition: border-color 0.2s, transform 0.2s;
-      position: relative;
-    }
-
-    .quote-card:hover {
-      border-color: rgba(0,0,0,0.14);
-      transform: translateY(-3px);
-    }
-
-    .quote-mark {
-      font-size: 3rem;
-      line-height: 1;
-      color: var(--orange);
-      opacity: 0.35;
-      font-family: Georgia, serif;
-      margin-bottom: -12px;
-    }
-
-    .quote-text {
-      font-size: 0.95rem;
-      line-height: 1.75;
-      color: var(--text-muted);
-      flex: 1;
-      font-style: italic;
-    }
-
-    .quote-attr {
-      padding-top: 20px;
-      border-top: 1px solid var(--border);
-    }
-
-    .quote-name {
-      font-size: 0.875rem;
-      font-weight: 600;
-      color: var(--text);
-    }
-
-    .quote-company {
-      font-size: 0.8rem;
-      color: var(--text-subtle);
-      margin-top: 2px;
     }
 
     /* ─── Final CTA ─────────────────────────────────────────────────── */
@@ -1321,17 +1196,12 @@
 
     /* ─── Responsive ────────────────────────────────────────────────── */
     @media (max-width: 900px) {
-      .problem-grid { grid-template-columns: 1fr; gap: 48px; }
       .steps-grid { grid-template-columns: 1fr; }
       .steps-grid::before { display: none; }
-      .quotes-grid { grid-template-columns: 1fr; }
       .nav-links { display: none; }
-      .problem-right { order: 1; }
     }
 
     @media (max-width: 768px) {
-      #before-after .container > div:last-child { grid-template-columns: 1fr; }
-      #before-after [style*="width:80%"] { width: 100% !important; }
       #approach-cards { grid-template-columns: 1fr !important; }
       #hero { overflow-x: hidden; }
       .hero-content { padding: 0 16px; padding-right: 16px; }
@@ -1456,56 +1326,6 @@
         min-height: 200px;
       }
 
-      /* Problem section — ensure text comes before diagram */
-      .problem-right { order: 2; }
-      .problem-left { order: 1; }
-
-      /* Problem diagram — center header, 2-col tool/stakeholder grids */
-      #problem .container { overflow-x: hidden; }
-      .chaos-diagram { overflow: hidden; padding: 20px 16px !important; }
-
-      /* Stats row: two "6+" blocks side by side, label as caption below */
-      .diagram-stat-row {
-        flex-direction: row !important;
-        flex-wrap: wrap !important;
-        align-items: flex-start !important;
-        justify-content: space-between !important;
-        gap: 4px !important;
-      }
-      .diagram-stat-left { order: 1; }
-      .diagram-stat-right { order: 2; text-align: right; }
-      .diagram-stat-center {
-        order: 3 !important;
-        width: 100% !important;
-        text-align: center !important;
-        font-size: 0.68rem !important;
-        text-transform: uppercase;
-        letter-spacing: 0.06em;
-        margin-top: 6px !important;
-      }
-
-      /* Tool boxes: wrap into 2x3 grid */
-      .chaos-diagram > div[style*="display:flex;gap:8px"] {
-        flex-wrap: wrap !important;
-        justify-content: center !important;
-      }
-      .chaos-diagram > div[style*="display:flex;gap:8px"] > div {
-        flex: 0 0 calc(50% - 4px) !important;
-        min-width: 0 !important;
-        padding: 8px !important;
-      }
-      .chaos-diagram > div[style*="display:flex;gap:8px"] > div > div:first-child {
-        font-size: 0.75rem !important;
-      }
-
-      /* Hide stakeholder row and its connector arrows */
-      .diagram-arrows-sep,
-      .diagram-arrows-row,
-      .diagram-stakeholder-row { display: none !important; }
-
-      /* Problem section — center label and intro text on mobile */
-      #problem .reveal { text-align: center; }
-
       /* How it works — screenshot must not overflow on mobile */
       #how-screenshot-wrap { overflow: hidden; max-width: 100%; }
       #how-screenshot { width: 100% !important; height: auto !important; max-width: 100%; }
@@ -1553,7 +1373,6 @@
       /* Trusted signal strip — centered */
       .hero-social-proof { flex-direction: column; align-items: center; text-align: center; }
       .hero-sp-logos { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; }
-      .problem-stat-row { flex-direction: column; gap: 20px; }
       .cta-box { padding: 48px 16px; }
       .footer-inner { flex-direction: column; align-items: flex-start; }
       .container { padding: 0 16px; }
@@ -1651,127 +1470,7 @@
     </div>
   </section>
 
-  <!-- ─── Problem ────────────────────────────────────────────────────── -->
-  <section id="problem" class="section">
-    <div class="container">
-      <div class="reveal">
-        <div class="label">The problem</div>
-        <p style="font-size:1rem;color:var(--text-muted);line-height:1.7;margin-bottom:16px;">Your customer interacted with 6+ people across 6+ systems this month. Nobody has the full picture.</p>
-        <h2>By the time you connect the dots,<br>they've already decided to leave</h2>
-      </div>
-
-      <!-- Full-width diagram -->
-      <div class="chaos-diagram reveal" style="margin-top:40px;border-radius:16px;padding:32px 36px;">
-
-        <!-- Stat callouts + title row -->
-        <div class="diagram-stat-row" style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:20px;">
-          <div class="diagram-stat-left">
-            <div style="font-size:2.4rem;font-weight:800;color:#e8782a;line-height:1;">6+</div>
-            <div style="font-size:0.72rem;color:#4a5568;margin-top:4px;">siloed data sources</div>
-          </div>
-          <div class="chaos-title diagram-stat-center" style="margin:0;padding:0;border:none;background:none;color:#4a5568;">A single customer account</div>
-          <div class="diagram-stat-right" style="text-align:right;">
-            <div style="font-size:2.4rem;font-weight:800;color:#e8782a;line-height:1;">6+</div>
-            <div style="font-size:0.72rem;color:#4a5568;margin-top:4px;">teams touching one account</div>
-          </div>
-        </div>
-
-        <!-- Tool columns -->
-        <div style="display:flex;gap:8px;margin-bottom:0;">
-          <div style="flex:1;background:#E8E6E1;border:1px solid rgba(0,0,0,0.08);border-radius:8px;padding:10px 8px;">
-            <div style="font-size:0.72rem;font-weight:700;color:#e8782a;margin-bottom:4px;">HubSpot</div>
-            <div style="font-size:0.68rem;color:#4a5568;">CRM / Pipeline</div>
-          </div>
-          <div style="flex:1;background:#E8E6E1;border:1px solid rgba(0,0,0,0.08);border-radius:8px;padding:10px 8px;">
-            <div style="font-size:0.72rem;font-weight:700;color:#1f3c5e;margin-bottom:4px;">Zendesk</div>
-            <div style="font-size:0.68rem;color:#4a5568;">Support Tickets</div>
-          </div>
-          <div style="flex:1;background:#E8E6E1;border:1px solid rgba(0,0,0,0.08);border-radius:8px;padding:10px 8px;">
-            <div style="font-size:0.72rem;font-weight:700;color:#2c8f7e;margin-bottom:4px;">Slack</div>
-            <div style="font-size:0.68rem;color:#4a5568;">Communications</div>
-          </div>
-          <div style="flex:1;background:#E8E6E1;border:1px solid rgba(0,0,0,0.08);border-radius:8px;padding:10px 8px;">
-            <div style="font-size:0.72rem;font-weight:700;color:#4a9fd4;margin-bottom:4px;">Salesforce</div>
-            <div style="font-size:0.68rem;color:#4a5568;">Account Data</div>
-          </div>
-          <div style="flex:1;background:#E8E6E1;border:1px solid rgba(0,0,0,0.08);border-radius:8px;padding:10px 8px;">
-            <div style="font-size:0.72rem;font-weight:700;color:#8b5cf6;margin-bottom:4px;">Gong</div>
-            <div style="font-size:0.68rem;color:#4a5568;">Call Transcripts</div>
-          </div>
-          <div style="flex:1;background:#E8E6E1;border:1px solid rgba(0,0,0,0.08);border-radius:8px;padding:10px 8px;">
-            <div style="font-size:0.72rem;font-weight:700;color:#0052CC;margin-bottom:4px;">Jira</div>
-            <div style="font-size:0.68rem;color:#4a5568;">Product & Engineering</div>
-          </div>
-        </div>
-
-        <!-- Dashed separator + connector arrows -->
-        <div class="diagram-arrows-sep" style="border-top:1px dashed rgba(0,0,0,0.12);margin:10px 0 0;"></div>
-        <div class="diagram-arrows-row" style="display:flex;gap:8px;margin-bottom:0;">
-          <div style="flex:1;display:flex;justify-content:center;padding:3px 0;font-size:0.65rem;color:rgba(0,0,0,0.25);">↓</div>
-          <div style="flex:1;display:flex;justify-content:center;padding:3px 0;font-size:0.65rem;color:rgba(0,0,0,0.25);">↓</div>
-          <div style="flex:1;display:flex;justify-content:center;padding:3px 0;font-size:0.65rem;color:rgba(0,0,0,0.25);">↓</div>
-          <div style="flex:1;display:flex;justify-content:center;padding:3px 0;font-size:0.65rem;color:rgba(0,0,0,0.25);">↓</div>
-          <div style="flex:1;display:flex;justify-content:center;padding:3px 0;font-size:0.65rem;color:rgba(0,0,0,0.25);">↓</div>
-          <div style="flex:1;display:flex;justify-content:center;padding:3px 0;font-size:0.65rem;color:rgba(0,0,0,0.25);">↓</div>
-        </div>
-
-        <!-- Stakeholder row -->
-        <div class="diagram-stakeholder-row" style="display:flex;gap:8px;margin-bottom:20px;">
-          <div style="flex:1;background:#E8E6E1;border:1px solid rgba(0,0,0,0.08);border-radius:12px;padding:10px 8px;">
-            <div style="font-size:0.72rem;font-weight:700;color:var(--text);margin-bottom:4px;">Sales Rep</div>
-            <div style="font-size:0.68rem;color:#4a5568;">Owns the deal, not the relationship</div>
-          </div>
-          <div style="flex:1;background:#E8E6E1;border:1px solid rgba(0,0,0,0.08);border-radius:12px;padding:10px 8px;">
-            <div style="font-size:0.72rem;font-weight:700;color:var(--text);margin-bottom:4px;">Support Agent</div>
-            <div style="font-size:0.68rem;color:#4a5568;">Closes tickets, never sees the account</div>
-          </div>
-          <div style="flex:1;background:#E8E6E1;border:1px solid rgba(0,0,0,0.08);border-radius:12px;padding:10px 8px;">
-            <div style="font-size:0.72rem;font-weight:700;color:var(--text);margin-bottom:4px;">Account Mgr</div>
-            <div style="font-size:0.68rem;color:#4a5568;">Last to know when things go wrong</div>
-          </div>
-          <div style="flex:1;background:#E8E6E1;border:1px solid rgba(0,0,0,0.08);border-radius:12px;padding:10px 8px;">
-            <div style="font-size:0.72rem;font-weight:700;color:var(--text);margin-bottom:4px;">CSM</div>
-            <div style="font-size:0.68rem;color:#4a5568;">Flying blind on health</div>
-          </div>
-          <div style="flex:1;background:#E8E6E1;border:1px solid rgba(0,0,0,0.08);border-radius:12px;padding:10px 8px;">
-            <div style="font-size:0.72rem;font-weight:700;color:var(--text);margin-bottom:4px;">Onboarding</div>
-            <div style="font-size:0.68rem;color:#4a5568;">Hands off and disappears</div>
-          </div>
-          <div style="flex:1;background:#E8E6E1;border:1px solid rgba(0,0,0,0.08);border-radius:12px;padding:10px 8px;">
-            <div style="font-size:0.72rem;font-weight:700;color:var(--text);margin-bottom:4px;">Engineering</div>
-            <div style="font-size:0.68rem;color:#4a5568;">Fixes issues, never sees the customer impact</div>
-          </div>
-        </div>
-
-        <div style="font-size:0.75rem;font-weight:700;text-align:center;color:var(--text);letter-spacing:0.04em;margin-bottom:12px;">Things Start to Slip</div>
-        <p style="font-size:0.8rem;color:var(--text-muted);line-height:1.75;margin-bottom:16px;">Quote requested, <strong style="color:#e8782a;">Permit delayed with no flag,</strong> interaction logged, <strong style="color:#e8782a;">Follow-up never sent,</strong> milestone passed, <strong style="color:#e8782a;">Complaint unseen by CSM,</strong> check-in skipped, <strong style="color:#e8782a;">Risk score stale,</strong> account silent for 6 weeks, <strong style="color:#e8782a;">no one noticed.</strong> Customer decided to leave.</p>
-        <div style="border:1px solid rgba(232,120,42,0.4);border-radius:8px;padding:12px 16px;background:#E8E6E1 !important;">
-          <p style="font-size:0.82rem;color:#e8782a;font-weight:600;text-align:center;margin:0;">Resulting in impersonal experiences that lead to churn and lost upsell opportunities</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="container" style="margin-top:40px;">
-      <div style="margin-top:32px;background:#E8E6E1 !important;border:1px solid rgba(224,114,48,0.2);border-radius:var(--radius-lg);padding:28px;position:relative;min-height:260px;overflow:hidden;">
-        <div id="quote-display" style="transition:opacity 0.5s ease;">
-          <div class="quote-slide" style="transition:opacity 0.4s ease;">
-            <div style="font-size:2.5rem;line-height:1;color:#e07230;opacity:1;font-family:Georgia,serif;margin-bottom:8px;">"</div>
-            <p style="font-size:0.95rem;line-height:1.75;color:var(--text-muted);margin-bottom:20px;">Most companies aren't systems of action, they are systems of recommendations. Where a company could differentiate is if it had the recommendation engine and then helped me do it.</p>
-            <div style="font-size:2.5rem;line-height:1;color:#e07230;font-family:Georgia,serif;text-align:right;margin-top:-8px;">"</div>
-            <div style="padding-top:16px;border-top:1px solid rgba(224,114,48,0.2);">
-              <div style="font-size:0.82rem;color:var(--text-subtle);">Global Head of Customer Success, $15B+ technology company</div>
-            </div>
-          </div>
-        </div>
-        <div style="display:flex;gap:8px;margin-top:24px;">
-          <div class="quote-dot" style="width:8px;height:8px;border-radius:50%;background:var(--orange);transition:opacity 0.3s;"></div>
-          <div class="quote-dot" style="width:8px;height:8px;border-radius:50%;background:var(--border);transition:opacity 0.3s;"></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ─── Before/After ───────────────────────────────────────────────── -->
+  <!-- ─── Our Approach ───────────────────────────────────────────────── -->
   <section id="before-after" style="padding:100px 0 100px;background:linear-gradient(to right,#011330 0%,#011330 25%,rgba(1,19,48,0.9) 40%,rgba(1,19,48,0.75) 55%,rgba(1,19,48,0.55) 70%,rgba(1,19,48,0.35) 85%,rgba(1,19,48,0.2) 100%);position:relative;margin:40px;border-radius:20px;overflow:hidden;">
     <div class="container">
       <div style="text-align:center;margin-bottom:56px;">
@@ -1814,6 +1513,19 @@
           </ul>
         </div>
 
+      </div>
+
+      <div class="approach-quote-block reveal">
+        <div id="quote-display" class="approach-quote-display">
+          <div class="approach-quote-mark">"</div>
+          <p class="approach-quote-text">Most companies aren't systems of action, they are systems of recommendations. Where a company could differentiate is if it had the recommendation engine and then helped me do it.</p>
+          <div class="approach-quote-mark approach-quote-mark-close">"</div>
+          <div class="approach-quote-attr">Global Head of Customer Success, $15B+ technology company</div>
+        </div>
+        <div class="approach-quote-dots">
+          <div class="quote-dot active"></div>
+          <div class="quote-dot"></div>
+        </div>
       </div>
     </div>
   </section>
@@ -1978,17 +1690,13 @@
       display.style.opacity = '0';
       setTimeout(() => {
         display.innerHTML = `
-          <div>
-            <div style="font-size:2.5rem;line-height:1;color:#e07230;opacity:1;font-family:Georgia,serif;margin-bottom:8px;">"</div>
-            <p style="font-size:0.95rem;line-height:1.75;color:var(--text-muted);margin-bottom:20px;">${q.text}</p>
-            <div style="font-size:2.5rem;line-height:1;color:#e07230;font-family:Georgia,serif;text-align:right;margin-top:-8px;">"</div>
-            <div style='padding-top:16px;border-top:1px solid rgba(224,114,48,0.2);'>
-              <div style='font-size:0.82rem;color:#9aa0ae;'>${q.name}, ${q.company}</div>
-            </div>
-          </div>`;
+          <div class="approach-quote-mark">"</div>
+          <p class="approach-quote-text">${q.text}</p>
+          <div class="approach-quote-mark approach-quote-mark-close">"</div>
+          <div class="approach-quote-attr">${q.name}, ${q.company}</div>`;
         display.style.opacity = '1';
         quoteDots.forEach((dot, i) => {
-          dot.style.background = i === quoteIndex ? '#e07230' : 'rgba(0,0,0,0.08)';
+          dot.classList.toggle('active', i === quoteIndex);
         });
       }, 500);
     }
