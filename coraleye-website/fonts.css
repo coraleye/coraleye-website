@@ -1,0 +1,42 @@
+/* Söhne — Klim Type Foundry (self-hosted web license)
+   Place woff2 files in coraleye-website/fonts/:
+   - Soehne-Buch.woff2           (400)
+   - Soehne-Kraftig.woff2        (500)
+   - Soehne-Halbfett.woff2       (600)
+   - Soehne-Dreiviertelfett.woff2 (700) */
+
+@font-face {
+  font-family: "Söhne";
+  src: local("Söhne Buch"), local("Soehne Buch"),
+       url("fonts/Soehne-Buch.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Söhne";
+  src: local("Söhne Kräftig"), local("Soehne Kraftig"),
+       url("fonts/Soehne-Kraftig.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Söhne";
+  src: local("Söhne Halbfett"), local("Soehne Halbfett"),
+       url("fonts/Soehne-Halbfett.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Söhne";
+  src: local("Söhne Dreiviertelfett"), local("Soehne Dreiviertelfett"),
+       url("fonts/Soehne-Dreiviertelfett.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
