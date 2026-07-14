@@ -886,44 +886,6 @@
       color: var(--blue);
     }
 
-    /* ─── Meet Cory ─────────────────────────────────────────────────── */
-    #meet-cory {
-      background: #E8E6E1;
-    }
-
-    .cory-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 80px;
-      align-items: center;
-    }
-
-    .cory-mascot {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .cory-orb {
-      width: 300px;
-      height: 300px;
-      border-radius: 50%;
-      background: #011330;
-      border: 1px solid var(--border);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-      box-shadow: 0 8px 40px rgba(0,0,0,0.10);
-    }
-
-    .cory-img {
-      width: 200px;
-      height: 200px;
-      object-fit: contain;
-      animation: float 4s ease-in-out infinite;
-    }
-
     @keyframes marquee {
       0%   { transform: translateX(0); }
       100% { transform: translateX(-50%); }
@@ -971,77 +933,6 @@
     @keyframes float {
       0%, 100% { transform: translateY(0px); }
       50% { transform: translateY(-12px); }
-    }
-
-    .cory-orbit {
-      position: absolute;
-      inset: -24px;
-      border-radius: 50%;
-      border: 1px dashed rgba(224,114,48,0.25);
-      animation: orbit-spin 18s linear infinite;
-    }
-
-    @keyframes orbit-spin {
-      from { transform: rotate(0deg); }
-      to { transform: rotate(360deg); }
-    }
-
-    .orbit-dot {
-      position: absolute;
-      top: -5px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      background: var(--orange);
-      box-shadow: 0 0 10px rgba(224,114,48,0.5);
-    }
-
-    .cory-info h2 { margin-bottom: 20px; }
-
-    .cory-info p {
-      color: var(--text-muted);
-      font-size: 1rem;
-      line-height: 1.7;
-      font-style: normal;
-      margin-bottom: 16px;
-    }
-
-    .cory-traits {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
-      margin-top: 32px;
-    }
-
-    .cory-trait {
-      display: flex;
-      align-items: flex-start;
-      gap: 12px;
-      padding: 14px 16px;
-      background: var(--bg-raised);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-    }
-
-    .trait-icon {
-      font-size: 1.1rem;
-      flex-shrink: 0;
-      margin-top: 1px;
-    }
-
-    .trait-text {
-      font-size: 0.85rem;
-      color: var(--text-muted);
-      line-height: 1.5;
-    }
-
-    .trait-text strong {
-      display: block;
-      color: var(--text);
-      font-size: 0.875rem;
-      margin-bottom: 2px;
     }
 
     /* ─── Quotes ────────────────────────────────────────────────────── */
@@ -1430,7 +1321,7 @@
 
     /* ─── Responsive ────────────────────────────────────────────────── */
     @media (max-width: 900px) {
-      .problem-grid, .cory-grid { grid-template-columns: 1fr; gap: 48px; }
+      .problem-grid { grid-template-columns: 1fr; gap: 48px; }
       .steps-grid { grid-template-columns: 1fr; }
       .steps-grid::before { display: none; }
       .quotes-grid { grid-template-columns: 1fr; }
@@ -1612,18 +1503,8 @@
       .diagram-arrows-row,
       .diagram-stakeholder-row { display: none !important; }
 
-      /* Meet Cory — center label, heading, and text on mobile */
-      .cory-info { text-align: center; }
-      .cory-info .label { text-align: center; }
-
       /* Problem section — center label and intro text on mobile */
       #problem .reveal { text-align: center; }
-
-      /* Meet Cory — hide desktop card, show inline mobile copy between text and traits */
-      .cory-action-desktop { display: none !important; }
-      .cory-action-mobile { display: block !important; }
-      .cory-grid { display: flex; flex-direction: column; }
-      .cory-grid .cory-info { order: 1; }
 
       /* How it works — screenshot must not overflow on mobile */
       #how-screenshot-wrap { overflow: hidden; max-width: 100%; }
@@ -1673,15 +1554,10 @@
       .hero-social-proof { flex-direction: column; align-items: center; text-align: center; }
       .hero-sp-logos { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; }
       .problem-stat-row { flex-direction: column; gap: 20px; }
-      .cory-traits { grid-template-columns: 1fr; }
       .cta-box { padding: 48px 16px; }
       .footer-inner { flex-direction: column; align-items: flex-start; }
       .container { padding: 0 16px; }
     }
-
-    /* Cory in Action: desktop shows original left-column card, mobile copy hidden */
-    .cory-action-mobile { display: none; }
-    .cory-action-desktop { display: block; }
 
     .nav-dropdown:hover .dropdown-menu {
       display: block !important;
@@ -2009,145 +1885,6 @@
     </div>
   </section>
 
-  <!-- ─── Meet Cory ──────────────────────────────────────────────────── -->
-  <section id="meet-cory" class="section">
-    <div class="container">
-      <div class="cory-grid">
-
-        <!-- Sandra Clark dispatch card -->
-        <div class="cory-action-desktop reveal">
-          <div style="background:#011330;border-radius:16px;padding:32px;border:1px solid rgba(232,120,42,0.25);box-shadow:0 8px 32px rgba(0,0,0,0.18);">
-
-            <!-- Card header -->
-            <div style="font-size:0.65rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#e8782a;margin-bottom:12px;">Cory in Action</div>
-            <div style="font-size:1rem;font-weight:700;color:#ffffff;margin-bottom:10px;">Sandra Clark, Meridian Health</div>
-            <div style="display:flex;gap:8px;margin-bottom:24px;">
-              <span style="font-size:0.7rem;font-weight:700;background:rgba(220,50,50,0.18);color:#f87171;border:1px solid rgba(220,50,50,0.3);border-radius:100px;padding:3px 10px;">Churn Risk: 82</span>
-              <span style="font-size:0.7rem;font-weight:700;background:rgba(232,120,42,0.15);color:#e8782a;border:1px solid rgba(232,120,42,0.3);border-radius:100px;padding:3px 10px;">Renewal in 18 days</span>
-            </div>
-
-            <!-- Step 1 — visible immediately -->
-            <div class="cory-step" style="padding-bottom:16px;border-bottom:1px solid rgba(255,255,255,0.07);margin-bottom:16px;opacity:1;transition:opacity 0.6s ease;">
-              <div style="display:flex;gap:12px;">
-                <div style="flex-shrink:0;font-size:0.68rem;font-weight:700;color:rgba(232,120,42,0.6);width:18px;padding-top:2px;">01</div>
-                <div>
-                  <div style="font-size:0.68rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:4px;">Flagged</div>
-                  <div style="font-size:0.85rem;color:rgba(255,255,255,0.6);line-height:1.6;">3 signals detected across Zendesk, Gong, and Slack over 6 days.</div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Step 2 — hidden initially -->
-            <div class="cory-step" style="padding-bottom:16px;border-bottom:1px solid rgba(255,255,255,0.07);margin-bottom:16px;opacity:0;transition:opacity 0.6s ease;">
-              <div style="display:flex;gap:12px;">
-                <div style="flex-shrink:0;font-size:0.68rem;font-weight:700;color:rgba(232,120,42,0.6);width:18px;padding-top:2px;">02</div>
-                <div>
-                  <div style="font-size:0.68rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:4px;">Analyzed</div>
-                  <div style="font-size:0.85rem;color:rgba(255,255,255,0.6);line-height:1.6;">Transcript excerpt: <em style="color:rgba(255,255,255,0.45);">"I feel like no one is reading our tickets."</em> Unanswered renewal question identified.</div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Step 3 — hidden initially -->
-            <div class="cory-step" style="padding-bottom:16px;border-bottom:1px solid rgba(255,255,255,0.07);margin-bottom:16px;opacity:0;transition:opacity 0.6s ease;">
-              <div style="display:flex;gap:12px;">
-                <div style="flex-shrink:0;font-size:0.68rem;font-weight:700;color:rgba(232,120,42,0.6);width:18px;padding-top:2px;">03</div>
-                <div>
-                  <div style="font-size:0.68rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:4px;">Play Drafted</div>
-                  <div style="font-size:0.85rem;color:rgba(255,255,255,0.6);line-height:1.6;">Recovery play queued. Apology call plus renewal prep sequence ready for CSM review.</div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Step 4 — hidden initially -->
-            <div class="cory-step" style="opacity:0;transition:opacity 0.6s ease;">
-              <div style="display:flex;gap:12px;">
-                <div style="flex-shrink:0;font-size:0.68rem;font-weight:700;color:#e8782a;width:18px;padding-top:2px;">04</div>
-                <div>
-                  <div style="font-size:0.68rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#e8782a;margin-bottom:4px;">Executed</div>
-                  <div style="font-size:0.85rem;color:#f8fafc;line-height:1.6;">CSM approved in one click. Call scheduled. Sequence deployed. Account moved from <span style="color:rgba(255,100,100,0.85);">At Risk</span> to <span style="color:#e8782a;">Watch</span>.</div>
-                </div>
-              </div>
-            </div>
-
-          </div>
-        </div>
-
-        <div class="cory-info reveal reveal-delay-1">
-          <div class="label">Meet Cory</div>
-          <h2>Your AI agent that never misses a signal</h2>
-          <p>Cory reads across the full customer timeline, picking up signals from conversations and usage across your entire account base.</p>
-
-          <!-- Mobile-only: Cory in Action card repositioned between text and traits -->
-          <div class="cory-action-mobile" style="margin:28px 0;">
-            <div style="background:#011330;border-radius:16px;padding:32px;border:1px solid rgba(232,120,42,0.25);box-shadow:0 8px 32px rgba(0,0,0,0.18);">
-              <div style="font-size:0.65rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#e8782a;margin-bottom:12px;">Cory in Action</div>
-              <div style="font-size:1rem;font-weight:700;color:#ffffff;margin-bottom:10px;">Sandra Clark, Meridian Health</div>
-              <div style="display:flex;gap:8px;margin-bottom:24px;">
-                <span style="font-size:0.7rem;font-weight:700;background:rgba(220,50,50,0.18);color:#f87171;border:1px solid rgba(220,50,50,0.3);border-radius:100px;padding:3px 10px;">Churn Risk: 82</span>
-                <span style="font-size:0.7rem;font-weight:700;background:rgba(232,120,42,0.15);color:#e8782a;border:1px solid rgba(232,120,42,0.3);border-radius:100px;padding:3px 10px;">Renewal in 18 days</span>
-              </div>
-              <div style="padding-bottom:16px;border-bottom:1px solid rgba(255,255,255,0.07);margin-bottom:16px;">
-                <div style="display:flex;gap:12px;">
-                  <div style="flex-shrink:0;font-size:0.68rem;font-weight:700;color:rgba(232,120,42,0.6);width:18px;padding-top:2px;">01</div>
-                  <div>
-                    <div style="font-size:0.68rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:4px;">Flagged</div>
-                    <div style="font-size:0.85rem;color:rgba(255,255,255,0.6);line-height:1.6;">3 signals detected across Zendesk, Gong, and Slack over 6 days.</div>
-                  </div>
-                </div>
-              </div>
-              <div style="padding-bottom:16px;border-bottom:1px solid rgba(255,255,255,0.07);margin-bottom:16px;">
-                <div style="display:flex;gap:12px;">
-                  <div style="flex-shrink:0;font-size:0.68rem;font-weight:700;color:rgba(232,120,42,0.6);width:18px;padding-top:2px;">02</div>
-                  <div>
-                    <div style="font-size:0.68rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:4px;">Analyzed</div>
-                    <div style="font-size:0.85rem;color:rgba(255,255,255,0.6);line-height:1.6;">Transcript excerpt: <em style="color:rgba(255,255,255,0.45);">"I feel like no one is reading our tickets."</em> Unanswered renewal question identified.</div>
-                  </div>
-                </div>
-              </div>
-              <div style="padding-bottom:16px;border-bottom:1px solid rgba(255,255,255,0.07);margin-bottom:16px;">
-                <div style="display:flex;gap:12px;">
-                  <div style="flex-shrink:0;font-size:0.68rem;font-weight:700;color:rgba(232,120,42,0.6);width:18px;padding-top:2px;">03</div>
-                  <div>
-                    <div style="font-size:0.68rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:4px;">Play Drafted</div>
-                    <div style="font-size:0.85rem;color:rgba(255,255,255,0.6);line-height:1.6;">Recovery play queued. Apology call plus renewal prep sequence ready for CSM review.</div>
-                  </div>
-                </div>
-              </div>
-              <div>
-                <div style="display:flex;gap:12px;">
-                  <div style="flex-shrink:0;font-size:0.68rem;font-weight:700;color:#e8782a;width:18px;padding-top:2px;">04</div>
-                  <div>
-                    <div style="font-size:0.68rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#e8782a;margin-bottom:4px;">Executed</div>
-                    <div style="font-size:0.85rem;color:#f8fafc;line-height:1.6;">CSM approved in one click. Call scheduled. Sequence deployed. Account moved from <span style="color:rgba(255,100,100,0.85);">At Risk</span> to <span style="color:#e8782a;">Watch</span>.</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="cory-traits" style="grid-template-columns:1fr;">
-            <div class="cory-trait">
-              <div class="trait-icon">⚡</div>
-              <div class="trait-text">
-                <strong>Action-first</strong>
-                Drafts the play and waits for a single CSM approval
-              </div>
-            </div>
-            <div class="cory-trait">
-              <div class="trait-icon">🛡</div>
-              <div class="trait-text">
-                <strong>Human-in-the-loop</strong>
-                CSMs stay in control. Cory does the legwork, you make the call.
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
   <!-- ─── Footer ─────────────────────────────────────────────────────── -->
   <footer>
     <div class="container">
@@ -2259,47 +1996,6 @@
       setInterval(rotateQuote, 4000);
     }
 
-
-    // ── Meet Cory: sequential step reveal ─────────────────────────────────
-    (function() {
-      var steps = document.querySelectorAll('.cory-step');
-      // Step 1 starts visible; steps 2-4 start hidden
-      for (var i = 1; i < steps.length; i++) {
-        steps[i].style.opacity = '0';
-      }
-      var currentStep = 1; // next step to reveal (0 is already visible)
-
-      function showNextStep() {
-        if (currentStep < steps.length) {
-          steps[currentStep].style.transition = 'opacity 0.6s ease';
-          steps[currentStep].style.opacity = '1';
-          currentStep++;
-          if (currentStep < steps.length) {
-            setTimeout(showNextStep, 3000);
-          } else {
-            setTimeout(resetSteps, 4000);
-          }
-        }
-      }
-
-      function resetSteps() {
-        for (var i = 0; i < steps.length; i++) {
-          steps[i].style.transition = 'opacity 0.3s ease';
-          steps[i].style.opacity = i === 0 ? '1' : '0';
-        }
-        currentStep = 1;
-        setTimeout(showNextStep, 2000);
-      }
-
-      if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-        setTimeout(showNextStep, 3000);
-      } else {
-        // Show all steps immediately for reduced motion users
-        for (var i = 0; i < steps.length; i++) {
-          steps[i].style.opacity = '1';
-        }
-      }
-    })();
 
     // ── How It Works: synchronized orbit dot + screenshot ─────────────────
     let currentStep = 0;
