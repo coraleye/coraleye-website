@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Coraleye | Customer Success, Finally Proactive</title>
-  <meta name="description" content="Coraleye unifies every customer signal, surfaces who needs attention, and helps your team act with one click, with your approval, before accounts churn." />
+  <meta name="description" content="Coraleye reads your customer data. You act on what matters. Know what your customers need before they do — with your approval on every move." />
   <link rel="icon" type="image/png" href="kory.png" />
   <link rel="apple-touch-icon" href="kory.png" />
   <link rel="canonical" href="https://coraleye.ai/" />
@@ -14,11 +14,11 @@
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://coraleye.ai/" />
   <meta property="og:title" content="Coraleye — Customer Success, Finally Proactive" />
-  <meta property="og:description" content="Coraleye unifies every customer signal, surfaces who needs attention, and helps your team act with one click, with your approval, before accounts churn." />
+  <meta property="og:description" content="Coraleye reads your customer data. You act on what matters. Know what your customers need before they do — with your approval on every move." />
   <meta property="og:image" content="https://coraleye.ai/act-workbench-module.png" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Coraleye — Customer Success, Finally Proactive" />
-  <meta name="twitter:description" content="Coraleye unifies every customer signal, surfaces who needs attention, and helps your team act with one click, with your approval, before accounts churn." />
+  <meta name="twitter:description" content="Coraleye reads your customer data. You act on what matters. Know what your customers need before they do — with your approval on every move." />
   <meta name="twitter:image" content="https://coraleye.ai/act-workbench-module.png" />
   <style>
     /* ─── Reset & Base ─────────────────────────────────────────────── */
@@ -40,6 +40,8 @@
       --radius:      10px;
       --radius-lg:   16px;
       --navy:        #011330;
+      --connect:     rgba(232, 120, 42, 0.3);
+      --success:     #34d399;
     }
 
     html { scroll-behavior: smooth; scroll-padding-top: 64px; overflow-x: hidden; }
@@ -516,7 +518,7 @@
       grid-template-columns: 1fr 1fr;
       gap: 48px;
       align-items: center;
-      margin-bottom: 32px;
+      margin-bottom: 0;
     }
 
     .how-orbit-col {
@@ -549,38 +551,15 @@
       font-size: 1rem;
       line-height: 1.7;
       color: var(--text-muted);
-      margin: 0 0 24px;
-    }
-
-    .how-unify-list {
-      list-style: none;
-      margin: 0 0 24px;
-      padding: 0;
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-    }
-
-    .how-unify-list li {
-      display: flex;
-      align-items: flex-start;
-      gap: 12px;
-      font-size: 0.9375rem;
-      line-height: 1.55;
-      color: var(--text);
-    }
-
-    .how-unify-check {
-      flex-shrink: 0;
-      margin-top: 2px;
-      width: 18px;
-      height: 18px;
-      color: #E8502A;
+      margin: 0 0 20px;
     }
 
     .how-unify-footnote {
+      display: flex;
+      align-items: center;
+      gap: 10px;
       padding: 14px 16px;
-      background: #34d399;
+      background: var(--success);
       border-radius: 8px;
       font-size: 0.8125rem;
       line-height: 1.5;
@@ -589,16 +568,65 @@
       margin: 0;
     }
 
-    .how-steps {
+    .how-unify-footnote-icon {
+      flex-shrink: 0;
+      width: 18px;
+      height: 18px;
+    }
+
+    .how-steps-band {
       max-width: 1100px;
-      margin: 0 auto;
+      margin: 56px auto 0;
+      padding-top: 56px;
+      border-top: 1px solid var(--border);
+    }
+
+    .how-steps-band-title {
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-subtle);
+      text-align: center;
+      margin: 0 0 28px;
+    }
+
+    .how-steps {
+      max-width: none;
+      margin: 0;
     }
 
     .how-step-boxes {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(2, 1fr);
       gap: 24px;
-      margin-top: 48px;
+      margin-top: 0;
+    }
+
+    .how-step-box-list {
+      list-style: none;
+      margin: 14px 0 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .how-step-box-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      font-size: 0.82rem;
+      line-height: 1.5;
+      color: var(--text-muted);
+    }
+
+    .how-step-box-check {
+      flex-shrink: 0;
+      margin-top: 2px;
+      width: 14px;
+      height: 14px;
+      color: var(--orange);
     }
 
     .how-step-box {
@@ -606,37 +634,6 @@
       border: 1px solid var(--border);
       border-radius: var(--radius-lg);
       padding: 28px 24px;
-    }
-
-    .how-step-footnote {
-      margin-top: 24px;
-      padding: 16px 20px;
-      border-top: 1px solid var(--border);
-      display: flex;
-      align-items: flex-start;
-      gap: 12px;
-    }
-
-    .how-step-footnote-label {
-      font-size: 0.68rem;
-      font-weight: 500;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--text-subtle);
-      flex-shrink: 0;
-      margin-top: 2px;
-    }
-
-    .how-step-footnote-text {
-      font-size: 0.84rem;
-      line-height: 1.6;
-      color: var(--text-muted);
-      margin: 0;
-    }
-
-    .how-step-footnote-text strong {
-      color: var(--text);
-      font-weight: 500;
     }
 
     .how-step-box-num {
@@ -953,7 +950,7 @@
       letter-spacing: -0.03em;
       margin-bottom: 24px;
       text-align: center;
-      color: transparent;
+      color: var(--navy);
       background-color: #011330;
       background-image:
         linear-gradient(135deg, rgba(11, 22, 40, 0.88) 0%, rgba(11, 22, 40, 0.72) 100%),
@@ -962,6 +959,21 @@
       background-position: center;
       -webkit-background-clip: text;
       background-clip: text;
+      color: transparent;
+    }
+
+    @supports not ((background-clip: text) or (-webkit-background-clip: text)) {
+      .cta-headline {
+        color: var(--navy);
+        background: none;
+      }
+    }
+
+    @media (forced-colors: active) {
+      .cta-headline {
+        color: CanvasText;
+        background: none;
+      }
     }
 
     /* ─── Footer ────────────────────────────────────────────────────── */
@@ -1240,6 +1252,10 @@
     .reveal-delay-3 { transition-delay: 0.3s; }
 
     /* ─── Responsive ────────────────────────────────────────────────── */
+    @media (min-width: 1024px) {
+      .how-step-boxes { grid-template-columns: repeat(4, 1fr); }
+    }
+
     @media (max-width: 900px) {
       .nav-links { display: none; }
       .nav-menu-btn { display: inline-flex; }
@@ -1359,12 +1375,12 @@
       <div class="how-header reveal">
         <div class="label">How it works</div>
         <h2>From signal to action.</h2>
-        <p>Coraleye unifies customer interactions, evaluates risk and opportunity, and surfaces the next best action for your team.</p>
+        <p>Coraleye unifies your stack, evaluates every account, and helps your team act with approval.</p>
       </div>
       <div class="how-unify-layout reveal">
         <div class="how-orbit-col">
           <svg class="how-orbit-svg" viewBox="0 0 460 460" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <g stroke="rgba(232, 80, 42, 0.3)" stroke-width="1">
+            <g style="stroke: var(--connect)" stroke-width="1">
               <line x1="230" y1="172" x2="230" y2="88"/>
               <line x1="257" y1="178.6" x2="296" y2="104.3"/>
               <line x1="277.7" y1="197.1" x2="346.9" y2="149.3"/>
@@ -1387,16 +1403,16 @@
               <image href="slack-logo.png" x="-19.5" y="-19.5" width="39" height="39" preserveAspectRatio="xMidYMid meet"/>
             </g>
             <g transform="translate(308.1, 81.2)">
-              <circle r="26" fill="#ffffff" stroke="rgba(0, 0, 0, 0.12)" stroke-width="1"/>
-              <image href="teams-logo.jpeg" x="-13" y="-13" width="26" height="26" preserveAspectRatio="xMidYMid meet"/>
+              <circle r="33" fill="#ffffff" stroke="rgba(0, 0, 0, 0.12)" stroke-width="1"/>
+              <image href="teams-logo.jpeg" x="-19.5" y="-19.5" width="39" height="39" preserveAspectRatio="xMidYMid meet"/>
             </g>
             <g transform="translate(368.3, 134.6)">
               <circle r="33" fill="#ffffff" stroke="rgba(0, 0, 0, 0.12)" stroke-width="1"/>
               <image href="outlook-logo.png" x="-19.5" y="-19.5" width="39" height="39" preserveAspectRatio="xMidYMid meet"/>
             </g>
             <g transform="translate(396.8, 209.7)">
-              <circle r="26" fill="#ffffff" stroke="rgba(0, 0, 0, 0.12)" stroke-width="1"/>
-              <image href="gmail-logo.png" x="-13" y="-13" width="26" height="26" preserveAspectRatio="xMidYMid meet"/>
+              <circle r="33" fill="#ffffff" stroke="rgba(0, 0, 0, 0.12)" stroke-width="1"/>
+              <image href="gmail-logo.png" x="-19.5" y="-19.5" width="39" height="39" preserveAspectRatio="xMidYMid meet"/>
             </g>
             <g transform="translate(387.1, 289.6)">
               <circle r="33" fill="#ffffff" stroke="rgba(0, 0, 0, 0.12)" stroke-width="1"/>
@@ -1431,54 +1447,62 @@
               <image href="mixpanel-logo.png" x="-19.5" y="-19.5" width="39" height="39" preserveAspectRatio="xMidYMid meet"/>
             </g>
             <g transform="translate(151.9, 81.2)">
-              <circle r="26" fill="#ffffff" stroke="rgba(0, 0, 0, 0.12)" stroke-width="1"/>
-              <image href="notion%20logo.png" x="-13" y="-13" width="26" height="26" preserveAspectRatio="xMidYMid meet"/>
+              <circle r="33" fill="#ffffff" stroke="rgba(0, 0, 0, 0.12)" stroke-width="1"/>
+              <image href="notion-logo.png" x="-19.5" y="-19.5" width="39" height="39" preserveAspectRatio="xMidYMid meet"/>
             </g>
           </svg>
         </div>
         <div class="how-unify-copy">
           <h3 class="how-unify-title">Unify all customer interaction data</h3>
-          <p class="how-unify-text">Coraleye connects via APIs and native integrations to gather conversations, messages, emails, calls, and third-party data so you can focus on growing relationships.</p>
-          <ul class="how-unify-list">
-            <li>
-              <svg class="how-unify-check" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <path d="M3.5 9.2 7.2 12.8 14.5 5.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-              Native integrations with your existing CRM, support, and communication tools
-            </li>
-            <li>
-              <svg class="how-unify-check" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <path d="M3.5 9.2 7.2 12.8 14.5 5.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-              Every interaction unified into one customer timeline, no manual logging
-            </li>
-            <li>
-              <svg class="how-unify-check" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <path d="M3.5 9.2 7.2 12.8 14.5 5.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-              MCP-compatible and API-first for custom data sources
-            </li>
-          </ul>
-          <p class="how-unify-footnote">Connects to your existing stack in minutes. No rip and replace.</p>
+          <p class="how-unify-text">Coraleye connects to your existing stack via APIs and native integrations — every signal flows to Cory at the center.</p>
+          <p class="how-unify-footnote">
+            <svg class="how-unify-footnote-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <circle cx="9" cy="9" r="8" stroke="currentColor" stroke-width="1.2"/>
+              <path d="M5.5 9.2 7.8 11.5 12.5 6.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            Connects to your existing stack in minutes. No rip and replace.
+          </p>
         </div>
       </div>
-      <div class="how-steps reveal">
+      <div class="how-steps-band reveal">
+        <p class="how-steps-band-title">From signal to action</p>
+        <div class="how-steps">
         <div class="how-step-boxes">
           <div class="how-step-box">
             <div class="how-step-box-num">1</div>
+            <h3 class="how-step-box-title">Unify All Customer Interaction Data</h3>
+            <p class="how-step-box-text">Coraleye connects via APIs and native integrations to gather conversations, messages, emails, calls, and third-party data so you can focus on growing relationships.</p>
+            <ul class="how-step-box-list">
+              <li>
+                <svg class="how-step-box-check" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2.5 7.2 5.5 10 11.5 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Native integrations with CRM, support, and communication tools
+              </li>
+              <li>
+                <svg class="how-step-box-check" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2.5 7.2 5.5 10 11.5 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                One customer timeline — no manual logging
+              </li>
+              <li>
+                <svg class="how-step-box-check" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2.5 7.2 5.5 10 11.5 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                MCP-compatible and API-first
+              </li>
+            </ul>
+          </div>
+          <div class="how-step-box">
+            <div class="how-step-box-num">2</div>
             <h3 class="how-step-box-title">Cory Evaluates</h3>
             <p class="how-step-box-text">Cory, Coraleye's AI agent, reads every signal across your account book and flags churn risk, expansion opportunities, sentiment shifts, and escalation patterns.</p>
           </div>
           <div class="how-step-box">
-            <div class="how-step-box-num">2</div>
+            <div class="how-step-box-num">3</div>
             <h3 class="how-step-box-title">24/7 Oversight</h3>
             <p class="how-step-box-text">Coraleye runs overnight evaluation in gated, secure environments, with human-in-the-loop auditing of interaction evidence.</p>
           </div>
           <div class="how-step-box">
-            <div class="how-step-box-num">3</div>
+            <div class="how-step-box-num">4</div>
             <h3 class="how-step-box-title">Act with Approval</h3>
             <p class="how-step-box-text">Your team reviews recommended plays and executes in one click — emails, escalations, and follow-ups, all with your sign-off before anything goes out.</p>
           </div>
+        </div>
         </div>
       </div>
 
@@ -1561,11 +1585,12 @@
       </div>
 
       <div class="approach-quote-block reveal">
+        <p class="how-steps-band-title" style="margin-bottom: 20px;">Verified design partner references</p>
         <div id="quote-display" class="approach-quote-display" aria-live="polite" aria-atomic="true">
           <div class="approach-quote-mark">"</div>
           <p class="approach-quote-text">Most companies aren't systems of action, they are systems of recommendations. Where a company could differentiate is if it had the recommendation engine and then helped me do it.</p>
           <div class="approach-quote-mark approach-quote-mark-close">"</div>
-          <div class="approach-quote-attr">VP Customer Success · Design partner · Enterprise SaaS · 400+ seats</div>
+          <div class="approach-quote-attr">VP Customer Success · Verified design partner · Enterprise SaaS · 400+ seats · confidential</div>
         </div>
         <div class="approach-quote-dots" role="tablist" aria-label="Customer quotes">
           <button type="button" class="quote-dot active" role="tab" aria-label="Quote 1" aria-selected="true" data-quote-index="0"></button>
@@ -1727,11 +1752,11 @@
     const quoteSlides = [
       {
         text: `Most companies aren't systems of action, they are systems of recommendations. Where a company could differentiate is if it had the recommendation engine and then helped me do it.`,
-        attr: `VP Customer Success · Design partner · Enterprise SaaS · 400+ seats`
+        attr: `VP Customer Success · Verified design partner · Enterprise SaaS · 400+ seats · confidential`
       },
       {
         text: `I would like my CSM team to spend zero time on follow-ups and actually taking action: booking the call, writing the email, sending an escalation internally, not just drafting the language.`,
-        attr: `Director of Customer Success · Series C startup · 120 seats`
+        attr: `Director of Customer Success · Verified design partner · Series C startup · 120 seats · confidential`
       }
     ];
     let quoteIndex = 0;
