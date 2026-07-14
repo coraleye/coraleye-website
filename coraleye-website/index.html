@@ -1397,6 +1397,11 @@
       color: #fca5a5;
     }
 
+    .demo-form button.demo-sent {
+      background: #10b981;
+      cursor: default;
+    }
+
     button.btn-hero-outline {
       font-family: inherit;
     }
@@ -2481,13 +2486,23 @@
             })
           });
 
-          if (!response.ok) throw new Error('Submit failed');
+          let data = {};
+          try { data = await response.json(); } catch (_) {}
 
-          demoForm.style.display = 'none';
+          const succeeded = response.ok || data.success === true || data.success === 'true';
+          if (!succeeded) throw new Error('Submit failed');
+
+          submitBtn.textContent = 'Sent!';
+          submitBtn.classList.add('demo-sent');
+          submitBtn.disabled = true;
+          demoForm.querySelectorAll('.demo-field input').forEach(function(input) {
+            input.disabled = true;
+          });
           if (demoSuccess) demoSuccess.style.display = 'block';
         } catch (err) {
           submitBtn.disabled = false;
           submitBtn.textContent = 'Request a Demo';
+          submitBtn.classList.remove('demo-sent');
           if (demoError) demoError.style.display = 'block';
         }
       });
