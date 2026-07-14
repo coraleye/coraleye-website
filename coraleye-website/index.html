@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Coraleye — Customer Success, Finally Proactive</title>
-  <meta name="description" content="Coraleye unifies every customer signal, surfaces who needs attention, and helps your team act with one click — before accounts churn." />
+  <title>Coraleye | Customer Success, Finally Proactive</title>
+  <meta name="description" content="Coraleye unifies every customer signal, surfaces who needs attention, and helps your team act with one click, with your approval, before accounts churn." />
   <link rel="icon" type="image/png" href="kory.png" />
   <link rel="apple-touch-icon" href="kory.png" />
   <link rel="canonical" href="https://coraleye.ai/" />
@@ -14,12 +14,12 @@
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://coraleye.ai/" />
   <meta property="og:title" content="Coraleye — Customer Success, Finally Proactive" />
-  <meta property="og:description" content="Coraleye unifies every customer signal, surfaces who needs attention, and helps your team act with one click — before accounts churn." />
-  <meta property="og:image" content="https://coraleye.ai/kory.png" />
+  <meta property="og:description" content="Coraleye unifies every customer signal, surfaces who needs attention, and helps your team act with one click, with your approval, before accounts churn." />
+  <meta property="og:image" content="https://coraleye.ai/act-workbench-module.png" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Coraleye — Customer Success, Finally Proactive" />
-  <meta name="twitter:description" content="Coraleye unifies every customer signal, surfaces who needs attention, and helps your team act with one click — before accounts churn." />
-  <meta name="twitter:image" content="https://coraleye.ai/kory.png" />
+  <meta name="twitter:description" content="Coraleye unifies every customer signal, surfaces who needs attention, and helps your team act with one click, with your approval, before accounts churn." />
+  <meta name="twitter:image" content="https://coraleye.ai/act-workbench-module.png" />
   <style>
     /* ─── Reset & Base ─────────────────────────────────────────────── */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; max-width: 100%; }
@@ -40,14 +40,16 @@
       --radius-lg:   16px;
     }
 
-    html { scroll-behavior: smooth; overflow-x: hidden; }
+    html { scroll-behavior: smooth; scroll-padding-top: 64px; overflow-x: hidden; }
 
     body {
       background: #E8E6E1;
       color: var(--text);
       font-family: "Söhne", "Soehne", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       font-size: 16px;
-      line-height: 1.6;
+      font-weight: 400;
+      line-height: 1.65;
+      letter-spacing: 0.01em;
       -webkit-font-smoothing: antialiased;
       overflow-x: hidden;
       max-width: 100vw;
@@ -99,28 +101,63 @@
       border-radius: 2px;
     }
 
-    h1 { font-size: clamp(2.4rem, 5vw, 4rem); font-weight: 700; line-height: 1.1; letter-spacing: -0.03em; }
-    h2 { font-size: 2.8rem; font-weight: 700; line-height: 1.2; letter-spacing: -0.025em; text-align: center; }
-    h3 { font-size: 1.15rem; font-weight: 600; line-height: 1.4; }
+    h1 { font-size: clamp(2.4rem, 5vw, 4rem); font-weight: 500; line-height: 1.08; letter-spacing: -0.02em; }
+    h2 { font-size: 2.8rem; font-weight: 500; line-height: 1.2; letter-spacing: -0.02em; text-align: center; }
+    h3 { font-size: 1.15rem; font-weight: 500; line-height: 1.45; }
 
-    /* ─── Nav ───────────────────────────────────────────────────────── */
-    nav {
-      position: sticky;
+    /* ─── Site nav ──────────────────────────────────────────────────── */
+    #site-nav {
+      position: fixed;
       top: 0;
+      left: 0;
+      right: 0;
       z-index: 100;
       height: 64px;
       display: flex;
       align-items: center;
-      border-bottom: 1px solid transparent;
-      background: #0b1628;
-      transition: background-color 0.3s ease;
-      margin: 0;
-      border-radius: 0;
+      background-color: #011330;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      transition: background-color 0.22s ease, border-color 0.22s ease;
     }
 
-    nav.scrolled {
-      background-color: #0b1628;
-      box-shadow: none;
+    #site-nav[data-theme="light"] {
+      border-bottom-color: rgba(0, 0, 0, 0.08);
+    }
+
+    #site-nav .nav-logo {
+      color: #ffffff;
+      transition: color 0.22s ease;
+    }
+
+    #site-nav[data-theme="light"] .nav-logo {
+      color: #e8782a;
+    }
+
+    #site-nav .nav-links a {
+      transition: color 0.22s ease;
+    }
+
+    #site-nav[data-theme="light"] .nav-links a {
+      color: var(--text);
+    }
+
+    #site-nav[data-theme="light"] .nav-links a:hover {
+      color: var(--text-muted);
+    }
+
+    #site-nav[data-theme="dark"] .nav-links a {
+      color: #ffffff;
+    }
+
+    #site-nav[data-theme="dark"] .nav-links a:hover {
+      color: rgba(255, 255, 255, 0.8);
+    }
+
+    .nav-logo-img {
+      width: 28px;
+      height: 28px;
+      object-fit: contain;
+      border-radius: 6px;
     }
 
     .nav-inner {
@@ -134,7 +171,7 @@
       display: flex;
       align-items: center;
       gap: 10px;
-      font-weight: 700;
+      font-weight: 500;
       font-size: 1.05rem;
       letter-spacing: -0.01em;
       color: #e8782a;
@@ -161,7 +198,6 @@
 
     .nav-links a {
       font-size: 0.875rem;
-      color: #ffffff;
       font-weight: 500;
       transition: color 0.15s;
     }
@@ -181,7 +217,7 @@
       padding: 9px 20px;
       border-radius: var(--radius);
       font-size: 0.875rem;
-      font-weight: 600;
+      font-weight: 500;
       cursor: pointer;
       transition: all 0.18s;
       border: none;
@@ -199,48 +235,16 @@
       box-shadow: 0 4px 14px rgba(0,0,0,0.25);
     }
 
-    .btn-ghost {
-      background: transparent;
-      color: #ffffff;
-      border: 1px solid rgba(255,255,255,0.4);
-    }
-
-    .btn-ghost:hover {
-      color: #ffffff;
-      border-color: rgba(255,255,255,0.7);
-      background: rgba(255,255,255,0.08);
-    }
-
-    .btn-outline {
-      background: transparent;
-      color: #ffffff;
-      border: 1px solid rgba(255,255,255,0.4);
-    }
-
-    .btn-outline:hover {
-      border-color: rgba(255,255,255,0.7);
-      color: #ffffff;
-      background: rgba(255,255,255,0.08);
-    }
-
     .btn-lg {
       padding: 13px 28px;
       font-size: 0.9375rem;
       border-radius: 11px;
     }
 
-    /* ─── Hero signal line ──────────────────────────────────────────── */
-    .hero-signal-line {
-      margin: 28px 0 26px;
-      overflow: visible;
-      max-width: 540px;
-    }
-
     /* ─── Hero ──────────────────────────────────────────────────────── */
     #hero {
-      padding: 80px 0;
+      padding: 136px 0 80px;
       margin: 0;
-      border-radius: 0;
       position: relative;
       overflow: hidden;
       background-color: #011330;
@@ -248,10 +252,6 @@
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
-      min-height: 100vh;
-      min-height: 100svh;
-      display: flex;
-      align-items: center;
     }
 
     #hero .container {
@@ -263,33 +263,19 @@
     #hero::before {
       content: '';
       position: absolute;
-      top: 0;
-      left: 0;
-      width: 60%;
-      height: 100%;
-      background: linear-gradient(to right, rgba(11, 22, 40, 0.88) 0%, rgba(11, 22, 40, 0.4) 50%, transparent 100%);
+      inset: 0;
+      background: linear-gradient(135deg, rgba(11, 22, 40, 0.88) 0%, rgba(11, 22, 40, 0.72) 100%);
       pointer-events: none;
       z-index: 0;
     }
 
-    .hero-top-bar {
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 2;
-      padding: 28px 0;
-    }
+    .hero-accent { color: #e8782a; }
 
-    .hero-top-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      width: 100%;
-    }
-
-    .hero-top-bar .nav-logo {
-      color: #ffffff;
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      color: #f8fafc;
+      max-width: 820px;
     }
 
     .btn-hero-outline {
@@ -299,7 +285,7 @@
       padding: 9px 20px;
       border-radius: var(--radius);
       font-size: 0.875rem;
-      font-weight: 600;
+      font-weight: 500;
       cursor: pointer;
       transition: all 0.18s;
       white-space: nowrap;
@@ -314,171 +300,23 @@
       color: #ffffff;
     }
 
-    .hero-grid-lines {
-      display: none;
-    }
-
-    .hero-glow { display: none; }
-
-    .hero-content {
-      position: relative;
-      z-index: 1;
-      max-width: 720px;
-      color: #f8fafc;
-    }
-
-    .hero-inner {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 56px;
-      align-items: center;
-      position: relative;
-      z-index: 1;
-    }
-
-    .hero-visual {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: auto;
-      position: relative;
-      align-self: stretch;
-      height: auto;
-    }
-
-    .hero-cory-card {
-      width: auto;
-      max-width: none;
-      position: relative;
-      margin-left: auto;
-      padding: 0;
-      background: transparent;
-      border: none;
-      box-shadow: none;
-      height: auto;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .hero-cory-img {
-      height: auto;
-      max-height: 420px;
-      width: auto;
-      object-fit: contain;
-      display: block;
-      animation: float 3s ease-in-out infinite;
-      transform: translateX(8%);
-      margin-top: -40px;
-    }
-
-    .hero-cory-note {
-      font-size: 0.95rem;
-      color: rgba(248,250,252,0.9);
-      font-weight: 600;
-      letter-spacing: 0.02em;
-    }
-
-    .hero-ticker {
-      margin-top: 48px;
-      margin-bottom: 32px;
-      max-width: 680px;
-    }
-
-    .ticker-label {
-      font-size: 0.8rem;
-      color: var(--orange);
-      text-transform: uppercase;
-      letter-spacing: 0.14em;
-      margin-bottom: 20px;
-      font-weight: 700;
-    }
-
-    .ticker-shell {
-      position: relative;
-      background: #111418;
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 20px;
-      padding: 22px 24px;
-      min-height: 150px;
-      height: 150px;
-      overflow: hidden;
-      display: flex;
-      align-items: flex-start;
-    }
-
-    .ticker-shell::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(180deg, rgba(255,255,255,0.03), transparent 60%);
-      pointer-events: none;
-    }
-
-    .ticker-message {
-      position: relative;
-      opacity: 0;
-      transform: translateY(8px);
-      transition: opacity 0.32s ease, transform 0.32s ease;
-      color: #f8fafc;
-      line-height: 1.7;
-      font-size: 0.98rem;
-      white-space: pre-wrap;
-    }
-
-    .ticker-message.active {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .ticker-keyword {
-      color: var(--orange);
-      font-weight: 700;
-    }
-
-    .hero-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 5px 12px 5px 6px;
-      background: rgba(255,255,255,0.08);
-      border: 1px solid rgba(255,255,255,0.18);
-      border-radius: 100px;
-      font-size: 0.8rem;
-      font-weight: 500;
-      color: #f8fafc;
-      margin-bottom: 28px;
-    }
-
-    .hero-badge-dot {
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: var(--orange);
-      animation: pulse-dot 2s ease-in-out infinite;
-    }
-
-    @keyframes pulse-dot {
-      0%, 100% { opacity: 1; transform: scale(1); }
-      50% { opacity: 0.5; transform: scale(0.8); }
-    }
-
     #hero h1 {
-      margin-bottom: 24px;
+      margin-bottom: 28px;
       color: #ffffff;
-    }
-
-    #hero h1 em {
-      font-style: normal;
-      color: var(--orange);
+      font-size: clamp(3rem, 7vw, 5.5rem);
+      font-weight: 500;
+      line-height: 1.04;
+      letter-spacing: -0.025em;
     }
 
     .hero-sub {
-      font-size: 1.15rem;
-      color: rgba(255,255,255,0.8);
-      max-width: 560px;
-      margin-bottom: 40px;
-      line-height: 1.7;
+      font-size: 1.25rem;
+      font-weight: 400;
+      color: rgba(255,255,255,0.78);
+      max-width: 620px;
+      margin-bottom: 44px;
+      line-height: 1.65;
+      letter-spacing: 0.01em;
     }
 
     .hero-ctas {
@@ -486,136 +324,12 @@
       align-items: center;
       gap: 14px;
       flex-wrap: wrap;
-      margin-bottom: 28px;
     }
 
-    .hero-ctas .btn-outline {
-      color: #f8fafc;
-      border-color: rgba(255,255,255,0.22);
-    }
-
-    .hero-ctas .btn-ghost {
-      color: rgba(248,250,252,0.92);
-      border-color: rgba(255,255,255,0.16);
-      background: rgba(255,255,255,0.05);
-    }
-
-    .hero-social-proof {
-      margin-top: 44px;
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      flex-wrap: wrap;
-      color: rgba(248,250,252,0.78);
-      font-size: 0.85rem;
-      border-top: 1px solid rgba(255,255,255,0.08);
-      padding-top: 24px;
-    }
-
-    .hero-social-proof span {
-      color: rgba(248,250,252,0.84);
-    }
-
-    .contact-block {
-      margin-top: 32px;
-      padding: 28px 28px 24px;
-      background: #ffffff;
-      border-radius: 20px;
-      border: 1px solid rgba(15,23,42,0.08);
-      max-width: 720px;
-    }
-
-    .contact-block h3 {
-      margin-bottom: 16px;
-      font-size: 1.15rem;
-      color: var(--text);
-    }
-
-    .contact-block p {
-      color: var(--text-muted);
-      line-height: 1.8;
-      margin-bottom: 14px;
-      max-width: 680px;
-    }
-
-    .mail-link {
-      color: var(--orange);
-      font-weight: 700;
-      text-decoration: none;
-    }
-
-    .mail-link:hover {
-      text-decoration: underline;
-    }
-
-    .hero-sp-logos {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .sp-logo-pill {
-      padding: 4px 10px;
-      background: var(--orange);
-      border: 1px solid var(--orange);
-      border-radius: 6px;
-      font-size: 0.75rem;
-      color: #ffffff;
-      font-weight: 500;
-      letter-spacing: 0.03em;
-    }
-
-    /* ─── Integration Strip ─────────────────────────────────────────── */
-    .integration-strip {
-      padding: 48px 0;
-    }
-
-    .integration-strip-inner {
-      display: flex;
-      align-items: center;
-      gap: 40px;
-      overflow: hidden;
-    }
-
-    .strip-label {
-      font-size: 0.75rem;
-      font-weight: 500;
-      color: var(--text-subtle);
-      white-space: nowrap;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-    }
-
-    .strip-logos {
-      display: flex;
-      align-items: center;
-      gap: 32px;
-      flex-wrap: wrap;
-    }
-
-    .strip-logo {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      color: var(--text-subtle);
-      font-size: 0.875rem;
-      font-weight: 600;
-      letter-spacing: -0.01em;
-      opacity: 0.5;
-      transition: opacity 0.2s;
-    }
-
-    .strip-logo:hover { opacity: 0.85; }
-
-    .strip-logo-icon {
-      width: 22px;
-      height: 22px;
-      border-radius: 5px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 13px;
-      flex-shrink: 0;
+    .section-light {
+      position: relative;
+      z-index: 2;
+      background: var(--bg);
     }
 
     /* ─── Approach quotes ───────────────────────────────────────────── */
@@ -698,17 +412,6 @@
       100% { transform: translateX(-50%); }
     }
 
-    .marquee-track {
-      display: flex;
-      width: max-content;
-      animation: marquee 20s linear infinite;
-    }
-
-    .marquee-track:hover {
-      animation-play-state: paused;
-    }
-
-    /* Hero ambient integration flow — slow, subtle */
     .hero-marquee-track {
       display: flex;
       width: max-content;
@@ -732,63 +435,15 @@
       filter: grayscale(100%);
     }
 
-    .how-cory-stage {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 40px;
-      align-items: center;
-      margin-bottom: 0;
-    }
-
-    .how-cory-inbound {
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: flex-end;
-      padding-right: 56px;
-    }
-
-    .how-cory-figure {
-      position: relative;
-      z-index: 2;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      margin-bottom: 4px;
-    }
-
-    .how-cory-figure-glow {
-      position: absolute;
-      bottom: 20px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 247px;
-      height: 247px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(232,120,42,0.22) 0%, transparent 70%);
-      pointer-events: none;
-    }
-
-    .how-cory-figure-img {
-      width: 273px;
-      height: 273px;
-      object-fit: contain;
-      animation: float 3s ease-in-out infinite;
-      filter: drop-shadow(0 12px 32px rgba(232,120,42,0.32));
-      position: relative;
-      z-index: 1;
-    }
-
-    .how-cory-desc {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding: 0 8px;
-    }
-
-    .how-cory-section {
+    .how-steps {
       max-width: 1100px;
-      margin: 0 auto 56px;
+      margin: 0 auto;
+    }
+
+    .how-step-footnote-link {
+      color: var(--orange);
+      text-decoration: underline;
+      text-underline-offset: 2px;
     }
 
     .how-step-boxes {
@@ -816,7 +471,7 @@
 
     .how-step-footnote-label {
       font-size: 0.68rem;
-      font-weight: 700;
+      font-weight: 500;
       letter-spacing: 0.08em;
       text-transform: uppercase;
       color: var(--text-subtle);
@@ -833,12 +488,12 @@
 
     .how-step-footnote-text strong {
       color: var(--text);
-      font-weight: 600;
+      font-weight: 500;
     }
 
     .how-step-box-num {
       font-size: 0.72rem;
-      font-weight: 700;
+      font-weight: 500;
       color: #e8782a;
       letter-spacing: 0.06em;
       margin-bottom: 10px;
@@ -846,7 +501,7 @@
 
     .how-step-box-title {
       font-size: 1rem;
-      font-weight: 700;
+      font-weight: 500;
       margin-bottom: 12px;
       line-height: 1.35;
       color: var(--text);
@@ -1053,7 +708,7 @@
 
     .approach-card-kicker {
       font-size: 0.65rem;
-      font-weight: 700;
+      font-weight: 500;
       letter-spacing: 0.14em;
       text-transform: uppercase;
       margin-bottom: 12px;
@@ -1094,6 +749,128 @@
     }
 
     .approach-list-mark-check { color: var(--orange); }
+
+    .trust-band-badges li:first-child::before {
+      content: none;
+      margin-right: 0;
+    }
+
+    .trust-band-badges a {
+      color: inherit;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
+    .trust-customers {
+      text-align: center;
+    }
+
+    .trust-customers-label {
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-subtle);
+      margin-bottom: 16px;
+    }
+
+    .trust-logos {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 24px 32px;
+    }
+
+    .trust-logo {
+      height: 22px;
+      width: auto;
+      opacity: 0.45;
+      filter: grayscale(100%);
+    }
+
+    .cta-lead {
+      color: var(--text-muted);
+      font-size: 1rem;
+      margin-bottom: 20px;
+    }
+
+    .cta-agenda {
+      list-style: none;
+      text-align: left;
+      max-width: 360px;
+      margin: 0 auto 32px;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .cta-agenda li {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      padding-left: 18px;
+      position: relative;
+    }
+
+    .cta-agenda li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: var(--orange);
+      font-weight: 500;
+    }
+
+    .quote-pause-btn {
+      margin-left: 8px;
+      padding: 4px 10px;
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 999px;
+      background: transparent;
+      color: rgba(255,255,255,0.6);
+      font-size: 0.72rem;
+      font-family: inherit;
+      cursor: pointer;
+    }
+
+    .quote-pause-btn[aria-pressed="true"] {
+      color: var(--orange);
+      border-color: rgba(224,114,48,0.4);
+    }
+
+    .footer-logo-img {
+      width: 32px;
+      height: 32px;
+      object-fit: contain;
+    }
+
+    .footer-demo-btn {
+      padding: 8px 16px;
+      font-size: 0.82rem;
+    }
+
+    .demo-submit-btn {
+      margin-top: 8px;
+      justify-content: center;
+      width: 100%;
+    }
+
+    .mobile-demo-bar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 90;
+      padding: 12px 16px calc(12px + env(safe-area-inset-bottom));
+      background: rgba(11, 22, 40, 0.96);
+      border-top: 1px solid rgba(255,255,255,0.1);
+      backdrop-filter: blur(8px);
+    }
+
+    .mobile-demo-bar-btn {
+      width: 100%;
+      justify-content: center;
+    }
 
     @keyframes float {
       0%, 100% { transform: translateY(0px); }
@@ -1215,7 +992,7 @@
     }
 
     .footer-brand {
-      font-weight: 700;
+      font-weight: 500;
       font-size: 0.95rem;
     }
 
@@ -1231,20 +1008,13 @@
       gap: 24px;
     }
 
-    .footer-links a,
-    .footer-demo-link {
+    .footer-links a {
       font-size: 0.85rem;
       color: rgba(255,255,255,0.6);
       transition: color 0.15s;
-      background: none;
-      border: none;
-      cursor: pointer;
-      font-family: inherit;
-      padding: 0;
     }
 
-    .footer-links a:hover,
-    .footer-demo-link:hover { color: rgba(255,255,255,0.9); }
+    .footer-links a:hover { color: rgba(255,255,255,0.9); }
 
     .footer-right {
       font-size: 0.8rem;
@@ -1258,7 +1028,7 @@
     }
 
     .footer-brand {
-      font-weight: 700;
+      font-weight: 500;
       font-size: 0.95rem;
       color: #ffffff;
     }
@@ -1326,7 +1096,7 @@
     .demo-panel-title {
       color: #ffffff;
       font-size: 1.35rem;
-      font-weight: 600;
+      font-weight: 500;
       line-height: 1.35;
       margin: 8px 40px 10px 0;
       letter-spacing: -0.02em;
@@ -1437,146 +1207,26 @@
     .reveal-delay-2 { transition-delay: 0.2s; }
     .reveal-delay-3 { transition-delay: 0.3s; }
 
-    /* ─── Mobile Dashboard Card ─────────────────────────────────────── */
-    .mobile-dashboard { display: none; }
-
     /* ─── Responsive ────────────────────────────────────────────────── */
     @media (max-width: 900px) {
+      .nav-links { display: none; }
       .how-step-boxes { grid-template-columns: 1fr; }
-      .how-cory-stage { grid-template-columns: 1fr; }
       .see-action-shots { grid-template-columns: 1fr; gap: 40px; }
       .approach-cards { grid-template-columns: 1fr; }
     }
 
     @media (max-width: 768px) {
-      #hero { overflow-x: hidden; }
+      #hero { overflow-x: hidden; padding: 112px 0 56px; }
       .hero-content { padding: 0 16px; padding-right: 16px; }
-      #hero h1 { font-size: clamp(2rem, 8vw, 4rem); }
-      .hero-sub { font-size: 1rem; max-width: 100%; overflow-wrap: break-word; word-break: break-word; }
+      #hero h1 { font-size: clamp(2.5rem, 9vw, 4.5rem); }
+      .hero-sub { font-size: 1.05rem; max-width: 100%; overflow-wrap: break-word; word-break: break-word; }
       .hero-ctas { flex-direction: column; align-items: stretch; }
       .hero-ctas a,
       .hero-ctas button { width: 100% !important; text-align: center; display: flex !important; justify-content: center; }
-      .hero-visual { display: none !important; }
-      .mobile-dashboard { display: block !important; }
-      .hero-pillars { display: none !important; }
       #hero .container { overflow: hidden; width: 100%; padding-left: 16px; padding-right: 16px; }
+      body { padding-bottom: 72px; }
 
-      /* Mobile dashboard card — kept for reference but hidden per latest request */
-      .mobile-dashboard-hidden {
-        display: none;
-        background: #011330;
-        border-radius: 12px;
-        padding: 20px;
-        width: calc(100% - 32px);
-        margin: 16px auto 0;
-        color: white;
-      }
-      .mobile-dash-header {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        margin-bottom: 12px;
-        font-weight: 700;
-        font-size: 0.95rem;
-      }
-      .at-risk-badge {
-        background: #dc2626;
-        color: white;
-        padding: 2px 8px;
-        border-radius: 4px;
-        font-size: 11px;
-        font-weight: 700;
-        letter-spacing: 0.05em;
-        flex-shrink: 0;
-      }
-      .mobile-dash-stats {
-        display: flex;
-        gap: 12px;
-        font-size: 0.76rem;
-        color: rgba(255,255,255,0.55);
-        margin-bottom: 14px;
-        flex-wrap: wrap;
-      }
-      .mobile-dash-flag {
-        font-size: 0.62rem;
-        font-weight: 700;
-        letter-spacing: 0.12em;
-        text-transform: uppercase;
-        color: #f87171;
-        margin-bottom: 6px;
-      }
-      .mobile-dashboard > p {
-        font-size: 0.82rem;
-        color: rgba(255,255,255,0.6);
-        line-height: 1.6;
-        margin-bottom: 14px;
-      }
-      .mobile-dash-evidence {
-        background: rgba(255,255,255,0.05);
-        border-left: 2px solid rgba(232,120,42,0.4);
-        border-radius: 6px;
-        padding: 10px 12px;
-        font-size: 0.8rem;
-        color: rgba(255,255,255,0.65);
-        line-height: 1.55;
-        margin-bottom: 16px;
-        font-style: italic;
-      }
-      .mobile-dash-evidence span {
-        display: block;
-        font-style: normal;
-        font-size: 0.68rem;
-        color: rgba(255,255,255,0.38);
-        margin-top: 6px;
-      }
-      .mobile-dash-actions { margin-top: 4px; }
-      .mobile-dash-cta {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        width: 100%;
-        padding: 10px 16px;
-        background: #e8782a;
-        color: #ffffff;
-        border: none;
-        border-radius: 8px;
-        font-size: 13px;
-        font-weight: 700;
-        text-decoration: none;
-        font-family: inherit;
-      }
-      .mobile-dash-cta:hover { background: #d97824; }
-      .hero-cory-img { max-width: 180px; max-height: 180px; width: auto; }
-      .hero-pillars { display: none; }
-
-      /* Hero top bar — logo + outline CTA over image */
-      .hero-top-bar { padding: 20px 0; }
-      .ticker-shell { height: auto; min-height: 100px; padding-bottom: 20px; }
-
-      /* Marquee — reduce logo margin so they don't clip on narrow screens */
-      .marquee-track img { margin: 0 20px !important; }
       .how-integration-logo { margin: 0 20px !important; }
-
-      .how-cory-stage {
-        grid-template-columns: 1fr;
-        gap: 32px;
-      }
-
-      .how-cory-inbound {
-        justify-content: center;
-        padding-right: 0;
-      }
-
-      .how-cory-figure-img {
-        width: 182px;
-        height: 182px;
-      }
-
-      .how-cory-figure-glow {
-        width: 163px;
-        height: 163px;
-        bottom: 14px;
-      }
 
       .how-step-boxes {
         grid-template-columns: 1fr;
@@ -1584,8 +1234,7 @@
         margin-top: 48px;
       }
 
-      /* Integration logos row — no horizontal overflow */
-      .marquee-track, .hero-marquee-track { overflow: hidden; }
+      .hero-marquee-track { overflow: hidden; }
 
       /* All section headlines — scale and center on mobile */
       h2 { font-size: clamp(1.6rem, 6vw, 2.4rem) !important; text-align: center; padding: 0 16px; white-space: normal !important; }
@@ -1597,57 +1246,24 @@
       .approach-section { margin: 0 !important; border-radius: 0 !important; }
       footer { margin: 0 !important; border-radius: 0 !important; }
 
-      /* Hide signal line on mobile — desktop-only visual */
-      .hero-signal-line { display: none; }
-
-      /* Hero — wave background image on mobile */
       #hero {
         background-color: #011330 !important;
         background-image: url("Coraleye Deep Ocean Image.jpeg") !important;
         background-size: cover !important;
         background-position: center !important;
         background-repeat: no-repeat !important;
-        min-height: auto;
-        display: block;
-        overflow: hidden;
-        width: 100%;
-        box-sizing: border-box;
       }
-      .hero-cory-img { transform: none; }
     }
 
     @media (max-width: 600px) {
       .page-wrapper { margin: 0; border-radius: 0; }
       .section { padding: 60px 16px; }
-      #hero { padding: 60px 0; margin: 0 !important; border-radius: 0 !important; overflow-x: hidden; }
-      .hero-visual { display: none !important; }
-      .hero-pillars { display: none; }
-      .hero-cory-card { margin: 24px auto 0 auto; display: block; text-align: center; }
-
-      /* Trusted signal strip — centered */
-      .hero-social-proof { flex-direction: column; align-items: center; text-align: center; }
-      .hero-sp-logos { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; }
+      #hero { padding: 48px 0; margin: 0 !important; border-radius: 0 !important; overflow-x: hidden; }
       .cta-box { padding: 48px 16px; }
       .footer-inner { flex-direction: column; align-items: flex-start; }
       .container { padding: 0 16px; }
     }
 
-    .nav-dropdown:hover .dropdown-menu {
-      display: block !important;
-    }
-
-    /* Transparent bridge over the 8px gap between trigger and menu so the
-       dropdown doesn't close while the cursor crosses into it. */
-    .dropdown-menu::before {
-      content: '';
-      position: absolute;
-      top: -12px;
-      left: 0;
-      right: 0;
-      height: 12px;
-    }
-
-    /* ─── Reduced Motion ────────────────────────────────────────────── */
     @media (prefers-reduced-motion: reduce) {
       *, *::before, *::after {
         animation-duration: 0.01ms !important;
@@ -1661,69 +1277,44 @@
 <body>
   <div class="page-wrapper">
 
-  <!-- ─── Hero ───────────────────────────────────────────────────────── -->
-  <section id="hero">
-    <div class="hero-grid-lines"></div>
-    <div class="hero-glow"></div>
-
-    <div class="hero-top-bar">
-      <div class="container">
-        <div class="hero-top-inner">
-          <a href="https://coraleye.ai/" class="nav-logo">
-            <div class="nav-logo-mark">
-              <img src="kory.png" alt="Coraleye logo" style="width:28px;height:28px;object-fit:contain;border-radius:6px;" />
-            </div>
-            Coraleye
-          </a>
-          <button type="button" class="btn-hero-outline demo-trigger">Request a Demo</button>
+  <!-- ─── Site nav ───────────────────────────────────────────────────── -->
+  <nav id="site-nav" data-theme="dark">
+    <div class="container">
+      <div class="nav-inner">
+        <a href="https://coraleye.ai/" class="nav-logo">
+          <div class="nav-logo-mark">
+            <img src="kory.png" alt="Coraleye logo" class="nav-logo-img" />
+          </div>
+          Coraleye
+        </a>
+        <ul class="nav-links">
+          <li><a href="#how-it-works">How it works</a></li>
+          <li><a href="#see-it-in-action">Product</a></li>
+          <li><a href="#before-after">Approach</a></li>
+        </ul>
+        <div class="nav-cta">
+          <button type="button" class="btn btn-primary demo-trigger">Request a Demo</button>
         </div>
       </div>
     </div>
+  </nav>
 
+  <!-- ─── Hero ───────────────────────────────────────────────────────── -->
+  <section id="hero" data-nav-theme="dark" data-nav-bg="#011330">
     <div class="container">
-      <div class="hero-inner">
-
-        <!-- LEFT: Text content -->
-        <div class="hero-content">
-          <h1>Customer success,<br>finally <span style="color:#e8782a;">proactive.</span></h1>
-
-          <p class="hero-sub">Coraleye unifies every customer signal, surfaces who needs attention, and helps your team act — with your approval.</p>
-
-          <div class="hero-ctas">
-            <button type="button" class="btn btn-primary btn-lg demo-trigger">Request a Demo →</button>
-          </div>
-
-          <!-- Feature pillars -->
-
-          <!-- Mobile-only simplified account card -->
-          <div class="mobile-dashboard">
-            <div class="mobile-dash-header">
-              <span>Terracotta Cloud</span>
-              <span class="at-risk-badge">AT RISK</span>
-            </div>
-            <div class="mobile-dash-stats">
-              <div>ARR: $96,000</div>
-              <div>Health: <span style="color:#e8782a;">48</span></div>
-              <div>Renewal: 180 days</div>
-            </div>
-            <div class="mobile-dash-flag">Why This Account Was Flagged</div>
-            <p>Three unresolved support escalations and no executive contact in 45 days.</p>
-            <div class="mobile-dash-evidence">
-              "We still haven't heard back on the policy exception from last month."
-              <span>Zendesk ticket · 2 days ago</span>
-            </div>
-            <div class="mobile-dash-actions">
-              <a href="#see-it-in-action" class="mobile-dash-cta">See how Coraleye flags this →</a>
-            </div>
-          </div>
+      <div class="hero-content">
+        <h1>Customer success,<br>finally <span class="hero-accent">proactive.</span></h1>
+        <p class="hero-sub">Coraleye unifies every customer signal, surfaces who needs attention, and helps your team act with your approval.</p>
+        <div class="hero-ctas">
+          <button type="button" class="btn btn-primary btn-lg demo-trigger">Request a Demo →</button>
+          <a href="#see-it-in-action" class="btn btn-hero-outline">See the product</a>
         </div>
-
       </div>
     </div>
   </section>
 
   <!-- ─── How it Works ───────────────────────────────────────────────── -->
-  <section id="how-it-works" class="section" style="position:relative;z-index:2;background:var(--bg);">
+  <section id="how-it-works" class="section section-light" data-nav-theme="light" data-nav-bg="#E8E6E1">
     <div class="container">
       <div class="how-header reveal">
         <div class="label">How it works</div>
@@ -1750,34 +1341,22 @@
           <img src="amplitude-logo.png" alt="Amplitude"  class="how-integration-logo" />
         </div>
       </div>
-      <div class="how-cory-section reveal">
-        <div class="how-cory-stage">
-          <div class="how-cory-inbound">
-            <div class="how-cory-figure">
-              <div class="how-cory-figure-glow"></div>
-              <img src="kory.png" alt="Cory, the Coraleye AI agent" class="how-cory-figure-img" />
-            </div>
-          </div>
-          <div class="how-cory-desc">
-            <h3 class="how-step-box-title">Meet Cory</h3>
-            <p class="how-step-box-text">Cory is your AI agent that reads every customer conversation, ticket, and call across your entire account book and tells your team exactly who needs attention and why.</p>
-          </div>
-        </div>
+      <div class="how-steps reveal">
         <div class="how-step-boxes">
-          <div class="how-step-box reveal">
+          <div class="how-step-box">
             <div class="how-step-box-num">1</div>
             <h3 class="how-step-box-title">Unify All Customer Interaction Data</h3>
             <p class="how-step-box-text">Coraleye connects via APIs and native integrations to gather conversations, messages, emails, calls, and third-party data so you can focus on growing relationships.</p>
           </div>
-          <div class="how-step-box reveal reveal-delay-1">
+          <div class="how-step-box">
             <div class="how-step-box-num">2</div>
             <h3 class="how-step-box-title">Cory Evaluates</h3>
-            <p class="how-step-box-text">Detect churn risk, expansion signals, sentiment shifts, and escalation patterns automatically.</p>
+            <p class="how-step-box-text">Cory reads every signal across your account book and flags churn risk, expansion opportunities, sentiment shifts, and escalation patterns for your team.</p>
           </div>
         </div>
-        <div class="how-step-footnote reveal reveal-delay-2">
+        <div class="how-step-footnote">
           <span class="how-step-footnote-label">Also</span>
-          <p class="how-step-footnote-text"><strong>24/7 Oversight</strong> — Coraleye runs overnight evaluation in gated, secure environments, with human-in-the-loop auditing of interaction evidence.</p>
+          <p class="how-step-footnote-text"><strong>24/7 Oversight:</strong> Coraleye runs overnight evaluation in gated, secure environments, with human-in-the-loop auditing of interaction evidence. <a href="privacy.html" class="how-step-footnote-link">See our privacy approach</a>.</p>
         </div>
       </div>
 
@@ -1785,12 +1364,12 @@
   </section>
 
   <!-- ─── See It In Action ─────────────────────────────────────────── -->
-  <section id="see-it-in-action" class="see-action-section">
+  <section id="see-it-in-action" class="see-action-section" data-nav-theme="light" data-nav-bg="#FAFAF8">
     <div class="container">
       <div class="see-action-header reveal">
         <div class="label">See it in action</div>
         <h2>Evaluation meets action.</h2>
-        <p class="see-action-sub">Cory surfaces what matters every morning. Your team acts in one click — with your approval.</p>
+        <p class="see-action-sub">Cory surfaces what matters every morning. Your team acts in one click, with your approval.</p>
       </div>
       <div class="see-action-shots">
         <figure class="see-action-shot reveal">
@@ -1812,23 +1391,33 @@
       </div>
       <div class="trust-band reveal">
         <div class="trust-band-proof">
-          <img src="duane-headshot.png" alt="" class="trust-band-photo" width="48" height="48" />
+          <img src="duane-headshot.png" alt="Duane, Co-founder of Coraleye" class="trust-band-photo" width="48" height="48" />
           <div>
-            <p class="trust-band-quote">"Built for CS leaders who need recommendations and a system of action — not another dashboard."</p>
+            <p class="trust-band-quote">"Built for CS leaders who need recommendations and a system of action, not another dashboard."</p>
             <p class="trust-band-attr">Duane · Co-founder, Coraleye</p>
           </div>
         </div>
+        <div class="trust-customers">
+          <p class="trust-customers-label">Works with your stack</p>
+          <div class="trust-logos">
+            <img src="zendesk-logo.png" alt="Zendesk" class="trust-logo" />
+            <img src="hubspot-logo.png" alt="HubSpot" class="trust-logo" />
+            <img src="gong-logo.png" alt="Gong" class="trust-logo" />
+            <img src="slack-logo.png" alt="Slack" class="trust-logo" />
+            <img src="outlook-logo.png" alt="Outlook" class="trust-logo" />
+          </div>
+        </div>
         <ul class="trust-band-badges">
-          <li>Gated overnight evaluation</li>
-          <li>Human-in-the-loop audit trail</li>
-          <li>Integrates with Zendesk, HubSpot, Gong, Slack &amp; more</li>
+          <li><a href="privacy.html">Gated overnight evaluation</a></li>
+          <li><a href="privacy.html">Human-in-the-loop audit trail</a></li>
+          <li>Flags at-risk accounts weeks before renewal decisions</li>
         </ul>
       </div>
     </div>
   </section>
 
   <!-- ─── Our Approach ───────────────────────────────────────────────── -->
-  <section id="before-after" class="approach-section">
+  <section id="before-after" class="approach-section" data-nav-theme="dark" data-nav-bg="#011330">
     <div class="container">
       <div class="approach-header reveal">
         <div class="label label-on-dark">Our Approach</div>
@@ -1871,37 +1460,43 @@
           <div class="approach-quote-mark">"</div>
           <p class="approach-quote-text">Most companies aren't systems of action, they are systems of recommendations. Where a company could differentiate is if it had the recommendation engine and then helped me do it.</p>
           <div class="approach-quote-mark approach-quote-mark-close">"</div>
-          <div class="approach-quote-attr">Global Head of Customer Success, $15B+ technology company</div>
+          <div class="approach-quote-attr">VP Customer Success, Design partner · Enterprise SaaS</div>
         </div>
         <div class="approach-quote-dots" role="tablist" aria-label="Customer quotes">
           <button type="button" class="quote-dot active" aria-label="Quote 1" aria-selected="true" data-quote-index="0"></button>
           <button type="button" class="quote-dot" aria-label="Quote 2" aria-selected="false" data-quote-index="1"></button>
+          <button type="button" id="quote-pause-btn" class="quote-pause-btn" aria-pressed="false">Pause</button>
         </div>
       </div>
     </div>
   </section>
 
   <!-- ─── Final CTA ──────────────────────────────────────────────────── -->
-  <section id="cta-section" class="section">
+  <section id="cta-section" class="section" data-nav-theme="light" data-nav-bg="#E8E6E1">
     <div class="cta-glow" aria-hidden="true"></div>
     <div class="container">
       <div class="cta-box reveal">
         <h2>See Coraleye on your accounts.</h2>
-        <p>Walk through evaluation and action on a live demo — 30 minutes, no commitment.</p>
+        <p class="cta-lead">30 minutes. No commitment. Here's what we'll cover:</p>
+        <ul class="cta-agenda">
+          <li>Walk your stack and integrations</li>
+          <li>Review one flagged account live</li>
+          <li>Draft one play your team would run</li>
+        </ul>
         <div class="cta-buttons">
-          <button type="button" class="btn btn-primary btn-lg demo-trigger">Request a Demo →</button>
+          <button type="button" class="btn btn-primary btn-lg demo-trigger">Book your demo →</button>
         </div>
       </div>
     </div>
   </section>
 
   <!-- ─── Footer ─────────────────────────────────────────────────────── -->
-  <footer>
+  <footer data-nav-theme="dark" data-nav-bg="#011330">
     <div class="container">
       <div class="footer-inner">
         <div class="footer-left">
           <div class="footer-logo-mark">
-            <img src="kory.png" alt="Coraleye" style="width:32px;height:32px;object-fit:contain;" />
+            <img src="kory.png" alt="Coraleye" class="footer-logo-img" />
           </div>
           <div>
             <div class="footer-brand">Coraleye</div>
@@ -1913,7 +1508,7 @@
           <a href="mailto:chris@coraleye.ai">chris@coraleye.ai</a>
           <a href="privacy.html">Privacy</a>
           <a href="terms.html">Terms</a>
-          <button type="button" class="footer-demo-link demo-trigger">Request a Demo</button>
+          <button type="button" class="btn btn-primary footer-demo-btn demo-trigger">Request a Demo</button>
         </div>
         <div class="footer-right">
           © 2026 Coraleye. All rights reserved.
@@ -1947,11 +1542,15 @@
         <label for="demo-phone">Phone number</label>
         <input id="demo-phone" type="tel" name="phone" placeholder="(555) 555-5555" autocomplete="tel" />
       </div>
-      <div id="demo-success" class="demo-form-success">Thanks — we'll reach out within one business day to schedule your demo.</div>
+      <div id="demo-success" class="demo-form-success">Thanks! We'll reach out within one business day to schedule your demo.</div>
       <div id="demo-error" class="demo-form-error">Something went wrong. Please email <a href="mailto:chris@coraleye.ai">chris@coraleye.ai</a> directly.</div>
-      <button type="submit" class="btn btn-primary btn-lg" style="margin-top:8px;justify-content:center;width:100%;">Request a Demo</button>
+      <button type="submit" class="btn btn-primary btn-lg demo-submit-btn">Request a Demo</button>
     </form>
   </aside>
+
+  <div id="mobile-demo-bar" class="mobile-demo-bar" hidden>
+    <button type="button" class="btn btn-primary demo-trigger mobile-demo-bar-btn">Request a Demo</button>
+  </div>
 
   <!-- ─── JS ─────────────────────────────────────────────────────────── -->
   <script>
@@ -1967,12 +1566,45 @@
     }, { threshold: 0.12 });
     reveals.forEach(el => observer.observe(el));
 
+    // Nav background follows the section behind it
+    const siteNav = document.getElementById('site-nav');
+    const navSections = document.querySelectorAll('[data-nav-bg]');
+
+    function updateNavBackground() {
+      if (!siteNav || !navSections.length) return;
+
+      const probeY = siteNav.offsetHeight * 0.5;
+      let activeSection = navSections[0];
+
+      navSections.forEach(function(section) {
+        const rect = section.getBoundingClientRect();
+        if (rect.top <= probeY && rect.bottom > probeY) {
+          activeSection = section;
+        }
+      });
+
+      const lastSection = navSections[navSections.length - 1];
+      if (lastSection.getBoundingClientRect().top <= probeY) {
+        activeSection = lastSection;
+      }
+
+      const theme = activeSection.dataset.navTheme || 'dark';
+      const bg = activeSection.dataset.navBg || '#011330';
+
+      siteNav.dataset.theme = theme;
+      siteNav.style.backgroundColor = bg;
+    }
+
+    updateNavBackground();
+    window.addEventListener('scroll', updateNavBackground, { passive: true });
+    window.addEventListener('resize', updateNavBackground);
+
 
     const quoteSlides = [
       {
         text: `Most companies aren't systems of action, they are systems of recommendations. Where a company could differentiate is if it had the recommendation engine and then helped me do it.`,
-        name: `Global Head of Customer Success`,
-        company: `$15B+ technology company`
+        name: `VP Customer Success`,
+        company: `Design partner · Enterprise SaaS`
       },
       {
         text: `I would like my CSM team to spend zero time on follow-ups and actually taking action: booking the call, writing the email, sending an escalation internally, not just drafting the language.`,
@@ -1982,7 +1614,9 @@
     ];
     let quoteIndex = 0;
     let quoteTimer;
+    let quotesPaused = false;
     const quoteDots = document.querySelectorAll('.quote-dot');
+    const quotePauseBtn = document.getElementById('quote-pause-btn');
 
     function showQuote(index) {
       quoteIndex = index;
@@ -2006,7 +1640,7 @@
 
     function startQuoteTimer() {
       clearInterval(quoteTimer);
-      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      if (quotesPaused || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
       quoteTimer = setInterval(function() {
         showQuote((quoteIndex + 1) % quoteSlides.length);
       }, 8000);
@@ -2021,7 +1655,30 @@
         }
       });
     });
+
+    if (quotePauseBtn) {
+      quotePauseBtn.addEventListener('click', function() {
+        quotesPaused = !quotesPaused;
+        quotePauseBtn.setAttribute('aria-pressed', quotesPaused ? 'true' : 'false');
+        quotePauseBtn.textContent = quotesPaused ? 'Resume' : 'Pause';
+        if (quotesPaused) clearInterval(quoteTimer);
+        else startQuoteTimer();
+      });
+    }
+
     startQuoteTimer();
+
+    const mobileDemoBar = document.getElementById('mobile-demo-bar');
+    const heroSection = document.getElementById('hero');
+    if (mobileDemoBar && heroSection && window.matchMedia('(max-width: 768px)').matches) {
+      mobileDemoBar.hidden = false;
+      const barObserver = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          mobileDemoBar.hidden = entry.isIntersecting;
+        });
+      }, { threshold: 0.05 });
+      barObserver.observe(heroSection);
+    }
 
     // ── Demo request panel ───────────────────────────────────────────
     const demoPanel = document.getElementById('demo-panel');
