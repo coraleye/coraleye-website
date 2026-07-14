@@ -29,8 +29,9 @@
       --bg-card:     #E8E6E1;
       --bg-raised:   #E8E6E1;
       --border:      rgba(0,0,0,0.08);
-      --orange:      #e07230;
-      --orange-dim:  rgba(224,114,48,0.10);
+      --orange:      #e8782a;
+      --orange-hover:#d96f24;
+      --orange-dim:  rgba(232, 120, 42, 0.10);
       --blue:        #1f497d;
       --blue-dim:    rgba(31,73,125,0.09);
       --text:        #0d1117;
@@ -38,9 +39,27 @@
       --text-subtle: #9aa0ae;
       --radius:      10px;
       --radius-lg:   16px;
+      --navy:        #011330;
     }
 
     html { scroll-behavior: smooth; scroll-padding-top: 64px; overflow-x: hidden; }
+
+    .skip-link {
+      position: absolute;
+      left: -9999px;
+      top: 12px;
+      z-index: 200;
+      padding: 10px 18px;
+      background: var(--orange);
+      color: #ffffff;
+      font-size: 0.875rem;
+      font-weight: 500;
+      border-radius: var(--radius);
+    }
+
+    .skip-link:focus {
+      left: 16px;
+    }
 
     body {
       background: #E8E6E1;
@@ -130,7 +149,7 @@
     }
 
     #site-nav[data-theme="light"] .nav-logo {
-      color: #e8782a;
+      color: var(--orange);
     }
 
     #site-nav .nav-links a {
@@ -174,7 +193,82 @@
       font-weight: 500;
       font-size: 1.05rem;
       letter-spacing: -0.01em;
-      color: #e8782a;
+      color: var(--orange);
+    }
+
+    .nav-menu-btn {
+      display: none;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      padding: 0;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: var(--radius);
+      background: transparent;
+      color: inherit;
+      cursor: pointer;
+      font-family: inherit;
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    #site-nav[data-theme="light"] .nav-menu-btn {
+      border-color: var(--border);
+      color: var(--text);
+    }
+
+    .nav-mobile-menu {
+      position: fixed;
+      top: 64px;
+      left: 0;
+      right: 0;
+      z-index: 99;
+      list-style: none;
+      margin: 0;
+      padding: 16px 24px 20px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+    }
+
+    #site-nav[data-theme="dark"] .nav-mobile-menu {
+      background-color: var(--navy);
+    }
+
+    #site-nav[data-theme="dark"] .nav-mobile-menu a {
+      color: #ffffff;
+      border-bottom-color: rgba(255, 255, 255, 0.08);
+    }
+
+    #site-nav[data-theme="light"] .nav-mobile-menu {
+      background-color: var(--bg);
+      border-bottom-color: var(--border);
+    }
+
+    #site-nav[data-theme="light"] .nav-mobile-menu a {
+      color: var(--text);
+      border-bottom-color: var(--border);
+    }
+
+    .nav-mobile-menu[hidden] {
+      display: none;
+    }
+
+    .nav-mobile-menu a {
+      display: block;
+      padding: 12px 0;
+      font-size: 1rem;
+      font-weight: 500;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .nav-mobile-menu li:last-child a {
+      border-bottom: none;
     }
 
     .nav-logo-mark {
@@ -225,12 +319,12 @@
     }
 
     .btn-primary {
-      background: #f0892a;
+      background: var(--orange);
       color: #ffffff;
     }
 
     .btn-primary:hover {
-      background: #d97824;
+      background: var(--orange-hover);
       transform: translateY(-1px);
       box-shadow: 0 4px 14px rgba(0,0,0,0.25);
     }
@@ -269,7 +363,16 @@
       z-index: 0;
     }
 
-    .hero-accent { color: #e8782a; }
+    .hero-accent { color: var(--orange); }
+
+    .hero-pain {
+      font-size: 0.9375rem;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.55);
+      margin-bottom: 20px;
+    }
 
     .hero-content {
       position: relative;
@@ -314,7 +417,7 @@
       font-weight: 400;
       color: rgba(255,255,255,0.78);
       max-width: 620px;
-      margin-bottom: 44px;
+      margin-bottom: 32px;
       line-height: 1.65;
       letter-spacing: 0.01em;
     }
@@ -349,7 +452,7 @@
     .approach-quote-mark {
       font-size: 2.5rem;
       line-height: 1;
-      color: #e07230;
+      color: var(--orange);
       font-family: Georgia, serif;
     }
 
@@ -390,7 +493,7 @@
     }
 
     .quote-dot.active {
-      background: #e07230;
+      background: var(--orange);
     }
 
     /* ─── How it Works ──────────────────────────────────────────────── */
@@ -418,6 +521,11 @@
       animation: marquee 55s linear infinite;
     }
 
+    .how-integrations-marquee:hover .hero-marquee-track,
+    .how-integrations-marquee:focus-within .hero-marquee-track {
+      animation-play-state: paused;
+    }
+
     .how-integrations-marquee {
       margin-bottom: 32px;
       overflow: hidden;
@@ -440,16 +548,10 @@
       margin: 0 auto;
     }
 
-    .how-step-footnote-link {
-      color: var(--orange);
-      text-decoration: underline;
-      text-underline-offset: 2px;
-    }
-
     .how-step-boxes {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 32px;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
       margin-top: 48px;
     }
 
@@ -494,7 +596,7 @@
     .how-step-box-num {
       font-size: 0.72rem;
       font-weight: 500;
-      color: #e8782a;
+      color: var(--orange);
       letter-spacing: 0.06em;
       margin-bottom: 10px;
     }
@@ -574,12 +676,6 @@
       margin-top: 48px;
     }
 
-    .see-action-cta-note {
-      margin-top: 14px;
-      font-size: 0.85rem;
-      color: var(--text-subtle);
-    }
-
     .trust-band {
       margin-top: 56px;
       padding-top: 40px;
@@ -588,33 +684,18 @@
       gap: 28px;
     }
 
-    .trust-band-proof {
-      display: flex;
-      align-items: flex-start;
-      gap: 16px;
-      max-width: 640px;
-      margin: 0 auto;
-    }
-
-    .trust-band-photo {
-      width: 48px;
-      height: 48px;
-      border-radius: 50%;
-      object-fit: cover;
-      flex-shrink: 0;
-    }
-
-    .trust-band-quote {
+    .trust-proof-line {
+      text-align: center;
       font-size: 0.92rem;
-      line-height: 1.65;
-      color: var(--text);
-      margin: 0 0 6px;
+      color: var(--text-muted);
+      max-width: 520px;
+      margin: 0 auto;
+      line-height: 1.6;
     }
 
-    .trust-band-attr {
-      font-size: 0.8rem;
-      color: var(--text-subtle);
-      margin: 0;
+    .trust-proof-line strong {
+      color: var(--text);
+      font-weight: 500;
     }
 
     .trust-band-badges {
@@ -750,43 +831,10 @@
 
     .approach-list-mark-check { color: var(--orange); }
 
-    .trust-band-badges li:first-child::before {
-      content: none;
-      margin-right: 0;
-    }
-
     .trust-band-badges a {
       color: inherit;
       text-decoration: underline;
       text-underline-offset: 2px;
-    }
-
-    .trust-customers {
-      text-align: center;
-    }
-
-    .trust-customers-label {
-      font-size: 0.72rem;
-      font-weight: 500;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--text-subtle);
-      margin-bottom: 16px;
-    }
-
-    .trust-logos {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      align-items: center;
-      gap: 24px 32px;
-    }
-
-    .trust-logo {
-      height: 22px;
-      width: auto;
-      opacity: 0.45;
-      filter: grayscale(100%);
     }
 
     .quote-pause-btn {
@@ -803,7 +851,7 @@
 
     .quote-pause-btn[aria-pressed="true"] {
       color: var(--orange);
-      border-color: rgba(224,114,48,0.4);
+      border-color: rgba(232, 120, 42, 0.4);
     }
 
     .footer-logo-img {
@@ -835,28 +883,10 @@
       justify-content: center;
     }
 
-    @keyframes float {
-      0%, 100% { transform: translateY(0px); }
-      50% { transform: translateY(-12px); }
-    }
-
     /* ─── Final CTA ─────────────────────────────────────────────────── */
     #cta-section {
       padding: 100px 0;
       text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .cta-glow {
-      position: absolute;
-      bottom: -200px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 700px;
-      height: 500px;
-      background: radial-gradient(ellipse at center, rgba(224,114,48,0.05) 0%, transparent 70%);
-      pointer-events: none;
     }
 
     .cta-inner {
@@ -878,14 +908,6 @@
       color: var(--text);
       margin-bottom: 24px;
       text-align: center;
-    }
-
-    .cta-demo-btn {
-      background: #e8782a;
-    }
-
-    .cta-demo-btn:hover {
-      background: #d96f24;
     }
 
     /* ─── Footer ────────────────────────────────────────────────────── */
@@ -1062,7 +1084,7 @@
     .quote-dot:focus-visible,
     input:focus-visible,
     textarea:focus-visible {
-      outline: 2px solid #e8782a;
+      outline: 2px solid var(--orange);
       outline-offset: 3px;
     }
 
@@ -1099,7 +1121,15 @@
     }
 
     .demo-field input:focus {
-      border-bottom-color: #e07230;
+      border-bottom-color: var(--orange);
+    }
+
+    .demo-field-error {
+      display: block;
+      min-height: 1.25em;
+      margin-top: 6px;
+      font-size: 0.78rem;
+      color: #fca5a5;
     }
 
     .demo-form-success,
@@ -1158,6 +1188,7 @@
     /* ─── Responsive ────────────────────────────────────────────────── */
     @media (max-width: 900px) {
       .nav-links { display: none; }
+      .nav-menu-btn { display: inline-flex; }
       .how-step-boxes { grid-template-columns: 1fr; }
       .see-action-shots { grid-template-columns: 1fr; gap: 40px; }
       .approach-cards { grid-template-columns: 1fr; }
@@ -1223,6 +1254,7 @@
   </style>
 </head>
 <body>
+  <a href="#main-content" class="skip-link">Skip to content</a>
   <div class="page-wrapper">
 
   <!-- ─── Site nav ───────────────────────────────────────────────────── -->
@@ -1242,19 +1274,28 @@
         </ul>
         <div class="nav-cta">
           <button type="button" class="btn btn-primary demo-trigger">Request a Demo</button>
+          <button type="button" class="nav-menu-btn" id="nav-menu-btn" aria-expanded="false" aria-controls="nav-mobile-menu">Menu</button>
         </div>
       </div>
     </div>
+    <ul id="nav-mobile-menu" class="nav-mobile-menu" hidden>
+      <li><a href="#how-it-works">How it works</a></li>
+      <li><a href="#see-it-in-action">Product</a></li>
+      <li><a href="#before-after">Approach</a></li>
+    </ul>
   </nav>
+
+  <main id="main-content">
 
   <!-- ─── Hero ───────────────────────────────────────────────────────── -->
   <section id="hero" data-nav-theme="dark" data-nav-bg="#011330">
     <div class="container">
       <div class="hero-content">
+        <p class="hero-pain">Most churn is decided weeks before your team notices.</p>
         <h1>Customer success,<br>finally <span class="hero-accent">proactive.</span></h1>
-        <p class="hero-sub">Coraleye unifies every customer signal, surfaces who needs attention, and helps your team act with your approval.</p>
+        <p class="hero-sub">Coraleye unifies every customer signal, surfaces who needs attention, and helps your team act before accounts churn — with your approval on every move.</p>
         <div class="hero-ctas">
-          <button type="button" class="btn btn-primary btn-lg demo-trigger">Request a Demo →</button>
+          <button type="button" class="btn btn-primary btn-lg demo-trigger">Request a Demo</button>
           <a href="#see-it-in-action" class="btn btn-hero-outline">See the product</a>
         </div>
       </div>
@@ -1269,7 +1310,7 @@
         <h2>From signal to action.</h2>
         <p>Coraleye unifies customer interactions, evaluates risk and opportunity, and surfaces the next best action for your team.</p>
       </div>
-      <div class="how-integrations-marquee reveal">
+      <div class="how-integrations-marquee reveal" id="integrations-marquee">
         <div class="hero-marquee-track">
           <img src="zendesk-logo.png"   alt="Zendesk"    class="how-integration-logo" />
           <img src="hubspot-logo.png"   alt="HubSpot"    class="how-integration-logo" />
@@ -1279,14 +1320,14 @@
           <img src="tableau-logo.png"   alt="Tableau"    class="how-integration-logo" />
           <img src="pendo-logo.png"     alt="Pendo"      class="how-integration-logo" />
           <img src="amplitude-logo.png" alt="Amplitude"  class="how-integration-logo" />
-          <img src="zendesk-logo.png"   alt="Zendesk"    class="how-integration-logo" />
-          <img src="hubspot-logo.png"   alt="HubSpot"    class="how-integration-logo" />
-          <img src="gong-logo.png"      alt="Gong"       class="how-integration-logo" />
-          <img src="slack-logo.png"     alt="Slack"      class="how-integration-logo" />
-          <img src="outlook-logo.png"   alt="Outlook"    class="how-integration-logo" />
-          <img src="tableau-logo.png"   alt="Tableau"    class="how-integration-logo" />
-          <img src="pendo-logo.png"     alt="Pendo"      class="how-integration-logo" />
-          <img src="amplitude-logo.png" alt="Amplitude"  class="how-integration-logo" />
+          <img src="zendesk-logo.png"   alt="" class="how-integration-logo" aria-hidden="true" />
+          <img src="hubspot-logo.png"   alt="" class="how-integration-logo" aria-hidden="true" />
+          <img src="gong-logo.png"      alt="" class="how-integration-logo" aria-hidden="true" />
+          <img src="slack-logo.png"     alt="" class="how-integration-logo" aria-hidden="true" />
+          <img src="outlook-logo.png"   alt="" class="how-integration-logo" aria-hidden="true" />
+          <img src="tableau-logo.png"   alt="" class="how-integration-logo" aria-hidden="true" />
+          <img src="pendo-logo.png"     alt="" class="how-integration-logo" aria-hidden="true" />
+          <img src="amplitude-logo.png" alt="" class="how-integration-logo" aria-hidden="true" />
         </div>
       </div>
       <div class="how-steps reveal">
@@ -1299,12 +1340,17 @@
           <div class="how-step-box">
             <div class="how-step-box-num">2</div>
             <h3 class="how-step-box-title">Cory Evaluates</h3>
-            <p class="how-step-box-text">Cory reads every signal across your account book and flags churn risk, expansion opportunities, sentiment shifts, and escalation patterns for your team.</p>
+            <p class="how-step-box-text">Cory, Coraleye's AI agent, reads every signal across your account book and flags churn risk, expansion opportunities, sentiment shifts, and escalation patterns.</p>
+          </div>
+          <div class="how-step-box">
+            <div class="how-step-box-num">3</div>
+            <h3 class="how-step-box-title">Act with Approval</h3>
+            <p class="how-step-box-text">Your team reviews recommended plays and executes in one click — emails, escalations, and follow-ups, all with your sign-off before anything goes out.</p>
           </div>
         </div>
         <div class="how-step-footnote">
-          <span class="how-step-footnote-label">Also</span>
-          <p class="how-step-footnote-text"><strong>24/7 Oversight:</strong> Coraleye runs overnight evaluation in gated, secure environments, with human-in-the-loop auditing of interaction evidence. <a href="privacy.html" class="how-step-footnote-link">See our privacy approach</a>.</p>
+          <span class="how-step-footnote-label">Plus</span>
+          <p class="how-step-footnote-text"><strong>24/7 Oversight:</strong> Coraleye runs overnight evaluation in gated, secure environments, with human-in-the-loop auditing of interaction evidence.</p>
         </div>
       </div>
 
@@ -1334,27 +1380,10 @@
         </figure>
       </div>
       <div class="see-action-cta reveal">
-        <button type="button" class="btn btn-primary btn-lg demo-trigger">Request a Demo →</button>
-        <p class="see-action-cta-note">30-min call · no commitment · we'll reach out within one business day</p>
+        <button type="button" class="btn btn-primary btn-lg demo-trigger">Request a Demo</button>
       </div>
       <div class="trust-band reveal">
-        <div class="trust-band-proof">
-          <img src="duane-headshot.png" alt="Duane, Co-founder of Coraleye" class="trust-band-photo" width="48" height="48" />
-          <div>
-            <p class="trust-band-quote">"Built for CS leaders who need recommendations and a system of action, not another dashboard."</p>
-            <p class="trust-band-attr">Duane · Co-founder, Coraleye</p>
-          </div>
-        </div>
-        <div class="trust-customers">
-          <p class="trust-customers-label">Works with your stack</p>
-          <div class="trust-logos">
-            <img src="zendesk-logo.png" alt="Zendesk" class="trust-logo" />
-            <img src="hubspot-logo.png" alt="HubSpot" class="trust-logo" />
-            <img src="gong-logo.png" alt="Gong" class="trust-logo" />
-            <img src="slack-logo.png" alt="Slack" class="trust-logo" />
-            <img src="outlook-logo.png" alt="Outlook" class="trust-logo" />
-          </div>
-        </div>
+        <p class="trust-proof-line">Built for CS teams managing <strong>50–500 seat</strong> portfolios at B2B SaaS companies.</p>
         <ul class="trust-band-badges">
           <li><a href="privacy.html">Gated overnight evaluation</a></li>
           <li><a href="privacy.html">Human-in-the-loop audit trail</a></li>
@@ -1382,7 +1411,7 @@
           <ul class="approach-list">
             <li><span class="approach-list-mark">▪</span>Accounts hot-potatoed across five teams with no shared context</li>
             <li><span class="approach-list-mark">▪</span>Interactions scattered across six siloed systems nobody reads in full</li>
-            <li><span class="approach-list-mark">▪</span>Health scores built on login frequency, a lagging indicator that tells you nothing about what customers actually said or felt</li>
+            <li><span class="approach-list-mark">▪</span>Health scores based on login frequency — lagging, and blind to what customers actually said</li>
             <li><span class="approach-list-mark">▪</span>CSMs spending hours on manual follow-ups instead of relationships</li>
             <li><span class="approach-list-mark">▪</span>Churn decisions made before anyone on the team noticed the pattern</li>
           </ul>
@@ -1404,15 +1433,15 @@
       </div>
 
       <div class="approach-quote-block reveal">
-        <div id="quote-display" class="approach-quote-display">
+        <div id="quote-display" class="approach-quote-display" aria-live="polite" aria-atomic="true">
           <div class="approach-quote-mark">"</div>
           <p class="approach-quote-text">Most companies aren't systems of action, they are systems of recommendations. Where a company could differentiate is if it had the recommendation engine and then helped me do it.</p>
           <div class="approach-quote-mark approach-quote-mark-close">"</div>
-          <div class="approach-quote-attr">VP Customer Success, Design partner · Enterprise SaaS</div>
+          <div class="approach-quote-attr">VP Customer Success · Design partner · Enterprise SaaS · 400+ seats</div>
         </div>
         <div class="approach-quote-dots" role="tablist" aria-label="Customer quotes">
-          <button type="button" class="quote-dot active" aria-label="Quote 1" aria-selected="true" data-quote-index="0"></button>
-          <button type="button" class="quote-dot" aria-label="Quote 2" aria-selected="false" data-quote-index="1"></button>
+          <button type="button" class="quote-dot active" role="tab" aria-label="Quote 1" aria-selected="true" data-quote-index="0"></button>
+          <button type="button" class="quote-dot" role="tab" aria-label="Quote 2" aria-selected="false" data-quote-index="1"></button>
           <button type="button" id="quote-pause-btn" class="quote-pause-btn" aria-pressed="false">Pause</button>
         </div>
       </div>
@@ -1421,14 +1450,15 @@
 
   <!-- ─── Final CTA ──────────────────────────────────────────────────── -->
   <section id="cta-section" class="section" data-nav-theme="light" data-nav-bg="#E8E6E1">
-    <div class="cta-glow" aria-hidden="true"></div>
     <div class="container">
       <div class="cta-inner reveal">
         <h2 class="cta-headline">Protect your base. Expand your best accounts.</h2>
-        <button type="button" class="btn btn-primary btn-lg demo-trigger cta-demo-btn">Request a Demo</button>
+        <button type="button" class="btn btn-primary btn-lg demo-trigger">Request a Demo</button>
       </div>
     </div>
   </section>
+
+  </main>
 
   <!-- ─── Footer ─────────────────────────────────────────────────────── -->
   <footer data-nav-theme="dark" data-nav-bg="#011330">
@@ -1467,7 +1497,8 @@
     <form id="demo-form" class="demo-form" novalidate>
       <div class="demo-field">
         <label for="demo-name">Name</label>
-        <input id="demo-name" type="text" name="name" placeholder="Your name" required autocomplete="name" />
+        <input id="demo-name" type="text" name="name" placeholder="Your name" required autocomplete="name" aria-describedby="demo-name-error" />
+        <span id="demo-name-error" class="demo-field-error" role="alert"></span>
       </div>
       <div class="demo-field">
         <label for="demo-company">Company</label>
@@ -1475,14 +1506,15 @@
       </div>
       <div class="demo-field">
         <label for="demo-email">Email</label>
-        <input id="demo-email" type="email" name="email" placeholder="you@company.com" required autocomplete="email" />
+        <input id="demo-email" type="email" name="email" placeholder="you@company.com" required autocomplete="email" aria-describedby="demo-email-error" />
+        <span id="demo-email-error" class="demo-field-error" role="alert"></span>
       </div>
       <div class="demo-field">
         <label for="demo-phone">Phone number</label>
         <input id="demo-phone" type="tel" name="phone" placeholder="(555) 555-5555" autocomplete="tel" />
       </div>
-      <div id="demo-success" class="demo-form-success">Thanks! We'll reach out within one business day to schedule your demo.</div>
-      <div id="demo-error" class="demo-form-error">Something went wrong. Please email <a href="mailto:chris@coraleye.ai">chris@coraleye.ai</a> directly.</div>
+      <div id="demo-success" class="demo-form-success" role="status" aria-live="polite">Thanks! We'll reach out within one business day to schedule your demo.</div>
+      <div id="demo-error" class="demo-form-error" role="alert" aria-live="assertive">Something went wrong. Please email <a href="mailto:chris@coraleye.ai">chris@coraleye.ai</a> directly.</div>
       <button type="submit" class="btn btn-primary btn-lg demo-submit-btn">Request a Demo</button>
     </form>
   </aside>
@@ -1538,17 +1570,40 @@
     window.addEventListener('scroll', updateNavBackground, { passive: true });
     window.addEventListener('resize', updateNavBackground);
 
+    const navMenuBtn = document.getElementById('nav-menu-btn');
+    const navMobileMenu = document.getElementById('nav-mobile-menu');
+
+    function closeNavMenu() {
+      if (!navMenuBtn || !navMobileMenu) return;
+      navMenuBtn.setAttribute('aria-expanded', 'false');
+      navMobileMenu.hidden = true;
+    }
+
+    if (navMenuBtn && navMobileMenu) {
+      navMenuBtn.addEventListener('click', function() {
+        const open = navMenuBtn.getAttribute('aria-expanded') === 'true';
+        navMenuBtn.setAttribute('aria-expanded', open ? 'false' : 'true');
+        navMobileMenu.hidden = open;
+      });
+
+      navMobileMenu.querySelectorAll('a').forEach(function(link) {
+        link.addEventListener('click', closeNavMenu);
+      });
+
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') closeNavMenu();
+      });
+    }
+
 
     const quoteSlides = [
       {
         text: `Most companies aren't systems of action, they are systems of recommendations. Where a company could differentiate is if it had the recommendation engine and then helped me do it.`,
-        name: `VP Customer Success`,
-        company: `Design partner · Enterprise SaaS`
+        attr: `VP Customer Success · Design partner · Enterprise SaaS · 400+ seats`
       },
       {
         text: `I would like my CSM team to spend zero time on follow-ups and actually taking action: booking the call, writing the email, sending an escalation internally, not just drafting the language.`,
-        name: `Director of Customer Success`,
-        company: `Series C startup`
+        attr: `Director of Customer Success · Series C startup · 120 seats`
       }
     ];
     let quoteIndex = 0;
@@ -1568,7 +1623,7 @@
           <div class="approach-quote-mark">"</div>
           <p class="approach-quote-text">${q.text}</p>
           <div class="approach-quote-mark approach-quote-mark-close">"</div>
-          <div class="approach-quote-attr">${q.name}, ${q.company}</div>`;
+          <div class="approach-quote-attr">${q.attr}</div>`;
         display.style.opacity = '1';
         quoteDots.forEach(function(dot, i) {
           dot.classList.toggle('active', i === quoteIndex);
@@ -1609,15 +1664,32 @@
 
     const mobileDemoBar = document.getElementById('mobile-demo-bar');
     const heroSection = document.getElementById('hero');
-    if (mobileDemoBar && heroSection && window.matchMedia('(max-width: 768px)').matches) {
+    let mobileBarObserver = null;
+
+    function setupMobileDemoBar() {
+      if (!mobileDemoBar || !heroSection) return;
+      const isMobile = window.matchMedia('(max-width: 768px)').matches;
+      if (!isMobile) {
+        mobileDemoBar.hidden = true;
+        if (mobileBarObserver) {
+          mobileBarObserver.disconnect();
+          mobileBarObserver = null;
+        }
+        return;
+      }
       mobileDemoBar.hidden = false;
-      const barObserver = new IntersectionObserver(function(entries) {
-        entries.forEach(function(entry) {
-          mobileDemoBar.hidden = entry.isIntersecting;
-        });
-      }, { threshold: 0.05 });
-      barObserver.observe(heroSection);
+      if (!mobileBarObserver) {
+        mobileBarObserver = new IntersectionObserver(function(entries) {
+          entries.forEach(function(entry) {
+            mobileDemoBar.hidden = entry.isIntersecting;
+          });
+        }, { threshold: 0.05 });
+        mobileBarObserver.observe(heroSection);
+      }
     }
+
+    setupMobileDemoBar();
+    window.addEventListener('resize', setupMobileDemoBar);
 
     // ── Demo request panel ───────────────────────────────────────────
     const demoPanel = document.getElementById('demo-panel');
@@ -1698,6 +1770,8 @@
         e.preventDefault();
         const nameEl = document.getElementById('demo-name');
         const emailEl = document.getElementById('demo-email');
+        const nameError = document.getElementById('demo-name-error');
+        const emailError = document.getElementById('demo-email-error');
         const name = nameEl.value.trim();
         const company = document.getElementById('demo-company').value.trim();
         const email = emailEl.value.trim();
@@ -1706,11 +1780,30 @@
 
         nameEl.style.borderBottomColor = '';
         emailEl.style.borderBottomColor = '';
+        nameEl.removeAttribute('aria-invalid');
+        emailEl.removeAttribute('aria-invalid');
+        if (nameError) nameError.textContent = '';
+        if (emailError) emailError.textContent = '';
         if (demoError) demoError.style.display = 'none';
 
         if (!name || !email) {
-          if (!name) nameEl.style.borderBottomColor = '#f87171';
-          if (!email) emailEl.style.borderBottomColor = '#f87171';
+          if (!name) {
+            nameEl.style.borderBottomColor = '#f87171';
+            nameEl.setAttribute('aria-invalid', 'true');
+            if (nameError) nameError.textContent = 'Please enter your name.';
+          }
+          if (!email) {
+            emailEl.style.borderBottomColor = '#f87171';
+            emailEl.setAttribute('aria-invalid', 'true');
+            if (emailError) emailError.textContent = 'Please enter your email address.';
+          }
+          return;
+        }
+
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+          emailEl.style.borderBottomColor = '#f87171';
+          emailEl.setAttribute('aria-invalid', 'true');
+          if (emailError) emailError.textContent = 'Please enter a valid email address.';
           return;
         }
 
@@ -1752,6 +1845,32 @@
           if (demoError) demoError.style.display = 'block';
         }
       });
+    }
+
+    function clearDemoFieldError(inputEl, errorEl) {
+      if (!inputEl) return;
+      inputEl.style.borderBottomColor = '';
+      inputEl.removeAttribute('aria-invalid');
+      if (errorEl) errorEl.textContent = '';
+    }
+
+    if (demoForm) {
+      const demoNameInput = document.getElementById('demo-name');
+      const demoEmailInput = document.getElementById('demo-email');
+      const demoNameErrorEl = document.getElementById('demo-name-error');
+      const demoEmailErrorEl = document.getElementById('demo-email-error');
+
+      if (demoNameInput) {
+        demoNameInput.addEventListener('input', function() {
+          clearDemoFieldError(demoNameInput, demoNameErrorEl);
+        });
+      }
+
+      if (demoEmailInput) {
+        demoEmailInput.addEventListener('input', function() {
+          clearDemoFieldError(demoEmailInput, demoEmailErrorEl);
+        });
+      }
     }
   </script>
 
