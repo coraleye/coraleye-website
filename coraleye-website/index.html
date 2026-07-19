@@ -943,7 +943,6 @@
 
     .timeline-header {
       text-align: left;
-      max-width: 760px;
       margin: 0 0 24px;
     }
 
@@ -959,7 +958,7 @@
       font-weight: 400;
       margin: 0 0 20px;
       text-align: left;
-      text-wrap: balance;
+      white-space: nowrap;
     }
 
     .timeline-meta {
@@ -1485,7 +1484,8 @@
     }
 
     @media (max-width: 900px) {
-      .surface-header .subhead {
+      .surface-header .subhead,
+      .timeline-header .subhead {
         white-space: normal;
       }
     }
