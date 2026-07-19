@@ -273,8 +273,7 @@
       font-family: inherit;
       font-size: 0.75rem;
       font-weight: 500;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
+      letter-spacing: 0.01em;
     }
 
     #site-nav[data-theme="light"] .nav-menu-btn {
@@ -958,177 +957,33 @@
       font-weight: 400;
       margin: 0 0 20px;
       text-align: left;
-      white-space: nowrap;
-    }
-
-    .timeline-meta {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      align-items: center;
-      gap: 8px 12px;
-      margin-bottom: 40px;
-      font-size: 0.88rem;
-      color: var(--text-muted);
-    }
-
-    .timeline-meta strong {
-      color: var(--navy);
-      font-weight: 500;
-    }
-
-    .timeline-meta .divider {
-      color: var(--text-subtle);
     }
 
     .timeline-module {
-      max-width: 980px;
+      max-width: 1120px;
       margin: 0 auto;
-    }
-
-    .comparison-track {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 16px;
-      max-width: 320px;
-      margin: 0 auto 40px;
-    }
-
-    .track-label {
-      font-size: 0.78rem;
-      font-weight: 500;
-      letter-spacing: 0.06em;
-      color: var(--text-muted);
-      white-space: nowrap;
-    }
-
-    .track-label.active {
-      color: var(--success-text);
-    }
-
-    .track-line {
-      position: relative;
-      flex: 1;
-      height: 2px;
-      background: var(--blue);
-      opacity: 0.35;
-    }
-
-    .track-dot {
-      position: absolute;
-      top: 50%;
-      left: 0%;
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      background: var(--orange);
-      transform: translate(-50%, -50%);
-      opacity: 0;
-      transition-property: left, background-color, opacity;
-      transition-timing-function: linear, ease, ease;
-      transition-duration: 0ms, 0.6s, 0.3s;
-    }
-
-    .track-dot.running {
-      opacity: 1;
-    }
-
-    .track-dot.arrived {
-      background: var(--success-text);
-    }
-
-    .reveal-card {
-      position: relative;
-      z-index: 1;
-      opacity: 0;
-      transform: translateY(14px);
-      transition: opacity 0.5s ease, transform 0.5s ease;
-    }
-
-    .reveal-card.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .reveal-card-wrap {
-      display: grid;
-      grid-template: 1fr / 1fr;
-      align-self: stretch;
-    }
-
-    .reveal-card-wrap > .card-skeleton,
-    .reveal-card-wrap > .reveal-card {
-      grid-area: 1 / 1;
-    }
-
-    .card-skeleton {
-      border-radius: var(--radius-lg);
-      background: #ececea;
-      border: 1px solid rgba(0, 0, 0, 0.04);
-      padding: 20px 18px;
-      min-height: 72px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      gap: 10px;
-      transition: opacity 0.35s ease, visibility 0.35s ease;
-    }
-
-    .card-skeleton::before,
-    .card-skeleton::after {
-      content: '';
-      display: block;
-      height: 9px;
-      border-radius: 999px;
-      background: rgba(1, 19, 48, 0.1);
-    }
-
-    .card-skeleton::before {
-      width: 30%;
-      max-width: 88px;
-    }
-
-    .card-skeleton::after {
-      width: 68%;
-      max-width: 220px;
-    }
-
-    .card-skeleton--compact {
-      min-height: 36px;
-      padding: 12px 18px;
-      border-radius: var(--radius);
-    }
-
-    .card-skeleton--compact::before {
-      width: 42%;
-      max-width: 140px;
-    }
-
-    .card-skeleton--compact::after {
-      display: none;
-    }
-
-    .reveal-card-wrap:has(.reveal-card.visible) .card-skeleton {
-      opacity: 0;
-      visibility: hidden;
     }
 
     .comparison-grid {
       display: grid;
-      grid-template-columns: 1fr auto 1fr;
-      grid-template-rows: repeat(7, auto);
-      column-gap: 32px;
+      grid-template-columns: 1fr auto 1fr auto 1fr;
+      column-gap: 24px;
       row-gap: 14px;
       align-items: start;
     }
 
     .comparison-col {
-      display: grid;
-      grid-template-rows: subgrid;
-      grid-row: 1 / -1;
+      display: flex;
+      flex-direction: column;
       gap: 14px;
       min-width: 0;
+    }
+
+    .stage-label {
+      font-size: 0.8125rem;
+      font-weight: 500;
+      letter-spacing: 0.01em;
+      color: var(--blue);
     }
 
     .comparison-col h3 {
@@ -1141,41 +996,9 @@
     .comparison-arrow {
       font-size: 28px;
       color: var(--blue);
-      grid-row: 1 / -1;
       align-self: center;
       justify-self: center;
       line-height: 1;
-    }
-
-    .health-score {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      margin-bottom: 20px;
-    }
-
-    .score-num {
-      font-size: 2.5rem;
-      font-weight: 700;
-      line-height: 1;
-      letter-spacing: 0.02em;
-    }
-
-    .health-score.at-risk .score-num {
-      color: var(--orange);
-    }
-
-    .health-score.improving .score-num {
-      color: var(--success-text);
-    }
-
-    .score-label {
-      margin-top: 8px;
-      font-size: 0.68rem;
-      font-weight: 500;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--text-subtle);
     }
 
     .evidence-count {
@@ -1193,10 +1016,9 @@
       justify-content: space-between;
       gap: 12px;
       margin-bottom: 14px;
-      font-size: 0.72rem;
+      font-size: 0.8125rem;
       font-weight: 500;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
+      letter-spacing: 0.01em;
       color: var(--text-subtle);
     }
 
@@ -1205,7 +1027,7 @@
     }
 
     .comparison-col .agent-memory {
-      margin-top: 14px;
+      margin-top: 0;
     }
 
     .agent-memory {
@@ -1218,10 +1040,9 @@
 
     .agent-memory strong {
       display: block;
-      font-size: 0.72rem;
+      font-size: 0.8125rem;
       font-weight: 500;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
+      letter-spacing: 0.01em;
       color: var(--blue);
       margin-bottom: 6px;
     }
@@ -1276,21 +1097,54 @@
       border-color: rgba(4, 120, 87, 0.18);
     }
 
-    .reveal-card-wrap--pair .action-card {
-      height: 100%;
-      box-sizing: border-box;
+    .renewal-capstone {
+      max-width: 640px;
+      margin: 40px auto 0;
+      padding: 28px 36px;
+      background: rgba(255, 255, 255, 0.6);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.5);
+      border-radius: 16px;
+      display: flex;
+      justify-content: space-between;
       align-items: center;
-      padding: 12px 16px;
+      flex-wrap: wrap;
+      gap: 20px;
+      box-shadow: 0 12px 32px rgba(30, 42, 68, 0.06);
     }
 
-    .reveal-card-wrap--pair .tag {
-      white-space: nowrap;
+    .renewal-checks {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      font-size: 14px;
+      color: var(--text-muted);
     }
 
-    .reveal-card-wrap--pair .card-skeleton {
-      min-height: 0;
-      height: 100%;
-      padding: 12px 16px;
+    .check-item {
+      color: var(--success-text);
+    }
+
+    .renewal-outcome {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+    }
+
+    .outcome-label {
+      font-size: 0.8125rem;
+      font-weight: 500;
+      letter-spacing: 0.01em;
+      color: var(--text-subtle);
+      margin-bottom: 4px;
+    }
+
+    .outcome-value {
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1.2;
     }
 
     .fine-print {
@@ -1301,55 +1155,34 @@
       color: var(--text-subtle);
     }
 
-    @media (max-width: 860px) {
+    @media (max-width: 900px) {
       .comparison-grid {
         grid-template-columns: 1fr;
-        grid-template-rows: none;
         gap: 24px;
       }
 
-      .comparison-col {
-        grid-row: auto;
-        grid-template-rows: none;
-      }
-
       .comparison-arrow {
-        grid-row: auto;
         transform: rotate(90deg);
-        padding: 0;
+        padding: 8px 0;
         justify-self: center;
-      }
-
-      .reveal-card-wrap--pair .action-card {
-        height: auto;
-      }
-
-      .reveal-card-wrap--pair .card-skeleton {
-        height: auto;
-        min-height: 72px;
       }
 
       .action-card {
         padding: 20px 18px;
       }
 
-      .timeline-meta .divider {
-        display: none;
+      .renewal-capstone {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 24px;
       }
 
-      .timeline-meta {
-        flex-direction: column;
-        align-items: center;
-        gap: 6px;
+      .renewal-outcome {
+        align-items: flex-start;
       }
     }
 
     @media (prefers-reduced-motion: reduce) {
-      .reveal-card {
-        opacity: 1;
-        transform: none;
-      }
-
       .stack-item {
         position: static;
         min-height: auto;
@@ -1359,17 +1192,6 @@
         opacity: 1 !important;
         transform: none !important;
         margin-bottom: 24px;
-      }
-
-      .card-skeleton {
-        opacity: 0;
-        visibility: hidden;
-      }
-
-      .track-dot {
-        opacity: 1;
-        left: 100%;
-        background: var(--success-text);
       }
     }
 
@@ -1484,8 +1306,7 @@
     }
 
     @media (max-width: 900px) {
-      .surface-header .subhead,
-      .timeline-header .subhead {
+      .surface-header .subhead {
         white-space: normal;
       }
     }
@@ -1740,10 +1561,9 @@
 
     .demo-field label {
       display: block;
-      font-size: 0.72rem;
+      font-size: 0.8125rem;
       font-weight: 500;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
+      letter-spacing: 0.01em;
       color: rgba(255, 255, 255, 0.4);
       margin-bottom: 6px;
     }
@@ -1991,81 +1811,81 @@
   <section id="timeline" class="section timeline-section" data-nav-theme="light" data-nav-bg="#ffffff">
     <div class="container">
       <div class="timeline-header reveal">
-        <h2>From flagged to saved.</h2>
-        <p class="subhead">One week in, Coraleye has more to go on. Watch the picture sharpen from first signal to a specific, addressable play.</p>
-      </div>
-      <div class="timeline-meta reveal">
-        <span><strong>Channels:</strong> Slack · Email · Calls</span>
-        <span class="divider">|</span>
-        <span><strong>Systems:</strong> Zendesk, Gong, HubSpot &amp; more</span>
+        <h2>Your company's context engine</h2>
+        <p class="subhead">Coraleye builds on your company's historical context to spot churn and upsell signals. Our agent drafts a path forward to guide your team's relationship strategy.</p>
       </div>
 
       <div class="timeline-module">
-        <div class="comparison-track">
-          <span class="track-label">Day 1</span>
-          <div class="track-line">
-            <div class="track-dot" id="trackDot"></div>
-          </div>
-          <span class="track-label active">1 week</span>
-        </div>
+        <div class="comparison-grid comparison-grid-3col">
 
-        <div class="comparison-grid">
           <div class="comparison-col">
-            <div class="health-score at-risk">
-              <span class="score-num">48</span>
-              <span class="score-label">Health Score</span>
+            <span class="stage-label">Day 1</span>
+            <div class="signal-row"><span>Signal</span><span class="tag">Usage + Slack</span></div>
+            <h3>Usage drop, champion departure</h3>
+            <div class="agent-memory">
+              <strong>Agent Memory</strong>
+              <p>Links LinkedIn activity with usage data. New CTO previously used a competitor's product at their last role.</p>
             </div>
-            <div class="signal-row"><span>Signal</span><span class="tag">Zendesk</span></div>
-            <h3>Rising support friction detected on Company A</h3>
-            <div class="reveal-card-wrap">
-              <div class="card-skeleton" aria-hidden="true"></div>
-              <div class="agent-memory reveal-card">
-                <strong>Agent Memory</strong>
-                <p>Renewal date, ARR, and prior expansion conversations stay connected.</p>
-              </div>
+            <div class="action-card">
+              <span class="tag">Account · Slack</span>
+              “Do you have this competitor's feature?” — “Absolutely, let me walk you through.”
             </div>
-            <div class="reveal-card-wrap">
-              <div class="card-skeleton" aria-hidden="true"></div>
-              <div class="action-card reveal-card"><span class="tag tag-cory">Cory</span>Pulls the latest Zendesk tickets and Gong calls into one account timeline.</div>
+            <div class="action-card">
+              <span class="tag">Coraleye</span>
+              Logs the churn signal and flags the risk.
             </div>
-            <div class="reveal-card-wrap reveal-card-wrap--pair">
-              <div class="card-skeleton" aria-hidden="true"></div>
-              <div class="action-card reveal-card"><span class="tag">Zendesk · Tool</span>3 tickets this week cite the same expense policy issue.</div>
-            </div>
-            <div class="reveal-card-wrap">
-              <div class="card-skeleton card-skeleton--compact" aria-hidden="true"></div>
-              <div class="evidence-count reveal-card">3 signals gathered</div>
-            </div>
+            <div class="evidence-count">Diagnosis: Churn signal detected</div>
           </div>
 
           <div class="comparison-arrow" aria-hidden="true">→</div>
 
           <div class="comparison-col">
-            <div class="health-score improving">
-              <span class="score-num">71</span>
-              <span class="score-label">Health Score</span>
-            </div>
+            <span class="stage-label">Same Day</span>
             <div class="signal-row"><span>Signal</span><span class="tag">Coraleye</span></div>
-            <h3>Root cause narrowed: play drafted for the CSM</h3>
-            <div class="reveal-card-wrap">
-              <div class="card-skeleton" aria-hidden="true"></div>
-              <div class="agent-memory reveal-card">
-                <strong>Agent Memory</strong>
-                <p>A week of tickets, calls, and Slack threads now cross-referenced against the original signal.</p>
-              </div>
+            <h3>Precedent workflows surfaced</h3>
+            <div class="agent-memory">
+              <strong>Agent Memory</strong>
+              <p>Drawn from prior recovery plays conducted with similar patterns.</p>
             </div>
-            <div class="reveal-card-wrap">
-              <div class="card-skeleton" aria-hidden="true"></div>
-              <div class="action-card reveal-card"><span class="tag tag-cory">Cory</span>Cross-references a week of evidence: the expense policy issue is the root cause, not a broader churn risk.</div>
+            <div class="action-card">
+              <span class="tag">Coraleye</span>
+              Uses agent memory to draft a tailored playbook.
             </div>
-            <div class="reveal-card-wrap reveal-card-wrap--pair">
-              <div class="card-skeleton" aria-hidden="true"></div>
-              <div class="action-card reveal-card"><span class="tag tag-human">CSM review · Human</span>Play reviewed and approved before it goes out.</div>
+            <div class="action-card">
+              <span class="tag tag-human">CSM · Human</span>
+              Walks through Coraleye's suggestions, agrees with the approach, and initiates the sequence.
             </div>
-            <div class="reveal-card-wrap">
-              <div class="card-skeleton card-skeleton--compact" aria-hidden="true"></div>
-              <div class="evidence-count reveal-card">9 signals gathered</div>
+            <div class="evidence-count">Recovery playbook initiated</div>
+          </div>
+
+          <div class="comparison-arrow" aria-hidden="true">→</div>
+
+          <div class="comparison-col">
+            <span class="stage-label">Follow-up</span>
+            <div class="signal-row"><span>Signal</span><span class="tag">Slack</span></div>
+            <h3>Account sentiment tracked over time</h3>
+            <div class="agent-memory">
+              <strong>Agent Memory</strong>
+              <p>Reads transcripts and diagnoses how the sequence is evolving.</p>
             </div>
+            <div class="action-card">
+              <span class="tag">Coraleye</span>
+              Continuously updates tailored actions to win each account.
+            </div>
+            <div class="evidence-count">Proactive outreach continues</div>
+          </div>
+
+        </div>
+
+        <div class="renewal-capstone">
+          <div class="renewal-checks">
+            <span class="check-item">✓ New stakeholders engage</span>
+            <span class="check-item">✓ ROI clarity</span>
+            <span class="check-item">✓ Locked in contract</span>
+          </div>
+          <div class="renewal-outcome">
+            <span class="outcome-label">Outcome</span>
+            <span class="outcome-value">Successful → Renewal</span>
           </div>
         </div>
       </div>
@@ -2241,58 +2061,6 @@
       });
     }, { threshold: 0.12 });
     reveals.forEach(el => observer.observe(el));
-
-    // Timeline comparison stagger + track dot
-    const revealCards = document.querySelectorAll('#timeline .reveal-card');
-    const trackDot = document.getElementById('trackDot');
-    const timelineSection = document.getElementById('timeline');
-    const STEP_MS = 2000;
-    let sequenceStarted = false;
-
-    function runTimelineSequence() {
-      if (sequenceStarted || !revealCards.length || !trackDot) return;
-      sequenceStarted = true;
-
-      const lastIndex = revealCards.length - 1;
-      const totalDuration = lastIndex * STEP_MS;
-
-      trackDot.classList.add('running');
-      trackDot.style.transitionDuration = totalDuration + 'ms, 0.6s, 0.3s';
-      requestAnimationFrame(function() {
-        trackDot.style.left = '100%';
-      });
-
-      revealCards.forEach(function(card, i) {
-        setTimeout(function() {
-          card.classList.add('visible');
-        }, i * STEP_MS);
-      });
-
-      setTimeout(function() {
-        trackDot.classList.add('arrived');
-      }, totalDuration);
-    }
-
-    if (revealCards.length && trackDot && timelineSection) {
-      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-        revealCards.forEach(function(card) {
-          card.classList.add('visible');
-        });
-        trackDot.classList.add('running', 'arrived');
-        trackDot.style.left = '100%';
-        trackDot.style.opacity = '1';
-      } else {
-        const timelineObserver = new IntersectionObserver(function(entries) {
-          entries.forEach(function(entry) {
-            if (entry.isIntersecting) {
-              runTimelineSequence();
-              timelineObserver.unobserve(entry.target);
-            }
-          });
-        }, { threshold: 0.3 });
-        timelineObserver.observe(timelineSection);
-      }
-    }
 
     initSurfaceStack();
 
