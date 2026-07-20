@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Terms of Service | Coraleye</title>
   <meta name="description" content="Coraleye Terms of Service: the agreement governing your access to and use of the Coraleye platform." />
-  <link rel="icon" type="image/png" href="cory the octopus green.png" />
-  <link rel="apple-touch-icon" href="cory the octopus green.png" />
+  <link rel="icon" type="image/png" href="new logo orange.png" />
+  <link rel="apple-touch-icon" href="new logo orange.png" />
   <link rel="stylesheet" href="fonts.css" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; max-width: 100%; }
@@ -14,18 +14,18 @@
     :root {
       /* Meridian editorial palette */
       --color-bg:               #FAF6ED;
-      --color-surface-dark:     #1C1712;
-      --color-text-primary:     #2A2117;
+      --color-surface-dark:     #2A221C;
+      --color-headline:         #4A3228;
+      --color-text-primary:     #3A3028;
       --color-text-secondary:   #5F5E5A;
-      --color-accent-rust:      #C1502E;
-      --color-accent-rust-hover:#B14A2A;
-      --color-accent-rust-dim:  #F4E3DC;
+      --color-accent-terracotta:#C27855;
+      --color-accent-terracotta-hover: #B26E4E;
+      --color-accent-terracotta-dim: color-mix(in srgb, var(--color-accent-terracotta) 14%, var(--color-bg));
       --color-accent-olive:     #5C6B3F;
       --color-accent-olive-bg:  #E8E9DC;
       --color-accent-amber:     #A9772E;
       --color-accent-amber-bg:  #F2E9D8;
       --color-border:           #E4DFD1;
-      --color-surface-darkcard: #241C15;
       --color-cream:            #FAF6ED;
       --font-serif:             Georgia, 'Times New Roman', Times, serif;
 
@@ -33,7 +33,7 @@
       --bg:          var(--color-bg);
       --bg-card:     var(--color-bg);
       --border:      var(--color-border);
-      --orange:      var(--color-accent-rust);
+      --orange:      var(--color-accent-terracotta);
       --text:        var(--color-text-primary);
       --text-muted:  var(--color-text-secondary);
       --text-subtle: #8A8984;
@@ -41,8 +41,8 @@
       --navy:        var(--color-surface-dark);
       --success-text:var(--color-accent-olive);
       --success-dim: var(--color-accent-olive-bg);
-      --pastel-green:       var(--color-accent-rust);
-      --pastel-green-hover: var(--color-accent-rust-hover);
+      --pastel-green:       var(--color-accent-terracotta);
+      --pastel-green-hover: var(--color-accent-terracotta-hover);
       --pastel-green-text:  #ffffff;
     }
 
@@ -68,7 +68,7 @@
       font-family: var(--font-serif);
       font-weight: 600;
       letter-spacing: 0.02em;
-      color: var(--color-text-primary);
+      color: var(--color-headline);
     }
 
     /* ─── Nav ───────────────────────────────────────────────────────── */
@@ -90,7 +90,7 @@
 
     .container {
       width: 100%;
-      max-width: 1120px;
+      max-width: 1280px;
       margin: 0 auto;
       padding: 0 24px;
     }
@@ -109,7 +109,7 @@
       font-weight: 500;
       font-size: 1.28rem;
       letter-spacing: -0.01em;
-      color: var(--success-text);
+      color: #C1502E;
       text-decoration: none;
     }
 
@@ -133,6 +133,7 @@
       object-fit: contain;
       border-radius: 8px;
       margin-right: -14px;
+      filter: brightness(0.72) saturate(1.15) hue-rotate(-8deg);
     }
 
     .nav-links {
@@ -177,7 +178,7 @@
     .btn-primary:hover {
       background: var(--color-accent-rust-hover);
       transform: translateY(-1px);
-      box-shadow: 0 4px 14px rgba(193, 80, 46, 0.22);
+      box-shadow: 0 4px 14px rgba(194, 120, 85, 0.22);
       text-decoration: none;
     }
 
@@ -214,7 +215,7 @@
       font-weight: 600;
       line-height: 1.15;
       letter-spacing: 0.05em;
-      color: var(--color-text-primary);
+      color: var(--color-headline);
       margin-bottom: 12px;
     }
 
@@ -233,7 +234,7 @@
       font-weight: 600;
       line-height: 1.3;
       letter-spacing: 0.05em;
-      color: var(--color-text-primary);
+      color: var(--color-headline);
       text-align: left;
       margin-bottom: 16px;
       padding-bottom: 10px;
@@ -245,7 +246,7 @@
       font-size: 1rem;
       font-weight: 600;
       letter-spacing: 0.02em;
-      color: var(--color-text-primary);
+      color: var(--color-headline);
       margin-top: 28px;
       margin-bottom: 10px;
     }
@@ -293,7 +294,7 @@
     /* ─── Footer ─────────────────────────────────────────────────────── */
     footer {
       position: relative;
-      color: var(--text-muted);
+      color: #fff;
       padding: 48px 0;
       margin: 0;
       border-top: none;
@@ -302,6 +303,14 @@
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
+    }
+
+    footer .nav-logo {
+      color: #fff;
+    }
+
+    footer .nav-logo-img {
+      filter: brightness(0) invert(1);
     }
 
     .footer-inner {
@@ -329,16 +338,16 @@
 
     .footer-links a {
       font-size: 0.85rem;
-      color: var(--text-muted);
+      color: #fff;
       transition: color 0.15s;
       text-decoration: none;
     }
 
-    .footer-links a:hover { color: var(--color-accent-rust); text-decoration: none; }
+    .footer-links a:hover { color: rgba(255, 255, 255, 0.78); text-decoration: none; }
 
     .footer-right {
       font-size: 0.8rem;
-      color: var(--text-subtle);
+      color: #fff;
     }
 
     /* ─── Responsive ─────────────────────────────────────────────────── */
@@ -359,7 +368,7 @@
       <div class="nav-inner">
         <a href="index.html" class="nav-logo">
           <div class="nav-logo-mark">
-            <img src="cory the octopus green.png" alt="Coraleye logo" class="nav-logo-img" />
+            <img src="new logo orange.png" alt="Coraleye logo" class="nav-logo-img" />
           </div>
           Coraleye
         </a>
@@ -577,7 +586,7 @@
         <div class="footer-left">
           <a href="index.html" class="nav-logo">
             <div class="nav-logo-mark">
-              <img src="cory the octopus green.png" alt="Coraleye logo" class="nav-logo-img" />
+              <img src="new logo orange.png" alt="Coraleye logo" class="nav-logo-img" />
             </div>
             Coraleye
           </a>

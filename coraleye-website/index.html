@@ -5,10 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Coraleye | Customer Success, Finally Proactive</title>
   <meta name="description" content="Coraleye reads your customer data. You act on what matters. Know what your customers need before they do, with your approval on every move." />
-  <link rel="icon" type="image/png" href="cory the octopus green.png" />
-  <link rel="apple-touch-icon" href="cory the octopus green.png" />
+  <link rel="icon" type="image/png" href="new logo orange.png" />
+  <link rel="apple-touch-icon" href="new logo orange.png" />
   <link rel="canonical" href="https://coraleye.ai/" />
   <link rel="stylesheet" href="fonts.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css" />
 
   <!-- Open Graph / social cards -->
   <meta property="og:type" content="website" />
@@ -26,48 +27,63 @@
 
     :root {
       /* Meridian editorial palette */
-      --color-bg:               #FAF6ED;
-      --color-surface-dark:     #1C1712;
-      --color-text-primary:     #2A2117;
+      --color-bg-a:             #FAF6ED;
+      --color-bg-b:             #F7F1E5;
+      --color-bg:               var(--color-bg-a);
+      --color-surface-card:     #FFFFFF;
+      --color-surface-dark:     #2A221C;
+      --color-headline:         #4A3228;
+      --color-text-primary:     #3A3028;
       --color-text-secondary:   #5F5E5A;
-      --color-accent-rust:      #C1502E;
-      --color-accent-rust-hover:#B14A2A;
-      --color-accent-rust-dim:  #F4E3DC;
+      --color-accent-terracotta:#C27855;
+      --color-accent-terracotta-hover: #B26E4E;
+      --color-accent-terracotta-dim: color-mix(in srgb, var(--color-accent-terracotta) 14%, var(--color-bg));
+      --color-accent-rust:      var(--color-accent-terracotta);
+      --color-accent-rust-hover:var(--color-accent-terracotta-hover);
+      --color-accent-rust-dim:  var(--color-accent-terracotta-dim);
       --color-accent-olive:     #5C6B3F;
       --color-accent-olive-bg:  #E8E9DC;
       --color-accent-amber:     #A9772E;
       --color-accent-amber-bg:  #F2E9D8;
       --color-border:           #E4DFD1;
-      --color-surface-darkcard: #241C15;
+      --color-surface-darkcard: #322820;
       --color-cream:            #FAF6ED;
       --font-serif:             Georgia, 'Times New Roman', Times, serif;
+      --photo-bottom-fade:      linear-gradient(to bottom, rgba(250, 246, 237, 0) 0%, rgba(250, 246, 237, 0) 60%, var(--color-bg-a) 100%);
 
       /* Legacy aliases */
       --bg:          var(--color-bg);
       --bg-card:     var(--color-bg);
       --bg-raised:   var(--color-bg);
       --border:      var(--color-border);
-      --orange:      var(--color-accent-rust);
-      --orange-hover:var(--color-accent-rust-hover);
-      --orange-dim:  var(--color-accent-rust-dim);
-      --blue:        var(--color-accent-rust);
-      --blue-dim:    var(--color-accent-rust-dim);
+      --orange:      var(--color-accent-terracotta);
+      --orange-hover:var(--color-accent-terracotta-hover);
+      --orange-dim:  var(--color-accent-terracotta-dim);
+      --blue:        var(--color-accent-terracotta);
+      --blue-dim:    var(--color-accent-terracotta-dim);
       --text:        var(--color-text-primary);
       --text-muted:  var(--color-text-secondary);
       --text-subtle: #8A8984;
       --radius:      10px;
       --radius-lg:   16px;
       --navy:        var(--color-surface-dark);
-      --connect:     rgba(193, 80, 46, 0.3);
+      --connect:     rgba(194, 120, 85, 0.3);
       --success:     var(--color-accent-olive);
       --success-text:var(--color-accent-olive);
       --success-dim: var(--color-accent-olive-bg);
-      --pastel-green:       var(--color-accent-rust);
-      --pastel-green-hover: var(--color-accent-rust-hover);
+      --pastel-green:       var(--color-accent-terracotta);
+      --pastel-green-hover: var(--color-accent-terracotta-hover);
       --pastel-green-text:  #ffffff;
+      --layout-max-width:   1280px;
+      --layout-gutter:      24px;
     }
 
-    html { scroll-behavior: smooth; scroll-padding-top: 64px; overflow-x: hidden; }
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 64px;
+      overflow-x: hidden;
+      scrollbar-gutter: stable;
+    }
 
     .skip-link {
       position: absolute;
@@ -111,19 +127,12 @@
     a { color: inherit; text-decoration: none; }
     img { display: block; max-width: 100%; }
 
-    .cory-mascot-img {
-      display: block;
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-    }
-
     /* ─── Utilities ─────────────────────────────────────────────────── */
     .container {
       width: 100%;
-      max-width: 1120px;
+      max-width: var(--layout-max-width);
       margin: 0 auto;
-      padding: 0 24px;
+      padding: 0 var(--layout-gutter);
     }
 
     .section {
@@ -173,7 +182,7 @@
       font-family: var(--font-serif);
       font-weight: 600;
       letter-spacing: 0.02em;
-      color: var(--color-text-primary);
+      color: var(--color-headline);
     }
 
     .subhead, .eyebrow {
@@ -209,12 +218,34 @@
       right: 0;
       z-index: 100;
       height: 64px;
-      display: flex;
-      align-items: center;
+      display: block;
       overflow: visible;
-      background: var(--color-bg);
-      border-bottom: 1px solid var(--color-border);
+      background: transparent;
+      border-bottom: 1px solid transparent;
       transition: background 0.35s ease, background-color 0.35s ease, backdrop-filter 0.35s ease, border-color 0.35s ease;
+    }
+
+    #site-nav > .container {
+      height: 100%;
+    }
+
+    #site-nav.nav-over-hero {
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      background: rgba(250, 246, 237, 0.78);
+      border-bottom-color: rgba(228, 223, 209, 0.65);
+    }
+
+    #site-nav .nav-cta .btn-primary {
+      background-color: #C1502E;
+      color: #FFFFFF;
+      opacity: 1;
+    }
+
+    #site-nav .nav-cta .btn-primary:hover {
+      background-color: #B14A2A;
+      opacity: 1;
+      box-shadow: 0 4px 14px rgba(193, 80, 46, 0.22);
     }
 
     #site-nav.nav-frost {
@@ -237,7 +268,7 @@
     }
 
     #site-nav[data-theme="light"] .nav-logo {
-      color: var(--success-text);
+      color: #C1502E;
     }
 
     #site-nav .nav-links a {
@@ -266,6 +297,28 @@
       object-fit: contain;
       border-radius: 8px;
       margin-right: -14px;
+      filter: brightness(0.72) saturate(1.15) hue-rotate(-8deg);
+    }
+
+    #site-nav .nav-logo-mark {
+      width: 36px;
+      height: 36px;
+      overflow: hidden;
+      position: relative;
+      flex-shrink: 0;
+      margin-right: 10px;
+    }
+
+    #site-nav .nav-logo-img {
+      position: absolute;
+      left: -18px;
+      top: 50%;
+      width: 72px;
+      height: auto;
+      max-width: none;
+      margin: 0;
+      transform: translateY(-50%);
+      filter: brightness(0.72) saturate(1.15) hue-rotate(-8deg);
     }
 
     .nav-inner {
@@ -273,6 +326,7 @@
       align-items: center;
       justify-content: space-between;
       width: 100%;
+      height: 64px;
     }
 
     .nav-logo {
@@ -282,7 +336,7 @@
       font-weight: 500;
       font-size: 1.28rem;
       letter-spacing: -0.01em;
-      color: var(--success-text);
+      color: #C1502E;
     }
 
     .nav-menu-btn {
@@ -412,9 +466,9 @@
     }
 
     .btn-primary:hover {
-      background: var(--color-accent-rust-hover);
+      background: var(--color-accent-terracotta-hover);
       transform: translateY(-1px);
-      box-shadow: 0 4px 14px rgba(193, 80, 46, 0.22);
+      box-shadow: 0 4px 14px rgba(194, 120, 85, 0.22);
     }
 
     .btn-lg {
@@ -423,22 +477,33 @@
       border-radius: 11px;
     }
 
+    /* ─── Photo sections (hero + testimonial) ───────────────────────── */
+    .photo-section {
+      position: relative;
+      overflow: hidden;
+      background-color: var(--color-bg);
+      background-image: var(--photo-bottom-fade), url("terracotta-coral background.jpeg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    .approach-section {
+      position: relative;
+      overflow: hidden;
+      background-color: var(--color-bg);
+      background-image: url("terracotta-coral background.jpeg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
     /* ─── Hero ──────────────────────────────────────────────────────── */
     #hero {
       min-height: 92vh;
       padding: 140px 0 120px;
       margin: 0;
-      position: relative;
-      overflow: hidden;
-      display: flex;
-      align-items: center;
-      background-color: var(--color-bg);
-      background-image:
-        linear-gradient(to bottom, rgba(42, 33, 23, 0.12) 0%, rgba(250, 246, 237, 0.45) 52%, var(--color-bg) 100%),
-        url("terracotta-coral background.jpeg");
-      background-size: cover, cover;
-      background-position: center, center;
-      background-repeat: no-repeat, no-repeat;
+      display: block;
     }
 
     .hero-pattern {
@@ -467,13 +532,12 @@
       }
     }
 
-    #hero .container {
+    #hero > .container {
       position: relative;
       z-index: 1;
-      width: 100%;
     }
 
-    .hero-accent { color: var(--success-text); }
+    .hero-accent { color: var(--color-accent-olive); }
 
     .hero-pain {
       margin-bottom: 20px;
@@ -486,38 +550,27 @@
       max-width: 820px;
     }
 
-    .btn-hero-outline {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 9px 20px;
-      border-radius: var(--radius);
-      font-size: 0.875rem;
-      font-weight: 500;
-      cursor: pointer;
-      transition: all 0.18s;
-      white-space: nowrap;
-      background: transparent;
-      color: var(--color-text-primary);
-      border: 1px solid rgba(42, 33, 23, 0.35);
-      text-decoration: none;
-    }
-
-    .btn-hero-outline:hover {
-      background: rgba(42, 33, 23, 0.06);
-      color: var(--color-text-primary);
-    }
-
     #hero h1 {
       margin-bottom: 28px;
       font-size: clamp(3rem, 7vw, 5.5rem);
       line-height: 1.04;
-      color: var(--color-text-primary);
+      color: var(--color-headline);
     }
 
     #hero .hero-pain,
     #hero .hero-sub {
-      color: var(--color-text-secondary);
+      color: var(--color-headline);
+    }
+
+    #hero .btn-primary {
+      background-color: #C1502E;
+      color: #FFFFFF;
+      opacity: 1;
+    }
+
+    #hero .btn-primary:hover {
+      background-color: #B14A2A;
+      opacity: 1;
     }
 
     .hero-sub {
@@ -535,13 +588,20 @@
     .section-light {
       position: relative;
       z-index: 2;
-      background: var(--bg);
+    }
+
+    .section-bg-a {
+      background: var(--color-bg-a);
+    }
+
+    .section-bg-b {
+      background: var(--color-bg-b);
     }
 
     /* ─── Approach quotes ───────────────────────────────────────────── */
     .approach-quote-block {
       margin-top: 0;
-      background: rgba(250, 246, 237, 0.72);
+      background: var(--color-bg-a);
       border: 1px solid var(--color-border);
       border-radius: var(--radius-lg);
       padding: 28px;
@@ -549,7 +609,7 @@
     }
 
     .approach-quote-display {
-      transition: opacity 0.5s ease;
+      transition: none;
     }
 
     .approach-quote-mark {
@@ -573,7 +633,7 @@
 
     .approach-quote-attr {
       padding-top: 16px;
-      border-top: 1px solid rgba(193, 80, 46, 0.2);
+      border-top: 1px solid color-mix(in srgb, var(--color-accent-terracotta) 20%, transparent);
       font-size: 0.82rem;
       color: var(--text-subtle);
     }
@@ -590,7 +650,7 @@
       padding: 0;
       border: none;
       border-radius: 50%;
-      background: rgba(42, 33, 23, 0.15);
+      background: rgba(58, 48, 40, 0.15);
       transition: background 0.3s;
       cursor: pointer;
     }
@@ -602,7 +662,7 @@
     /* ─── How it Works ──────────────────────────────────────────────── */
     #how-it-works.built-for-stack-section {
       position: relative;
-      background: linear-gradient(to bottom, var(--color-accent-olive-bg) 0%, var(--color-bg) 100%);
+      padding: 80px 0 56px;
     }
 
     .how-header {
@@ -624,7 +684,7 @@
       display: grid;
       grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
       gap: 48px;
-      align-items: center;
+      align-items: start;
     }
 
     .how-stack-layout .how-header {
@@ -658,7 +718,8 @@
       position: relative;
       width: 100%;
       max-width: none;
-      aspect-ratio: 1;
+      max-height: 480px;
+      aspect-ratio: 3 / 2;
       overflow: visible;
       background: transparent;
       box-shadow: none;
@@ -805,68 +866,8 @@
     .integration-bubble:nth-child(11) { animation-duration: 8.9s; animation-delay: 0.5s; }
     .integration-bubble:nth-child(12) { animation-duration: 10.2s; animation-delay: 1.4s; }
 
-    .integrations-cloud-motion-svg {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      pointer-events: none;
-      overflow: visible;
-    }
-
-    .cory-swimmer {
-      position: absolute;
-      width: 16%;
-      max-width: 88px;
-      aspect-ratio: 1;
-      offset-path: url(#cory-swim-path);
-      offset-distance: 0%;
-      offset-anchor: center;
-      offset-rotate: auto 180deg;
-      animation: cory-swim 22s linear infinite;
-      z-index: 4;
-      pointer-events: none;
-    }
-
-    .cory-swimmer .cory-mascot-img {
-      animation: cory-wiggle 1.8s ease-in-out infinite;
-    }
-
-    @keyframes cory-swim {
-      0% { offset-distance: 0%; z-index: 2; }
-      22% { z-index: 7; }
-      48% { z-index: 3; }
-      72% { z-index: 6; }
-      100% { offset-distance: 100%; z-index: 2; }
-    }
-
-    @keyframes cory-wiggle {
-      0%, 100% { transform: rotate(-3deg); }
-      50% { transform: rotate(3deg); }
-    }
-
-    @supports not (offset-path: url(#cory-swim-path)) {
-      .cory-swimmer {
-        left: 44%;
-        top: 54%;
-        transform: translate(-50%, -50%);
-      }
-
-      .cory-swimmer .cory-mascot-img {
-        animation: cory-wiggle 1.8s ease-in-out infinite;
-      }
-    }
-
     @media (prefers-reduced-motion: reduce) {
       .integration-bubble { animation: none !important; }
-      .cory-swimmer {
-        animation: none !important;
-        offset-distance: 38%;
-        left: auto;
-        top: auto;
-        transform: none;
-      }
-      .cory-swimmer .cory-mascot-img { animation: none !important; }
     }
 
     .how-unify-copy {
@@ -997,13 +998,14 @@
 
     /* ─── Timeline walkthrough ───────────────────────────────────────── */
     .timeline-section {
-      background: var(--color-bg);
       padding: 80px 0 100px;
     }
 
     .timeline-header {
       text-align: left;
-      margin: 0 0 24px;
+      margin: 0 0 32px;
+      padding-bottom: 28px;
+      border-bottom: 1px solid var(--color-border);
     }
 
     .timeline-header h2 {
@@ -1016,13 +1018,59 @@
       font-size: calc(1rem + 3pt);
       line-height: 1.7;
       font-weight: 400;
-      margin: 0 0 20px;
+      margin: 0;
       text-align: left;
     }
 
     .timeline-module {
-      max-width: 1120px;
+      max-width: 100%;
       margin: 0 auto;
+      position: relative;
+    }
+
+    .timeline-progress-track {
+      position: relative;
+      width: 100%;
+      height: 8px;
+      background-color: #E4DFD1;
+      border-radius: 4px;
+      margin-bottom: 16px;
+      overflow: visible;
+    }
+
+    .timeline-progress-fill {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 0%;
+      background-color: var(--color-accent-olive);
+      border-radius: 4px;
+      transition: width 0.6s ease-out;
+    }
+
+    .timeline-progress-arrow {
+      position: absolute;
+      right: -10px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 0;
+      height: 0;
+      border-top: 10px solid transparent;
+      border-bottom: 10px solid transparent;
+      border-left: 14px solid #E4DFD1;
+      transition: border-left-color 0.6s ease-out;
+    }
+
+    .timeline-progress-track.is-complete .timeline-progress-arrow {
+      border-left-color: var(--color-accent-olive);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .timeline-progress-fill,
+      .timeline-progress-arrow {
+        transition: none;
+      }
     }
 
     .comparison-grid {
@@ -1033,11 +1081,46 @@
       align-items: start;
     }
 
+    .timeline-module .comparison-grid {
+      column-gap: 28px;
+    }
+
     .comparison-col {
       display: flex;
       flex-direction: column;
       gap: 14px;
       min-width: 0;
+    }
+
+    .timeline-module .comparison-col {
+      gap: 0;
+    }
+
+    .timeline-module .comparison-col .stage-label {
+      margin-bottom: 10px;
+    }
+
+    .timeline-module .comparison-col .signal-row {
+      margin-bottom: 16px;
+    }
+
+    .timeline-module .comparison-col h3 {
+      margin-bottom: 16px;
+    }
+
+    .context-column-panel {
+      background-color: #E8E9DC;
+      border-radius: 16px;
+      padding: 24px;
+    }
+
+    .timeline-module .context-column-panel .timeline-card + .timeline-card {
+      margin-top: 22px;
+    }
+
+    .timeline-module .comparison-col .evidence-count {
+      margin-top: 20px;
+      padding-top: 0;
     }
 
     .stage-label {
@@ -1050,7 +1133,7 @@
     .comparison-col h3 {
       font-size: 1.05rem;
       line-height: 1.4;
-      color: var(--color-text-primary);
+      color: var(--color-headline);
       margin: 0;
     }
 
@@ -1097,6 +1180,92 @@
       background: var(--bg);
       border-radius: var(--radius);
       border-left: 3px solid var(--color-accent-olive);
+    }
+
+    .timeline-module .agent-memory,
+    .timeline-module .action-card {
+      padding: 24px;
+      border-radius: 16px;
+      background: var(--color-surface-card);
+    }
+
+    .timeline-module .action-card {
+      border: 1px solid var(--color-border);
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.03);
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 12px;
+    }
+
+    .timeline-module .timeline-card {
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(12px) scale(0.96);
+      transition: opacity 400ms ease-out, transform 400ms ease-out, visibility 400ms ease-out;
+    }
+
+    .timeline-module .timeline-card.is-visible {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0) scale(1);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .timeline-module .timeline-card {
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        transition: none;
+      }
+    }
+
+    .timeline-playback {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      gap: 8px;
+      min-height: 36px;
+      margin-top: 12px;
+    }
+
+    .timeline-playback-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      font-family: inherit;
+      font-size: 0.8125rem;
+      font-weight: 500;
+      line-height: 1;
+      color: var(--text-subtle);
+      background: transparent;
+      border: 1px solid var(--color-border);
+      border-radius: 999px;
+      padding: 6px 14px;
+      cursor: pointer;
+      transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+    }
+
+    .timeline-playback-btn:hover {
+      color: var(--text-muted);
+      border-color: color-mix(in srgb, var(--color-border) 70%, var(--text-subtle));
+      background: rgba(250, 246, 237, 0.65);
+    }
+
+    .timeline-playback-btn:focus-visible {
+      outline: 2px solid var(--color-accent-terracotta);
+      outline-offset: 2px;
+    }
+
+    .timeline-pause-btn {
+      width: 34px;
+      height: 34px;
+      padding: 0;
+      font-size: 1rem;
+    }
+
+    .timeline-playback-btn[hidden] {
+      display: none;
     }
 
     .agent-memory strong {
@@ -1159,20 +1328,30 @@
     }
 
     .renewal-capstone {
-      max-width: 640px;
-      margin: 40px auto 0;
-      padding: 28px 36px;
-      background: rgba(250, 246, 237, 0.6);
-      backdrop-filter: blur(8px);
-      -webkit-backdrop-filter: blur(8px);
-      border: 1px solid var(--color-border);
+      padding: 24px;
+      background-color: var(--color-surface-dark);
+      border: 1px solid rgba(255, 255, 255, 0.1);
       border-radius: 16px;
+      color: #FAF6ED;
       display: flex;
       justify-content: space-between;
       align-items: center;
       flex-wrap: wrap;
       gap: 20px;
-      box-shadow: 0 12px 32px rgba(42, 33, 23, 0.06);
+      box-shadow: 0 12px 32px rgba(50, 40, 32, 0.24);
+    }
+
+    .comparison-col .renewal-capstone {
+      width: 100%;
+      max-width: none;
+      margin-top: 20px;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 16px;
+    }
+
+    .comparison-col .renewal-outcome {
+      align-items: flex-start;
     }
 
     .renewal-checks {
@@ -1180,11 +1359,11 @@
       flex-direction: column;
       gap: 8px;
       font-size: 14px;
-      color: var(--text-muted);
+      color: rgba(250, 246, 237, 0.9);
     }
 
-    .check-item {
-      color: var(--success-text);
+    .renewal-capstone .check-item {
+      color: rgba(250, 246, 237, 0.9);
     }
 
     .renewal-outcome {
@@ -1193,18 +1372,18 @@
       align-items: flex-end;
     }
 
-    .outcome-label {
+    .renewal-capstone .outcome-label {
       font-size: 0.8125rem;
       font-weight: 500;
       letter-spacing: 0.01em;
-      color: var(--text-subtle);
+      color: rgba(250, 246, 237, 0.65);
       margin-bottom: 4px;
     }
 
-    .outcome-value {
+    .renewal-capstone .outcome-value {
       font-size: 22px;
       font-weight: 700;
-      color: var(--color-text-primary);
+      color: #FAF6ED;
       line-height: 1.2;
     }
 
@@ -1222,6 +1401,11 @@
         gap: 24px;
       }
 
+      .timeline-module .comparison-grid {
+        column-gap: 0;
+        row-gap: 32px;
+      }
+
       .comparison-arrow {
         transform: rotate(90deg);
         padding: 8px 0;
@@ -1230,6 +1414,11 @@
 
       .action-card {
         padding: 20px 18px;
+      }
+
+      .timeline-module .agent-memory,
+      .timeline-module .action-card {
+        padding: 24px;
       }
 
       .renewal-capstone {
@@ -1244,21 +1433,18 @@
     }
 
     @media (prefers-reduced-motion: reduce) {
-      .stack-item {
-        position: static;
-        min-height: auto;
+      .pillar-row {
+        margin-bottom: 48px;
       }
 
       .stack-card {
         opacity: 1 !important;
         transform: none !important;
-        margin-bottom: 24px;
       }
     }
 
     /* ─── Under the surface ─────────────────────────────────────────── */
     .surface-section {
-      background: linear-gradient(to bottom, var(--color-bg) 0%, var(--color-accent-olive-bg) 100%);
       padding: 80px 0 100px;
     }
 
@@ -1282,37 +1468,50 @@
       white-space: nowrap;
     }
 
-    .stack-wrapper {
-      position: relative;
+    .pillars-wrapper {
       margin: 40px 0 0;
     }
 
-    .stack-item {
-      min-height: 38vh;
+    .pillar-row {
       display: flex;
-      align-items: flex-start;
-      justify-content: flex-start;
-      position: sticky;
-      top: max(15vh, 88px);
-      z-index: 1;
+      align-items: center;
+      gap: 48px;
+      margin-bottom: 64px;
     }
 
-    .stack-item:nth-child(1) { z-index: 1; }
-    .stack-item:nth-child(2) { z-index: 2; justify-content: flex-end; }
-    .stack-item:nth-child(3) { z-index: 3; }
-    .stack-item:nth-child(4) { z-index: 4; justify-content: flex-end; }
+    .pillar-row:last-child {
+      margin-bottom: 0;
+    }
 
-    .stack-card {
+    .pillar-row.reverse {
+      flex-direction: row-reverse;
+    }
+
+    .pillar-card {
+      flex: 0 0 380px;
+    }
+
+    .pillar-visual {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .pillar-visual-frame {
+      background: var(--color-bg);
+      border: 0.5px solid var(--color-border);
+      border-radius: 16px;
+      padding: 20px;
+      box-shadow: none;
+    }
+
+    .pillar-card .stack-card {
       width: 100%;
-      max-width: 640px;
-      padding: 40px;
-      background: rgba(250, 246, 237, 0.75);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-      border: 1px solid var(--color-border);
-      border-radius: 20px;
-      box-shadow: 0 20px 40px rgba(42, 33, 23, 0.08);
-      will-change: transform, opacity;
+      max-width: none;
+      padding: 4px 8px 4px 0;
+      background: transparent;
+      border: none;
+      border-radius: 0;
+      box-shadow: none;
     }
 
     .stack-card .item-num {
@@ -1323,7 +1522,7 @@
     }
 
     .stack-card h3 {
-      color: var(--color-text-primary);
+      color: var(--color-headline);
       font-size: 26px;
       margin: 8px 0;
       line-height: 1.2;
@@ -1363,7 +1562,411 @@
       width: 6px;
       height: 6px;
       border-radius: 50%;
-      background: var(--color-accent-rust);
+      background: var(--color-accent-terracotta);
+    }
+
+    /* Pillar visuals */
+    .evaluate-visual {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+
+    .evaluate-score-card {
+      background: #FFFFFF;
+      border-radius: 12px;
+      padding: 14px 16px;
+    }
+
+    .evaluate-score-card--now {
+      border: 1px solid #C1502E;
+    }
+
+    .evaluate-score-card--soon {
+      border: 1px solid var(--color-accent-amber);
+    }
+
+    .evaluate-score-head {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 4px;
+    }
+
+    .evaluate-score-ring {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      border: 2px solid currentColor;
+      font-size: 11px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .evaluate-score-card--now .evaluate-score-ring {
+      color: #C1502E;
+    }
+
+    .evaluate-score-card--soon .evaluate-score-ring {
+      color: var(--color-accent-amber);
+    }
+
+    .evaluate-score-name {
+      font-family: var(--font-serif);
+      font-size: 14px;
+      color: #3A2418;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+
+    .evaluate-score-status {
+      font-size: 11px;
+      font-weight: 500;
+      margin-bottom: 6px;
+    }
+
+    .evaluate-score-card--now .evaluate-score-status {
+      color: #C1502E;
+    }
+
+    .evaluate-score-card--soon .evaluate-score-status {
+      color: var(--color-accent-amber);
+    }
+
+    .evaluate-score-desc {
+      font-size: 12px;
+      color: var(--color-text-secondary);
+      line-height: 1.5;
+      margin: 0 0 12px;
+    }
+
+    .evaluate-signals {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 6px;
+    }
+
+    .evaluate-signal-cell {
+      background: #F7F1E5;
+      border-radius: 6px;
+      padding: 8px;
+    }
+
+    .evaluate-signal-label {
+      font-size: 9px;
+      color: var(--color-text-secondary);
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      line-height: 1.2;
+    }
+
+    .evaluate-signal-value {
+      font-size: 14px;
+      font-weight: 700;
+      margin-top: 2px;
+      line-height: 1.2;
+    }
+
+    .evaluate-signal-value--severe {
+      color: #C1502E;
+    }
+
+    .evaluate-signal-value--moderate {
+      color: var(--color-accent-amber);
+    }
+
+    .learn-visual {
+      background: var(--color-accent-olive-bg);
+      border-radius: 12px;
+      padding: 16px 18px;
+    }
+
+    .learn-visual-label {
+      font-size: 11px;
+      color: var(--color-accent-olive);
+      text-transform: uppercase;
+      font-weight: 500;
+      margin-bottom: 6px;
+    }
+
+    .learn-visual-summary {
+      font-size: 13px;
+      color: #3A2418;
+      line-height: 1.6;
+      margin: 0 0 10px;
+    }
+
+    .learn-visual-entry {
+      background: #FFFFFF;
+      border-radius: 8px;
+      padding: 10px 14px;
+      margin-bottom: 8px;
+    }
+
+    .learn-visual-entry:last-child {
+      margin-bottom: 0;
+    }
+
+    .learn-visual-entry p {
+      font-size: 12px;
+      color: #3A2418;
+      margin: 0;
+      line-height: 1.45;
+    }
+
+    .act-visual {
+      display: flex;
+      gap: 16px;
+    }
+
+    .act-visual-main {
+      flex: 1.3;
+      min-width: 0;
+    }
+
+    .act-visual-today {
+      background: #F4E3DC;
+      border: 0.5px solid var(--color-border);
+      border-radius: 10px;
+      padding: 14px 16px;
+      margin-bottom: 10px;
+    }
+
+    .act-visual-label {
+      font-size: 11px;
+      text-transform: uppercase;
+      font-weight: 500;
+      margin-bottom: 8px;
+    }
+
+    .act-visual-label--today {
+      color: #C1502E;
+      margin-bottom: 8px;
+    }
+
+    .act-visual-label--branch {
+      color: var(--color-text-secondary);
+      margin-bottom: 6px;
+    }
+
+    .act-visual-label--stall {
+      color: var(--color-text-secondary);
+      margin-bottom: 4px;
+    }
+
+    .act-visual-field {
+      background: #FFFFFF;
+      border: 0.5px solid var(--color-border);
+      border-radius: 8px;
+      padding: 10px 12px;
+      font-size: 12px;
+      color: var(--color-text-secondary);
+      margin-bottom: 8px;
+    }
+
+    .act-visual-field:last-of-type {
+      margin-bottom: 0;
+    }
+
+    .act-visual-draft-title {
+      font-size: 12px;
+      color: #3A2418;
+      font-weight: 500;
+      margin-bottom: 6px;
+    }
+
+    .act-visual-draft-body {
+      font-size: 12px;
+      color: var(--color-text-secondary);
+      line-height: 1.5;
+      margin: 0;
+    }
+
+    .act-visual-send-row {
+      text-align: right;
+      margin-top: 8px;
+    }
+
+    .act-visual-send-btn {
+      display: inline-block;
+      background: #C1502E;
+      color: #FAF6ED;
+      font-size: 12px;
+      font-weight: 500;
+      padding: 6px 14px;
+      border-radius: 8px;
+    }
+
+    .act-visual-branch {
+      border: 0.5px solid var(--color-border);
+      border-radius: 10px;
+      padding: 12px 14px;
+      margin-bottom: 10px;
+    }
+
+    .act-visual-branch--stall {
+      border-style: dashed;
+      margin-bottom: 0;
+    }
+
+    .act-visual-branch-step {
+      font-size: 12px;
+      color: #3A2418;
+      margin: 0 0 6px;
+      line-height: 1.45;
+    }
+
+    .act-visual-branch-step:last-child {
+      margin-bottom: 0;
+    }
+
+    .act-visual-goal {
+      width: 200px;
+      flex-shrink: 0;
+    }
+
+    .act-visual-goal-card {
+      background: #241C15;
+      border-radius: 10px;
+      padding: 14px 16px;
+    }
+
+    .act-visual-goal-label {
+      font-size: 11px;
+      color: #B9AF9E;
+      text-transform: uppercase;
+      font-weight: 500;
+      margin-bottom: 6px;
+    }
+
+    .act-visual-goal-text {
+      font-size: 13px;
+      color: #FAF6ED;
+      line-height: 1.5;
+      margin: 0 0 10px;
+    }
+
+    .act-visual-goal-date {
+      border-top: 0.5px solid #3A2E24;
+      padding-top: 8px;
+      font-size: 12px;
+      color: #B9AF9E;
+    }
+
+    .trace-visual {
+      background: var(--color-accent-olive-bg);
+      border-radius: 12px;
+      padding: 16px 18px;
+    }
+
+    .trace-visual-summary {
+      font-size: 13px;
+      color: #3A2418;
+      line-height: 1.6;
+      margin: 0 0 12px;
+    }
+
+    .trace-visual-precedent {
+      background: #FFFFFF;
+      border-left: 3px solid var(--color-accent-olive);
+      border-radius: 8px;
+      padding: 12px 14px;
+    }
+
+    .trace-visual-precedent-label {
+      font-size: 11px;
+      color: var(--color-accent-olive);
+      text-transform: uppercase;
+      font-weight: 500;
+      margin-bottom: 4px;
+    }
+
+    .trace-visual-precedent-quote {
+      font-size: 12px;
+      color: #3A2418;
+      font-style: italic;
+      margin: 0 0 8px;
+      line-height: 1.45;
+    }
+
+    .trace-visual-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .trace-visual-pill {
+      background: var(--color-accent-olive-bg);
+      color: var(--color-accent-olive);
+      font-size: 11px;
+      padding: 4px 10px;
+      border-radius: 10px;
+    }
+
+    .trace-pipeline {
+      margin-top: 20px;
+    }
+
+    .trace-pipeline-label {
+      font-size: 11px;
+      color: var(--color-accent-olive);
+      text-transform: uppercase;
+      font-weight: 500;
+      margin-bottom: 14px;
+    }
+
+    .trace-pipeline-steps {
+      display: flex;
+      align-items: stretch;
+      gap: 0;
+    }
+
+    .trace-pipeline-step {
+      flex: 1;
+      border-radius: 10px;
+      padding: 14px 16px;
+    }
+
+    .trace-pipeline-step--plain {
+      background: #FFFFFF;
+      border: 0.5px solid var(--color-border);
+    }
+
+    .trace-pipeline-step--output {
+      background: var(--color-accent-olive-bg);
+    }
+
+    .trace-pipeline-step-title {
+      font-size: 12px;
+      color: #3A2418;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    .trace-pipeline-step-desc {
+      font-size: 11px;
+      color: var(--color-text-secondary);
+      line-height: 1.5;
+      margin: 0;
+    }
+
+    .trace-pipeline-arrow {
+      width: 32px;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .trace-pipeline-arrow-icon {
+      width: 0;
+      height: 0;
+      border-top: 5px solid transparent;
+      border-bottom: 5px solid transparent;
+      border-left: 8px solid #C1502E;
     }
 
     @media (max-width: 900px) {
@@ -1372,30 +1975,54 @@
       }
     }
 
-    @media (max-width: 600px) {
-      .stack-item {
-        min-height: 32vh;
-        justify-content: flex-start !important;
+    @media (max-width: 768px) {
+      .pillar-row,
+      .pillar-row.reverse {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 32px;
+        margin-bottom: 48px;
       }
 
-      .stack-card {
-        padding: 28px 24px;
-        max-width: 100%;
+      .pillar-card {
+        flex: 1 1 auto;
+      }
+
+      .act-visual {
+        flex-direction: column;
+      }
+
+      .act-visual-goal {
+        width: 100%;
+      }
+
+      .evaluate-visual {
+        grid-template-columns: 1fr;
+      }
+
+      .trace-pipeline-steps {
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .trace-pipeline-arrow {
+        display: none;
       }
     }
 
-    /* ─── Quotes section (terracotta) ───────────────────────────────── */
+    @media (max-width: 600px) {
+      .pillar-card .stack-card {
+        padding: 0;
+      }
+
+      .pillar-visual-frame {
+        padding: 16px;
+      }
+    }
+
+    /* ─── Quotes section ─────────────────────────────────────────────── */
     .approach-section {
       padding: 80px 0 100px;
-      position: relative;
-      overflow: hidden;
-      background-color: var(--color-bg);
-      background-image:
-        linear-gradient(to bottom, rgba(42, 33, 23, 0.12) 0%, rgba(250, 246, 237, 0.45) 52%, var(--color-bg) 100%),
-        url("terracotta-coral background.jpeg");
-      background-size: cover, cover;
-      background-position: center, center;
-      background-repeat: no-repeat, no-repeat;
     }
 
     .approach-section .container {
@@ -1417,7 +2044,7 @@
 
     .quote-pause-btn[aria-pressed="true"] {
       color: var(--orange);
-      border-color: rgba(193, 80, 46, 0.4);
+      border-color: color-mix(in srgb, var(--color-accent-terracotta) 40%, transparent);
     }
 
     .demo-submit-btn {
@@ -1433,7 +2060,7 @@
       right: 0;
       z-index: 90;
       padding: 12px 16px calc(12px + env(safe-area-inset-bottom));
-      background: rgba(28, 23, 18, 0.96);
+      background: rgba(42, 34, 28, 0.96);
       border-top: 1px solid rgba(255,255,255,0.1);
       backdrop-filter: blur(8px);
     }
@@ -1465,12 +2092,12 @@
       line-height: 1.04;
       margin-bottom: 24px;
       text-align: center;
-      color: var(--color-surface-dark);
+      color: var(--color-headline);
     }
 
     @supports not ((background-clip: text) or (-webkit-background-clip: text)) {
       .cta-headline {
-        color: var(--color-surface-dark);
+        color: var(--color-headline);
       }
     }
 
@@ -1484,7 +2111,7 @@
     /* ─── Footer ────────────────────────────────────────────────────── */
     footer {
       position: relative;
-      color: var(--text-muted);
+      color: #fff;
       padding: 48px 0;
       margin: 0;
       border-radius: 0;
@@ -1495,6 +2122,14 @@
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
+    }
+
+    footer .nav-logo {
+      color: #fff;
+    }
+
+    footer .nav-logo-img {
+      filter: brightness(0) invert(1);
     }
 
     .footer-inner {
@@ -1522,15 +2157,15 @@
 
     .footer-links a {
       font-size: 0.85rem;
-      color: var(--text-muted);
+      color: #fff;
       transition: color 0.15s;
     }
 
-    .footer-links a:hover { color: var(--color-accent-rust); }
+    .footer-links a:hover { color: rgba(255, 255, 255, 0.78); }
 
     .footer-right {
       font-size: 0.8rem;
-      color: var(--text-subtle);
+      color: #fff;
     }
 
     /* ─── Demo request panel ─────────────────────────────────────────── */
@@ -1605,7 +2240,7 @@
     .quote-dot:focus-visible,
     input:focus-visible,
     textarea:focus-visible {
-      outline: 2px solid var(--color-accent-rust);
+      outline: 2px solid var(--color-accent-terracotta);
       outline-offset: 3px;
     }
 
@@ -1641,7 +2276,7 @@
     }
 
     .demo-field input:focus {
-      border-bottom-color: var(--color-accent-rust);
+      border-bottom-color: var(--color-accent-terracotta);
     }
 
     .demo-field-error {
@@ -1682,10 +2317,6 @@
       cursor: default;
     }
 
-    button.btn-hero-outline {
-      font-family: inherit;
-    }
-
     /* ─── Remove outer section borders/margins (desktop) ───────────── */
     .approach-section { margin: 0 !important; border-radius: 0 !important; }
 
@@ -1720,14 +2351,12 @@
 
     @media (max-width: 768px) {
       #hero { overflow-x: hidden; min-height: 85vh; padding: 112px 0 72px; }
-      .hero-content { padding: 0 16px; padding-right: 16px; }
       #hero h1 { font-size: clamp(2.5rem, 9vw, 4.5rem); }
       .hero-pain,
       .hero-sub { max-width: 100%; overflow-wrap: break-word; word-break: break-word; }
       .hero-ctas { flex-direction: column; align-items: stretch; }
       .hero-ctas a,
       .hero-ctas button { width: 100% !important; text-align: center; display: flex !important; justify-content: center; }
-      #hero .container { overflow: hidden; width: 100%; padding-left: 16px; padding-right: 16px; }
       body { padding-bottom: 72px; }
 
       .how-step-boxes {
@@ -1752,22 +2381,22 @@
 
       #hero {
         background-color: var(--color-bg) !important;
-        background-image:
-          linear-gradient(to bottom, rgba(42, 33, 23, 0.12) 0%, rgba(250, 246, 237, 0.45) 52%, var(--color-bg) 100%),
-          url("terracotta-coral background.jpeg") !important;
-        background-size: cover, cover !important;
-        background-position: center, center !important;
-        background-repeat: no-repeat, no-repeat !important;
+        background-image: var(--photo-bottom-fade), url("terracotta-coral background.jpeg") !important;
+        background-size: cover !important;
+        background-position: center !important;
+        background-repeat: no-repeat !important;
       }
     }
 
     @media (max-width: 600px) {
       .page-wrapper { margin: 0; border-radius: 0; }
-      .section { padding: 60px 16px; }
+      :root { --layout-gutter: 16px; }
+      .section { padding: 60px 0; }
+      .timeline-section { padding: 80px 0 100px; }
+      .built-for-stack-section { padding: 80px 0 56px; }
       #hero { min-height: 78vh; padding: 72px 0 56px; margin: 0 !important; border-radius: 0 !important; overflow-x: hidden; }
       .cta-headline { font-size: clamp(2.5rem, 9vw, 4rem); }
       .footer-inner { flex-direction: column; align-items: flex-start; }
-      .container { padding: 0 16px; }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -1790,8 +2419,7 @@
       <div class="nav-inner">
         <a href="https://coraleye.ai/" class="nav-logo">
           <div class="nav-logo-mark">
-            <!-- TODO: replace green PNG with olive SVG (cory the octopus green.png → olive asset) -->
-            <img src="cory the octopus green.png" alt="Coraleye logo" class="nav-logo-img" />
+            <img src="new logo orange.png" alt="Coraleye logo" class="nav-logo-img" />
           </div>
           Coraleye
         </a>
@@ -1816,7 +2444,7 @@
   <main id="main-content">
 
   <!-- ─── Hero ───────────────────────────────────────────────────────── -->
-  <section id="hero" data-nav-theme="light" data-nav-bg="#FAF6ED">
+  <section id="hero" class="photo-section" data-nav-theme="light" data-nav-bg="#FAF6ED" data-nav-transparent="true">
     <div class="hero-pattern" aria-hidden="true"></div>
     <div class="container">
       <div class="hero-content">
@@ -1825,14 +2453,13 @@
         <p class="hero-sub">Coraleye reads your customer data. You act on what matters. Know what your customers need before they do.</p>
         <div class="hero-ctas">
           <button type="button" class="btn btn-primary btn-lg demo-trigger">Request a Demo</button>
-          <a href="#timeline" class="btn btn-hero-outline">See the product</a>
         </div>
       </div>
     </div>
   </section>
 
   <!-- ─── How it Works ───────────────────────────────────────────────── -->
-  <section id="how-it-works" class="section section-light built-for-stack-section" data-nav-theme="light" data-nav-bg="#FAF6ED">
+  <section id="how-it-works" class="section section-light section-bg-a built-for-stack-section" data-nav-theme="light" data-nav-bg="#FAF6ED">
     <div class="container">
       <div class="how-stack-layout reveal">
         <div class="how-header">
@@ -1855,12 +2482,6 @@
             <div class="integration-bubble integration-bubble--sm integration-bubble--outlook"><img src="outlook-logo.png" alt="" /></div>
             <div class="integration-bubble integration-bubble--sm integration-bubble--gmail"><img src="gmail-logo.png" alt="" /></div>
             <div class="integration-bubble integration-bubble--sm integration-bubble--fin"><img src="fin-logo.png" alt="" /></div>
-            <svg class="integrations-cloud-motion-svg" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
-              <path id="cory-swim-path" fill="none" d="M 24,72 C 28,60 34,48 42,52 C 50,56 52,44 58,48 C 64,52 70,58 74,52 C 78,44 78,32 76,28 C 72,24 66,28 68,38 C 70,50 60,62 48,66 C 36,70 28,71 24,72 Z" />
-            </svg>
-            <div class="cory-swimmer">
-              <img src="cory the octopus green.png" alt="" class="cory-mascot-img" />
-            </div>
           </div>
         </div>
       </div>
@@ -1868,31 +2489,38 @@
   </section>
 
   <!-- ─── Timeline walkthrough ─────────────────────────────────────── -->
-  <section id="timeline" class="section timeline-section" data-nav-theme="light" data-nav-bg="#FAF6ED">
+  <section id="timeline" class="section timeline-section section-bg-b" data-nav-theme="light" data-nav-bg="#F7F1E5">
     <div class="container">
       <div class="timeline-header reveal">
         <h2>Your company's context engine</h2>
-        <p class="subhead">Coraleye builds on your company's historical context to spot churn and upsell signals. Our agent drafts a path forward to guide your team's relationship strategy.</p>
+        <p class="subhead">Coraleye evaluates your historical records and real-time enrichment signals to spot churn and upsell data. Our agent, Cory, surfaces the reasoning behind each signal and drafts a path forward for your team's relationship strategy.</p>
       </div>
 
       <div class="timeline-module">
+        <div class="timeline-progress-track" aria-hidden="true">
+          <div class="timeline-progress-fill"></div>
+          <div class="timeline-progress-arrow"></div>
+        </div>
+
         <div class="comparison-grid comparison-grid-3col">
 
           <div class="comparison-col">
             <span class="stage-label">Day 1</span>
             <div class="signal-row"><span>Signal</span><span class="tag">Usage + Slack</span></div>
             <h3>Usage drop, champion departure</h3>
-            <div class="agent-memory">
-              <strong>Agent Memory</strong>
-              <p>Links LinkedIn activity with usage data. New CTO previously used a competitor's product at their last role.</p>
-            </div>
-            <div class="action-card">
-              <span class="tag">Account · Slack</span>
-              “Do you have this competitor's feature?” — “Absolutely, let me walk you through.”
-            </div>
-            <div class="action-card">
-              <span class="tag">Coraleye</span>
-              Logs the churn signal and flags the risk.
+            <div class="context-column-panel">
+              <div class="agent-memory timeline-card">
+                <strong>Agent Memory</strong>
+                <p>Links LinkedIn activity with usage data. New CTO previously used a competitor's product at their last role.</p>
+              </div>
+              <div class="action-card timeline-card">
+                <span class="tag">Account · Slack</span>
+                “Do you have this competitor's feature?” — “Absolutely, let me walk you through.”
+              </div>
+              <div class="action-card timeline-card">
+                <span class="tag">Coraleye</span>
+                Logs the churn signal and flags the risk.
+              </div>
             </div>
             <div class="evidence-count">Diagnosis: Churn signal detected</div>
           </div>
@@ -1903,17 +2531,19 @@
             <span class="stage-label">Same Day</span>
             <div class="signal-row"><span>Signal</span><span class="tag">Coraleye</span></div>
             <h3>Precedent workflows surfaced</h3>
-            <div class="agent-memory">
-              <strong>Agent Memory</strong>
-              <p>Drawn from prior recovery plays conducted with similar patterns.</p>
-            </div>
-            <div class="action-card">
-              <span class="tag">Coraleye</span>
-              Uses agent memory to draft a tailored playbook.
-            </div>
-            <div class="action-card">
-              <span class="tag tag-human">CSM · Human</span>
-              Walks through Coraleye's suggestions, agrees with the approach, and initiates the sequence.
+            <div class="context-column-panel">
+              <div class="agent-memory timeline-card">
+                <strong>Agent Memory</strong>
+                <p>Drawn from prior recovery plays conducted with similar patterns.</p>
+              </div>
+              <div class="action-card timeline-card">
+                <span class="tag">Coraleye</span>
+                Uses agent memory to draft a tailored playbook.
+              </div>
+              <div class="action-card timeline-card">
+                <span class="tag tag-human">CSM · Human</span>
+                Walks through Coraleye's suggestions, agrees with the approach, and initiates the sequence.
+              </div>
             </div>
             <div class="evidence-count">Recovery playbook initiated</div>
           </div>
@@ -1923,30 +2553,38 @@
           <div class="comparison-col">
             <span class="stage-label">Follow-up</span>
             <div class="signal-row"><span>Signal</span><span class="tag">Slack</span></div>
-            <h3>Account sentiment tracked over time</h3>
-            <div class="agent-memory">
-              <strong>Agent Memory</strong>
-              <p>Reads transcripts and diagnoses how the sequence is evolving.</p>
-            </div>
-            <div class="action-card">
-              <span class="tag">Coraleye</span>
-              Continuously updates tailored actions to win each account.
+            <h3>Account sentiment over time</h3>
+            <div class="context-column-panel">
+              <div class="agent-memory timeline-card">
+                <strong>Agent Memory</strong>
+                <p>Reads transcripts and diagnoses how the sequence is evolving.</p>
+              </div>
+              <div class="action-card timeline-card">
+                <span class="tag">Coraleye</span>
+                Continuously updates tailored actions to win each account.
+              </div>
             </div>
             <div class="evidence-count">Proactive outreach continues</div>
+            <div class="renewal-capstone">
+              <div class="renewal-checks">
+                <span class="check-item">✓ New stakeholders engage</span>
+                <span class="check-item">✓ ROI clarity</span>
+                <span class="check-item">✓ Locked in contract</span>
+              </div>
+              <div class="renewal-outcome">
+                <span class="outcome-label">Outcome</span>
+                <span class="outcome-value">Successful → Renewal</span>
+              </div>
+            </div>
           </div>
 
         </div>
 
-        <div class="renewal-capstone">
-          <div class="renewal-checks">
-            <span class="check-item">✓ New stakeholders engage</span>
-            <span class="check-item">✓ ROI clarity</span>
-            <span class="check-item">✓ Locked in contract</span>
-          </div>
-          <div class="renewal-outcome">
-            <span class="outcome-label">Outcome</span>
-            <span class="outcome-value">Successful → Renewal</span>
-          </div>
+        <div class="timeline-playback" aria-live="polite">
+          <button type="button" class="timeline-playback-btn timeline-pause-btn" aria-label="Pause animation" hidden>
+            <i class="ti ti-player-pause" aria-hidden="true"></i>
+          </button>
+          <button type="button" class="timeline-playback-btn timeline-replay-btn" hidden>Replay</button>
         </div>
       </div>
 
@@ -1955,60 +2593,208 @@
   </section>
 
   <!-- ─── Under the surface ─────────────────────────────────────────── -->
-  <section id="under-the-surface" class="section surface-section" data-nav-theme="light" data-nav-bg="#FAF6ED">
+  <section id="under-the-surface" class="section surface-section section-bg-a" data-nav-theme="light" data-nav-bg="#FAF6ED">
     <div class="container">
       <div class="surface-header reveal">
-        <h2>Under the surface.</h2>
+        <h2>Under the surface</h2>
         <p class="subhead">The parts of Coraleye you don't see in the workbench, quietly running on every account, every day.</p>
       </div>
 
-      <div class="stack-wrapper" id="stackWrapper">
-        <div class="stack-item">
-          <div class="stack-card">
-            <span class="item-num">01</span>
-            <h3>Evaluate</h3>
-            <p class="card-intro">Score every account against evidence, not proxies.</p>
-            <ul>
-              <li>Cross-references support tickets, calls, and Slack, not just login counts.</li>
-              <li>Re-run nightly, so a score is never more than a day stale.</li>
-              <li>Every score traces back to the specific interactions behind it.</li>
-            </ul>
+      <div class="pillars-wrapper">
+        <div class="pillar-row">
+          <div class="pillar-card">
+            <div class="stack-card">
+              <span class="item-num">01</span>
+              <h3>Evaluate</h3>
+              <p class="card-intro">Score every account against evidence, not proxies.</p>
+              <ul>
+                <li>Cross-references tickets, calls, messages, usage, and external data.</li>
+                <li>Custom model runs nightly, so health evaluations are never stale.</li>
+                <li>Scores trace back to the logged and unlogged interactions behind them.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="pillar-visual">
+            <div class="pillar-visual-frame">
+              <div class="evaluate-visual">
+                <div class="evaluate-score-card evaluate-score-card--now">
+                  <div class="evaluate-score-head">
+                    <div class="evaluate-score-ring">82</div>
+                    <div class="evaluate-score-name">Meridian Freight</div>
+                  </div>
+                  <div class="evaluate-score-status">Act now</div>
+                  <p class="evaluate-score-desc">Exec sponsor silent for 31 days; active seats down 22%.</p>
+                  <div class="evaluate-signals">
+                    <div class="evaluate-signal-cell">
+                      <div class="evaluate-signal-label">Exec engagement</div>
+                      <div class="evaluate-signal-value evaluate-signal-value--severe">Low</div>
+                    </div>
+                    <div class="evaluate-signal-cell">
+                      <div class="evaluate-signal-label">Usage trend</div>
+                      <div class="evaluate-signal-value evaluate-signal-value--severe">−22%</div>
+                    </div>
+                    <div class="evaluate-signal-cell">
+                      <div class="evaluate-signal-label">Ticket tone</div>
+                      <div class="evaluate-signal-value evaluate-signal-value--moderate">Neutral</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="evaluate-score-card evaluate-score-card--soon">
+                  <div class="evaluate-score-head">
+                    <div class="evaluate-score-ring">74</div>
+                    <div class="evaluate-score-name">Halcyon Robotics</div>
+                  </div>
+                  <div class="evaluate-score-status">Act soon</div>
+                  <p class="evaluate-score-desc">Champion resigned last week; admin seat unassigned.</p>
+                  <div class="evaluate-signals">
+                    <div class="evaluate-signal-cell">
+                      <div class="evaluate-signal-label">Champion</div>
+                      <div class="evaluate-signal-value evaluate-signal-value--severe">Vacant</div>
+                    </div>
+                    <div class="evaluate-signal-cell">
+                      <div class="evaluate-signal-label">Seat coverage</div>
+                      <div class="evaluate-signal-value evaluate-signal-value--moderate">Gap</div>
+                    </div>
+                    <div class="evaluate-signal-cell">
+                      <div class="evaluate-signal-label">Response time</div>
+                      <div class="evaluate-signal-value evaluate-signal-value--moderate">Slow</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-        <div class="stack-item">
-          <div class="stack-card">
-            <span class="item-num">02</span>
-            <h3>Learn</h3>
-            <p class="card-intro">Carry each account's history forward, automatically.</p>
-            <ul>
-              <li>Renewal dates, past commitments, and prior flags stay attached to every account.</li>
-              <li>Nothing gets re-explained from scratch when a new signal comes in.</li>
-              <li>The longer Coraleye runs, the more context it has to work with.</li>
-            </ul>
+
+        <div class="pillar-row reverse">
+          <div class="pillar-card">
+            <div class="stack-card">
+              <span class="item-num">02</span>
+              <h3>Learn</h3>
+              <p class="card-intro">Carry each account's history forward, automatically.</p>
+              <ul>
+                <li>Renewal dates, past commitments, and prior flags stay attached to every account.</li>
+                <li>Nothing gets re-explained from scratch when a new signal comes in.</li>
+                <li>The longer Coraleye runs, the more context it has to work with.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="pillar-visual">
+            <div class="pillar-visual-frame">
+              <div class="learn-visual">
+                <div class="learn-visual-label">Agent memory</div>
+                <p class="learn-visual-summary">Renewal date, prior sponsor change, and last two flags carry forward automatically — nothing gets re-explained when a new signal comes in.</p>
+                <div class="learn-visual-entry">
+                  <p>June: champion moved teams, replacement sponsor never logged in.</p>
+                </div>
+                <div class="learn-visual-entry">
+                  <p>July: seat usage sliding, support tone turned transactional.</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-        <div class="stack-item">
-          <div class="stack-card">
-            <span class="item-num">03</span>
-            <h3>Act</h3>
-            <p class="card-intro">Draft the play. Your team makes the call.</p>
-            <ul>
-              <li>Every flagged account gets a recommended play, not just a red flag.</li>
-              <li>Plays route to the right CSM automatically.</li>
-              <li>Nothing goes out without a human review step.</li>
-            </ul>
+
+        <div class="pillar-row">
+          <div class="pillar-card">
+            <div class="stack-card">
+              <span class="item-num">03</span>
+              <h3>Act</h3>
+              <p class="card-intro">Draft the play. Your team makes the call.</p>
+              <ul>
+                <li>Every flagged account gets a drafted next step, not just a red flag.</li>
+                <li>The play adapts; if it stalls, the next move is already decided.</li>
+                <li>Nothing goes out without a human review step.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="pillar-visual">
+            <div class="pillar-visual-frame">
+              <div class="act-visual">
+                <div class="act-visual-main">
+                  <div class="act-visual-today">
+                    <div class="act-visual-label act-visual-label--today">Today</div>
+                    <div class="act-visual-field">To: Dana Whitfield · Meridian Freight</div>
+                    <div class="act-visual-field">
+                      <div class="act-visual-draft-title">Quick note re: Meridian Freight</div>
+                      <p class="act-visual-draft-body">Hi Dana, introducing myself as your new point of contact, referencing the Q2 savings report your team presented, and proposing a 20-minute re-onboarding call this week.</p>
+                    </div>
+                    <div class="act-visual-send-row">
+                      <span class="act-visual-send-btn">Send</span>
+                    </div>
+                  </div>
+                  <div class="act-visual-branch">
+                    <div class="act-visual-label act-visual-label--branch">If on track</div>
+                    <p class="act-visual-branch-step">Day 3 · Follow up with usage-impact one-pager</p>
+                    <p class="act-visual-branch-step">Day 10 · Re-onboarding call with new VP Ops</p>
+                  </div>
+                  <div class="act-visual-branch act-visual-branch--stall">
+                    <div class="act-visual-label act-visual-label--stall">If it stalls</div>
+                    <p class="act-visual-branch-step">Escalate to Meridian's manager and loop in your own leadership.</p>
+                  </div>
+                </div>
+                <div class="act-visual-goal">
+                  <div class="act-visual-goal-card">
+                    <div class="act-visual-goal-label">Goal · end date</div>
+                    <p class="act-visual-goal-text">Re-establish an executive sponsor and convert the renewal into a 2-year term before the 34-day window closes.</p>
+                    <div class="act-visual-goal-date">August 23, 2026</div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-        <div class="stack-item">
-          <div class="stack-card">
-            <span class="item-num">04</span>
-            <h3>Trace</h3>
-            <p class="card-intro">Show your work, every time.</p>
-            <ul>
-              <li>Every score and play links back to the exact conversations behind it.</li>
-              <li>No black-box recommendations. See the evidence, not just the verdict.</li>
-              <li>Built for teams that need to explain a decision, not just receive one.</li>
-            </ul>
+
+        <div class="pillar-row">
+          <div class="pillar-card">
+            <div class="stack-card">
+              <span class="item-num">04</span>
+              <h3>Trace</h3>
+              <p class="card-intro">Show your work, every time.</p>
+              <ul>
+                <li>Every play links back to the exact precedent that shaped it.</li>
+                <li>No black-box recommendations; see evidence before any verdict.</li>
+                <li>Built for teams that need to explain a decision, not just receive one.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="pillar-visual">
+            <div class="pillar-visual-frame">
+              <div class="trace-visual">
+                <p class="trace-visual-summary">Sponsor-silence signals like this recover in about two-thirds of comparable cases when a re-introduction happens within five days.</p>
+                <div class="trace-visual-precedent">
+                  <div class="trace-visual-precedent-label">Closest historical precedent</div>
+                  <p class="trace-visual-precedent-quote">A similar account sat unmanaged for 11 weeks before churning.</p>
+                  <div class="trace-visual-pills">
+                    <span class="trace-visual-pill">68% recovery rate</span>
+                    <span class="trace-visual-pill">12 cases modeled</span>
+                  </div>
+                </div>
+              </div>
+              <div class="trace-pipeline">
+                <div class="trace-pipeline-label">How a score gets built</div>
+                <div class="trace-pipeline-steps">
+                  <div class="trace-pipeline-step trace-pipeline-step--plain">
+                    <div class="trace-pipeline-step-title">Deterministic signals</div>
+                    <p class="trace-pipeline-step-desc">Pattern-matched from every conversation — no model call, not editable.</p>
+                  </div>
+                  <div class="trace-pipeline-arrow" aria-hidden="true">
+                    <div class="trace-pipeline-arrow-icon"></div>
+                  </div>
+                  <div class="trace-pipeline-step trace-pipeline-step--plain">
+                    <div class="trace-pipeline-step-title">Scored conversation metrics</div>
+                    <p class="trace-pipeline-step-desc">Every conversation rated against a fixed rubric, one metric at a time.</p>
+                  </div>
+                  <div class="trace-pipeline-arrow" aria-hidden="true">
+                    <div class="trace-pipeline-arrow-icon"></div>
+                  </div>
+                  <div class="trace-pipeline-step trace-pipeline-step--output">
+                    <div class="trace-pipeline-step-title">Account health score</div>
+                    <p class="trace-pipeline-step-desc">Signals roll up into one score, re-run nightly on every account.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -2018,7 +2804,7 @@
   <!-- ─── Design partner quotes ──────────────────────────────────────── -->
   <section id="before-after" class="approach-section" data-nav-theme="light" data-nav-bg="#FAF6ED" data-nav-frost="true">
     <div class="container">
-      <div class="approach-quote-block reveal">
+      <div class="approach-quote-block">
         <p class="how-steps-band-title" style="margin-bottom: 20px;">Verified design partner references</p>
         <div id="quote-display" class="approach-quote-display" aria-live="polite" aria-atomic="true">
           <div class="approach-quote-mark">"</div>
@@ -2036,7 +2822,7 @@
   </section>
 
   <!-- ─── Final CTA ──────────────────────────────────────────────────── -->
-  <section id="cta-section" class="section" data-nav-theme="light" data-nav-bg="#FAF6ED">
+  <section id="cta-section" class="section section-bg-b" data-nav-theme="light" data-nav-bg="#F7F1E5">
     <div class="container">
       <div class="cta-inner reveal">
         <h2 class="cta-headline">Protect your base. Expand your best accounts.</h2>
@@ -2054,7 +2840,7 @@
         <div class="footer-left">
           <a href="https://coraleye.ai/" class="nav-logo">
             <div class="nav-logo-mark">
-              <img src="cory the octopus green.png" alt="Coraleye logo" class="nav-logo-img" />
+              <img src="new logo orange.png" alt="Coraleye logo" class="nav-logo-img" />
             </div>
             Coraleye
           </a>
@@ -2122,31 +2908,203 @@
     }, { threshold: 0.12 });
     reveals.forEach(el => observer.observe(el));
 
-    initSurfaceStack();
+    initTimelineWalkthrough();
 
-    function initSurfaceStack() {
-      const cards = document.querySelectorAll('.stack-item .stack-card');
+    function initTimelineWalkthrough() {
+      var module = document.querySelector('#timeline .timeline-module');
+      if (!module) return;
+
+      var cards = Array.prototype.slice.call(module.querySelectorAll('.timeline-card'));
       if (!cards.length) return;
 
-      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-        cards.forEach(function(card) {
-          card.style.opacity = '1';
-          card.style.transform = 'none';
+      var pauseBtn = module.querySelector('.timeline-pause-btn');
+      var replayBtn = module.querySelector('.timeline-replay-btn');
+      var progressTrack = module.querySelector('.timeline-progress-track');
+      var progressFill = module.querySelector('.timeline-progress-fill');
+      var progressArrow = module.querySelector('.timeline-progress-arrow');
+      var columnEndIndices = [];
+      var progressSteps = [];
+      var cardCount = 0;
+      var STAGGER_MS = 1750;
+      var CARD_ANIM_MS = 400;
+      var timeouts = [];
+      var nextIndex = 0;
+      var paused = false;
+      var started = false;
+      var finished = false;
+
+      module.querySelectorAll('.comparison-col').forEach(function(col) {
+        var colCards = col.querySelectorAll('.timeline-card');
+        if (!colCards.length) return;
+        cardCount += colCards.length;
+        columnEndIndices.push(cardCount - 1);
+        progressSteps.push((columnEndIndices.length / module.querySelectorAll('.comparison-col').length) * 100);
+      });
+
+      function clearScheduled() {
+        timeouts.forEach(function(id) { clearTimeout(id); });
+        timeouts = [];
+      }
+
+      function setPauseUi(isPaused) {
+        if (!pauseBtn) return;
+        pauseBtn.innerHTML = isPaused
+          ? '<i class="ti ti-player-play" aria-hidden="true"></i>'
+          : '<i class="ti ti-player-pause" aria-hidden="true"></i>';
+        pauseBtn.setAttribute('aria-label', isPaused ? 'Resume animation' : 'Pause animation');
+      }
+
+      function resetProgress(instant) {
+        if (!progressFill || !progressArrow || !progressTrack) return;
+        if (instant) {
+          progressFill.style.transition = 'none';
+          progressArrow.style.transition = 'none';
+        }
+        progressFill.style.width = '0%';
+        progressArrow.style.borderLeftColor = '#E4DFD1';
+        progressTrack.classList.remove('is-complete');
+        if (instant) {
+          progressFill.offsetHeight;
+          progressFill.style.transition = '';
+          progressArrow.style.transition = '';
+        }
+      }
+
+      function freezeProgress() {
+        if (!progressFill) return;
+        var computedWidth = window.getComputedStyle(progressFill).width;
+        progressFill.style.transition = 'none';
+        progressFill.style.width = computedWidth;
+        progressFill.offsetHeight;
+        progressFill.style.transition = '';
+      }
+
+      function setProgress(percent, force) {
+        if (!progressFill || !progressArrow || !progressTrack) return;
+        if (paused && !force) return;
+        progressFill.style.width = percent + '%';
+        if (percent >= 100) {
+          progressTrack.classList.add('is-complete');
+          progressArrow.style.borderLeftColor = '#5C6B3F';
+        } else {
+          progressTrack.classList.remove('is-complete');
+          progressArrow.style.borderLeftColor = '#E4DFD1';
+        }
+      }
+
+      function syncProgressFromVisibleCards() {
+        var highestStep = -1;
+        columnEndIndices.forEach(function(endIndex, i) {
+          if (cards[endIndex].classList.contains('is-visible')) {
+            highestStep = i;
+          }
         });
+        if (highestStep >= 0) {
+          setProgress(progressSteps[highestStep], true);
+        }
+      }
+
+      function onCardRevealed(index) {
+        var stepIndex = columnEndIndices.indexOf(index);
+        if (stepIndex === -1) return;
+        var progressId = setTimeout(function() {
+          if (!paused && !finished) setProgress(progressSteps[stepIndex]);
+        }, CARD_ANIM_MS);
+        timeouts.push(progressId);
+      }
+
+      function finishSequence() {
+        finished = true;
+        paused = false;
+        clearScheduled();
+        if (pauseBtn) pauseBtn.hidden = true;
+        if (replayBtn) replayBtn.hidden = false;
+      }
+
+      function queueCard(index) {
+        if (paused || finished) return;
+
+        if (index >= cards.length) {
+          var finishId = setTimeout(finishSequence, CARD_ANIM_MS);
+          timeouts.push(finishId);
+          return;
+        }
+
+        var delay = index === 0 ? 0 : STAGGER_MS;
+        var id = setTimeout(function() {
+          if (paused) {
+            nextIndex = index;
+            return;
+          }
+          cards[index].classList.add('is-visible');
+          onCardRevealed(index);
+          nextIndex = index + 1;
+          queueCard(index + 1);
+        }, delay);
+        timeouts.push(id);
+      }
+
+      function beginSequence() {
+        clearScheduled();
+        paused = false;
+        finished = false;
+        started = true;
+        nextIndex = 0;
+        cards.forEach(function(card) { card.classList.remove('is-visible'); });
+        resetProgress(true);
+        if (pauseBtn) {
+          pauseBtn.hidden = false;
+          setPauseUi(false);
+        }
+        if (replayBtn) replayBtn.hidden = true;
+        queueCard(0);
+      }
+
+      function pauseSequence() {
+        if (!started || finished || paused) return;
+        paused = true;
+        clearScheduled();
+        freezeProgress();
+        syncProgressFromVisibleCards();
+        setPauseUi(true);
+      }
+
+      function resumeSequence() {
+        if (!started || finished || !paused) return;
+        paused = false;
+        setPauseUi(false);
+        syncProgressFromVisibleCards();
+        queueCard(nextIndex);
+      }
+
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        cards.forEach(function(card) { card.classList.add('is-visible'); });
+        setProgress(100);
+        if (replayBtn) replayBtn.hidden = false;
         return;
       }
 
-      function updateDim() {
-        cards.forEach(function(card) {
-          const distanceFromTop = card.getBoundingClientRect().top;
-          const progress = Math.min(Math.max(distanceFromTop / (window.innerHeight * 0.4), 0), 1);
-          card.style.opacity = String(0.5 + progress * 0.5);
-          card.style.transform = 'scale(' + (0.96 + progress * 0.04) + ')';
+      if (pauseBtn) {
+        pauseBtn.addEventListener('click', function() {
+          if (paused) resumeSequence();
+          else pauseSequence();
         });
-        requestAnimationFrame(updateDim);
       }
 
-      requestAnimationFrame(updateDim);
+      if (replayBtn) {
+        replayBtn.addEventListener('click', beginSequence);
+      }
+
+      var timelineObserver = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting && !started) {
+            beginSequence();
+            timelineObserver.unobserve(module);
+          }
+        });
+      }, { threshold: 0.22 });
+
+      timelineObserver.observe(module);
     }
 
     // Nav background follows the section behind it
@@ -2182,9 +3140,10 @@
       const theme = activeSection.dataset.navTheme || 'light';
       const bg = activeSection.dataset.navBg || '#FAF6ED';
       const frost = activeSection.dataset.navFrost === 'true';
+      const transparent = activeSection.dataset.navTransparent === 'true';
 
       siteNav.dataset.theme = theme;
-      siteNav.classList.remove('nav-frost', 'nav-section-solid');
+      siteNav.classList.remove('nav-frost', 'nav-section-solid', 'nav-over-hero');
       siteNav.style.background = '';
       siteNav.style.backgroundColor = '';
       siteNav.style.backdropFilter = '';
@@ -2193,7 +3152,13 @@
         ? '#E4DFD1'
         : 'rgba(255, 255, 255, 0.08)';
 
-      if (frost) {
+      if (transparent) {
+        siteNav.classList.add('nav-over-hero');
+        siteNav.style.backgroundColor = 'rgba(250, 246, 237, 0.78)';
+        siteNav.style.backdropFilter = 'blur(14px)';
+        siteNav.style.webkitBackdropFilter = 'blur(14px)';
+        siteNav.style.borderBottomColor = 'rgba(228, 223, 209, 0.65)';
+      } else if (frost) {
         siteNav.classList.add('nav-frost');
         siteNav.style.backdropFilter = 'blur(12px)';
         siteNav.style.webkitBackdropFilter = 'blur(12px)';
@@ -2255,19 +3220,15 @@
       const q = quoteSlides[index];
       const display = document.getElementById('quote-display');
       if (!display || !q) return;
-      display.style.opacity = '0';
-      setTimeout(function() {
-        display.innerHTML = `
+      display.innerHTML = `
           <div class="approach-quote-mark">"</div>
           <p class="approach-quote-text">${q.text}</p>
           <div class="approach-quote-mark approach-quote-mark-close">"</div>
           <div class="approach-quote-attr">${q.attr}</div>`;
-        display.style.opacity = '1';
-        quoteDots.forEach(function(dot, i) {
-          dot.classList.toggle('active', i === quoteIndex);
-          dot.setAttribute('aria-selected', i === quoteIndex ? 'true' : 'false');
-        });
-      }, 500);
+      quoteDots.forEach(function(dot, i) {
+        dot.classList.toggle('active', i === quoteIndex);
+        dot.setAttribute('aria-selected', i === quoteIndex ? 'true' : 'false');
+      });
     }
 
     function startQuoteTimer() {
