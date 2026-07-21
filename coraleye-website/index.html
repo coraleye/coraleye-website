@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Coraleye | Customer Success, Finally Proactive</title>
-  <meta name="description" content="Coraleye reads your customer data. You act on what matters. Know what your customers need before they do, with your approval on every move." />
+  <meta name="description" content="Coraleye harnesses your data, empowering your team to know and act before it's too late, with your approval on every move." />
   <link rel="icon" type="image/png" href="new logo orange.png" />
   <link rel="apple-touch-icon" href="new logo orange.png" />
   <link rel="canonical" href="https://coraleye.ai/" />
@@ -15,11 +15,11 @@
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://coraleye.ai/" />
   <meta property="og:title" content="Coraleye | Customer Success, Finally Proactive" />
-  <meta property="og:description" content="Coraleye reads your customer data. You act on what matters. Know what your customers need before they do, with your approval on every move." />
+  <meta property="og:description" content="Coraleye harnesses your data, empowering your team to know and act before it's too late, with your approval on every move." />
   <meta property="og:image" content="https://coraleye.ai/act-workbench-module.png" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Coraleye | Customer Success, Finally Proactive" />
-  <meta name="twitter:description" content="Coraleye reads your customer data. You act on what matters. Know what your customers need before they do, with your approval on every move." />
+  <meta name="twitter:description" content="Coraleye harnesses your data, empowering your team to know and act before it's too late, with your approval on every move." />
   <meta name="twitter:image" content="https://coraleye.ai/act-workbench-module.png" />
   <style>
     /* ─── Reset & Base ─────────────────────────────────────────────── */
@@ -488,16 +488,6 @@
       background-repeat: no-repeat;
     }
 
-    .approach-section {
-      position: relative;
-      overflow: hidden;
-      background-color: var(--color-bg);
-      background-image: url("terracotta-coral background.jpeg");
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-    }
-
     /* ─── Hero ──────────────────────────────────────────────────────── */
     #hero {
       min-height: 92vh;
@@ -550,6 +540,10 @@
       max-width: 820px;
     }
 
+    .hero-headline-lead {
+      white-space: nowrap;
+    }
+
     #hero h1 {
       margin-bottom: 28px;
       font-size: clamp(3rem, 7vw, 5.5rem);
@@ -596,67 +590,6 @@
 
     .section-bg-b {
       background: var(--color-bg-b);
-    }
-
-    /* ─── Approach quotes ───────────────────────────────────────────── */
-    .approach-quote-block {
-      margin-top: 0;
-      background: var(--color-bg-a);
-      border: 1px solid var(--color-border);
-      border-radius: var(--radius-lg);
-      padding: 28px;
-      min-height: 260px;
-    }
-
-    .approach-quote-display {
-      transition: none;
-    }
-
-    .approach-quote-mark {
-      font-size: 2.5rem;
-      line-height: 1;
-      color: var(--orange);
-      font-family: Georgia, serif;
-    }
-
-    .approach-quote-mark-close {
-      text-align: right;
-      margin-top: -8px;
-    }
-
-    .approach-quote-text {
-      font-size: 0.95rem;
-      line-height: 1.75;
-      color: var(--text-muted);
-      margin-bottom: 20px;
-    }
-
-    .approach-quote-attr {
-      padding-top: 16px;
-      border-top: 1px solid color-mix(in srgb, var(--color-accent-terracotta) 20%, transparent);
-      font-size: 0.82rem;
-      color: var(--text-subtle);
-    }
-
-    .approach-quote-dots {
-      display: flex;
-      gap: 8px;
-      margin-top: 24px;
-    }
-
-    .quote-dot {
-      width: 8px;
-      height: 8px;
-      padding: 0;
-      border: none;
-      border-radius: 50%;
-      background: rgba(58, 48, 40, 0.15);
-      transition: background 0.3s;
-      cursor: pointer;
-    }
-
-    .quote-dot.active {
-      background: var(--orange);
     }
 
     /* ─── How it Works ──────────────────────────────────────────────── */
@@ -923,12 +856,6 @@
       margin: 0 0 28px;
     }
 
-    .approach-quote-block > .how-steps-band-title {
-      display: inline-flex;
-      width: 100%;
-      justify-content: center;
-    }
-
     .how-steps {
       max-width: none;
       margin: 0;
@@ -1121,6 +1048,11 @@
     .timeline-module .comparison-col .evidence-count {
       margin-top: 20px;
       padding-top: 0;
+      font-size: 1.05rem;
+      font-weight: 600;
+      letter-spacing: 0.01em;
+      color: var(--color-headline);
+      text-align: left;
     }
 
     .stage-label {
@@ -1195,6 +1127,60 @@
       flex-direction: column;
       align-items: flex-start;
       gap: 12px;
+    }
+
+    .chat-thread {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      width: 100%;
+    }
+
+    .chat-bubble {
+      position: relative;
+      max-width: 92%;
+      padding: 9px 14px;
+      font-size: 0.875rem;
+      line-height: 1.35;
+      letter-spacing: -0.01em;
+    }
+
+    .chat-bubble--incoming {
+      align-self: flex-start;
+      background: #E9E9EB;
+      color: #1D1D1F;
+      border-radius: 18px;
+      border-bottom-left-radius: 4px;
+    }
+
+    .chat-bubble--incoming::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: -7px;
+      width: 20px;
+      height: 20px;
+      background: #E9E9EB;
+      border-bottom-right-radius: 15px;
+    }
+
+    .chat-bubble--outgoing {
+      align-self: flex-end;
+      background: #007AFF;
+      color: #FFFFFF;
+      border-radius: 18px;
+      border-bottom-right-radius: 4px;
+    }
+
+    .chat-bubble--outgoing::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      right: -7px;
+      width: 20px;
+      height: 20px;
+      background: #007AFF;
+      border-bottom-left-radius: 15px;
     }
 
     .timeline-module .timeline-card {
@@ -1338,7 +1324,7 @@
       align-items: center;
       flex-wrap: wrap;
       gap: 20px;
-      box-shadow: 0 12px 32px rgba(50, 40, 32, 0.24);
+      box-shadow: 0 8px 24px rgba(42, 34, 28, 0.16);
     }
 
     .comparison-col .renewal-capstone {
@@ -1829,7 +1815,7 @@
     }
 
     .act-visual-goal-card {
-      background: #241C15;
+      background: var(--color-surface-dark);
       border-radius: 10px;
       padding: 14px 16px;
     }
@@ -1850,7 +1836,7 @@
     }
 
     .act-visual-goal-date {
-      border-top: 0.5px solid #3A2E24;
+      border-top: 0.5px solid rgba(255, 255, 255, 0.12);
       padding-top: 8px;
       font-size: 12px;
       color: #B9AF9E;
@@ -2018,33 +2004,6 @@
       .pillar-visual-frame {
         padding: 16px;
       }
-    }
-
-    /* ─── Quotes section ─────────────────────────────────────────────── */
-    .approach-section {
-      padding: 80px 0 100px;
-    }
-
-    .approach-section .container {
-      position: relative;
-      z-index: 1;
-    }
-
-    .quote-pause-btn {
-      margin-left: 8px;
-      padding: 4px 10px;
-      border: 1px solid var(--color-border);
-      border-radius: 999px;
-      background: transparent;
-      color: var(--text-muted);
-      font-size: 0.72rem;
-      font-family: inherit;
-      cursor: pointer;
-    }
-
-    .quote-pause-btn[aria-pressed="true"] {
-      color: var(--orange);
-      border-color: color-mix(in srgb, var(--color-accent-terracotta) 40%, transparent);
     }
 
     .demo-submit-btn {
@@ -2237,7 +2196,6 @@
 
     a:focus-visible,
     button:focus-visible,
-    .quote-dot:focus-visible,
     input:focus-visible,
     textarea:focus-visible {
       outline: 2px solid var(--color-accent-terracotta);
@@ -2318,7 +2276,6 @@
     }
 
     /* ─── Remove outer section borders/margins (desktop) ───────────── */
-    .approach-section { margin: 0 !important; border-radius: 0 !important; }
 
     /* ─── Scroll Reveal ─────────────────────────────────────────────── */
     .reveal {
@@ -2376,7 +2333,6 @@
       .page-wrapper { margin: 0 !important; border-radius: 0 !important; }
       nav { margin: 0 !important; border-radius: 0 !important; }
       #hero { margin: 0 !important; border-radius: 0 !important; }
-      .approach-section { margin: 0 !important; border-radius: 0 !important; }
       footer { margin: 0 !important; border-radius: 0 !important; }
 
       #hero {
@@ -2448,9 +2404,9 @@
     <div class="hero-pattern" aria-hidden="true"></div>
     <div class="container">
       <div class="hero-content">
-        <p class="hero-pain">Most churn is decided weeks before your team notices.</p>
-        <h1>Customer success,<br>finally <span class="hero-accent">proactive.</span></h1>
-        <p class="hero-sub">Coraleye reads your customer data. You act on what matters. Know what your customers need before they do.</p>
+        <p class="hero-pain">Improve your customer retention</p>
+        <h1><span class="hero-headline-lead">Customer success,</span><br>finally <span class="hero-accent">proactive.</span></h1>
+        <p class="hero-sub">Coraleye harnesses your data, empowering your team to know and act before it's too late.</p>
         <div class="hero-ctas">
           <button type="button" class="btn btn-primary btn-lg demo-trigger">Request a Demo</button>
         </div>
@@ -2464,7 +2420,7 @@
       <div class="how-stack-layout reveal">
         <div class="how-header">
           <h2>Built for your stack</h2>
-          <p>Coraleye connects to your existing stack in minutes via APIs and native integrations.</p>
+          <p>Coraleye organizes your native stack and outside data, enriching the context that your team operates on.</p>
           <h3 class="how-header-sub">24/7 oversight</h3>
           <p>Overnight evaluation in gated, secure environments, with human-in-the-loop auditing.</p>
         </div>
@@ -2515,7 +2471,10 @@
               </div>
               <div class="action-card timeline-card">
                 <span class="tag">Account · Slack</span>
-                “Do you have this competitor's feature?” — “Absolutely, let me walk you through.”
+                <div class="chat-thread" aria-label="Slack conversation excerpt">
+                  <div class="chat-bubble chat-bubble--incoming">Do you have this competitor's feature?</div>
+                  <div class="chat-bubble chat-bubble--outgoing">Absolutely, let me walk you through.</div>
+                </div>
               </div>
               <div class="action-card timeline-card">
                 <span class="tag">Coraleye</span>
@@ -2801,31 +2760,11 @@
     </div>
   </section>
 
-  <!-- ─── Design partner quotes ──────────────────────────────────────── -->
-  <section id="before-after" class="approach-section" data-nav-theme="light" data-nav-bg="#FAF6ED" data-nav-frost="true">
-    <div class="container">
-      <div class="approach-quote-block">
-        <p class="how-steps-band-title" style="margin-bottom: 20px;">Verified design partner references</p>
-        <div id="quote-display" class="approach-quote-display" aria-live="polite" aria-atomic="true">
-          <div class="approach-quote-mark">"</div>
-          <p class="approach-quote-text">Most companies aren't systems of action, they are systems of recommendations. Where a company could differentiate is if it had the recommendation engine and then helped me do it.</p>
-          <div class="approach-quote-mark approach-quote-mark-close">"</div>
-          <div class="approach-quote-attr">VP Customer Success · Verified design partner · Enterprise SaaS · 400+ seats · confidential</div>
-        </div>
-        <div class="approach-quote-dots" role="tablist" aria-label="Customer quotes">
-          <button type="button" class="quote-dot active" role="tab" aria-label="Quote 1" aria-selected="true" data-quote-index="0"></button>
-          <button type="button" class="quote-dot" role="tab" aria-label="Quote 2" aria-selected="false" data-quote-index="1"></button>
-          <button type="button" id="quote-pause-btn" class="quote-pause-btn" aria-pressed="false">Pause</button>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- ─── Final CTA ──────────────────────────────────────────────────── -->
   <section id="cta-section" class="section section-bg-b" data-nav-theme="light" data-nav-bg="#F7F1E5">
     <div class="container">
       <div class="cta-inner reveal">
-        <h2 class="cta-headline">Protect your base. Expand your best accounts.</h2>
+        <h2 class="cta-headline">Expand your accounts.</h2>
         <button type="button" class="btn btn-primary btn-lg demo-trigger">Request a Demo</button>
       </div>
     </div>
@@ -3198,68 +3137,6 @@
       });
     }
 
-
-    const quoteSlides = [
-      {
-        text: `Most companies aren't systems of action, they are systems of recommendations. Where a company could differentiate is if it had the recommendation engine and then helped me do it.`,
-        attr: `VP Customer Success · Verified design partner · Enterprise SaaS · 400+ seats · confidential`
-      },
-      {
-        text: `I would like my CSM team to spend zero time on follow-ups and actually taking action: booking the call, writing the email, sending an escalation internally, not just drafting the language.`,
-        attr: `Director of Customer Success · Verified design partner · Series C startup · 120 seats · confidential`
-      }
-    ];
-    let quoteIndex = 0;
-    let quoteTimer;
-    let quotesPaused = false;
-    const quoteDots = document.querySelectorAll('.quote-dot');
-    const quotePauseBtn = document.getElementById('quote-pause-btn');
-
-    function showQuote(index) {
-      quoteIndex = index;
-      const q = quoteSlides[index];
-      const display = document.getElementById('quote-display');
-      if (!display || !q) return;
-      display.innerHTML = `
-          <div class="approach-quote-mark">"</div>
-          <p class="approach-quote-text">${q.text}</p>
-          <div class="approach-quote-mark approach-quote-mark-close">"</div>
-          <div class="approach-quote-attr">${q.attr}</div>`;
-      quoteDots.forEach(function(dot, i) {
-        dot.classList.toggle('active', i === quoteIndex);
-        dot.setAttribute('aria-selected', i === quoteIndex ? 'true' : 'false');
-      });
-    }
-
-    function startQuoteTimer() {
-      clearInterval(quoteTimer);
-      if (quotesPaused || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-      quoteTimer = setInterval(function() {
-        showQuote((quoteIndex + 1) % quoteSlides.length);
-      }, 8000);
-    }
-
-    quoteDots.forEach(function(dot) {
-      dot.addEventListener('click', function() {
-        const idx = parseInt(dot.getAttribute('data-quote-index'), 10);
-        if (!isNaN(idx)) {
-          showQuote(idx);
-          startQuoteTimer();
-        }
-      });
-    });
-
-    if (quotePauseBtn) {
-      quotePauseBtn.addEventListener('click', function() {
-        quotesPaused = !quotesPaused;
-        quotePauseBtn.setAttribute('aria-pressed', quotesPaused ? 'true' : 'false');
-        quotePauseBtn.textContent = quotesPaused ? 'Resume' : 'Pause';
-        if (quotesPaused) clearInterval(quoteTimer);
-        else startQuoteTimer();
-      });
-    }
-
-    startQuoteTimer();
 
     const mobileDemoBar = document.getElementById('mobile-demo-bar');
     const heroSection = document.getElementById('hero');
