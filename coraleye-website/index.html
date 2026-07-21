@@ -663,6 +663,11 @@
       50% { transform: translate(-50%, -50%) translateY(-4px) translateX(2px); }
     }
 
+    @keyframes bubble-bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-6px); }
+    }
+
     .integration-bubble {
       position: absolute;
       border-radius: 50%;
@@ -2395,8 +2400,63 @@
         text-align: center;
       }
 
+      .integrations-cloud {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-content: center;
+        gap: 14px;
+        position: relative;
+        aspect-ratio: auto;
+        max-height: none;
+        height: auto;
+        padding: 8px 0;
+      }
+
+      .integration-bubble,
+      .integration-bubble--xxs,
+      .integration-bubble--sm,
+      .integration-bubble--md,
+      .integration-bubble--lg,
+      .integration-bubble--xl,
+      .integration-bubble--xxl {
+        position: relative;
+        top: auto !important;
+        left: auto !important;
+        width: 52px;
+        height: 52px;
+        z-index: auto;
+        transform: none;
+        animation: bubble-bounce 2.4s ease-in-out infinite;
+      }
+
+      .integration-bubble--xl,
+      .integration-bubble--xxl {
+        width: 64px;
+        height: 64px;
+      }
+
+      .integration-bubble:nth-child(1) { animation-duration: 2.4s; animation-delay: 0s; }
+      .integration-bubble:nth-child(2) { animation-duration: 2.4s; animation-delay: 0.12s; }
+      .integration-bubble:nth-child(3) { animation-duration: 2.4s; animation-delay: 0.24s; }
+      .integration-bubble:nth-child(4) { animation-duration: 2.4s; animation-delay: 0.36s; }
+      .integration-bubble:nth-child(5) { animation-duration: 2.4s; animation-delay: 0.48s; }
+      .integration-bubble:nth-child(6) { animation-duration: 2.4s; animation-delay: 0.6s; }
+      .integration-bubble:nth-child(7) { animation-duration: 2.4s; animation-delay: 0.72s; }
+      .integration-bubble:nth-child(8) { animation-duration: 2.4s; animation-delay: 0.84s; }
+      .integration-bubble:nth-child(9) { animation-duration: 2.4s; animation-delay: 0.96s; }
+      .integration-bubble:nth-child(10) { animation-duration: 2.4s; animation-delay: 1.08s; }
+      .integration-bubble:nth-child(11) { animation-duration: 2.4s; animation-delay: 1.2s; }
+      .integration-bubble:nth-child(12) { animation-duration: 2.4s; animation-delay: 1.35s; }
+
       .cta-headline { font-size: clamp(2.5rem, 9vw, 4rem); }
       .footer-inner { flex-direction: column; align-items: flex-start; }
+    }
+
+    @media (max-width: 600px) and (prefers-reduced-motion: reduce) {
+      .integration-bubble {
+        animation: none !important;
+      }
     }
 
     @media (prefers-reduced-motion: reduce) {
