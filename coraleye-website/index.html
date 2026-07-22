@@ -32,7 +32,7 @@
       --color-bg:               var(--color-bg-a);
       --color-surface-card:     #FFFFFF;
       --color-surface-dark:     #4A3228;
-      --color-headline:         #4A3228;
+      --color-headline:         var(--color-surface-dark);
       --color-text-primary:     #3A3028;
       --color-text-secondary:   #5F5E5A;
       --color-accent-terracotta:#C27855;
@@ -183,7 +183,7 @@
       font-family: var(--font-serif);
       font-weight: 600;
       letter-spacing: 0.02em;
-      color: var(--color-headline);
+      color: var(--color-surface-dark);
     }
 
     .subhead, .eyebrow {
@@ -589,6 +589,16 @@
       margin-bottom: 32px;
     }
 
+    @media (min-width: 601px) {
+      #hero .hero-pain {
+        margin-bottom: 48px;
+      }
+
+      #hero h1 {
+        margin-bottom: 56px;
+      }
+    }
+
     .hero-ctas {
       display: flex;
       align-items: center;
@@ -655,6 +665,35 @@
       font-size: 1.25rem;
       line-height: 1.3;
       text-align: left;
+    }
+
+    .audience-tags {
+      margin-top: 32px;
+      max-width: 22em;
+    }
+
+    .audience-label {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--color-headline);
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    .audience-bubbles {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .audience-bubble {
+      background: var(--color-headline);
+      color: var(--color-bg-b);
+      font-size: 13px;
+      font-weight: 500;
+      padding: 8px 16px;
+      border-radius: 999px;
+      line-height: 1.3;
     }
 
     .integrations-cloud-wrap {
@@ -1092,7 +1131,6 @@
     .comparison-col h3 {
       font-size: 1.05rem;
       line-height: 1.4;
-      color: var(--color-headline);
       margin: 0;
     }
 
@@ -1562,7 +1600,6 @@
     }
 
     .stack-card h3 {
-      color: var(--color-headline);
       font-size: 26px;
       margin: 8px 0;
       line-height: 1.2;
@@ -2105,12 +2142,11 @@
       line-height: 1.04;
       margin-bottom: 24px;
       text-align: center;
-      color: var(--color-headline);
     }
 
     @supports not ((background-clip: text) or (-webkit-background-clip: text)) {
       .cta-headline {
-        color: var(--color-headline);
+        color: var(--color-surface-dark);
       }
     }
 
@@ -2577,6 +2613,14 @@
           <p>Coraleye organizes your native stack and outside data, enriching the context that your team operates on.</p>
           <h3 class="how-header-sub">24/7 oversight</h3>
           <p>Overnight evaluation in gated, secure environments, with human-in-the-loop auditing.</p>
+          <div class="audience-tags">
+            <span class="audience-label">Built for:</span>
+            <div class="audience-bubbles">
+              <span class="audience-bubble">Customer Success</span>
+              <span class="audience-bubble">Partnerships</span>
+              <span class="audience-bubble">Revenue Operations</span>
+            </div>
+          </div>
         </div>
         <div class="integrations-cloud-wrap" aria-hidden="true">
           <div class="integrations-cloud">
