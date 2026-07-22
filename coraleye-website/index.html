@@ -494,6 +494,21 @@
       padding: 140px 0 120px;
       margin: 0;
       display: block;
+      background-image: none;
+      background-color: var(--color-bg-a);
+    }
+
+    #hero.photo-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: var(--photo-bottom-fade), url("terracotta-coral background.jpeg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      filter: saturate(1.2);
+      z-index: 0;
+      pointer-events: none;
     }
 
     .hero-pattern {
@@ -505,7 +520,7 @@
       background: url("coraleye-hero-pattern.svg") no-repeat right bottom / contain;
       opacity: 0.2;
       pointer-events: none;
-      z-index: 0;
+      z-index: 1;
     }
 
     @media (max-width: 900px) {
@@ -527,7 +542,7 @@
       z-index: 1;
     }
 
-    .hero-accent { color: var(--color-accent-olive); }
+    .hero-accent { color: #1F7A3F; }
 
     .hero-pain {
       margin-bottom: 20px;
@@ -548,7 +563,8 @@
       margin-bottom: 28px;
       font-size: clamp(3rem, 7vw, 5.5rem);
       line-height: 1.04;
-      color: var(--color-headline);
+      color: #FFFFFF;
+      text-shadow: 0 2px 12px rgba(0, 0, 0, 0.15), 0 1px 3px rgba(0, 0, 0, 0.22);
     }
 
     #hero .hero-pain,
@@ -2114,10 +2130,20 @@
       overflow: hidden;
       border-top: none;
       background-color: var(--color-accent-rust-dim);
+      background-image: none;
+    }
+
+    footer::before {
+      content: '';
+      position: absolute;
+      inset: 0;
       background-image: url("terracotta-coral background.jpeg");
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
+      filter: saturate(1.2);
+      z-index: 0;
+      pointer-events: none;
     }
 
     footer .nav-logo {
@@ -2373,11 +2399,8 @@
       footer { margin: 0 !important; border-radius: 0 !important; }
 
       #hero {
-        background-color: var(--color-bg) !important;
-        background-image: var(--photo-bottom-fade), url("terracotta-coral background.jpeg") !important;
-        background-size: cover !important;
-        background-position: center !important;
-        background-repeat: no-repeat !important;
+        background-color: var(--color-bg-a) !important;
+        background-image: none !important;
       }
     }
 
