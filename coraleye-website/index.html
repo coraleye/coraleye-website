@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Coraleye | Customer Success, Finally Proactive</title>
   <meta name="description" content="Coraleye harnesses your data, empowering your team to know and act before it's too late, with your approval on every move." />
-  <link rel="icon" type="image/png" href="new logo orange.png" />
-  <link rel="apple-touch-icon" href="new logo orange.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
   <link rel="canonical" href="https://coraleye.ai/" />
   <link rel="stylesheet" href="fonts.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css" />
@@ -494,7 +494,8 @@
       min-height: 92vh;
       padding: 140px 0 120px;
       margin: 0;
-      display: block;
+      display: flex;
+      align-items: center;
       background-image: none;
       background-color: var(--color-bg-a);
     }
@@ -541,6 +542,7 @@
     #hero > .container {
       position: relative;
       z-index: 1;
+      width: 100%;
     }
 
     .hero-accent { color: var(--color-accent-hero); }
@@ -554,6 +556,8 @@
       z-index: 1;
       color: var(--color-text-primary);
       max-width: 820px;
+      margin: 0 auto;
+      text-align: center;
     }
 
     .hero-headline-lead {
@@ -585,8 +589,8 @@
     }
 
     .hero-sub {
-      max-width: 620px;
-      margin-bottom: 32px;
+      max-width: 720px;
+      margin: 0 auto 32px;
     }
 
     @media (min-width: 601px) {
@@ -602,6 +606,7 @@
     .hero-ctas {
       display: flex;
       align-items: center;
+      justify-content: center;
       gap: 14px;
       flex-wrap: wrap;
     }
@@ -2411,9 +2416,9 @@
       #hero h1 { font-size: clamp(2.5rem, 9vw, 4.5rem); }
       .hero-pain,
       .hero-sub { max-width: 100%; overflow-wrap: break-word; word-break: break-word; }
-      .hero-ctas { flex-direction: column; align-items: stretch; }
+      .hero-ctas { flex-direction: column; align-items: center; }
       .hero-ctas a,
-      .hero-ctas button { width: 100% !important; text-align: center; display: flex !important; justify-content: center; }
+      .hero-ctas button { width: auto !important; text-align: center; display: flex !important; justify-content: center; }
       body { padding-bottom: 72px; }
 
       .how-step-boxes {
@@ -2477,16 +2482,18 @@
 
       .hero-content {
         max-width: 100%;
+        text-align: center;
       }
 
       .hero-ctas {
-        align-items: flex-start;
+        align-items: center;
+        justify-content: center;
       }
 
       #hero .hero-ctas .btn-primary {
         width: auto !important;
         display: inline-block !important;
-        align-self: flex-start;
+        align-self: center;
         padding: 12px 24px;
         font-size: 0.875rem;
         text-align: center;
@@ -2596,7 +2603,7 @@
       <div class="hero-content">
         <p class="hero-pain">Maximize your customers' lifetime value</p>
         <h1><span class="hero-headline-lead">Customer success,</span><br>finally <span class="hero-accent">proactive.</span></h1>
-        <p class="hero-sub">Coraleye mines your data for the earliest indicators, so your team knows and acts before it's too late.</p>
+        <p class="hero-sub">Surface key signals within your account base, plan a roadmap of actions, and provide your team the context needed to keep every customer growing.</p>
         <div class="hero-ctas">
           <button type="button" class="btn btn-primary btn-lg demo-trigger">Request a Demo</button>
         </div>
@@ -2617,6 +2624,7 @@
             <span class="audience-label">Built for:</span>
             <div class="audience-bubbles">
               <span class="audience-bubble">Customer Success</span>
+              <span class="audience-bubble">Account Management</span>
               <span class="audience-bubble">Partnerships</span>
               <span class="audience-bubble">Revenue Operations</span>
             </div>
